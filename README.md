@@ -1,5 +1,5 @@
 # woman-center-fe
-<h3>Repository Capston Team 14 - Woman Center</h3>
+<h3>Repository Capstone Team 14 - Woman Center</h3>
 
 <h4>Frontend Developer ReactJS</h4> 
 <ul> 
@@ -25,6 +25,6 @@
     🧠 Manage Curate and publish news articles
     </li>
 </ul>
-<p>Jobdesc Frontend Developer RaectJS - Woman Center</p>
+<p>Jobdesc Frontend Developer ReactJS - Woman Center</p>
 
 
