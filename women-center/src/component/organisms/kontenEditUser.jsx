@@ -2,14 +2,17 @@ import React from 'react'
 import Forms from '../molekul/form'
 import Profil from '../molekul/profil'
 import Artikel from '../molekul/artikel'
-const KontenEditUser = () => {
+
+const KontenEditUser = (props) => {
+
+  const {titleForms, children, profil} = props
     return (
         <>
         <div className="container-xxl mt-4">
           <div className="row mx-2">
             <div className="d-flex gap-3">
-                <Forms />
-                <Profil />
+                <Forms titleForms={titleForms}/>
+                {profil}
             </div>
           </div>
         </div>
@@ -17,7 +20,7 @@ const KontenEditUser = () => {
         <div className="container-xxl mt-4">
           <div className="row mx-2">
             <div className="d-flex justify-content-between">
-                <Artikel />
+                {children}
             </div>
           </div>
         </div>

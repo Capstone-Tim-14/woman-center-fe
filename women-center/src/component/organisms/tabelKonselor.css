@@ -1,0 +1,31 @@
+.custom-button {
+    background: rgba(244, 81, 141, 0.20) !important;
+    border: none !important;
+    color: #F4518D !important;
+
+    /* Atur properti CSS lainnya jika diperlukan */
+}
+
+.table-header th {
+    border-bottom: 1px solid #4B4B4B !important;
+    /* Atur warna dan gaya border sesuai kebutuhan */
+    border-top: 1px solid #4B4B4B !important;
+    /* Atur warna dan gaya border sesuai kebutuhan */
+}
+
+.custom-btn-account {
+    display: flex !important;
+    width: 175px !important;
+    height: 36px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 12px !important;
+    background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%)) !important;
+    border: none !important;
+}
+
+.custom-btn-dropdown{
+    background: rgba(94, 99, 102, 0.08) !important;
+    border: none !important;
+    color: #8B8D97 !important;
+}

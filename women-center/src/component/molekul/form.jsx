@@ -1,10 +1,12 @@
 import { Form } from "react-bootstrap"
 import Inputan from "../atom/inputan"
 
-const Forms = () => {
+const Forms = (props) => {
+
+  const {titleForms} = props
     return(
         <div className="col-8 flex-column">
-            <p className="fw-semibold m-0">Informasi User</p>
+            <p className="fw-semibold m-0">{titleForms}</p>
             <Form className="mt-3">
                 <Form.Group
                     className="mb-3 d-flex gap-3"
