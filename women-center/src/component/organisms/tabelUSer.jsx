@@ -23,7 +23,7 @@ import { IoNotifications } from "react-icons/io5";
 import { BsChevronDown } from "react-icons/bs";
 import { IoSettingsOutline } from "react-icons/io5";
 
-const TabelKonselor = () => {
+const TabelUser = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDatabaseOpen, setIsDatabaseOpen] = useState(false);
 
@@ -94,13 +94,13 @@ const TabelKonselor = () => {
 
       <div className="content">
         <div className="line">
-          <p>Konselor</p>
+          <p>User</p>
           <IoNotifications className="notification-icon" />
           <a href="#"><img src="/src/assets/img/profile1.png" className='admin-icon' alt="Admin" style={{ marginRight: '8px', width: '24px', height: '24px' }} /></a>
         </div><p/>
 
         <div className="logo">
-          <div><a href="#"><AiFillHome /> / Konselor</a></div><br/>
+          <div><a href="#"><AiFillHome /> / User</a></div><br/>
           <table className="custom-table">
             <thead>
               <tr>
@@ -135,12 +135,12 @@ const TabelKonselor = () => {
 
         <div className="mt-5 p-4">
           <div className="d-flex justify-content-end mb-3">
-            <Button href="#" className="custom-btn-account">+Buat Akun Konselor</Button>
+            <Button href="#" className="custom-btn-account">+Buat Akun User</Button>
           </div>
           <div className="mb-3 ">
             <Row>
               <Col>
-                <h5>Konselor</h5>
+                <h5>User</h5>
               </Col>
               <Col className="d-flex justify-content-end">
                 <SearchKonselor />
@@ -156,7 +156,6 @@ const TabelKonselor = () => {
                 <th>Username</th>
                 <th>Alamat Email</th>
                 <th>Tipe User</th>
-                <th>Jadwal</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -166,9 +165,6 @@ const TabelKonselor = () => {
                 <td>Otto</td>
                 <td>@mdo</td>
                 <td>@mdo</td>
-                <td>
-                  <Button className="custom-button" >Jadwal</Button>
-                </td>
                 <td>
                   <div className="d-flex">
                     <IconEdit />
@@ -181,7 +177,6 @@ const TabelKonselor = () => {
                 <td>Thornton</td>
                 <td>@fat</td>
                 <td>@fat</td>
-                <td><Button className="custom-button" >Jadwal</Button></td>
                 <td>
                   <div className="d-flex">
                     <IconEdit />
@@ -194,7 +189,6 @@ const TabelKonselor = () => {
                 <td>@twitter</td>
                 <td>@twitter</td>
                 <td>@twitter</td>
-                <td><Button className="custom-button" >Jadwal</Button></td>
                 <td>
                   <div className="d-flex">
                     <IconEdit />
@@ -247,4 +241,4 @@ const TabelKonselor = () => {
   );
 };
 
-export default TabelKonselor;
+export default TabelUser;

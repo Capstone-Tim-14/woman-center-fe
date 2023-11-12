@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       {/* <EditUser /> */}
-      {/* <DataKonselor /> */}
+      <DataKonselor />
       <TabelKonselor />
     </>
   )
