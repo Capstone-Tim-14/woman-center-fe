@@ -1,7 +1,5 @@
 import React from 'react'
 import Forms from '../molekul/form'
-import Profil from '../molekul/profil'
-import Artikel from '../molekul/artikel'
 
 const KontenEditUser = (props) => {
 

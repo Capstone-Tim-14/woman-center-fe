@@ -1,10 +1,9 @@
-import {RiDeleteBinLine} from 'react-icons/ri'
-
-const ButtonHapus = ({onClick}) => {
+import React from "react"
+const ButtonHapus = ({onClick, icon}) => {
     return <button 
             onClick={onClick}
             style={{border: 'none', background: 'none'}}>
-            <RiDeleteBinLine className="text-danger" />
+            {icon}
         </button>
 }
 export default ButtonHapus

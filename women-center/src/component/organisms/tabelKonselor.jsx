@@ -22,6 +22,7 @@ import { AiFillHome } from "react-icons/ai";
 import { IoNotifications } from "react-icons/io5";
 import { BsChevronDown } from "react-icons/bs";
 import { IoSettingsOutline } from "react-icons/io5";
+import ModalTambahAkun from '../molekul/modalTambahAkun';
 
 const TabelKonselor = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -135,7 +136,9 @@ const TabelKonselor = () => {
 
         <div className="mt-5 p-4">
           <div className="d-flex justify-content-end mb-3">
-            <Button href="#" className="custom-btn-account">+Buat Akun Konselor</Button>
+            <ModalTambahAkun 
+              label="Buat Akun Konselor"
+              title="Tambah Konselor" />
           </div>
           <div className="mb-3 ">
             <Row>
