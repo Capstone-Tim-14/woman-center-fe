@@ -1,16 +1,13 @@
 import CheckBox from "../atom/checkBox"
 import Searching from "../atom/inputanSearch"
-import ButtonHapus from "../atom/buttonHapus"
-
+import ModalHapus from "./modalHapus"
 const Artikel = () => {
     return(
         <>
         <div className="col-3 d-flex flex-column">
             <div className="d-flex justify-content-between align-items-center">
                 <p className="m-0">Artikel</p>
-                  <ButtonHapus 
-                    onClick={""}
-                  />
+                  <ModalHapus />
             </div>
             <div className="mt-2">
                 <Searching 
@@ -31,9 +28,7 @@ const Artikel = () => {
         <div className="col-3 d-flex flex-column">
             <div className="d-flex justify-content-between align-items-center">
                 <p className="m-0">Karier</p>
-                  <ButtonHapus 
-                    onClick={""}
-                  />
+                <ModalHapus />
             </div>
             <div className="mt-2">
                 <Searching 
@@ -54,9 +49,7 @@ const Artikel = () => {
         <div className="col-3 d-flex flex-column">
             <div className="d-flex justify-content-between align-items-center">
                 <p className="m-0">Konseling</p>
-                  <ButtonHapus 
-                    onClick={""}
-                  />
+                <ModalHapus />
             </div>
             <div className="mt-2">
                 <Searching 

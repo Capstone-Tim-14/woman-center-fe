@@ -2,7 +2,7 @@ import React from "react";
 
 const ButtonTambah = ({ onClick, label }) => {
     return <button 
-                className="btn px-5 bg-button text-white fw-bold" 
+                className="btn px-4 bg-button text-white fw-medium" 
                 onClick={onClick}>
                 {label}
             </button>

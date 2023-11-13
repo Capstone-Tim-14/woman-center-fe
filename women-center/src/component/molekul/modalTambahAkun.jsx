@@ -7,7 +7,7 @@ import Inputan from '../atom/inputan';
 import Buttonn from '../atom/button';
 
 
-const ButtonModal = () => {
+const ModalTambahAkun = ({title, label}) => {
 
     const [show, setShow] = useState(false);
 
@@ -17,12 +17,12 @@ const ButtonModal = () => {
     return(
         <>
 
-      <ButtonTambah onClick={handleShow}/>
+      <ButtonTambah onClick={handleShow} label={label}/>
 
       <Modal show={show} onHide={handleClose} size="sm">
 
         <Modal.Header >
-          <Modal.Title>Tambah User</Modal.Title>
+          <Modal.Title className='fs-6'>{title}</Modal.Title>
           <ButtonClose onClick={handleClose}/>
         </Modal.Header>
 
@@ -73,4 +73,4 @@ const ButtonModal = () => {
         </>
     )
 }
-export default ButtonModal
+export default ModalTambahAkun
