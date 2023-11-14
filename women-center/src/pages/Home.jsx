@@ -1,6 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-
+import Navbar from "../components/Navbar/navbar";
+import Header from "../components/Header/header";
+import Fitur from "../components/Fitur/fitur";
+//import Fiturlist from "../components/Fitur/fiturlist";
+import Konseling from "../components/Konseling/konseling";
 import { Container, Row, Col,} from "reactstrap";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
@@ -16,6 +20,10 @@ import artikel03 from "../assets/image 4.png"
 const Home = () => {
   return (
       <section>
+        <Navbar />
+        <Header />
+        <Fitur />
+        <Konseling />
         <Container>
           <Row>
           <div className="artikel">
