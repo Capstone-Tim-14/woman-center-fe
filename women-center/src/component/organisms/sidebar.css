@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 247px;
+    width: 100px;
     min-height: 120vh; /* Set minimum height to 100% of the viewport height */
     padding: 33px 0px 33px 24px;
     flex-shrink: 0;
@@ -229,5 +229,5 @@
     border-bottom: 1px solid #ccc; /* Add a border line at the bottom */
   }
   
-  
+
   

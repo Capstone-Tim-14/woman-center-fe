@@ -1,3 +1,5 @@
+
+import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import "./tabelKonselor.css";
 import Table from 'react-bootstrap/Table';
@@ -64,31 +66,32 @@ const TabelKonselor = () => {
         {/* Sidebar Section */}
         <div className={isMenuOpen ? "dropdown-menu" : "hidden"}>
           <div><br />
-            <a className="menu-icon" href="#"><TbHomeHeart /> Dashboard </a><br/><br/>
-            <a href="#" className='menu-icon' onClick={toggleDatabase}>
+            <Link to="/#" className="menu-icon" ><TbHomeHeart /> Dashboard </Link><br/><br/>
+            <Link to="/" className='menu-icon'>
               <GoPeople style={{ marginRight: '8px' }} /> Database <TiChevronRight /><br/>
               <span className={`menu-icon ${isMenuOpen ? 'close' : ''}`}></span>
-            </a>
+            </Link>
+
             <div className={isDatabaseOpen ? "dropdown-menu" : "hidden"}>
-              <div><a href="#">User</a></div><br/>
-              <div><a href="#">Konselor</a></div><br/>
+              <div><Link to="/">User</Link></div><br/>
+              <div><Link to="/tabel-konselor">Konselor</Link></div><br/>
             </div>
           </div>
           
           <div className='menu-icon'>
-            <a href="#"><TbChecklist style={{ marginRight: '8px' }}/>Jadwal dan Paket</a>
+            <Link to="/jadwal"><TbChecklist style={{ marginRight: '8px' }}/>Jadwal dan Paket</Link>
           </div><br/>
           <div className='menu-icon'>
-            <a href="#"><GrArticle style={{ marginRight: '8px' }} />Artikel</a>
+            <Link to="#"><GrArticle style={{ marginRight: '8px' }} />Artikel</Link>
           </div><br/>
           <div className='menu-icon'>
-            <a href="#"><BsChatText style={{ marginRight: '8px' }} />Chat</a>
+            <Link to="#"><BsChatText style={{ marginRight: '8px' }} />Chat</Link>
           </div><br/><br/><br/><br/><br/><br/><br/><br/>
           <div className='admin-navbar'>
-            <a href="#"><IoSettingsOutline style={{ marginRight: '8px' }}/>Settings</a>
+            <Link to="#"><IoSettingsOutline style={{ marginRight: '8px' }}/>Settings</Link>
           </div><br/>
           <div className='menu-icon'>
-            <a href="#"><img src="/src/assets/img/profile1.png" alt="Admin" style={{ marginRight: '8px', width: '24px', height: '24px' }} />Admin</a>
+            <Link to="#"><img src="/src/assets/img/profile1.png" alt="Admin" style={{ marginRight: '8px', width: '24px', height: '24px' }} />Admin</Link>
           </div>
         </div>
       </div>
@@ -101,7 +104,7 @@ const TabelKonselor = () => {
         </div><p/>
 
         <div className="logo">
-          <div><a href="#"><AiFillHome /> / Konselor</a></div><br/>
+        <div><Link to="/tabel-konselor"><AiFillHome /> / Konselor</Link></div><br/>
           <table className="custom-table">
             <thead>
               <tr>
