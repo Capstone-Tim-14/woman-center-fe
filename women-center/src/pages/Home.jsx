@@ -20,7 +20,6 @@ import artikel03 from "../assets/image 4.png"
 const Home = () => {
   return (
       <section>
-        <Navbar />
         <Header />
         <Fitur />
         <Konseling />
