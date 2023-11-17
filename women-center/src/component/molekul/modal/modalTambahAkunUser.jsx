@@ -20,8 +20,7 @@ const ModalTambahAkunUser = () => {
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
 
-    // ubah bagian handleAdd
-    const handleAdd = () => {
+    const handleClick = () => {
         console.log(Username, Email, Password);
     }
 
@@ -37,67 +36,57 @@ const ModalTambahAkunUser = () => {
           <ButtonClose onClick={handleClose}/>
         </Modal.Header>
 
-<<<<<<< HEAD
         <Modal.Body>
           <Form>
           <Form.Group className="d-flex flex-column gap-3 ">
           <Inputan 
                 type="text" 
-=======
-        <Form onSubmit={handleAdd}>
-            <Form.Group className="d-flex flex-column gap-3 ">
-              <Inputan 
-                name='namadepan'
-                type="text"
->>>>>>> 70a6ca605d2bc754cf84fd586e9006f2c0cb477c
                 placeholder="Nama Depan"
                 autoFocus={true}
                 value={NamaDepan}
                 onChange={(e) => setNamaDepan(e.target.value)}
               />
               <Inputan 
-                name='namabelakang'
-                type="text"
+                type="text" 
                 placeholder="Nama Belakang"
                 value={NamaBelakang}
                 onChange={(e) => setNamaBelakang(e.target.value)}
               />
               <Inputan 
-                name='username'
                 type="text" 
                 placeholder="Username"
                 value={Username}
                 onChange={(e) => setUsername(e.target.value)}
               />
               <Inputan 
-                name='email'
-                type="email"
+                type="email" 
                 placeholder="Alamat Email"
                 value={Email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               <Inputan 
-                name='password'
-                type="password"
+                type="password" 
                 placeholder="Password"
                 value={Password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
-            <Modal.Footer className='d-flex justify-content-between'>
-              <Buttonn 
-                className='text-primary bg-white' 
-                onClick={handleClose}
-                label="Batal"
-              />
-                
-              <Buttonn 
-                className='bg-button text-white' 
-                type="submit"
-                label="Tambah"
-              />
-            </Modal.Footer>
           </Form>
+        </Modal.Body>
+
+        <Modal.Footer className='d-flex justify-content-between'>
+          <Buttonn 
+            className='text-primary bg-white' 
+            onClick={handleClose}
+            label="Batal"
+          />
+            
+          <Buttonn 
+            className='bg-button text-white' 
+            onClick={handleClick}
+            label="Tambah"
+          />
+        </Modal.Footer>
 
       </Modal>
 
