@@ -13,6 +13,7 @@ const ModalTambahAkunKonselor = () => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const onAddKonselor = () => setShow(true);
 
     const [NamaDepan, setNamaDepan] = useState("");
     const [NamaBelakang, setNamaBelakang] = useState("");
@@ -21,13 +22,29 @@ const ModalTambahAkunKonselor = () => {
     const [Password, setPassword] = useState("");
 
     const handleClick = () => {
-        console.log(Username, Email, Password);
-    }
-
-
+      // Validasi: Pastikan semua field sudah diisi
+      if (!NamaDepan || !NamaBelakang || !Username || !Email || !Password) {
+        // Tampilkan pesan kesalahan atau lakukan tindakan lain sesuai kebutuhan
+        console.error('Harap isi semua field sebelum menambahkan konselor.');
+        return;
+      }
+  
+      onAddKonselor({
+        first_name: "",
+        last_name: "",
+        username: "",
+        email: "",
+        password: "",
+      });
+    
+      handleClose();
+    };
+    const ModalTambahAkunKonselor = ({ onAddKonselor }) => {
+      // ... rest of the component code
+    };
+    
     return(
         <>
-
       <ButtonTambah onClick={handleShow} label="Buat Akun Konselor"/>
 
       <Modal show={show} onHide={handleClose} size="sm">
@@ -38,9 +55,9 @@ const ModalTambahAkunKonselor = () => {
         </Modal.Header>
 
         <Modal.Body>
-          <Form onSubmit={""}>
+          <Form onSubmit={handleClick}>
             <Form.Group className="d-flex flex-column gap-3 ">
-              <Inputan 
+            <Inputan 
                 type="text" 
                 placeholder="Nama Depan"
                 autoFocus={true}
@@ -82,10 +99,10 @@ const ModalTambahAkunKonselor = () => {
             label="Batal"
           />
             
-          <Buttonn 
-            className='bg-button text-white' 
-            onClick={handleClick}
-            label="Tambah"
+            <Buttonn 
+              className='bg-button text-white' 
+              onClick={handleClick}
+              label="Tambah"
           />
         </Modal.Footer>
 

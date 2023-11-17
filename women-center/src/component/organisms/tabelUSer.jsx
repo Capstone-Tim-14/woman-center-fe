@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import "./tabelKonselor.css";
 import Table from 'react-bootstrap/Table';
 import SearchKonselor from "../atom/inputan/searchKonselor";
@@ -27,6 +28,15 @@ import ModalTambahAkunUser from '../molekul/modal/modalTambahAkunUser';
 const TabelUser = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDatabaseOpen, setIsDatabaseOpen] = useState(false);
+  const [newKonselorData, setNewKonselorData] = useState({
+    // Inisialisasi data konselor baru jika diperlukan
+    // Contoh:
+    first_name: "",
+    last_name: "",
+    username: "",
+    email: "",
+    password: "",
+  });
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -36,6 +46,33 @@ const TabelUser = () => {
   const toggleDatabase = () => {
     setIsDatabaseOpen(!isDatabaseOpen);
     setIsMenuOpen(false);
+  };
+
+  const handleAddKonselor = async () => {
+    try {
+      const response = await axios.post('', newKonselorData);
+  
+      if (response.status === 201) {
+        // Konselor berhasil ditambahkan
+        console.log('Konselor berhasil ditambahkan');
+        setNewKonselorData({
+          // Reset data konselor jika diperlukan
+          // Contoh:
+          first_name: "",
+          last_name: "",
+          username: "",
+          email: "",
+          password: "",
+          // ...
+        });
+        // Tutup modal atau lakukan yang sesuai
+      } else {
+        // Tangani kesalahan jika diperlukan
+        console.error('Gagal menambahkan konselor');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   useEffect(() => {
@@ -64,15 +101,15 @@ const TabelUser = () => {
         {/* Sidebar Section */}
         <div className={isMenuOpen ? "dropdown-menu" : "hidden"}>
           <div><br />
-          <Link to="/#" className="menu-icon" ><TbHomeHeart /> Dashboard </Link><br/><br/>
-            <Link to="/" className='menu-icon'>
+          <Link className="menu-icon" to="/"><TbHomeHeart /> Dashboard </Link><br/><br/>
+            <a className='menu-icon' onClick={toggleDatabase}>
               <GoPeople style={{ marginRight: '8px' }} /> Database <TiChevronRight /><br/>
-              <span className={`menu-icon ${isMenuOpen ? 'close' : ''}`}></span>
-            </Link>
+              <span className={`menu-icon ${isDatabaseOpen ? 'close' : ''}`}></span>
+            </a>
 
             <div className={isDatabaseOpen ? "dropdown-menu" : "hidden"}>
-              <div><Link to="/">User</Link></div><br/>
-              <div><Link to="/tabel-konselor">Konselor</Link></div><br/>
+              <div><a href="/">User</a></div><br/>
+              <div><a href="/tabel-konselor">Konselor</a></div><br/>
             </div>
           </div>
           
@@ -138,7 +175,11 @@ const TabelUser = () => {
 
         <div className="mt-5 p-4">
           <div className="d-flex justify-content-end mb-3">
-          <ModalTambahAkunUser />
+          <ModalTambahAkunUser 
+            onAddKonselor={handleAddKonselor}
+            newKonselorData={newKonselorData}
+            setNewKonselorData={setNewKonselorData}
+            />
           </div>
           <div className="mb-3 ">
             <Row>

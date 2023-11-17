@@ -39,7 +39,7 @@ const ModalTambahAkunUser = () => {
         <Modal.Body>
           <Form>
           <Form.Group className="d-flex flex-column gap-3 ">
-              <Inputan 
+          <Inputan 
                 type="text" 
                 placeholder="Nama Depan"
                 autoFocus={true}
