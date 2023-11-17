@@ -1,41 +1,45 @@
 import { Form } from "react-bootstrap"
-import Inputan from "../atom/inputan"
+import Inputan from "../../atom/inputan/Inputan"
 
-const Forms = (props) => {
+const FormsDataUser = () => {
 
-  const {titleForms} = props
     return(
         <div className="col-8 flex-column">
-            <p className="fw-semibold m-0">{titleForms}</p>
-            <Form className="mt-3">
+            <p className="m-0">Informasi User</p>
+            <Form className="mt-3 d-flex justify-content-between gap-2">
                 <Form.Group
-                    className="mb-3 d-flex gap-3"
+                    className="mb-3 d-flex flex-column col-6 gap-3"
                     controlId="inputan1"
                   >
                     <Inputan 
                       type="text" 
-                      placeholder="Nama"
+                      placeholder="Nama Depan"
                       onChange={""}
                       autoFocus={true}
                     />
                     <Inputan 
-                      type="password"
-                      placeholder="Password"
+                      type="text" 
+                      placeholder="Nama Belakang"
+                      onChange={""}
+                    />
+                     <Inputan 
+                      type="email"
+                      placeholder="Alamat Email"
                       onChange={""}
                     />
                   </Form.Group>
 
                   <Form.Group
-                    className="mb-3 d-flex gap-3"
+                    className="mb-3 d-flex flex-column col-6 gap-3"
                     controlId="inputan2"
                   >
                     <Inputan 
-                      type="email"
-                      placeholder="Email"
+                      type="date"
                       onChange={""}
                     />
                     <Inputan 
-                      type="date"
+                      type="password" 
+                      placeholder="Password"
                       onChange={""}
                     />
                 </Form.Group>
@@ -43,4 +47,4 @@ const Forms = (props) => {
         </div>
     )
 }
-export default Forms
+export default FormsDataUser

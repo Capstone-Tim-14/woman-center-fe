@@ -4,7 +4,8 @@ const Buttonn = ({className, type, label, onClick}) => {
         <Button
             type={type}
             className={className}
-            onClick={onClick}>
+            onClick={onClick}
+            style={{width: '128px'}}>
             {label}
         </Button>
     )

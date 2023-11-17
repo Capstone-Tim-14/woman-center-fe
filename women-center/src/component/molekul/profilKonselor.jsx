@@ -3,7 +3,7 @@ const ProfilKonselor = () =>{
     return(
         <>
         <div className="col-4 flex-column">
-            <p className="fw-semibold m-0">Foto Profil</p>
+            <p className="m-0">Foto Profil</p>
             <div 
                 className="mt-3">
                 <img 

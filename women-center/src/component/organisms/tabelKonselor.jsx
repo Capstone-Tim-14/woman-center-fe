@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import "./tabelKonselor.css";
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import SearchKonselor from "../atom/SearchKonselor";
+import SearchKonselor from "../atom/inputan/searchKonselor";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import IconCalendar from "../atom/iconCalendar";
@@ -24,7 +24,7 @@ import { AiFillHome } from "react-icons/ai";
 import { IoNotifications } from "react-icons/io5";
 import { BsChevronDown } from "react-icons/bs";
 import { IoSettingsOutline } from "react-icons/io5";
-import ModalTambahAkun from '../molekul/modalTambahAkun';
+import ModalTambahAkunKonselor from '../molekul/modal/modalTambahAkunKonselor';
 
 const TabelKonselor = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -139,9 +139,7 @@ const TabelKonselor = () => {
 
         <div className="mt-5 p-4">
           <div className="d-flex justify-content-end mb-3">
-            <ModalTambahAkun 
-              label="Buat Akun Konselor"
-              title="Tambah Konselor" />
+            <ModalTambahAkunKonselor />
           </div>
           <div className="mb-3 ">
             <Row>

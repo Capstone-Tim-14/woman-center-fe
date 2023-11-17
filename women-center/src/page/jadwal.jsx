@@ -1,10 +1,10 @@
 import React from "react"
-import HeaderEditUser from "../component/organisms/headerEditUser"
-import KontenJadwal from "../component/organisms/kontenJadwal"
+import Header from "../component/organisms/header/Headers"
+import KontenJadwal from "../component/organisms/konten/kontenJadwal"
 const Jadwal = () => {
     return (
         <div>
-            <HeaderEditUser title="Jadwal" />
+            <Header title="Jadwal" />
             <KontenJadwal titleForms="Rania Indriani"/>
         </div>
     )

@@ -1,4 +1,4 @@
-import ButtonClose from "../atom/buttonClose"
+import ButtonClose from "../atom/button/buttonClose"
 
 const NavbarEditUser = (props) => {
 

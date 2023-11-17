@@ -2,8 +2,9 @@ import React from "react";
 
 const ButtonTambah = ({ onClick, label }) => {
     return <button 
-                className="btn px-4 bg-button text-white fw-medium" 
-                onClick={onClick}>
+                className="btn bg-button text-white fw-medium  rounded-4"
+                onClick={onClick}
+                style={{width: '200px'}}>
                 {label}
             </button>
 }

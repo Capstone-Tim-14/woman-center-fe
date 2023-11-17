@@ -1,16 +1,14 @@
 import React from "react"
-import HeaderEditUser from "../component/organisms/headerEditUser"
-import KontenEditUser from "../component/organisms/kontenEditUser"
-import FooterEditUser from "../component/organisms/footerEditUser"
-import ArtikelKonselor from "../component/molekul/artikelKonselor"
-import ProfilKonselor from "../component/molekul/profilKonselor"
+import Header from "../component/organisms/header/Headers"
+import KontenDataKonselor from "../component/organisms/konten/kontenDataKonselor"
+import Footer from "../component/organisms/footer/Footers"
 
 const DataKonselor = () => {
     return (
         <section>
-        <HeaderEditUser title="Edit Konselor"/>
-        <KontenEditUser titleForms="Informasi Konselor" profil={<ProfilKonselor />}>  <ArtikelKonselor /> </KontenEditUser>
-        <FooterEditUser />
+        <Header title="Data Konselor"/>
+        <KontenDataKonselor />
+        <Footer />
   </section>
     )
 }

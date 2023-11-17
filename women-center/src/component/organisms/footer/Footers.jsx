@@ -1,6 +1,6 @@
-import GrupButton from "../molekul/grupButton"
+import GrupButton from "../../molekul/grupButton"
 
-const FooterEditUser = () => {
+const Footer = () => {
     return(
         <footer>
           <div className="container-xxl mt-4">
@@ -11,4 +11,4 @@ const FooterEditUser = () => {
         </footer>
     )
 }
-export default FooterEditUser
+export default Footer

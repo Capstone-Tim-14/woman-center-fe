@@ -1,6 +1,6 @@
 import React from 'react'
-import CheckBox from '../atom/checkBox'
-import FooterEditUser from './footerEditUser'
+import CheckBox from '../../atom/checkbox/checkBox'
+import Footer from '../footer/Footers'
 
 const KontenJadwal = () => {
 
@@ -139,7 +139,7 @@ const KontenJadwal = () => {
                     </div>
                 </div>
                 <div className="position-absolute bottom-0 end-0 p-3">
-                    <FooterEditUser></FooterEditUser>
+                    <Footer />
                 </div>
             </div>
 

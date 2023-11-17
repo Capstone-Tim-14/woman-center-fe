@@ -1,9 +1,7 @@
 import React from "react"
-import NavbarEditUser from "../molekul/navbarEditUser"
+import NavbarEditUser from "../../molekul/navbarEditUser"
 
-const HeaderEditUser = (props) => {
-
-  const {title} = props
+const Header = ({title}) => {
     return(
         <header>
           <div className="container-xxl max-width-xxl">
@@ -14,4 +12,4 @@ const HeaderEditUser = (props) => {
         </header>
     )
 }
-export default HeaderEditUser
+export default Header

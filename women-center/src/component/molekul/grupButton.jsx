@@ -1,14 +1,14 @@
-import Buttonn from "../atom/button"
+import Buttonn from "../atom/button/button"
 
 const GrupButton = () => {
     return(
         <div className="d-flex justify-content-end gap-3">
             <Buttonn 
-                className="bg-white text-primary px-5"
+                className="bg-white text-primary"
                 label="Batal"
                 onClick={""}/>
             <Buttonn 
-                className="bg-button px-5"
+                className="bg-button"
                 label="Simpan"
                 onClick={""}/>
         </div>
