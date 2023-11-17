@@ -21,6 +21,7 @@ const ModalTambahAkunKonselor = () => {
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
 
+<<<<<<< HEAD
     const handleClick = () => {
       // Validasi: Pastikan semua field sudah diisi
       if (!NamaDepan || !NamaBelakang || !Username || !Email || !Password) {
@@ -43,6 +44,14 @@ const ModalTambahAkunKonselor = () => {
       // ... rest of the component code
     };
     
+=======
+     // ubah bagian handleAdd
+    const handleAdd = () => {
+        console.log(Username, Email, Password);
+    }
+
+
+>>>>>>> 70a6ca605d2bc754cf84fd586e9006f2c0cb477c
     return(
         <>
       <ButtonTambah onClick={handleShow} label="Buat Akun Konselor"/>
@@ -54,42 +63,68 @@ const ModalTambahAkunKonselor = () => {
           <ButtonClose onClick={handleClose}/>
         </Modal.Header>
 
+<<<<<<< HEAD
         <Modal.Body>
           <Form onSubmit={handleClick}>
             <Form.Group className="d-flex flex-column gap-3 ">
             <Inputan 
                 type="text" 
+=======
+          <Form onSubmit={handleAdd}>
+            <Form.Group className="d-flex flex-column gap-3 ">
+              <Inputan 
+                name='namadepan'
+                type="text"
+>>>>>>> 70a6ca605d2bc754cf84fd586e9006f2c0cb477c
                 placeholder="Nama Depan"
                 autoFocus={true}
                 value={NamaDepan}
                 onChange={(e) => setNamaDepan(e.target.value)}
               />
               <Inputan 
-                type="text" 
+                name='namabelakang'
+                type="text"
                 placeholder="Nama Belakang"
                 value={NamaBelakang}
                 onChange={(e) => setNamaBelakang(e.target.value)}
               />
               <Inputan 
+                name='username'
                 type="text" 
                 placeholder="Username"
                 value={Username}
                 onChange={(e) => setUsername(e.target.value)}
               />
               <Inputan 
-                type="email" 
+                name='email'
+                type="email"
                 placeholder="Alamat Email"
                 value={Email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               <Inputan 
-                type="password" 
+                name='password'
+                type="password"
                 placeholder="Password"
                 value={Password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
+            <Modal.Footer className='d-flex justify-content-between'>
+              <Buttonn 
+                className='text-primary bg-white' 
+                onClick={handleClose}
+                label="Batal"
+              />
+                
+              <Buttonn 
+                className='bg-button text-white' 
+                type="submit"
+                label="Tambah"
+              />
+            </Modal.Footer>
           </Form>
+<<<<<<< HEAD
         </Modal.Body>
 
         <Modal.Footer className='d-flex justify-content-between'>
@@ -105,6 +140,8 @@ const ModalTambahAkunKonselor = () => {
               label="Tambah"
           />
         </Modal.Footer>
+=======
+>>>>>>> 70a6ca605d2bc754cf84fd586e9006f2c0cb477c
 
       </Modal>
 
