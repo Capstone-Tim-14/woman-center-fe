@@ -28,9 +28,7 @@ import ModalTambahAkunUser from '../molekul/modal/modalTambahAkunUser';
 const TabelUser = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDatabaseOpen, setIsDatabaseOpen] = useState(false);
-  const [newKonselorData, setNewKonselorData] = useState({
-    // Inisialisasi data konselor baru jika diperlukan
-    // Contoh:
+  const [newUserData, setNewUserData] = useState({
     first_name: "",
     last_name: "",
     username: "",
@@ -48,27 +46,27 @@ const TabelUser = () => {
     setIsMenuOpen(false);
   };
 
-  const handleAddKonselor = async () => {
+  const handleAddUser = async () => {
     try {
-      const response = await axios.post('', newKonselorData);
+      console.log('Data to be sent to API:', newUserData);
+
+      const response = await axios.post('https://api-ferminacare.tech/api/v1/users/register', newUserData);
+
+      console.log('API Response:', response.data); // Log the API response
   
       if (response.status === 201) {
-        // Konselor berhasil ditambahkan
-        console.log('Konselor berhasil ditambahkan');
-        setNewKonselorData({
-          // Reset data konselor jika diperlukan
-          // Contoh:
+        console.log('User berhasil ditambahkan');
+        setNewUserData({
           first_name: "",
           last_name: "",
           username: "",
           email: "",
           password: "",
-          // ...
         });
         // Tutup modal atau lakukan yang sesuai
       } else {
         // Tangani kesalahan jika diperlukan
-        console.error('Gagal menambahkan konselor');
+        console.error('Gagal menambahkan User');
       }
     } catch (error) {
       console.error('Error:', error);
@@ -85,6 +83,7 @@ const TabelUser = () => {
   }, [isMenuOpen]);
 
   useEffect(() => () => setIsDatabaseOpen(false), []);
+
 
   return (
     <div className="main-layout">
@@ -176,9 +175,9 @@ const TabelUser = () => {
         <div className="mt-5 p-4">
           <div className="d-flex justify-content-end mb-3">
           <ModalTambahAkunUser 
-            onAddKonselor={handleAddKonselor}
-            newKonselorData={newKonselorData}
-            setNewKonselorData={setNewKonselorData}
+            onAddUser={handleAddUser}
+            newUserData={newUserData}
+            setNewUserData={setNewUserData}
             />
           </div>
           <div className="mb-3 ">

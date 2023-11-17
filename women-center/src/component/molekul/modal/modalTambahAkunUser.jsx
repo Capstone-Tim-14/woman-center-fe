@@ -13,6 +13,7 @@ const ModalTambahAkunUser = () => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const onAddUser = () => setShow(true);
 
     const [NamaDepan, setNamaDepan] = useState("");
     const [NamaBelakang, setNamaBelakang] = useState("");
@@ -21,9 +22,26 @@ const ModalTambahAkunUser = () => {
     const [Password, setPassword] = useState("");
 
     const handleClick = () => {
-        console.log(Username, Email, Password);
-    }
-
+      // Validasi: Pastikan semua field sudah diisi
+      if (!NamaDepan || !NamaBelakang || !Username || !Email || !Password) {
+        // Tampilkan pesan kesalahan atau lakukan tindakan lain sesuai kebutuhan
+        console.error('Harap isi semua field sebelum menambahkan konselor.');
+        return;
+      }
+      onAddUser({
+        first_name: "",
+        last_name: "",
+        username: "",
+        email: "",
+        password: "",
+      });
+    
+      handleClose();
+    };
+    const ModalTambahAkunUser = ({ onAddUser }) => {
+      // ... rest of the component code
+    };
+      
     return(
         <>
 
