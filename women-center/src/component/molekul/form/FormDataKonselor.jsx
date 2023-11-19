@@ -22,12 +22,16 @@ const FormsDataKonselor = () => {
                       placeholder="Nama Belakang"
                       onChange={""}
                     />
-                     <Inputan 
-                      type="email"
-                      placeholder="Alamat Email"
+                    <Inputan 
+                      type="text" 
+                      placeholder="Username"
                       onChange={""}
                     />
-                    
+                    <Inputan 
+                      type="text" 
+                      placeholder="Pendidikan Terakhir"
+                      onChange={""}
+                    />
                   </Form.Group>
 
                   <Form.Group
@@ -39,10 +43,20 @@ const FormsDataKonselor = () => {
                       onChange={""}
                     />
                     <Inputan 
+                      type="email"
+                      placeholder="Alamat Email"
+                      onChange={""}
+                    />
+                    <Inputan 
                       type="password" 
                       placeholder="Password"
                       onChange={""}
                     />
+                    <Form.Control 
+                      as="textarea"
+                      placeholder="Deskripsi Psikologi"
+                      rows={5}
+                      style={{ backgroundColor: "var(--third-color)", resize: "none" }} />
                 </Form.Group>
             </Form>
         </div>

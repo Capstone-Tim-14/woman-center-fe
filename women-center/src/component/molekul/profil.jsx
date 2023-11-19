@@ -4,13 +4,12 @@ const Profil = ({src}) =>{
         <>
         <div className="col-4 flex-column">
             <p className="m-0">Foto Profil</p>
-            <div 
-                className="mt-3">
                 <img 
                     src={src}
-                    className="rounded-2 h-auto w-auto"/>
+                    className="rounded-2 mt-3"
+                    style={{height: '340px', width: '320px', objectFit: 'cover'}}
+                    />
             </div>
-        </div>
         </>
     )
 }
