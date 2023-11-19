@@ -1,0 +1,42 @@
+#tentang {
+    padding-top: 0rem;
+    font-family: 'Raleway'!important;
+  }
+
+  .learnmore-btn{
+    color: #F4518D;
+    display: flex;
+    padding: 6px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    border: 1px solid var(--primary-f-4518-d, #F4518D);
+    margin: 0 auto;
+    margin-top: 58px;
+    width: fit-content;
+    margin-bottom: 30px;
+  }
+
+  .title-fitur{
+    color: var(--neutral-0-c-0-c-0-c-neutral, #0C0C0C);
+    text-align: left;
+    font-family: 'Raleway'!important;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28.18px; 
+    letter-spacing: 0em;
+    margin-bottom: 0em;
+  }
+
+  .text-fitur{
+    color: var(--neutral-646464-neutral-100, #646464);
+    text-align: left;
+    font-family: 'Raleway' !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; 
+    letter-spacing: 0em;
+  }

@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "../components/Navbar/navbar";
 import Header from "../components/Header/header";
 import Fitur from "../components/Fitur/fitur";
-import Fiturlist from "../components/Fitur/fiturlist";
+import Fiturdata from "../components/Fitur/fiturdata";
 import Konselinglangsung from "../components/Konseling/konselinglangsung";
 import Konseling from "../components/Konseling/konseling";
 import { Container, Row, Col,} from "reactstrap";
@@ -23,7 +23,7 @@ const Home = () => {
       <section>
         <Header />
         <Fitur />
-        <Fiturlist />
+        <Fiturdata />
         <Konseling />
         <Konselinglangsung />
         <Container>
