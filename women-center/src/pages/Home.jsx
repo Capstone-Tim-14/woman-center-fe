@@ -3,7 +3,8 @@ import React from "react";
 import Navbar from "../components/Navbar/navbar";
 import Header from "../components/Header/header";
 import Fitur from "../components/Fitur/fitur";
-//import Fiturlist from "../components/Fitur/fiturlist";
+import Fiturlist from "../components/Fitur/fiturlist";
+import Konselinglangsung from "../components/Konseling/konselinglangsung";
 import Konseling from "../components/Konseling/konseling";
 import { Container, Row, Col,} from "reactstrap";
 import { Link } from "react-router-dom";
@@ -22,7 +23,9 @@ const Home = () => {
       <section>
         <Header />
         <Fitur />
+        <Fiturlist />
         <Konseling />
+        <Konselinglangsung />
         <Container>
           <Row>
           <div className="artikel">
