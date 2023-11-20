@@ -22,7 +22,6 @@ const UserSection = () => (
             <img id="filterDateIcon" className="option-icon" src="public/asset/filterdate.png" alt="Icon 1" />
           </a>
           {/* Other Option Icon */}
-          <img className="option-icon" src="public/asset/tablebuttons.png" alt="Icon 2" />
         </div>
       </div>
     </div>
