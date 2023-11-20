@@ -1,0 +1,247 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f4f1;
+}
+
+/* Main Container Styles */
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Header Styles */
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+    background-color: #fff;
+    padding: 20px 0;
+}
+
+.header h1 {
+    color: black;
+    font-size: 24px;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: row; /* Align items horizontally */
+    align-items: center;
+}
+
+.subtitle {
+    display: flex;
+    align-items: center;
+}
+
+.icon-home-img {
+    width: 16px;
+    height: 16px;
+}
+
+.subtitle-text {
+    color: #8B8D97;
+    font-size: 12px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.div-icon {
+    margin-right: 10px;
+}
+
+/* AddArticleButton Styles */
+.create-article-button {
+    margin-top: 5px; /* Slightly reduce the top margin for better alignment */
+    margin-left: auto; /* Move the button to the right */
+    padding: 5px 8px; /* Adjusted padding for a more balanced look */
+    background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex; /* Set display to flex */
+    align-items: center; /* Align items vertically */
+    border-radius: 15px;
+}
+
+.create-article-button span {
+    margin-left: 5px; /* Add left margin for space between icon and text */
+}
+
+
+
+
+/* Sub-Containers Styles */
+.sub-containers {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+/* Left Container Styles */
+.interaksi-kontributor {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px; /* Add margin to create space between the containers */
+    background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+}
+
+.div-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.div-header-content {
+    display: flex;
+    align-items: center;
+}
+
+.div-header-left {
+    margin-right: 10px;
+}
+
+.icon-image {
+    width: 32px;
+    height: 32px;
+}
+
+.div-title-DashboardSummary { /* New class for div-header-title */
+    color: #fff;
+    font-size: 20px; /* Adjust the font size as needed */
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.div-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.div-footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-footer-item {
+    text-align: center;
+}
+
+.div-footer-title-left {
+    color: #fff;
+    font-size: 14px; /* Adjust the font size as needed */
+    font-weight: 400;
+}
+
+.div-footer-data-left {
+    color: #fff;
+    font-size: 18px; /* Adjust the font size as needed */
+    font-weight: 500;
+}
+
+.div-footer-percentage-left {
+    color: #fff;
+    font-size: 14px; /* Adjust the font size as needed */
+    font-weight: 500;
+}
+
+
+/* Right Container Styles */
+.Interaksi-user {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px; /* Add margin to create space between the containers */
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.div-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.div-header-right {
+    display: flex; /* Set display to flex to align items horizontally */
+    align-items: center; /* Align items vertically */
+}
+
+.icon-image {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px; /* Add margin to create space between the icon and text */
+}
+
+.div-header-title {
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+/* Bottom Section of Right Container */
+.div-footer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.div-footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-footer-item {
+    text-align: center;
+}
+
+.div-footer-title {
+    color: #8B8D97;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.div-footer-data {
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.div-footer-percentage {
+    color: #FF1493; /* Dark Pink color */
+    font-size: 14px;
+    font-weight: 500;
+}
