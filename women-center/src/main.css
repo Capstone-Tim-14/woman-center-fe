@@ -1,104 +1,56 @@
- /* Global Styles */
+/* Global Styles */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    background-color: #f5f4f1;
 }
 
-/* Container Styles */
-.div-main-container {
+/* Main Container Styles */
+.main-container {
     width: 100%;
-    height: 100%;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    display: inline-flex;
-}
-
-/* Top Section Styles */
-.div-top-section {
-    align-self: stretch;
-    height: auto;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
-.div-title-bar {
-    align-self: stretch;
+/* Header Styles */
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    display: inline-flex;
-    color: #45464E;
+    align-items: center; /* Align items vertically */
+    background-color: #fff;
+    padding: 20px 0;
 }
 
-.div-title {
+.header h1 {
     color: black;
-    font-size: 20px;
+    font-size: 24px;
     font-family: 'Poppins';
-    font-weight: 500;
-    word-wrap: break-word;
+    font-weight: 600;
 }
 
-.div-icons {
+.header-content {
+    display: flex;
+    flex-direction: row; /* Align items horizontally */
+    align-items: center;
+}
+
+.subtitle {
     display: flex;
     align-items: center;
 }
 
-.div-icon {
-    width: 20px;
-    height: 20px;
-    padding: 0 5px;
-    display: flex;
-    align-items: center;
-}
-
-.div-icon-inner {
-    width: 14.17px;
-    height: 16.67px;
-    position: relative;
-}
-
-.div-icon-bar {
-    width: 14.17px;
-    height: 13.33px;
-    position: absolute;
-    background: #F4518D;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* Image Styles */
-.div-image {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    margin-top: 10px;
-    margin-right: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.div-image:hover {
-    transform: scale(1.1);
-}
-
-/* Subtitle Styles */
-.div-subtitle {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.div-icon-home {
-    margin-right: 5px;
-}
-
-.div-icon-home-img {
+.icon-home-img {
     width: 16px;
     height: 16px;
 }
 
-.div-subtitle-text {
+.subtitle-text {
     color: #8B8D97;
     font-size: 12px;
     font-family: 'Poppins';
@@ -106,50 +58,65 @@ body {
     word-wrap: break-word;
 }
 
-/* New Container Styles */
-.statistics-container {
+.header-icons {
     display: flex;
     align-items: center;
+}
+
+.div-icon {
+    margin-right: 10px;
+}
+
+/* AddArticleButton Styles */
+.create-article-button {
+    margin-top: 5px; /* Slightly reduce the top margin for better alignment */
+    margin-left: auto; /* Move the button to the right */
+    padding: 5px 8px; /* Adjusted padding for a more balanced look */
+    background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex; /* Set display to flex */
+    align-items: center; /* Align items vertically */
+    border-radius: 15px;
+}
+
+.create-article-button span {
+    margin-left: 5px; /* Add left margin for space between icon and text */
+}
+
+
+
+
+/* Sub-Containers Styles */
+.sub-containers {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     margin-top: 20px;
 }
 
-.icon-container,
-.text-container {
-    margin-right: 20px;
-}
 
-.icon-image {
-    width: 50px;
-    height: 50px;
-}
-
-.icon-text {
-    color: #FFF;
-    font-size: 20px;
-    font-family: 'Poppins';
-    font-weight: 500;
-    word-wrap: break-word;
-}
-
-.new-container {
-    background-color: #F4518D;
-    margin-top: 10px;
+/* Left Container Styles */
+.interaksi-kontributor {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 15px;
     padding: 20px;
+    margin-bottom: 20px; /* Add margin to create space between the containers */
+    background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
 }
 
-.div-title {
-    color: #45464E;
-}
-
-/* Header Styling */
 .div-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.div-header-title {
-    color: white;
+    margin-bottom: 20px;
 }
 
 .div-header-content {
@@ -157,41 +124,25 @@ body {
     align-items: center;
 }
 
-.div-header-left,
-.div-option {
-    display: flex;
-    align-items: center;
+.div-header-left {
+    margin-right: 10px;
 }
 
-.div-option {
-    background-color: #F4518D;
+.icon-image {
+    width: 32px;
+    height: 32px;
+}
+
+.div-title-DashboardSummary { /* New class for div-header-title */
     color: #fff;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 20px; /* Adjust the font size as needed */
+    font-weight: 600;
+    word-wrap: break-word;
 }
 
-.div-option1 {
-    background-color: 	#FFB6C1;
-    color: #fff;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-.div-option:hover {
-    background-color: #F4518D;
-}
-
-/* Body Styling */
-.div-body {
-    margin-top: 20px;
-}
-
-/* Footer Styling */
 .div-footer {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .div-footer-content {
@@ -201,171 +152,96 @@ body {
 
 .div-footer-item {
     text-align: center;
-    margin-right: 20px;
+}
+
+.div-footer-title-left {
+    color: #fff;
+    font-size: 14px; /* Adjust the font size as needed */
+    font-weight: 400;
+}
+
+.div-footer-data-left {
+    color: #fff;
+    font-size: 18px; /* Adjust the font size as needed */
+    font-weight: 500;
+}
+
+.div-footer-percentage-left {
+    color: #fff;
+    font-size: 14px; /* Adjust the font size as needed */
+    font-weight: 500;
+}
+
+
+/* Right Container Styles */
+.Interaksi-user {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px; /* Add margin to create space between the containers */
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.div-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.div-header-right {
+    display: flex; /* Set display to flex to align items horizontally */
+    align-items: center; /* Align items vertically */
+}
+
+.icon-image {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px; /* Add margin to create space between the icon and text */
+}
+
+.div-header-title {
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+/* Bottom Section of Right Container */
+.div-footer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.div-footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-footer-item {
+    text-align: center;
 }
 
 .div-footer-title {
-    color: #F9F5F6;
+    color: #8B8D97;
     font-size: 14px;
-    font-family: 'Raleway';
     font-weight: 400;
-    word-wrap: break-word;
 }
 
 .div-footer-data {
+    color: black;
     font-size: 18px;
-    color: white;
+    font-weight: 500;
 }
 
 .div-footer-percentage {
-    color: white;
-}
-
-/* Container Wrapper */
-.container-wrapper {
-    display: flex;
-    gap: 20px; /* Add some spacing between the containers */
-}
-
-/* Left Container */
-.left-container {
-    flex: 1; /* Take up remaining space */
-    box-sizing: border-box;
-    background-color: #F4518D;
-    padding: 20px;
-}
-
-/* Right Container */
-.right-container {
-    flex: 1; /* Take up remaining space */
-    box-sizing: border-box;
-    background-color: #FFB6C1;
-    padding: 20px;
-}
-
-/* Additional Styles from styles.css */
-.container {
-    width: 100%;
-    height: 100%;
-    padding-bottom: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch; /* Align items to stretch across the width */
-    gap: 20px; /* Add some spacing between sections */
-}
-
-.button {
-    width: 175px;
-    height: 36px;
-    margin-top: 15px;
-    background: linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%);
-    border-radius: 12px;
-    justify-content: center;
-    align-items: center;
-    display: inline-flex;
-    text-decoration: none; /* Remove underline */
-}
-
-.button-text {
-    color: #FCFCFC;
-    font-size: 12px;
-    font-family: 'Poppins';
-    font-weight: 600;
-    line-height: 20px;
-    word-wrap: break-word;
-    text-decoration: none; /* Remove underline */
-}
-
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Menggunakan justify-content: flex-start untuk meletakkan elemen di sebelah kiri */
-    position: left;
-}
-
-.user-text {
-    color: #45464E;
-    font-family: 'Poppins';
-    font-size: 14px; /* Sesuaikan ukuran font sesuai kebutuhan */
+    color: #FF1493; /* Dark Pink color */
+    font-size: 14px;
     font-weight: 500;
-    margin-right: 10px; /* Memberi jarak antara teks username dengan elemen selanjutnya */
-    position: left;
-    align-self: center; /* Menyamakan tinggi dengan tulisan search */
-}
-
-.container .header {
-    display: flex;
-    align-items: center;
-}
-
-.container .search-container {
-    position: relative;
-    display: flex;
-    align-items: center; /* Center items vertically */
-}
-
-.container .search-container input {
-    padding: 10px 30px 10px 35px;
-    font-size: 15px;
-    width: 150px;
-    margin-right: 10px; /* Add margin to the right to create space for the icon */
-}
-
-.container .search-container img {
-    padding: 5px;
-    width: 16px;
-    height: 20px;
-    margin-right: 5px; /* Adjust margin for spacing between image icon and text */
-}
-
-.container .search-container i {
-    position: right;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #888;
-}
-
-.container .search-container .search-icon {
-    width: 16px;
-    height: 20px;
-    margin-right: 10px;
-}
-
-/* Optional: Adjust the positioning of the icon to suit your design */
-.container .search-container .search-icon {
-    position: absolute;
-    left: 5px; /* Adjust as needed */
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.container .option-container img {
-    margin-right: 5px; /* Tambahkan margin-right untuk memberi jarak antara dua ikon gambar */
-}
-
-/* Add your existing CSS styles here */
-
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.data-table th,
-.data-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center; /* Center the text */
-}
-
-.data-table th {
-    background-color: transparent; /* Make the background transparent */
-}
-
-.delete-button {
-    background: transparent;
-    border: 1px solid #ddd; /* Add a border to the button */
-    cursor: pointer;
 }

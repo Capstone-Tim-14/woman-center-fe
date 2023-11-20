@@ -4,8 +4,8 @@ const UserSection = () => (
   <div>
     {/* User Section */}
     <div className="user-text">User</div>
-    <div className="container">
-      <div className="header">
+    <div className="container-search">
+      <div className="header-search">
         <div className="search-container">
           {/* Search Icon */}
           <i className="fas fa-search">

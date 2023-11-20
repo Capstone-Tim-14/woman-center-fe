@@ -1,20 +1,14 @@
 import React from 'react';
 
 const RightContainer = () => (
-  <div className="new-container right-container">
+  <div className="Interaksi-user">
     {/* Top Section of Right Container */}
     <div className="div-header">
       <div className="div-header-content">
-        <div className="div-header-left">
+        <div className="div-header-right">
           <img className="icon-image" src="public/asset/User.png" alt="Icon" />
           <div className="div-header-title">Interaksi User</div>
         </div>
-        <select id="timeOptionRight" className="div-option1">
-          <option value="hari">Hari</option>
-          <option value="minggu">Minggu</option>
-          <option value="bulan">Bulan</option>
-          <option value="tahun">Tahun</option>
-        </select>
       </div>
     </div>
 
