@@ -2,12 +2,8 @@
 import React from "react";
 import Header from "../components/Header/header";
 import Fitur from "../components/Fitur/fitur";
-<<<<<<< HEAD
-=======
 import Fiturdata from "../components/Fitur/fiturdata";
 import Konselinglangsung from "../components/Konseling/konselinglangsung";
->>>>>>> b5142a57958a1a199da3858eb3085d4290b7f732
-import Konseling from "../components/Konseling/konseling";
 import { Container, Row, Col,} from "reactstrap";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
@@ -26,7 +22,6 @@ const Home = () => {
         <Header />
         <Fitur />
         <Fiturdata />
-        <Konseling />
         <Konselinglangsung />
         <Container>
           <Row>
