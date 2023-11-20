@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import moment from 'moment'; // Make sure to install 'moment' if not already installed
+import './style.css'
 
 const FilterDate = () => {
   const [startDate, setStartDate] = useState('');
