@@ -1,12 +1,4 @@
 
-  .component-konseling1{
-      width: Hug (1,057px);
-      height: Hug(540px);
-      top: 1592px;
-      left: 192px;
-      Gap: 0px;
-      background: #1F1F1F;
-  }
   
   
   .garis{
@@ -26,16 +18,6 @@
   
   }
   
-  .img-konseling1{
-    margin-top: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 441px;
-    height: 400px;
-    flex-shrink: 0;
-  }
   
   .img-konseling2{
       margin-top: 200px;
@@ -53,23 +35,11 @@
       flex-shrink: 0;
     }
   
-  .konseling1{
-    padding-left: 64px;
-  }
   
   .konseling2{
       padding-right: 64px;
     }
   
-  .head-konseling1{
-    color: var(--primary-f-4518-d, #F4518D);
-    font-family: 'Raleway'!important;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;  
-    margin-top: 200px;
-  }
   
   .head-konseling2{
       color: var(--primary-f-4518-d, #F4518D);
@@ -82,14 +52,6 @@
       text-align: end;
     }
   
-  .body-konseling1{
-    color: var(--neutral-0-c-0-c-0-c-neutral, #F9F5F6);
-    font-family: 'Raleway' !important;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 46px;
-  }
   
   .body-konseling2{
     color: var(--neutral-0-c-0-c-0-c-neutral, #1F1F1F);
@@ -99,20 +61,6 @@
     font-weight: 900;
     line-height: 46px;
     text-align: end;
-  }
-  
-  .txt-konseling1{
-    color: var(--neutral-646464-neutral-100, #F9F5F6);
-    font-family: 'Raleway' !important;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
-    letter-spacing: 0em;
-    margin-top: 24px;
-    margin-right: 50px;
-    text-align: left;
-  
   }
   
   .txt-konseling2{
@@ -127,18 +75,6 @@
       margin-right: 0px;
       text-align:right;
   
-  }
-  
-  .konseling1-button{
-    color: #F9F5F6;
-    padding: 6px 40px;
-    gap: 10px;
-    border-radius: 30px;
-    border: 1px solid var(--primary-f-4518-d, #F4518D);
-    margin: 0 auto;
-    width: fit-content;
-    background-color: #F4518D;
-    font-family: 'Raleway'!important;
   }
   
   .konseling2-button{
