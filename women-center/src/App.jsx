@@ -1,34 +1,23 @@
-import React from 'react'; // Import React for JSX usage
+import React from 'react';
 import ReactDOM from 'react-dom';
-import moment from 'moment';
-// fsevents sebaiknya tidak diimpor karena biasanya hanya dibutuhkan di lingkungan pengembangan macOS
-import Mainstyle from './main.css';
-import Sidebarstyle from './Sidebar.css';
-import MainContainer from './Component/MainContainer'; // Sesuaikan path sesuai struktur proyek Anda
+import './main.css';
+import './Sidebar.css';
+import moment from 'moment'; // Mengimpor moment
+import MainContainer from './Component/MainContainer';
 import LeftContainer from './Component/LeftContainer';
-import RightContainer from './Component/RightContainer'; // Pastikan RightContainer diimpor
+import RightContainer from './Component/RightContainer';
 import ButtonArtikel from './Component/AddArticleButton';
 import UserSection from './Component/UserSection';
 import TableSection from './Component/TableSection';
 import FilterDate from './Component/FilterDate';
 import Sidebar from './Component/Sidebar';
 
-
 const App = () => {
-  // Gunakan konfigurasi Vite di sini
-  const viteConfig = defineConfig({
-    // ... konfigurasi spesifik untuk penggunaan di dalam komponen ...
-  });
-
-  // Lakukan sesuatu dengan konfigurasi Vite
-  console.log(viteConfig);
+  // Contoh penggunaan moment di dalam komponen App
+  const currentDateTime = moment().format('MMMM Do YYYY, h:mm:ss a');
 
   return (
-    <React.StrictMode>
-      <Mainstyle />
-      <Sidebarstyle />
-      <moment />
-      {/* Tambahkan komponen-komponen di sini */}
+    <>
       <MainContainer />
       <LeftContainer />
       <RightContainer />
@@ -37,11 +26,12 @@ const App = () => {
       <TableSection />
       <FilterDate />
       <Sidebar />
-    </React.StrictMode>
+      {/* Menampilkan waktu saat ini menggunakan moment */}
+      <p>Current Date and Time: {currentDateTime}</p>
+    </>
   );
-}
+};
 
-// Render komponen App ke elemen dengan id "root"
 ReactDOM.render(
   <App />,
   document.getElementById('root')
