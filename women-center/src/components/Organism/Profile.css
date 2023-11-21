@@ -38,7 +38,7 @@
     border-radius: 8px;
     background: var(--input-default-background, rgba(239, 241, 249, 0.60));
     cursor: pointer;
-    color: var(--black-2, #ABAFB1); /* Warna font hitam */
+    color: var(--black-2, #EFF1F999); /* Warna font hitam */
     font-family: 'Raleway', sans-serif; /* Font family Raleway */
     font-size: 16px; /* Ukuran font 16px */
     position: relative;
@@ -54,7 +54,7 @@
     gap: 10px;
     border-radius: 8px;
     background: var(--input-default-background, rgba(239, 241, 249, 0.60));
-    color: var(--black-2, #ABAFB1); /* Warna font hitam */
+    color: var(--black-2, #EFF1F999); /* Warna font hitam */
     font-family: 'Raleway', sans-serif; /* Font family Raleway */
     font-size: 16px; /* Ukuran font 16px */
     z-index: 1; /* Ensure the dropdown is above the form */
@@ -85,7 +85,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    color: #EFF1F999; /* Set the desired text color */
+    color: #eff1f96a; /* Set the desired text color */
     background: var(--input-default-background, rgba(233, 234, 238, 0.6)); /* Set the same background color as the form container */
     border-radius: 6px; /* Add border-radius if needed */
     padding: 5px 10px; /* Add padding if needed */

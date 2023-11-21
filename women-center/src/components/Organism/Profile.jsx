@@ -113,12 +113,20 @@ const Profile = () => {
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px', marginTop: '16px' }}>
         <p style={{ fontSize: '30px', marginRight: '40px', font:'Raleway-medium/Medium 20', marginLeft:'16px' }}>Pengaturan Akun</p>
         <button
-          className="btn btn-primary"
-          onClick={handleUpdateButtonClick}
-          style={{ width: '120px', marginLeft: '635px', borderRadius: '12px' }}
-        >
-          Update
-        </button>
+        className="btn btn-primary"
+        onClick={handleUpdateButtonClick}
+        style={{
+          width: '120px',
+          marginLeft: '625px',
+          borderRadius: '12px',
+          background: 'var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%))',
+          border: 'none', // Remove the border
+          color: 'white', // Set the text color to white
+        }}>
+          
+        Update
+      </button>
+
       </div>
 
       <div style={{ display: 'flex' }}>
@@ -292,7 +300,7 @@ const Profile = () => {
 
         <div style={{ margin: '16px' }}></div>
           <img
-            src="src/assets/icon/profile 2.png"
+            src="/src/assets/icon/profile 2.png"
             alt="Side Image"
             className="side-image"
             style={{ width: '172px', height: '172px', alignSelf: 'flex-start', marginRight: '16px', borderRadius: '12px' }}
