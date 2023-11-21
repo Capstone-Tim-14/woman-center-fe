@@ -14,6 +14,7 @@ import Karir from "../assets/karir.png"
 import artikel01 from "../assets/image 2.png"
 import artikel02 from "../assets/image 3.png"
 import artikel03 from "../assets/image 4.png"
+import Konseling from "../components/Konseling/konseling";
 
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
         <Fitur />
         <Fiturdata />
         <Konselinglangsung />
+        <Konseling />
         <Container>
           <Row>
           <div className="artikel">
