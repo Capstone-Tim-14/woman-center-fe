@@ -22,7 +22,11 @@ function HeaderKonselor() {
                             <div 
                                 className='text-center mb-3' 
                                 id='title_konselor'>
-                                <h3 className='m-0 lh-base'>Berkonsultasi Dengan Profesional<br/>yang Berpengalaman</h3>
+                                <p 
+                                    className='m-0 lh-base'>
+                                    Berkonsultasi Dengan Profesional
+                                    <br/>yang Berpengalaman
+                                </p>
                             </div>
                             <div 
                                 className='text-center mb-3'

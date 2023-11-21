@@ -1,0 +1,21 @@
+:root{
+    --primary : rgba(244, 81, 141, 1);
+    --secondary : rgba(253, 206, 223, 1);
+    --secondary-2 : rgba(255, 91, 205, 1.00);
+    --neutural : #1f1f1f;
+    --putih : #FFFFFF;
+}
+
+#banner{
+    background-color: var(--putih);
+    width: 875px;
+    padding: 20px;
+}
+#icons{
+    background-color: var(--primary);
+    padding: 4px;
+    color: var(--putih);
+}
+#banner p{
+    font-size: medium;
+}

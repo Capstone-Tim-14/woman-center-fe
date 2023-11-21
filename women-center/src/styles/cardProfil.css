@@ -8,7 +8,7 @@
 
 #cardprofil{
     background-color: var(--putih);
-    width: 275px;
+    width: 280px;
 }
 
  #cardprofil #image{
@@ -16,13 +16,13 @@
     height: 96px;
     object-fit: cover;
 }
- /* #cardprofil #image{
-    width: 96px;
-    height: 96px;
-    object-fit: cover;
-} */
+ #cardprofil #nama{
+    font-weight: 600;
+    font-family: 'Raleway'!important;
+}
  #cardprofil #sesi{
+    padding: 3px;
     font-size: smaller;
     width: 70px;
-    background-color: var(--primary);
+    background: linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%);
 }

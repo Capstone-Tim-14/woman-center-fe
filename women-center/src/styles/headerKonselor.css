@@ -14,25 +14,25 @@
 }
 
 #gambar_1{
-  top: 0px;
+  top: 10px;
   position: absolute;
   left: 0px;
   z-index: 1;
 }
 #gambar_2{
-  top: 0px;
+  top: 10px;
   position: absolute;
   left: 130px;
   z-index: 2;
 }
 #gambar_3{
-  top: 10px;
+  top: 20px;
   position: absolute;
   right: 0px;
   z-index: 2;
 }
 #gambar_4{
-  top: 0px;
+  top: 10px;
   position: absolute;
   right: 165px;
   z-index: 1;
@@ -41,8 +41,10 @@
 #text_konselor {
   z-index: 3;
 }
-#title_konselor h3 {
+#title_konselor p {
+  font-size: 32px;
   font-weight: 700;
+  font-family: 'Raleway'!important;
   color: var(--secondary-2);
 }
 #p1_konselor p {
