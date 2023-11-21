@@ -1,6 +1,6 @@
 // SearchBar.jsx
 import React, { useState } from 'react';
-import PopUpModal from './PopUpModal'; // Impor komponen PopUpModal dari file terpisah
+import PopUpModal from '../organisms/PopUpModal'; // Impor komponen PopUpModal dari file terpisah
 
 const SearchBar = () => {
   const [isOpen, setIsOpen] = useState(false);

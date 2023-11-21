@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './main.css';
-import MainContainer from './Component/MainContainer';
+import MainContainer from './Components/organisms/MainContainer';
 
 const App = () => {
   return (
