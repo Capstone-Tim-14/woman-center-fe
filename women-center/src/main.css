@@ -302,6 +302,12 @@ body {
     margin-right: 10px; /* Adjust the distance */
 }
 
+.search-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .filter-date-icon {
     margin-right: -50px; /* Adjust the distance from the right */
     margin-left: 10px;
@@ -534,3 +540,59 @@ input {
     font-family: "Poppins", sans-serif;
   }
   
+/* CSS untuk PageSelector */
+
+.page-selector-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+  width: 100%;
+}
+
+.items-perpage {
+  display: flex;
+  align-items: center;
+  margin-left: -35px;
+}
+
+.items-per-page-select {
+  margin-right: 10px;
+}
+
+.items-per-page-select p1 {
+  vertical-align: middle;
+  margin-bottom: 0; /* Hilangkan margin bawah dari elemen p1 */
+  margin-left: 5px;
+}
+
+select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.page-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+  margin-left: 10px; /* Sesuaikan jarak antara elemen */
+}
+
+/* CSS untuk PageOptions */
+.page-options {
+  display: flex;
+  align-items: center;
+  margin-right: -35px;
+}
+
+.page-options p {
+  margin: 0;
+  margin-left: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+

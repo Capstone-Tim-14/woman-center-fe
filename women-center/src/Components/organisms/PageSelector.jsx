@@ -5,7 +5,7 @@ import PageOptions from '../molecules/PageOption';
 
 const PageSelector = () => {
   return (
-    <div className="page-selector">
+    <div className="page-selector-footer">
       <ItemPerPage />
       <PageOptions />
     </div>

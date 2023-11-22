@@ -4,20 +4,37 @@ import PopUpModal from '../organisms/PopUpModal'; // Impor komponen PopUpModal d
 
 const SearchBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchText, setSearchText] = useState('');
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleSearch = () => {
+    // Lakukan logika pencarian sesuai dengan nilai searchText
+    console.log(`Searching for: ${searchText}`);
+    // Tambahkan logika lainnya sesuai kebutuhan, misalnya tampilkan hasil pencarian.
+  };
+
   return (
     <div className="search-bar">
-      {/* Ikon pencarian */}
-      <div className="search-icon">
+      {/* Tombol pencarian */}
+      <button className="search-button" onClick={handleSearch}>
         <img src='public/asset/Search.jpg' alt="Search-Icon" />
-      </div>
+      </button>
 
       {/* Kotak pencarian */}
-      <input type="text" placeholder="Search..." />
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchText}
+        onChange={(e) => setSearchText(e.target.value)}
+        onKeyPress={(e) => {
+          if (e.key === 'Enter') {
+            handleSearch();
+          }
+        }}
+      />
 
       {/* Ikon filter date */}
       <div className="filter-date-icon" onClick={togglePopup}>

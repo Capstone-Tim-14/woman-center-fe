@@ -39,8 +39,10 @@ const MainContainer = () => {
       {/* Table Section */}
       <TableSection />
 
-      {/* Page Selector */}
+      {/* Page Selector (as Footer) */}
+      <footer className="page-selector-footer">
       <PageSelector />
+      </footer>
     </div>
   );
 };

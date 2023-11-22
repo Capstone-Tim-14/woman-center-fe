@@ -24,21 +24,20 @@ const ItemPerPage = () => {
   };
 
   return (
-    <div className="page-selector">
+    <div className="items-perpage">
       <div className="items-per-page-select">
         <select value={itemsPerPage} onChange={handleItemsPerPageChange}>
           {generatePageOptions()}
         </select>
-        <label>Items per page</label>
+        <p1>Items per page</p1>
       </div>
-
       <div className="page-info">
         <p>
           {startIndex}-{endIndex} items of {totalItems} items
         </p>
       </div>
     </div>
-  );
+  );  
 };
 
 export default ItemPerPage;
