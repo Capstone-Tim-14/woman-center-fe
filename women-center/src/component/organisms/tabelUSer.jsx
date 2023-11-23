@@ -23,6 +23,9 @@ import { AiFillHome } from "react-icons/ai";
 import { IoNotifications } from "react-icons/io5";
 import { BsChevronDown } from "react-icons/bs";
 import { IoSettingsOutline } from "react-icons/io5";
+import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
+import { MdOutlineWorkOutline } from "react-icons/md";
+import { HiOutlineLogout } from "react-icons/hi";
 import ModalTambahAkunUser from '../molekul/modal/modalTambahAkunUser';
 
 const TabelUser = () => {
@@ -53,7 +56,7 @@ const TabelUser = () => {
       const response = await axios.post('https://api-ferminacare.tech/api/v1/users/register', newUserData);
 
       console.log('API Response:', response.data); // Log the API response
-  
+
       if (response.status === 201) {
         console.log('User berhasil ditambahkan');
         setNewUserData({
@@ -84,10 +87,9 @@ const TabelUser = () => {
 
   useEffect(() => () => setIsDatabaseOpen(false), []);
 
-
   return (
     <div className="main-layout">
-      <div className={`sidebar ${isMenuOpen ? 'menu-open' : ''}`}>
+      <div className={`sidebar ${isMenuOpen || isDatabaseOpen ? 'menu-open' : ''}`}>
         <div className="brand">
           <div className="center-info">
             <p className="center-name" onClick={toggleMenu}>
@@ -99,8 +101,9 @@ const TabelUser = () => {
 
         {/* Sidebar Section */}
         <div className={isMenuOpen ? "dropdown-menu" : "hidden"}>
-          <div><br />
-          <Link className="menu-icon" to="/"><TbHomeHeart /> Dashboard </Link><br/><br/>
+          <div>
+            <br />
+            <Link className="menu-icon" to="/"><TbHomeHeart /> Dashboard </Link><br/><br/>
             <a className='menu-icon' onClick={toggleDatabase}>
               <GoPeople style={{ marginRight: '8px' }} /> Database <TiChevronRight /><br/>
               <span className={`menu-icon ${isDatabaseOpen ? 'close' : ''}`}></span>
@@ -113,7 +116,13 @@ const TabelUser = () => {
           </div>
           
           <div className='menu-icon'>
-            <Link to="/jadwal"><TbChecklist style={{ marginRight: '8px' }}/>Jadwal dan Paket</Link>
+            <Link to="/jadwal"><TbChecklist style={{ marginRight: '8px' }}/>Jadwal</Link>
+          </div><br/>
+          <div className='menu-icon'>
+            <Link to="#"><HiOutlineClipboardDocumentList  style={{ marginRight: '8px' }}/>Paket</Link>
+          </div><br/>
+          <div className='menu-icon'>
+            <Link to="#"><MdOutlineWorkOutline  style={{ marginRight: '8px' }}/>Karier</Link>
           </div><br/>
           <div className='menu-icon'>
             <Link to="#"><GrArticle style={{ marginRight: '8px' }} />Artikel</Link>
@@ -126,11 +135,15 @@ const TabelUser = () => {
           </div><br/>
           <div className='menu-icon'>
             <Link to="#"><img src="/src/assets/img/profile1.png" alt="Admin" style={{ marginRight: '8px', width: '24px', height: '24px' }} />Admin</Link>
-          </div>
+          </div><br/>
+          <div className='admin-navbar'>
+            <Link to="#"><HiOutlineLogout  style={{ marginRight: '8px' }}/>Logout</Link>
+          </div><br/>
         </div>
       </div>
+      
 
-
+      
       <div className="content">
         <div className="line">
           <p>User</p>
@@ -153,7 +166,7 @@ const TabelUser = () => {
                 <th></th><th></th>
                 <th></th><th></th>
                 <th></th><th></th>
-                <th>Harian <BsChevronDown /></th>
+                
               </tr>
             </thead>
             <tbody>
@@ -171,6 +184,7 @@ const TabelUser = () => {
             </tbody>
           </table>
         </div>
+
 
         <div className="mt-5 p-4">
           <div className="d-flex justify-content-end mb-3">

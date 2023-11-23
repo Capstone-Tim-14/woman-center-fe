@@ -24,6 +24,9 @@ import { AiFillHome } from "react-icons/ai";
 import { IoNotifications } from "react-icons/io5";
 import { BsChevronDown } from "react-icons/bs";
 import { IoSettingsOutline } from "react-icons/io5";
+import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
+import { MdOutlineWorkOutline } from "react-icons/md";
+import { HiOutlineLogout } from "react-icons/hi";
 import ModalTambahAkunKonselor from '../molekul/modal/modalTambahAkunKonselor';
 
 const TabelKonselor = () => {
@@ -113,7 +116,13 @@ const TabelKonselor = () => {
           </div>
           
           <div className='menu-icon'>
-            <Link to="/jadwal"><TbChecklist style={{ marginRight: '8px' }}/>Jadwal dan Paket</Link>
+            <Link to="/jadwal"><TbChecklist style={{ marginRight: '8px' }}/>Jadwal</Link>
+          </div><br/>
+          <div className='menu-icon'>
+            <Link to="/jadwal"><HiOutlineClipboardDocumentList  style={{ marginRight: '8px' }}/>Paket</Link>
+          </div><br/>
+          <div className='menu-icon'>
+            <Link to="/jadwal"><MdOutlineWorkOutline  style={{ marginRight: '8px' }}/>Karier</Link>
           </div><br/>
           <div className='menu-icon'>
             <Link to="#"><GrArticle style={{ marginRight: '8px' }} />Artikel</Link>
@@ -126,7 +135,10 @@ const TabelKonselor = () => {
           </div><br/>
           <div className='menu-icon'>
             <Link to="#"><img src="/src/assets/img/profile1.png" alt="Admin" style={{ marginRight: '8px', width: '24px', height: '24px' }} />Admin</Link>
-          </div>
+          </div><br />
+          <div className='admin-navbar'>
+            <Link to="#"><HiOutlineLogout  style={{ marginRight: '8px' }}/>Logout</Link>
+          </div><br/>
         </div>
       </div>
 
@@ -152,7 +164,6 @@ const TabelKonselor = () => {
                 <th></th><th></th>
                 <th></th><th></th>
                 <th></th><th></th>
-                <th>Harian <BsChevronDown /></th>
               </tr>
             </thead>
             <tbody>
