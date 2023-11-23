@@ -510,17 +510,22 @@ input {
   label {
     display: block;
     margin-bottom: 5px; /* Adjusted spacing */
-  }
+    margin-right: 10px; /* Atur jarak antara label dan checkbox sesuai kebutuhan */
+}
   
-  /* Align "Dari" and "Sampai" inputs side by side with increased spacing */
-  .popup div {
-    display: flex;
-    align-items: center;
-  }
-  
-  .popup div label {
-    margin-right: 20px; /* Increased spacing */
-  }
+.popup div label {
+  margin-bottom: 5px; /* Adjusted spacing between label and checkbox */
+  display: flex;
+  align-items: center; /* Align label and checkbox vertically */
+}
+
+.popup div input[type="checkbox"] {
+  margin-right: 10px; /* Adjusted spacing between checkbox and text */
+}
+
+.popup div label span {
+  display: block; /* Ensure text is on a new line (block element) */
+}
   
   /* Center the filter button with wider width */
   .filter-date-button {
@@ -538,7 +543,18 @@ input {
   /* Change font to Poppins for date inputs */
   input[type="date"] {
     font-family: "Poppins", sans-serif;
+    margin-bottom: 10px;
   }
+
+  .popup-header {
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
   
 /* CSS untuk PageSelector */
 
