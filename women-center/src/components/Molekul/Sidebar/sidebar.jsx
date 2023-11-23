@@ -11,6 +11,10 @@ import { AiFillHome }  from "react-icons/ai";
 import { IoNotifications }  from "react-icons/io5";
 import { BsChevronDown }  from "react-icons/bs";
 import { IoSettingsOutline }  from "react-icons/io5";
+import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
+import { MdOutlineWorkOutline } from "react-icons/md";
+import { HiOutlineLogout } from "react-icons/hi";
+
 
 
 function Sidebar() {
@@ -79,7 +83,13 @@ function Sidebar() {
             </div>
           </div>
           <div className='menu-icon'>
-            <a href="#"><TbChecklist style={{ marginRight: '8px' }}/>Jadwal dan Paket</a>
+          <Link to="/jadwal"><TbChecklist style={{ marginRight: '8px' }}/>Jadwal</Link>
+          </div><br/>
+          <div className='menu-icon'>
+          <Link to="#"><HiOutlineClipboardDocumentList  style={{ marginRight: '8px' }}/>Paket</Link>
+          </div><br/>
+          <div className='menu-icon'>
+          <Link to="#"><MdOutlineWorkOutline  style={{ marginRight: '8px' }}/>Karier</Link>
           </div><br/>
           <div className='menu-icon'>
             <a href="#"><GrArticle style={{ marginRight: '8px' }} />Artikel</a>
@@ -92,7 +102,10 @@ function Sidebar() {
           </div><br/>
           <div className='menu-icon'>
           <a href="#"><img src="/src/assets/icon/profile1.png" alt="Admin" style={{ marginRight: '8px', width: '24px', height: '24px' }} />Admin</a>
-          </div>
+          </div><br/>
+          <div className='admin-navbar'>
+          <Link to="#"><HiOutlineLogout  style={{ marginRight: '8px' }}/>Logout</Link>
+          </div><br/>
         </div>
       </div>
 
