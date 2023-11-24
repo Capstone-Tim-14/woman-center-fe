@@ -1,18 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const SesiDipesan = () => {
+const SesiDipesanContainer = () => {
+  // State untuk menyimpan data sesi dipesan
+  const [reservedSessions, setReservedSessions] = useState(1250);
+  const [percentageIncrease, setPercentageIncrease] = useState(15.80);
+
+  // Logika atau efek samping lainnya dapat ditambahkan di sini
+  // Misalnya, pembaruan data setiap beberapa detik
+
   return (
-    <div className="box-Dipesan">
-      <div className="box-top.Dipesan">
+    <SesiDipesan
+      reservedSessions={reservedSessions}
+      percentageIncrease={percentageIncrease}
+    />
+  );
+};
+
+const SesiDipesan = ({ reservedSessions, percentageIncrease }) => {
+  return (
+    <div className="box-sesi-dipesan">
+      <div className="box-top-dipesan-container">
         <img src="src/asset/tas.svg" alt="User Icon" />
         <p>Sesi Dipesan</p>
       </div>
-      <div className="box-bottom-Dipesan">
-        <p>1,250</p>
-        <p className="subtitle">+15.80%</p>
+      <div className="box-bottom-dipesan">
+        <p>{reservedSessions.toLocaleString()}</p>
+        <p className="subtitle">+{percentageIncrease}%</p>
       </div>
     </div>
   );
 };
 
-export default SesiDipesan;
+export default SesiDipesanContainer;

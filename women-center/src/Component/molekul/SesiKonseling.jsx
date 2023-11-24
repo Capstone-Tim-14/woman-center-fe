@@ -1,18 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const SesiKonseling = () => {
+const SesiKonselingContainer = () => {
+  // State untuk menyimpan data sesi konseling
+  const [ongoingSessions, setOngoingSessions] = useState(123);
+  const [percentageIncrease, setPercentageIncrease] = useState(15.80);
+
+  // Logika atau efek samping lainnya dapat ditambahkan di sini
+  // Misalnya, pembaruan data setiap beberapa detik
+
   return (
-    <div className="box-sesi-konseling">
-      <div className="box-top.konseling">
-      <img src="src/asset/icon 2.svg" alt="konseling-icon" />
+    <SesiKonseling
+      ongoingSessions={ongoingSessions}
+      percentageIncrease={percentageIncrease}
+    />
+  );
+};
+
+const SesiKonseling = ({ ongoingSessions, percentageIncrease }) => {
+  return (
+    <div className="sesi-konseling-container">
+      <div className="sesi-konseling-top">
+        <img src="src/asset/icon 2.svg" alt="konseling-icon" />
         <p>Sesi Konseling Berjalan</p>
       </div>
-      <div className="box-bottom-konseling">
-        <p>123</p>
-        <p className="subtitle">+15.80%</p>
+      <div className="sesi-konseling-bottom">
+        <p>{ongoingSessions}</p>
+        <p className="subtitle">+{percentageIncrease}%</p>
       </div>
     </div>
   );
 };
 
-export default SesiKonseling;
+export default SesiKonselingContainer;

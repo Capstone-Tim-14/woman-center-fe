@@ -1,7 +1,7 @@
 // MainBox.jsx
 import React from 'react';
 import Headerbox from '../molekul/Headerbox';
-import Bodybox from './Bodybox';
+import Bodybox from './Container';
 
 
 
