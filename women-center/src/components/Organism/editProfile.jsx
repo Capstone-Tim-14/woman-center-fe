@@ -4,7 +4,7 @@ import './editProfile.css';
 import { BsPeople } from 'react-icons/bs';
 import { LuMail } from 'react-icons/lu';
 import { FiMapPin } from 'react-icons/fi';
-import { FaRegBuilding, FaTrash, FaUpload } from 'react-icons/fa'; // Menambahkan ikon delete dan upload
+import { FaRegBuilding, FaTrash, FaUpload } from 'react-icons/fa'; 
 
 const EditProfile = () => {
   const [selectedOptions, setSelectedOptions] = useState({
@@ -17,7 +17,6 @@ const EditProfile = () => {
   const [provinces, setProvinces] = useState([]);
 
   useEffect(() => {
-    // Mendapatkan daftar negara
     axios.get('https://restcountries.com/v2/all')
       .then((response) => {
         setCountries(response.data.map(country => country.name));
@@ -34,7 +33,6 @@ const EditProfile = () => {
       dropdown2: selectedCountry,
     }));
 
-    // Mendapatkan daftar provinsi dari negara yang dipilih
     axios.get(`https://restcountries.com/v2/name/${selectedCountry}`)
       .then((response) => {
         const countryData = response.data[0];
@@ -66,11 +64,9 @@ const EditProfile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Tambahkan logika pengiriman formulir di sini jika diperlukan
   };
 
   const handleUpdateButtonClick = () => {
-    // Tambahkan logika untuk memperbarui atau mengedit data di sini
     console.log('Tombol Update diklik');
   };
 
@@ -93,7 +89,7 @@ const EditProfile = () => {
         </button>
       </div>
 
-      <form onSubmit={(e) => e.preventDefault()} style={{ display: 'flex', marginBottom: '20px' }}>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', marginBottom: '20px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
           <div className="form-container">
             <p style={{ marginLeft: '16px', marginBottom: '4px' }}>First Name</p>
@@ -197,55 +193,39 @@ const EditProfile = () => {
           </div>
         </div>
 
-        <img
-          src="/src/assets/icon/profile 2.png"
-          alt="Side Image"
-          className="side-image"
-          style={{ width: '172px', height: '172px', alignSelf: 'flex-start', marginRight: '16px', borderRadius: '12px' }}
-        />
-
-        {/* Ikon Delete dan Upload */}
         <div style={{ marginLeft: '20px', marginBottom: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          {/* Ikon Delete */}
-          <div style={{ marginBottom: '8px' }}>
-            <FaTrash size={20} style={{ marginRight: '8px' }} />
-            <span>Delete</span>
-          </div>
+          <img
+            src="/src/assets/icon/profile 2.png"
+            alt="Side Image"
+            className="side-image"
+            style={{ width: '172px', height: '172px', alignSelf: 'flex-start', marginRight: '16px', borderRadius: '12px' }}
+          /><br/>
 
-          {/* Ikon Upload */}
-          <div>
-            <FaUpload size={20} style={{ marginRight: '8px' }} />
-            <span>Upload</span>
-          </div>
-        </div>
-      </form>
-
-      <div style={{ marginLeft: '20px', marginBottom: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            {/* Ikon Delete dan Upload */}
+            <div style={{ marginLeft: '20px', marginBottom: '20px', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
             {/* Ikon Delete */}
             <button
               onClick={() => {
-                // Tambahkan logika untuk menghandle delete di sini
                 console.log('Delete button clicked');
               }}
-              style={{ marginBottom: '8px', background: 'none', border: 'none', cursor: 'pointer', outline: 'none' }}
+              style={{ marginRight: '12px', background: 'none', border: 'none', cursor: 'pointer', outline: 'none' }}
             >
-              <FaTrash size={20} style={{ marginRight: '8px' }} />
-              <span>Delete</span>
+              <FaTrash size={20} />
             </button>
 
             {/* Ikon Upload */}
             <button
               onClick={() => {
-                
                 console.log('Upload button clicked');
               }}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', outline: 'none' }}
+              style={{ marginRight:'12px', background: 'none', border: 'none', cursor: 'pointer', outline: 'none' }}
             >
-              <FaUpload size={20} style={{ marginRight: '8px' }} />
-              <span>Upload</span>
+              <FaUpload size={20} />
             </button>
           </div>
         </div>
+      </form>
+    </div>
   );
 };
 
