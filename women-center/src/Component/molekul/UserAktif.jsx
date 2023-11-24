@@ -7,7 +7,7 @@ const UserAktif = () => {
         <img src="src/asset/icon.svg" alt="User Icon" />
         <p>User Aktif</p>
       </div>
-      <div className="box-bottom">
+      <div className="box-bottom-user">
         <p>12.250</p>
         <p className="subtitle">+15.80%</p>
       </div>

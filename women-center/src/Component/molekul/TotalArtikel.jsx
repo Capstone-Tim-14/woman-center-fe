@@ -5,10 +5,10 @@ const TotalArtikel = () => {
   return (
     <div className="box-total-artikel"> {/* Tambahkan kelas "total-artikel" */}
       <div className="box-top.artikell">
-        <img src="path/to/user-icon.png" alt="User Icon" />
+        <img src="src/asset/Document.svg" alt="User Icon" />
         <p>Total Artikel</p>
       </div>
-      <div className="box-bottom">
+      <div className="box-bottom-artikel">
         <p>21,250</p>
         <p className="subtitle">+15.80%</p>
       </div>

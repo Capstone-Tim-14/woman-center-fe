@@ -1,0 +1,36 @@
+/* HeaderBox.css */
+.HeaderBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 10px;
+    color: #fff;
+  }
+  
+ .summary {
+    background-color: transparent;
+    padding: 10px;
+  }
+  
+  .summary h2 {
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+  }
+
+  /* Options.css */
+
+.options {
+    margin-left: auto; /* Agar posisinya berada di sebelah kanan */
+    margin-right: 10px; /* Berikan jarak dari elemen lain di sebelah kiri */
+  }
+  
+  .options select {
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    /* Sesuaikan gaya lainnya sesuai kebutuhan */
+  }
+  
+  
