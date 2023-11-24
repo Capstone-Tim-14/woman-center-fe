@@ -1,0 +1,200 @@
+/* MainBox.css */
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Berikan jarak antara content dan box-user-aktif */
+}
+
+/* Summary.css */
+.summary h2 {
+    margin: 0;
+}
+
+/* Options.css */
+.options {
+    display: flex;
+    align-items: center; /* Agar opsi berada di tengah vertikal */
+    margin-left: auto; /* Agar posisinya berada di sebelah kanan */
+    margin-right: 10px; /* Berikan jarak dari elemen lain di sebelah kiri */
+}
+
+.options select {
+    padding: 5px;
+    font-size: 14px;
+    /* Sesuaikan gaya lainnya sesuai kebutuhan */
+}
+
+ /* UserAktif.css */
+
+.box-user-aktif {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #333;
+    padding: 10px;
+  }
+  
+  .box-user-aktif .box-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .box-user-aktif img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .box-user-aktif .box-top p {
+    margin: 0;
+  }
+  
+  .box-user-aktif .box-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .box-user-aktif .box-bottom p {
+    margin: 0;
+  }
+  
+  .box-user-aktif .subtitle {
+    color: #888;
+  }
+  
+/* SesiKonseling.css */
+
+.box-sesi-konseling {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #333;
+    padding: 10px;
+    width: 200px; /* Sesuaikan dengan kebutuhan lebar box */
+}
+
+.box-sesi-konseling .box-top.konseling {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Berikan jarak antara box-top dan box-bottom */
+}
+
+.box-sesi-konseling img {
+    width: 50px; /* Sesuaikan dengan kebutuhan lebar ikon */
+    height: auto;
+    /* margin-right: 10px; */ /* Coba hilangkan atau ubah nilai properti ini */
+}
+
+.box-sesi-konseling .box-top.konseling p {
+    margin: 0;
+}
+
+.box-sesi-konseling .box-bottom-2 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.box-sesi-konseling .box-bottom-2 p {
+    margin: 0;
+}
+
+.box-sesi-konseling .subtitle {
+    color: #888;
+}
+
+/* TotalArtikel.css */
+
+.box-total-artikel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #333;
+    padding: 10px;
+    width: 200px; /* Sesuaikan dengan kebutuhan lebar box */
+}
+
+.box-total-artikel .box-top.artikell {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Berikan jarak antara box-top dan box-bottom */
+}
+
+.box-total-artikel img {
+    width: 50px; /* Sesuaikan dengan kebutuhan lebar ikon */
+    height: auto;
+    margin-right: 10px; /* Berikan jarak antara gambar dan teks */
+}
+
+.box-total-artikel .box-top.artikell p {
+    margin: 0;
+}
+
+.box-total-artikel .box-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.box-total-artikel .box-bottom p {
+    margin: 0;
+}
+
+.box-total-artikel .subtitle {
+    color: #888;
+}
+
+/* SesiDipesan.css */
+
+.box-Dipesan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #333;
+    padding: 10px;
+    width: 200px; /* Sesuaikan dengan kebutuhan lebar box */
+}
+
+.box-Dipesan .box-top.Dipesan {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Berikan jarak antara box-top dan box-bottom */
+}
+
+.box-Dipesan img {
+    width: 50px; /* Sesuaikan dengan kebutuhan lebar ikon */
+    height: auto;
+    margin-right: 10px; /* Berikan jarak antara gambar dan teks */
+}
+
+.box-Dipesan .box-top.Dipesan p {
+    margin: 0;
+}
+
+.box-Dipesan .box-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.box-Dipesan .box-bottom p {
+    margin: 0;
+}
+
+.box-Dipesan .subtitle {
+    color: #888;
+}
+
+
