@@ -4,7 +4,8 @@ const SesiKonseling = () => {
   return (
     <div className="box-sesi-konseling">
       <div className="box-top.konseling">
-        <img src="src/asset/icon 2.svg" alt="User Icon" /><p>Sesi Konseling Berjalan</p>
+      <img src="src/asset/icon 2.svg" alt="konseling-icon" />
+        <p>Sesi Konseling Berjalan</p>
       </div>
       <div className="box-bottom-konseling">
         <p>123</p>

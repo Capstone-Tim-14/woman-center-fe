@@ -4,6 +4,7 @@ import Headerbox from '../molekul/Headerbox';
 import Bodybox from './Bodybox';
 
 
+
 const MainBox = () => {
   return (
     <div className="main-box">
