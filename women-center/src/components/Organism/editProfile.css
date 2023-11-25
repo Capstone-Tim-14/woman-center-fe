@@ -1,0 +1,134 @@
+/* Profile.css */
+
+/* Desktop Styles */
+.form-container {
+  display: flex;
+  padding: 5px 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  flex: 1 0 0;
+  align-self: stretch;
+  border-radius: 6px;
+  position: relative;
+  z-index: 2;
+  margin-left: 25px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
+}
+
+.form-container1 {
+  display: flex;
+  padding: 1px 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  flex: 1 0 0;
+  border-radius: 6px;
+  position: relative;
+  z-index: 2;
+  margin-left: 25px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
+}
+
+
+
+.form-container .form-row {
+  display: flex;
+  align-items: center;
+}
+
+.form-container .form-row svg {
+  margin-right: 8px;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  width: 300px;
+  border: 1px solid #ddd;
+  background: linear-gradient(0deg, rgba(248, 249, 253, 0.999), rgba(239, 241, 249, 0.999)),
+  linear-gradient(0deg, #1F1F1F, #1F1F1F);
+}
+
+.form-row.with-dropdown {
+  flex-direction: column;
+}
+
+
+.custom-dropdown {
+  width: 147px;
+  height: 45px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #1F1F1F;
+  gap: 10px;
+  background: linear-gradient(0deg, rgba(248, 249, 253, 0.999), rgba(239, 241, 249, 0.999)),
+              linear-gradient(0deg, #1F1F1F, #1F1F1F);
+}
+
+.custom-dropdown1 {
+  width: 80px;
+  height: 45px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-right: 100px;
+  border: 1px solid #1F1F1F;
+  gap: 0px;
+  background: linear-gradient(0deg, rgba(248, 249, 253, 0.999), rgba(239, 241, 249, 0.999)),
+              linear-gradient(0deg, #1F1F1F, #1F1F1F);
+}
+.dropdown {
+  position: relative;
+}
+
+.dropdown button {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  padding: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f2f2f2;
+}
+
+.side-image {
+  width: 172px;
+  height: 172px;
+  align-self: flex-start;
+  margin-right: 16px;
+  border-radius: 12px;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .form-container {
+    margin-left: 0; /* Atur margin menjadi 0 untuk tata letak yang lebih baik pada layar kecil */
+  }
+  
+  .form-row input,
+  .custom-dropdown,
+  .dropdown button {
+    width: 100%; /* Atur lebar elemen input, dropdown, dan button menjadi 100% */
+  }
+}

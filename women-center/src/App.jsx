@@ -1,7 +1,14 @@
-import Layout from './components/Layout/layout'
+import React from 'react';
+import Profile from './components/organism/Profile';
+import EditProfile from "./components/Layout/layout";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  return <Layout/>
+  return (
+    <div className="app">
+      <EditProfile />
+    </div>
+  );
 }
 
 export default App;
