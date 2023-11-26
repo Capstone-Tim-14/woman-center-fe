@@ -1,0 +1,98 @@
+.head-dashboard{
+    display: flex;
+    padding: 0px 8px;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: stretch;
+    width: 40%;
+}
+
+.txt-dashboard{
+    color: #000;
+    font-family: 'Raleway' !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.txt-dashboard2{
+    color: #000;
+    font-family: 'Raleway' !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.showall-topartikel{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1 0 0;
+}
+.show-artikel{
+    display: flex;
+    padding: 12px;
+    width: 40%;
+    align-items: center;
+    gap: 32px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: #FFF;
+    box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.40);
+}
+
+.content-top-artikel{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1 0 0;
+}
+.img-top-artikel{
+    width: 112px;
+    height: 112px;
+    border-radius: 8px;
+    background:lightgray 50% / cover no-repeat;  
+}
+
+.title-top-artikel{
+    align-self: stretch;
+    color: var(--neutral-0-c-0-c-0-c-neutral, #1F1F1F);
+    font-family: 'Raleway' !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.subtitle-top-artikel{
+    color: var(--neutral-646464-neutral-100, var(--14646464, #646464));
+    font-family: 'Raleway' !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 166.667% */
+    margin-bottom: 10px;
+}
+
+.insight-topartikel{
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    color: #939393;
+}
+
+.icon-dashboard-top{
+    display: flex;
+    size: 12;
+    align-items: center;
+    color: var(--neutral-neutral-60, #939393);
+    font-family: 'Raleway' !important;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 180% */
+    gap: 5px;
+}

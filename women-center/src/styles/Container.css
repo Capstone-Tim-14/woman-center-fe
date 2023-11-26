@@ -1,0 +1,212 @@
+/* Container.css */
+.container {
+    display: flex;
+    justify-content: space-between; /* Atur jarak antar kontainer */
+    margin: 10px; /* Atur margin pada container */
+
+}
+
+.container > div {
+    flex: 1; /* Memberikan setiap kontainer proporsi yang sama dari lebar container */
+    margin: 0 3px; /* Atur margin antar kontainer */
+}
+  
+  /* UserAktifContainer.css */
+
+.user-aktif-container {
+    flex: 1; /* Memberikan proporsi yang sama dari lebar container */
+    margin: 10px; /* Atur margin antar kontainer */
+  }
+  
+  /* UserAktif.css */
+  
+  .box-user-aktif {
+    text-align: left;
+    background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .box-top {
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+  
+  .box-top p {
+    margin: 0;
+    color: white;
+  }
+  
+  .box-top img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .box-bottom-user {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+  }
+  
+  .box-bottom-user p {
+    margin: 0;
+    color: white;
+  }
+  
+  .subtitle-User {
+    font-size: 14px;
+    margin: 0;
+    color: white;
+  }
+  
+  /* SesiKonselingContainer.css */
+
+.sesi-konseling-container {
+    background-color: #fff;
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 25%; /* Membagi menjadi 25% dari lebar kontainer */
+  }
+  
+  .sesi-konseling-top {
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+  
+  .sesi-konseling-top p {
+    margin: 0;
+    color: black;
+  }
+  
+  .sesi-konseling-top img {
+    width: 35px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .sesi-konseling-bottom {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+  }
+  
+  .sesi-konseling-bottom p {
+    margin: 0;
+    color: black;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+    margin: 0;
+    color: white;
+  }
+
+  /* TotalArtikelContainer.css */
+
+.box-total-artikel {
+    background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 25%; /* Membagi menjadi 25% dari lebar kontainer */
+  }
+  
+  .box-top-artikell-container {
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+  
+  .box-top-artikell-container img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: #fff;
+  }
+  
+  .box-top-artikell-container p {
+    margin: 0;
+    color: white;
+  }
+  
+  .box-bottom-artikel {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+  }
+  
+  .box-bottom-artikel p {
+    margin: 0;
+    color: white;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+    margin: 0;
+    color: white;
+  }
+  
+  /* SesiDipesanContainer.css */
+
+.box-sesi-dipesan {
+    background-color: #fff;
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 25%; /* Membagi menjadi 25% dari lebar kontainer */
+  }
+  
+  .box-top-dipesan-container {
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+  
+  .box-top-dipesan-container img {
+    width: 35px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .box-top-dipesan-container p {
+    margin: 0;
+    color: black;
+  }
+  
+  .box-bottom-dipesan {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+  }
+  
+  .box-bottom-dipesan p {
+    margin: 0;
+    color: black;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+    margin: 0;
+    color: white;
+  }
+  
+  
