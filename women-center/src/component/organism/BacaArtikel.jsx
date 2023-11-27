@@ -15,7 +15,7 @@ const ArtikelModal = ({ show, handleClose }) => {
    
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://api-ferminacare.tech/api/v1/admin/articles/menjaga-kesehatan-mental-di-era-digital');
+        const response = await axios.get('https://6542b7a801b5e279de1f79ad.mockapi.io/articledetail');
         if (response.status === 401) {
           
           console.error('Unauthorized access.');

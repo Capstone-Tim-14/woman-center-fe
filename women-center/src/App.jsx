@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './main.css';
-import MainContainer from './Components/organisms/MainContainer';
-import AddArtikel from './component/pages/AddArtikel';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routers from './routes/routers';
 
-const App = () => {
+
+function App  () {
   return (
-    <>
-      <AddArtikel />
-    </>
+  
+    <Router>
+      <Routers />
+    </Router>
+     
   );
 };
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 
 export default App;

@@ -7,6 +7,7 @@ import SearchBar from '../atoms/SearchBar';
 import TableSection from '../molecules/TableSection';
 import PageSelector from '../organisms/PageSelector'; // Ganti nama import menjadi PageSelector
 
+
 const MainContainer = () => {
   const [isCreateArticleClicked, setCreateArticleClicked] = useState(false);
 

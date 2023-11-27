@@ -1,8 +1,18 @@
 import React from 'react';
 import DeleteButton from '../atoms/DeleteButton'; // Pastikan telah diimpor
+import { useNavigate } from 'react-router-dom';
+import ArtikelModal from '../../component/organism/BacaArtikel';
 
 
-const TableSection = () => {
+const TableSection = (openModal) => {
+
+  const navigate = useNavigate();
+
+  const handleRowClick = (articleId) => {
+    // Navigate to the article detail page when the row is clicked
+    navigate(`/articles/${articleId}`);
+  };
+
   const confirmDelete = () => {
     // Tambahkan logika konfirmasi atau hapus di sini
     console.log('Delete button clicked');
@@ -26,6 +36,7 @@ const TableSection = () => {
         </thead>
         <tbody>
   <tr>
+    
     <td><input type="checkbox" /></td>
     <td>Article Title 1</td>
     <td>Contributor 1</td>
@@ -49,7 +60,8 @@ const TableSection = () => {
 
 
   {/* Dummy Data - Approved */}
-  <tr>
+  <tr onClick={() => handleRowClick(1)}>
+  
     <td><input type="checkbox" /></td>
     <td>Article Title 2</td>
     <td>Contributor 2</td>
@@ -69,6 +81,7 @@ const TableSection = () => {
     <td>
       <DeleteButton onClick={confirmDelete} />
     </td>
+    
   </tr>
 
 
