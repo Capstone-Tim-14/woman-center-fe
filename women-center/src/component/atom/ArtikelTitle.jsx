@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import { Container, Button, Row, Col } from 'react-bootstrap';
 import './ArtikelTitle.css'
 
-const TitleBar = ({ onSubmit, onTitleChange, onArticleContentChange, onCategoryChange }) => {
- 
+const TitleBar = ({ onSubmit }) => {
   const handleSubmit = () => {
-
-    console.log('Submitting data:', title, articleContent, selectedCategories, image);
-    
+    // Call the onSubmit prop to trigger the form submission
     if (onSubmit) {
       onSubmit();
     }

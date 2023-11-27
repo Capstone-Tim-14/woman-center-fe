@@ -52,7 +52,7 @@ const AddArtikel = () => {
       <ArtikelBaru onTitleChange={handleTitleChange} />
         <Button onClick={handleShowPopup}>Open Popup</Button>
        
-        {/*<ArtikelModal show={showPopup} handleClose={handleClosePopup}> </ArtikelModal>*/}
+        <ArtikelModal show={showPopup} handleClose={handleClosePopup}> </ArtikelModal>
          </>
     );
   };

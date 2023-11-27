@@ -6,30 +6,8 @@ import TitleBar from '../atom/ArtikelTitle';
 import './ArtikelBaru.css'
 import CategorySelect from '../molekul/CategorySelect';
 
-const ArtikelBaru = ( onSubmit ) => {
-  const [title, setTitle] = useState('');
-  const [articleContent, setArticleContent] = useState('');
-  const [selectedCategories, setSelectedCategories] = useState([]);
-  const [image, setImage] = useState(null);
-
-  const handleTitleChange = (newTitle) => {
-    setTitle(newTitle);
-  };
-
-  const handleArticleContentChange = (newArticleContent) => {
-    setArticleContent(newArticleContent);
-  };
-
-  const handleCategoryChange = (newSelectedCategories) => {
-    setSelectedCategories(newSelectedCategories);
-  };
-
-  const handleImageChange = (newImage) => {
-    setImage(newImage);
-  };
-
-  
-   
+const ArtikelBaru = ( ) => {
+ 
     return (
       
       <Container fluid className="artikel-baru-page">
@@ -38,11 +16,11 @@ const ArtikelBaru = ( onSubmit ) => {
         <Col className="container-textbox" md={8}>
           <Row>
             <Col md={12}>
-            <TextBoxArtikel onTitleChange={handleTitleChange} onArticleContentChange={handleArticleContentChange} />
+            <TextBoxArtikel />
 
             </Col>
             <Col md={12}>
-            <CategorySelect onCategoryChange={(selectedCategories) => handleCategoryChange(selectedCategories)} />
+            <CategorySelect  />
 
             </Col>
           </Row>
@@ -50,7 +28,7 @@ const ArtikelBaru = ( onSubmit ) => {
     
         
         <Col className="container-image" md={4}>
-          <ImageUploadAdd onImageChange={handleImageChange}/>
+          <ImageUploadAdd />
         </Col>
       </Row>
     </Container>
