@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { Container, Row, Col } from "reactstrap"; // Added Col
+import { Container, Row, Col } from "reactstrap";
 import imgkonseling from '../assets/Group 27173.png'
 import '../styles/konselingpage.css'
 import imgkonseling2 from '../assets/masalah.png'

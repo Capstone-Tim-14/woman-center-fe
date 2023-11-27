@@ -14,7 +14,6 @@ import Karir from "../assets/karir.png"
 import artikel01 from "../assets/image 2.png"
 import artikel02 from "../assets/image 3.png"
 import artikel03 from "../assets/image 4.png"
-import Konseling from "../components/Konseling/konseling";
 
 
 const Home = () => {
@@ -24,7 +23,6 @@ const Home = () => {
         <Fitur />
         <Fiturdata />
         <Konselinglangsung />
-        <Konseling />
         <Container>
           <Row>
           <div className="artikel">
@@ -32,7 +30,6 @@ const Home = () => {
             <div className="head-artikel">
             <h6 className="ttl-artikel">Artikel terkini</h6>
             <h1 className="title-art">Temukan Artikel Terkini</h1>
-            <hr  className="garis"/>
             <p className="subt-art">Jelajahi beragam artikel informatif dan inspiratif yang membantu Anda mendapatkan wawasan baru <br />
              dan solusi praktis untuk berbagai topik.</p>
             </div>          
@@ -124,7 +121,6 @@ const Home = () => {
               <div className="Download">
                 <h6 className="Title_dwn">Download</h6>
                 <h1 className="txt_unduh">Unduh Aplikasi Sekarang!</h1>
-                <hr  className="garis"/>
                 <p className="subt_unduh">Segera unduh dan nikmati fitur-fitur unggulan kami! <br />
                 Tetap bergabung untuk menggali potensi terbaik dalam diri Anda!</p>
                 <div className="download_btn">
