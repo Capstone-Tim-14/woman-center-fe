@@ -4,14 +4,18 @@ import Topartikel from "../components/top-artikel";
 import Listartikel from "../components/list-artikel";
 import Header from "../Component/Organism/Header";
 import MainBox from "../Component/Organism/MainBox";
-import SliderTextCombo from "../Component/molekul/SliderTextCombo";
+import GrafikText from "../Component/Atom/GrafikText";
+import Checkbox from "../Component/Atom/Checkbox";
+import Chart from "../Component/molekul/Chart";
 
 const Dashboard = () => {
     return (
         <div>
             <Header />
             <MainBox />
-            <SliderTextCombo />
+            <GrafikText />
+            <Checkbox />
+            <Chart />
             <Topartikel />
             {/* <Listartikel /> */}
         </div>

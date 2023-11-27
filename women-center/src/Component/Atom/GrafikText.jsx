@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GrafikArtikel = () => {
+const GrafikText = () => {
   return (
     <div>
       <p>Articles growth</p>
@@ -8,4 +8,4 @@ const GrafikArtikel = () => {
   );
 }
 
-export default GrafikArtikel;
+export default GrafikText;
