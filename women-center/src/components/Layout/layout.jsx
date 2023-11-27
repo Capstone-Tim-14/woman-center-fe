@@ -95,7 +95,7 @@ function layout() {
             <a href="/chat"><BsChatText style={{ marginRight: '8px' }} />Chat</a>
           </div><br/><br/><br/><br/><br/><br/><br/><br/>
           <div className='admin-navbar'>
-            <a href="/profile">< IoSettingsOutline style={{ marginRight: '8px' }}/>Settings</a>
+            <a href="/settings">< IoSettingsOutline style={{ marginRight: '8px' }}/>Settings</a>
           </div><br/>
           <div className='menu-icon'>
           <a href="/profile"><img src="public/asset/profile 1.jpg" style={{ marginRight: '8px', width: '24px', height: '24px' }} />Admin</a>

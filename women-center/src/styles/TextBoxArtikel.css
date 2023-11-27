@@ -1,0 +1,42 @@
+body {
+    margin: initial; 
+    display: initial; 
+    place-items: initial;
+    min-width: initial;
+    min-height: initial; 
+  }
+#root {
+    margin: 0;
+    padding: 0
+}
+
+.container {
+    margin: 0;
+    padding : 31px 28px
+}
+.text-box-artikel {
+   
+    border-radius: 8px;
+    margin: 10px 0px 0;
+    background: var(--input-default-background, rgba(239, 241, 249, 0.60));
+    border: 1px solid transparent; 
+    outline: none;
+    vertical-align: text-top;
+    width: 100%;
+    font-weight: 400;
+    
+   
+}
+
+.text-box-artikel::placeholder {  
+    color: var(--black-2, #ABAFB1); 
+}
+
+.text-box-artikel.isi-artikel textarea {
+    text-align: left; 
+    vertical-align: top; 
+    overflow-x: hidden; 
+    white-space: normal; 
+    resize: vertical; 
+    
+  }
