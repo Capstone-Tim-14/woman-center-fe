@@ -5,6 +5,9 @@ import { FiSearch } from "react-icons/fi";
 import image1 from "../assets/image1.png"
 
 const Listartikel = () => {
+    const handleViewMoreClick = () => {
+        console.log('View More clicked!')
+    }
     return (
         <div className="all-list-dashboard">
             <div className="head-list-dashboard">
@@ -15,7 +18,7 @@ const Listartikel = () => {
                         placeholder="Search"
                     />
                 </div>
-                <p className="txt-view">View More</p>
+                <p className="txt-view" onClick={handleViewMoreClick}>View More</p>
             </div>
             <div className="list-artikel-dashboard">
                 <div className="content-artikel-dashboard">

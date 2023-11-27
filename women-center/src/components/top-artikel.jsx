@@ -8,11 +8,15 @@ import { FaRegBookmark } from "react-icons/fa6";
 
 
 const Topartikel = () => {
+
+    const handleViewMoreClick = () => {
+        console.log('View More clicked!')
+    }
     return (
         <div className="all-top-artikel">
             <div className="head-dashboard">
                 <h6 className="txt-dashboard">Top Artikel</h6>
-                <p className="txt-dashboard2">View More</p>
+                <p className="txt-dashboard2" onClick={handleViewMoreClick}>View More</p>
             </div>
 
             <div className="showall-topartikel">
