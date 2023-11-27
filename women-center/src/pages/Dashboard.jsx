@@ -13,7 +13,7 @@ const Dashboard = () => {
             <MainBox />
             <SliderTextCombo />
             <Topartikel />
-            {/* <Listartikel /> */}
+            <Listartikel />
         </div>
     );
 }
