@@ -17,7 +17,7 @@ const Dashboard = () => {
             <Checkbox />
             <Chart />
             <Topartikel />
-            {/* <Listartikel /> */}
+            <Listartikel />
         </div>
     );
 }

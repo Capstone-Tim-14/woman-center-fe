@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: flex-end;
     align-self: stretch;
-    width: 30%;
+    width: 70%;
 }
 
 .txt-dashboard{
@@ -23,6 +23,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    cursor: pointer;
 }
 .showall-topartikel{
     display: flex;
@@ -31,10 +32,15 @@
     gap: 12px;
     flex: 1 0 0;
 }
+
+.all-top-artikel{
+    float: right;
+    margin-right: -150px;
+}
 .show-artikel{
     display: flex;
     padding: 12px;
-    width: 30%;
+    width: 70%;
     align-items: center;
     gap: 32px;
     align-self: stretch;
