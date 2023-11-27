@@ -5,7 +5,6 @@ import Fitur from "../components/Fitur/fitur";
 import Fiturdata from "../components/Fitur/fiturdata";
 import Konselinglangsung from "../components/Konseling/konselinglangsung";
 import { Container, Row, Col,} from "reactstrap";
-import { Link } from "react-router-dom";
 import "../styles/home.css";
 import Playgoogle from "../assets/googleplay.png"
 import Appstore from "../assets/appstore.png"
@@ -124,18 +123,20 @@ const Home = () => {
                 <p className="subt_unduh">Segera unduh dan nikmati fitur-fitur unggulan kami! <br />
                 Tetap bergabung untuk menggali potensi terbaik dalam diri Anda!</p>
                 <div className="download_btn">
+                <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer">
                   <button className="playgoogle__btn">
-                   <Link to='/playgoogle'><img src={Playgoogle} alt="google-img" /></Link> 
+                    <img src={Playgoogle} alt="google-img" />
                   </button>
+                </a>
 
+                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
                   <button className="apple-btn">
-                  <Link to='/appstore'><img src={Appstore} alt="apple-img" /></Link> 
+                    <img src={Appstore} alt="apple-img" />
                   </button>
+                </a>
                 </div>
-
               </div>
             </Col>
-
           </Row>
         </Container>
       </section>
