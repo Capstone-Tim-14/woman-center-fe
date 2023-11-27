@@ -1,6 +1,6 @@
 import React from 'react'
 import CheckBox from '../../atom/checkbox/checkBox'
-import Footer from '../footer/Footers'
+import Buttonn from '../../atom/button/button'
 
 const KontenJadwal = () => {
 
@@ -139,7 +139,20 @@ const KontenJadwal = () => {
                     </div>
                 </div>
                 <div className="position-absolute bottom-0 end-0 p-3">
-                    <Footer />
+                    <div className='d-flex gap-2'>
+                        <Buttonn 
+                            className={"bg-white text-primary"}
+                            label="Batal" 
+                            // onClick nya diisi sesuai kondisi
+                            onClick={""}
+                        /> 
+                        <Buttonn 
+                            className={"bg-button"}
+                            label="Simpan" 
+                             // onClick nya diisi sesuai kondisi
+                            onClick={""}
+                        />
+                    </div>
                 </div>
             </div>
 

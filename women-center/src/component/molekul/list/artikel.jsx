@@ -12,7 +12,7 @@ const Artikel = ({checkboxArtikel, onCheckBoxChange }) => {
     };
 
     const filteredCheckboxArtikel = checkboxArtikel.filter((item) =>
-        item.label.toLowerCase().includes(searchValue.toLowerCase())
+        item.title.toLowerCase().includes(searchValue.toLowerCase())
     );
 
     return(
@@ -33,8 +33,7 @@ const Artikel = ({checkboxArtikel, onCheckBoxChange }) => {
                 <CheckBox
                     key={item.id}
                     id={item.id}
-                    label={item.label}
-                    value={item.value}
+                    label={item.title}
                     checked={item.checked}
                     onChange={() =>  onCheckBoxChange(item.id)}
                 />

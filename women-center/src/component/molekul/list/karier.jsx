@@ -1,7 +1,21 @@
 import CheckBox from "../../atom/checkbox/checkBox"
 import Searching from "../../atom/inputan/inputanSearch"
 import ModalHapus from "../modal/modalHapus"
+import React, { useState } from "react"
+
 const Karier = ({checkboxKarier, onCheckBoxChange}) => {
+
+    const [searchValue, setSearchValue] = useState("");
+
+    const handleSearchChange = (event) => {
+        const { value } = event.target;
+        setSearchValue(value);
+    };
+
+    const filteredCheckboxKarier = checkboxKarier.filter((item) =>
+        item.label.toLowerCase().includes(searchValue.toLowerCase())
+    );
+
     return(
         <>
         <div className="col-4 d-flex flex-column">
@@ -11,12 +25,12 @@ const Karier = ({checkboxKarier, onCheckBoxChange}) => {
             </div>
             <div className="mt-2">
                 <Searching 
-                    type="text"
-                    placeholder="Search"
+                    value={searchValue}
+                    onChange={handleSearchChange}
                      />
             </div>
             <div className="mt-2">
-                {checkboxKarier.map((item) => (
+                {filteredCheckboxKarier.map((item) => (
                 <CheckBox
                     key={item.id}
                     id={item.id}
