@@ -5,7 +5,7 @@ import Listartikel from "../components/list-artikel";
 import Header from "../Component/Organism/Header";
 import MainBox from "../Component/Organism/MainBox";
 import GrafikText from "../Component/Atom/GrafikText";
-import Checkbox from "../Component/Atom/Checkbox";
+
 import Chart from "../Component/molekul/Chart";
 
 const Dashboard = () => {
@@ -14,7 +14,7 @@ const Dashboard = () => {
             <Header />
             <MainBox />
             <GrafikText />
-            <Checkbox />
+
             <Chart />
             <Topartikel />
             <Listartikel />
