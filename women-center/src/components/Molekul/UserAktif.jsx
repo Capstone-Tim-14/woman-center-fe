@@ -22,7 +22,7 @@ const UserAktif = ({ activeUsers, percentageIncrease }) => {
   return (
     <div className="box-user-aktif">
       <div className="box-top">
-        <img src="src/assets/icon/icon.svg" alt="User Icon" />
+        <img src="public/asset/icon.svg" alt="User Icon" />
         <p>User Aktif</p>
       </div>
       <div className="box-bottom-user">

@@ -20,7 +20,7 @@ const TotalArtikel = ({ totalArtikel, percentageIncrease }) => {
   return (
     <div className="box-total-artikel">
       <div className="box-top-artikell-container">
-        <img src="src/assets/icon/Document.svg" alt="User Icon" />
+        <img src="public/asset/Document.svg" alt="User Icon" />
         <p>Total Artikel</p>
       </div>
       <div className="box-bottom-artikel">

@@ -1,0 +1,21 @@
+/* ArticlesOrganism.css */
+
+.articles-organism {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px; /* Sesuaikan dengan preferensi margin yang diinginkan */
+  }
+  
+  .left-column {
+    width: 50%; /* Sesuaikan lebar kolom kiri */
+  }
+  
+  .right-column {
+    width: 45%; /* Sesuaikan lebar kolom kanan */
+  }
+  
+  .article-list {
+    padding: 10px;
+  }
+  
+  /* Tambahkan properti styling tambahan jika diperlukan */

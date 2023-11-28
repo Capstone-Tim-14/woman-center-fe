@@ -8,7 +8,7 @@ const HeaderContainer = () => {
         <h3>Artikel</h3>
         <div className="subtitle">
           <div className="icon-home">
-            <img className="icon-home-img" src="public/asset/Home.jpg" alt="Home Icon" />
+            <img className="icon-home-img" src="public/asset/Home.svg" alt="Home Icon" />
           </div>
           <div className="subtitle-text">/ Artikel</div>
         </div>
@@ -17,7 +17,7 @@ const HeaderContainer = () => {
         {/* Notification Icon */}
         <div className="div-icon">
           <div className="div-icon-inner">
-            <img className="div-icon-bar" src="public/asset/Notification.jpg" alt="Notification Icon" />
+            <img className="div-icon-bar" src="public/asset/Notification.svg" alt="Notification Icon" />
           </div>
         </div>
 

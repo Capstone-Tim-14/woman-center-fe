@@ -1,11 +1,11 @@
 import React from 'react';
-import "../../styles/Header.css";
+import '../../styles/Header.css';
 
 const Header = () => {
   return (
     <div className="header">
       <div className="header-content">
-        <h3>Dashboard</h3>
+        <h1>Dashboard</h1>
         <div className="subtitle">
           <div className="icon-home">
             <img className="icon-home-img" src="public/asset/Home.svg" alt="Home Icon" />
@@ -17,7 +17,7 @@ const Header = () => {
         {/* Notification Icon */}
         <div className="div-icon">
           <div className="div-icon-inner">
-            <img className="div-icon-bar" src="public/asset/Notification.svg" alt="Notification Icon" />
+            <img className="div-icon-bar" src="public/asset/Notification.jpg" alt="Notification Icon" />
           </div>
         </div>
 

@@ -20,7 +20,7 @@ const SesiDipesan = ({ reservedSessions, percentageIncrease }) => {
   return (
     <div className="box-sesi-dipesan">
       <div className="box-top-dipesan-container">
-        <img src="src/assets/icon/tas.svg" alt="User Icon" />
+        <img src="public/asset/tas.svg" alt="User Icon" />
         <p>Sesi Dipesan</p>
       </div>
       <div className="box-bottom-dipesan">

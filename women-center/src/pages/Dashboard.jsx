@@ -1,22 +1,21 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
 import Topartikel from "../components/top-artikel";
 import Listartikel from "../components/list-artikel";
 import Header from "../components/Organism/Header";
 import MainBox from "../components/Organism/MainBox";
-import SliderTextCombo from "../components/Molekul/SliderTextCombo";
+import GrafikArtikel from "../components/Organism/GrafikArtikel";
+
 
 const Dashboard = () => {
     return (
         <div>
             <Header />
             <MainBox />
-            <SliderTextCombo />
+            <GrafikArtikel />
             <Topartikel />
-            <Listartikel /> 
+            <Listartikel />
         </div>
     );
 }
 
 export default Dashboard;
-

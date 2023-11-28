@@ -338,7 +338,7 @@ input {
   }
   
   th {
-    background-color: #f2f2f2;
+    background-color: #fff;
   }
   
   /* Status Styles */
@@ -546,7 +546,7 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f0f0f0;
+  background-color: #fff;
   padding: 20px;
   width: 100%;
 }
@@ -569,7 +569,7 @@ input {
 
 select {
   padding: 8px;
-  border: 1px solid #ccc;
+  background: rgba(94, 99, 102, 0.08);
   border-radius: 5px;
   font-size: 14px;
 }

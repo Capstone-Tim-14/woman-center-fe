@@ -107,8 +107,6 @@ function layout() {
       </div>
       
 {/* Navbar User section */}
-      <div className="content">
-        </div>
         <Router />
       </div>
     

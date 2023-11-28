@@ -1,0 +1,78 @@
+/* Grafik.css */
+
+.header {
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold; /* Membuat tulisan menjadi bold */
+    color: black; /* Mengubah warna tulisan menjadi hitam */
+    margin-bottom: 10px;
+    background: transparent; /* Mengatur background menjadi transparan */
+    border: none; /* Menghilangkan border jika ada */
+    padding: 0; /* Mengatur padding menjadi 0 jika ada */
+  }
+  
+  .slider-container {
+    position: relative;
+    width: 300px;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    height: 30px;
+    -webkit-appearance: none;
+    background: #FDCEDF;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  input[type="range"]:hover {
+    opacity: 1;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background: #F4518D;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    background: #F4518D;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  datalist {
+    display: none;
+  }
+  
+  output {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+  }
+
+  /* Menambahkan margin pada bagian row */
+.row {
+    margin-top: 20px;
+  }
+  
+  /* Mengatur lebar kolom */
+  .col-4 {
+    width: 50%;
+  }
+  
+  /* Menambahkan ruang di atas dan di bawah grafik */
+  .ApexCharts-tooltip {
+    margin: 20px 0;
+  }

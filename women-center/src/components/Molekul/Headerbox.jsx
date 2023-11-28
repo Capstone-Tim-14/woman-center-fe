@@ -1,7 +1,7 @@
 import React from 'react';
 import Summary from '../Atom/Summary';
 import Options from '../Atom/Option';
-import "../../styles/Headerbox.css";
+import '../../styles/Headerbox.css'
 
 const Headerbox = () => {
   return (
