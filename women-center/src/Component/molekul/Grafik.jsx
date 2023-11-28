@@ -1,8 +1,10 @@
+// Grafik.js
 import React, { useState } from "react";
 import Chart from "react-apexcharts";
+import "./Grafik.css";
 
 function Grafik() {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState("week");
   const [state, setState] = useState({
     options: {
       colors: ["#FDCEDF", "#F8E8EE", "#F4518D"],
@@ -10,7 +12,7 @@ function Grafik() {
         id: "basic-bar",
       },
       xaxis: {
-        categories: [],
+        categories: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
       },
       dataLabels: {
         enabled: false,
@@ -20,39 +22,57 @@ function Grafik() {
         autoSelected: "pan",
       },
     },
-    series: [],
+    series: [
+      {
+        name: "User membaca artikel",
+        data: [30, 40, 45, 50, 49, 60, 70],
+      },
+      {
+        name: "Artikel yang diajukan",
+        data: [3, 60, 35, 80, 49, 70, 20],
+      },
+      {
+        name: "Artikel yang dipublikasi",
+        data: [10, 20, 15, 30, 25, 20, 15],
+      },
+    ],
   });
 
-  const handleCheckboxChange = (option) => {
+  const handleSliderChange = (value) => {
+    let option;
+    switch (value) {
+      case "0":
+        option = "week";
+        break;
+      case "1":
+        option = "month";
+        break;
+      case "2":
+        option = "year";
+        break;
+      default:
+        break;
+    }
     setSelectedOption(option);
-    // Update data based on the selected option
+    updateChartData(option);
+  };
+
+  const updateChartData = (option) => {
     switch (option) {
       case "week":
         setState({
+          ...state,
           options: {
             ...state.options,
             xaxis: {
-              categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
+              categories: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
             },
           },
-          series: [
-            {
-              name: "User membaca artikel",
-              data: [30, 40, 45, 50, 49, 60, 70, 91],
-            },
-            {
-              name: "Artikel yang diajukan",
-              data: [3, 60, 35, 80, 49, 70, 20, 81],
-            },
-            {
-              name: "Artikel yang dipublikasi",
-              data: [10, 20, 15, 30, 25, 20, 15, 10],
-            },
-          ],
         });
         break;
       case "month":
         setState({
+          ...state,
           options: {
             ...state.options,
             xaxis: {
@@ -90,6 +110,7 @@ function Grafik() {
         break;
       case "year":
         setState({
+          ...state,
           options: {
             ...state.options,
             xaxis: {
@@ -119,46 +140,26 @@ function Grafik() {
 
   return (
     <div className="App">
-      <h1>
-        Articles growth <i className="fas fa-user"></i>{" "}
-      </h1>
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            value="week"
-            checked={selectedOption === "week"}
-            onChange={() => handleCheckboxChange("week")}
-          />
-          <span className="checkbox-label">Minggu</span>
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            value="month"
-            checked={selectedOption === "month"}
-            onChange={() => handleCheckboxChange("month")}
-          />
-          <span className="checkbox-label">Bulan</span>
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            value="year"
-            checked={selectedOption === "year"}
-            onChange={() => handleCheckboxChange("year")}
-          />
-          <span className="checkbox-label">Tahun</span>
-        </label>
+      <header className="header">Articles growth</header>
+      <div className="slider-container">
+        <input
+          type="range"
+          min="0"
+          max="2"
+          value={selectedOption === "week" ? "0" : selectedOption === "month" ? "1" : "2"}
+          onChange={(e) => handleSliderChange(e.target.value)}
+          list="options"
+        />
+        <datalist id="options">
+          <option value="0">Week</option>
+          <option value="1">Month</option>
+          <option value="2">Year</option>
+        </datalist>
+        <output htmlFor="options">{selectedOption}</output>
       </div>
       <div className="row">
         <div className="col-4">
-          <Chart
-            options={state.options}
-            series={state.series}
-            type="bar"
-            width="450"
-          />
+          <Chart options={state.options} series={state.series} type="bar" width="450" />
         </div>
       </div>
     </div>

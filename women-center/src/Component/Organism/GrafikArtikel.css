@@ -1,0 +1,21 @@
+/* ArticlesOrganism.css */
+
+.articles-organism {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .left-column {
+    width: 50%; /* Adjust the width as needed */
+  }
+  
+  .right-column {
+    width: 45%; /* Adjust the width as needed */
+  }
+  
+  .article-list {
+    padding: 10px;
+  }
+  
+  /* Add any additional styling as needed */
+  
