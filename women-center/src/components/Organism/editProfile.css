@@ -20,12 +20,22 @@
   padding: 1px 10px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 5px;
   flex: 1 0 0;
   border-radius: 6px;
   position: relative;
   z-index: 2;
   margin-left: 25px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
+}
+
+.form-container2 {
+  display: flex;
+  padding: 1px 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 0 0;
+  border-radius: 1px;
+  position: relative;
+  z-index: 2;
 }
 
 
@@ -70,9 +80,8 @@
   height: 45px;
   padding: 8px 10px;
   border-radius: 8px;
-  margin-right: 100px;
+  margin-right: 10px;
   border: 1px solid #1F1F1F;
-  gap: 0px;
   background: linear-gradient(0deg, rgba(248, 249, 253, 0.999), rgba(239, 241, 249, 0.999)),
               linear-gradient(0deg, #1F1F1F, #1F1F1F);
 }
