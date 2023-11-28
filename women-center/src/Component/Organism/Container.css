@@ -73,6 +73,7 @@
     padding: 20px;
     border-radius: 10px;
     width: 25%; /* Membagi menjadi 25% dari lebar kontainer */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .sesi-konseling-top {
@@ -170,6 +171,7 @@
     padding: 20px;
     border-radius: 10px;
     width: 25%; /* Membagi menjadi 25% dari lebar kontainer */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .box-top-dipesan-container {
