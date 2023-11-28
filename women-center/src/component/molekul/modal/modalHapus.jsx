@@ -5,6 +5,7 @@ import ButtonHapus from "../../atom/button/buttonHapus";
 import ButtonClose from "../../atom/button/buttonClose";
 import Buttonn from "../../atom/button/button";
 import {RiDeleteBinLine} from 'react-icons/ri'
+import IconDelete from "../../atom/iconDelete";
 
 const ModalHapus = ({onClick}) => {
     const [show, setShow] = useState(false);
@@ -17,7 +18,7 @@ const ModalHapus = ({onClick}) => {
 
       <ButtonHapus 
         onClick={handleShow} 
-        icon={<RiDeleteBinLine className='text-danger'/>}
+        icon={<IconDelete className='text-danger'/>}
       />
 
       <Modal 

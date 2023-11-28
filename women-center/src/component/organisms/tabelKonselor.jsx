@@ -28,7 +28,8 @@ import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import { HiOutlineLogout } from "react-icons/hi";
 import ModalTambahAkunKonselor from '../molekul/modal/modalTambahAkunKonselor';
-
+import ModalDataKonselor from '../molekul/modal/modalDataKonselor';
+import ModalHapus from '../molekul/modal/modalHapus';
 const TabelKonselor = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDatabaseOpen, setIsDatabaseOpen] = useState(false);
@@ -224,8 +225,8 @@ const TabelKonselor = () => {
                 </td>
                 <td>
                   <div className="d-flex">
-                    <IconEdit />
-                    <IconDelete />
+                    <ModalDataKonselor/>
+                    <ModalHapus />
                   </div>
                 </td>
               </tr>

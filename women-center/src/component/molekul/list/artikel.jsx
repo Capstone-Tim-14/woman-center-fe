@@ -1,4 +1,4 @@
-import CheckBox from "../../atom/checkbox/checkBox"
+import CheckBox from "../../atom/checkBox/checkBox"
 import Searching from "../../atom/inputan/inputanSearch"
 import ModalHapus from "../modal/modalHapus"
 import React, {useState} from "react"
