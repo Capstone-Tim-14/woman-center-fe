@@ -53,7 +53,7 @@ function fiturdata() {
             </Card>
 
           </div>
-          <a href="#" className="learnmore-btn justify-content-center">Learn more </a>
+          <a href="/fitur" className="learnmore-btn justify-content-center">Learn more </a>
         </div>
       </section>
   );

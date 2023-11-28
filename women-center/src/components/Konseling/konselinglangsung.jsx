@@ -11,7 +11,7 @@ const konselinglangsung = () => {
         <section id="herokonseling" >
             <Row>
         <Col lg='6' style={{ justifyContent: 'center', alignItems: 'center' }}>
-            <div className="img-konselingone">
+            <div id="konseling" className="img-konselingone">
             <img src={Image} alt="img-konselingone" style={{ width: '70%', height: 'auto' }} />
             </div>
           </Col>  
@@ -22,7 +22,7 @@ const konselinglangsung = () => {
           <h1 className="body-konseling1">Bicarakan Masalah Anda dengan Para Profesional</h1>
           <hr  className="garis-konseling1"/>
           <p className="txt-konseling1">Selalu ada saat Anda membutuhkannya. Fitur Konseling kami memungkinkan Anda bertemu secara langsung atau berkomunikasi dengan konselor yang berkompeten untuk membahas masalah apa pun yang sedang Anda hadapi. Temukan dukungan, pemahaman, dan solusi yang Anda butuhkan!</p>
-          <button className="konseling1-button">Learn more</button>
+          <a href="/konseling"><button className="konseling1-button">Learn more</button></a>
           </div>
           </Col>
             </Row>

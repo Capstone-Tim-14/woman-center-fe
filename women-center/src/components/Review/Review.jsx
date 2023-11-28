@@ -31,7 +31,7 @@ const Review = () => {
     return (
         <section>
             <Container>
-                <div className="review">
+                <div id="review" className="review">
                 <Row>
                     <Col lg='12'>
                     <div className="review-box">

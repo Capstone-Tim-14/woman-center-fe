@@ -9,7 +9,7 @@ const fitur = () => {
     <section>
     <Container>
       <Row>
-      <div className="fitur">
+      <div id="fitur" className="fitur">
       <Col lg='12'>
         <div className="fiturs">
         <h6 className="head-fitur">Fitur</h6>

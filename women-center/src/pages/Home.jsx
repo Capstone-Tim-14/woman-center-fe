@@ -4,6 +4,7 @@ import Header from "../components/Header/header";
 import Fitur from "../components/Fitur/fitur";
 import Fiturdata from "../components/Fitur/fiturdata";
 import Konselinglangsung from "../components/Konseling/konselinglangsung";
+import Konselorhome from "../components/Konseling/konseling.jsx";
 import { Container, Row, Col,} from "reactstrap";
 import "../styles/home.css";
 import Playgoogle from "../assets/googleplay.png"
@@ -22,9 +23,10 @@ const Home = () => {
         <Fitur />
         <Fiturdata />
         <Konselinglangsung />
+        <Konselorhome />
         <Container>
           <Row>
-          <div className="artikel">
+          <div id="artikel" className="artikel">
           <Col lg='12'>
             <div className="head-artikel">
             <h6 className="ttl-artikel">Artikel terkini</h6>
@@ -48,7 +50,7 @@ const Home = () => {
                       <p className="card-text">
                       Temukan berbagai artikel informatif yang mendukung dan memberikan wawasan untuk kehidupan wanita.
                       </p> {/* Ganti dengan deskripsi artikel Anda */}
-                      <a href="#" className="btn-readmore">
+                      <a href="/artikel" className="btn-readmore">
                         Read more <i className="ri-arrow-right-line"></i>
                       </a>
                     </div>
@@ -67,7 +69,7 @@ const Home = () => {
                       <p className="card-text">
                       Temukan berbagai artikel informatif yang mendukung dan memberikan wawasan untuk kehidupan wanita.
                       </p> {/* Ganti dengan deskripsi artikel Anda */}
-                      <a href="#" className="btn-readmore">
+                      <a href="/artikel" className="btn-readmore">
                         Read more <i className="ri-arrow-right-line"></i>
                       </a>
                     </div>
@@ -86,7 +88,7 @@ const Home = () => {
                       <p className="card-text">
                       Temukan berbagai artikel informatif yang mendukung dan memberikan wawasan untuk kehidupan wanita.
                       </p> {/* Ganti dengan deskripsi artikel Anda */}
-                      <a href="#" className="btn-readmore"> 
+                      <a href="/artikel" className="btn-readmore"> 
                         Read more <i className="ri-arrow-right-line"></i>
                       </a>
                     </div>
@@ -94,7 +96,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <a href="#" className="learnmore-btn justify-content-center">Learn more </a>
+            <a href="/artikel" className="learnmore-btn justify-content-center">Learn more </a>
           </div>
 
           <Col lg='6' style={{ justifyContent: 'center', alignItems: 'center' }}>
@@ -104,11 +106,11 @@ const Home = () => {
           </Col>  
 
             <Col lg='6'>
-              <div className="karir">
+              <div id="karier" className="karir">
               <h6 className="title-karir">Karier</h6>
               <h1 className="subt-karir">Rekomendasi Karir  <br /> Khusus untuk Anda</h1>
               <p className="txt-karir">Jelajahi masa depan karier Anda dengan bantuan AI kami. Fitur Karier kami memungkinkan Anda untuk berbicara dengan AI yang cerdas, yang akan memberikan rekomendasi berharga terkait rencana karir bagi wanita. Temukan peluang, identifikasi potensi, dan rancang perjalanan karier Anda dengan percaya diri!</p>
-              <button className="karir-btn">Learn more</button>
+              <a href="/karier"><button className="karir-btn">Learn more</button></a>
               </div>
             </Col>
 
@@ -117,7 +119,7 @@ const Home = () => {
             </Col>
 
             <Col lg='12'>
-              <div className="Download">
+              <div id="download" className="Download">
                 <h6 className="Title_dwn">Download</h6>
                 <h1 className="txt_unduh">Unduh Aplikasi Sekarang!</h1>
                 <p className="subt_unduh">Segera unduh dan nikmati fitur-fitur unggulan kami! <br />

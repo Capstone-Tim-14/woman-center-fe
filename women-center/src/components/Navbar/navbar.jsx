@@ -13,13 +13,13 @@ export default function navbar() {
             </div>
             <div className="navbar-links-container">
                 <a href="/">Home</a>
-                <a href="/fitur">Fitur</a>
-                <a href="/konseling">Konseling</a>
-                <a href="/artikel">Artikel</a>
-                <a href="/karier" >Karier</a>
-                <a href="/review">Review</a>
-                <a href="/download">Download</a>
-                <a href="/kontak_us">Kontak Us</a>
+                <a href="#fitur">Fitur</a>
+                <a href="#konseling">Konseling</a>
+                <a href="#artikel">Artikel</a>
+                <a href="#karier" >Karier</a>
+                <a href="#review">Review</a>
+                <a href="#download">Download</a>
+                <a href="#kontak_us">Kontak Us</a>
             </div>
         </nav>
         </header>
