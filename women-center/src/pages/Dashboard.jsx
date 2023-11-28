@@ -4,18 +4,15 @@ import Topartikel from "../components/top-artikel";
 import Listartikel from "../components/list-artikel";
 import Header from "../Component/Organism/Header";
 import MainBox from "../Component/Organism/MainBox";
-import GrafikText from "../Component/Atom/GrafikText";
+import Grafik from "../Component/molekul/Grafik";
 
-import Chart from "../Component/molekul/Chart";
 
 const Dashboard = () => {
     return (
         <div>
             <Header />
             <MainBox />
-            <GrafikText />
-
-            <Chart />
+            <Grafik />
             <Topartikel />
             <Listartikel />
         </div>
