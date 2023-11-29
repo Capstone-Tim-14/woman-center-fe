@@ -68,6 +68,8 @@ const Karir = () => {
 
             <div className="horizontal-forms">
               {/* Border 1 */}
+              <div style={{ width: '150px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <p style={{ color: 'black' }}>Foto Profile</p>
               <div style={{ width: '150px', height: '154px', padding: '74px 16px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '10px', flexShrink: 0, borderRadius: '12px', border: '1px solid var(--Grey, #E1E2E9)', background: 'var(--Main-Background, #F4F5FA)' }}>
                 {uploadedImage1 ? (
                   <img
@@ -105,8 +107,11 @@ const Karir = () => {
                   )}
                 </div>
               </div>
+            </div>
 
               {/* Border 2 */}
+              <div style={{ width: '540px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <p style={{ color: 'black'}}>Foto Sampul</p>
               <div style={{ width: '540px', height: '154px', padding: '74px 16px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '10px', flexShrink: 0, borderRadius: '12px', border: '1px solid var(--Grey, #E1E2E9)', background: 'var(--Main-Background, #F4F5FA)' }}>
                 {uploadedImage2 ? (
                   <img
@@ -145,6 +150,8 @@ const Karir = () => {
                 </div>
               </div>
             </div>
+            </div>
+            
 
             <div className="form-container">
               {/* Form 1 and 2 */}
