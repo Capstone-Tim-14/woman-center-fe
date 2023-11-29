@@ -28,6 +28,7 @@ import { MdOutlineWorkOutline } from "react-icons/md";
 import { HiOutlineLogout } from "react-icons/hi";
 import ModalTambahAkunUser from '../molekul/modal/modalTambahAkunUser';
 import ModalDataUser from '../molekul/modal/modalDataUser';
+import ModalHapus from '../molekul/modal/modalHapus';
 
 const TabelUser = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -225,8 +226,8 @@ const TabelUser = () => {
                 <td>@mdo</td>
                 <td>
                   <div className="d-flex">
-                    <IconEdit />
-                    <IconDelete />
+                    <ModalDataUser />
+                    <ModalHapus icons={<IconDelete className='text-danger'/>}/>
                   </div>
                 </td>
               </tr>

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import ArtikelKonselor from "../artikelKonselor";
-import ProfilKonselor from "../profilKonselor";
 import IconEdit from "../../atom/iconEdit";
-import { Modal, Button } from "react-bootstrap";
-import KontenDataUser from "../../organisms/konten/kontenDataUser";
+import KontenDataKonselor from "../../organisms/konten/kontenDataKonselor";
+import { Modal } from "react-bootstrap";
 const ModalDataKonselor = () => {
     const [showPopup, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -31,17 +29,8 @@ const ModalDataKonselor = () => {
                     <Modal.Title>Edit Konselor</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    {/* Konten pop-up */}
-                    <KontenDataUser titleForms="Informasi Konselor" profil={<ProfilKonselor />}>
-                        <ArtikelKonselor />
-                    </KontenDataUser>
+                    <KontenDataKonselor onClose={closePopup}/>
                 </Modal.Body>
-                <Modal.Footer>
-                    {/* Tombol untuk menutup pop-up */}
-                    {/* <Button variant="secondary" onClick={closePopup}>
-              Tutup Pop-up
-            </Button> */}
-                </Modal.Footer>
             </Modal>
 
         </section>

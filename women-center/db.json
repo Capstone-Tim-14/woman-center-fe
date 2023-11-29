@@ -1,23 +1,23 @@
 {
   "users": [
     {
+      "first_name": "agim",
+      "last_name": "gg",
+      "username": "aliando09",
+      "email": "agimgimnastiar00@gmail.com",
+      "birthday": "2023-11-09",
+      "password": "asdkkask",
       "id": 1,
-      "first_name": "John",
-      "last_name": "Doe",
-      "username": "johndoe",
-      "email": "john.doe@example.com",
-      "birthday": "1990-01-01",
-      "password": "hashedpassword",
-      "picture": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "picture": "src/assets/img/profil2.png",
       "articles": [
         {
           "id": 1,
-          "title": "Introduction to Psychology",
+          "title": "Healthy ",
           "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
         {
           "id": 2,
-          "title": "Coping with Stress",
+          "title": "Time Management",
           "content": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         }
       ]

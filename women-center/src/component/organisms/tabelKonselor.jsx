@@ -226,7 +226,7 @@ const TabelKonselor = () => {
                 <td>
                   <div className="d-flex">
                     <ModalDataKonselor/>
-                    <ModalHapus />
+                    <ModalHapus icons={<IconDelete className='text-danger'/>}/>
                   </div>
                 </td>
               </tr>

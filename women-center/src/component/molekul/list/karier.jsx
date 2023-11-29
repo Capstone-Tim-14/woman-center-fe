@@ -1,6 +1,7 @@
 import CheckBox from "../../atom/checkbox/checkBox"
 import Searching from "../../atom/inputan/inputanSearch"
 import ModalHapus from "../modal/modalHapus"
+import {RiDeleteBinLine} from 'react-icons/ri'
 import React, { useState } from "react"
 
 const Karier = ({checkboxKarier, onCheckBoxChange}) => {
@@ -13,7 +14,7 @@ const Karier = ({checkboxKarier, onCheckBoxChange}) => {
     };
 
     const filteredCheckboxKarier = checkboxKarier.filter((item) =>
-        item.label.toLowerCase().includes(searchValue.toLowerCase())
+        item.title.toLowerCase().includes(searchValue.toLowerCase())
     );
 
     return(
@@ -21,7 +22,7 @@ const Karier = ({checkboxKarier, onCheckBoxChange}) => {
         <div className="col-4 d-flex flex-column">
             <div className="d-flex justify-content-between align-items-center">
                 <p className="m-0">Karier</p>
-                  <ModalHapus />
+                <ModalHapus icons={<RiDeleteBinLine color="red"/>}/>
             </div>
             <div className="mt-2">
                 <Searching 
@@ -34,8 +35,7 @@ const Karier = ({checkboxKarier, onCheckBoxChange}) => {
                 <CheckBox
                     key={item.id}
                     id={item.id}
-                    label={item.label}
-                    value={item.value}
+                    label={item.title}
                     checked={item.checked}
                     onChange={() =>  onCheckBoxChange(item.id)}
                 />

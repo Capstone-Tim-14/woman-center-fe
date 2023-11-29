@@ -5,10 +5,12 @@ import Artikel from '../../molekul/list/artikel'
 import Karier from '../../molekul/list/karier'
 import Konseling from '../../molekul/list/konseling'
 import Buttonn from '../../atom/button/button'
+import ModalSucces from '../../molekul/modal/successModal'
+import FailedModal from '../../molekul/modal/failedModal'
 import { Form } from 'react-bootstrap'
 import axios from "axios"
 
-const KontenDataUser = () => {
+const KontenDataUser = ({onClose}) => {
 
   const [formData, setFormData] = useState({
     first_name: '',
@@ -21,6 +23,8 @@ const KontenDataUser = () => {
   const [checkboxItemsArtikel, setCheckboxItemsArtikel] = useState([]);
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showFailedModal, setShowFailedModal] = useState(false);
   const [imageUrl, setImageUrl] = useState('');
 
   const handleInputChange = (name, value) => {
@@ -30,8 +34,7 @@ const KontenDataUser = () => {
   // Fungsi untuk mengambil data profil
   const getProfil = async () => {
     try {
-      const userId = '1'; // Gantilah dengan ID pengguna yang sesuai
-      const userApiUrl = `http://localhost:3000/users/${userId}`;
+      const userApiUrl = `http://localhost:3000/users/1`;
   
       // Panggil endpoint untuk mendapatkan data pengguna
       const userResponse = await axios.get(userApiUrl);
@@ -52,8 +55,7 @@ const KontenDataUser = () => {
   // Fungsi untuk mengambil data artikel
   const getArtikel = async () => {
     try {
-      const userId = '1'; // Gantilah dengan ID pengguna yang sesuai
-      const apiUrl = `http://localhost:3000/users/${userId}`;
+      const apiUrl = `http://localhost:3000/users/1`;
 
       const response = await axios.get(apiUrl);
       const user = response.data;
@@ -88,7 +90,7 @@ const KontenDataUser = () => {
 
     if (!isDataValid) {
       setLoading(false);
-      alert('Isi data terlebih dahulu.');
+      setShowFailedModal(true);
       return;
     }
 
@@ -99,7 +101,7 @@ const KontenDataUser = () => {
       const response = await axios.put(apiUrl, formData);
       
       if (response.status === 200 || response.status === 204) {
-        alert('User data updated successfully.');
+        setShowSuccessModal(true);
       }
     } catch (error) {
       console.error('Error:', error);
@@ -121,7 +123,7 @@ const KontenDataUser = () => {
         <>
         <div className="container-xxl mt-4">
           <div className="row mx-2">
-          <Form onSubmit={handleSubmit}>
+          <Form>
             <div className="d-flex gap-4 col-12">
                 <FormsDataUser 
                     first_name={formData.first_name}
@@ -140,26 +142,38 @@ const KontenDataUser = () => {
                 <Artikel 
                   checkboxArtikel={checkboxItemsArtikel} 
                   onCheckBoxChange={handleCheckboxChange} />
-                {/* <Karier 
+                <Karier 
                   checkboxKarier={checkboxItemsArtikel} 
                   onCheckBoxChange={handleCheckboxChange}/>
                 <Konseling 
                   checkboxKonseling={checkboxItemsArtikel} 
-                  onCheckBoxChange={handleCheckboxChange} /> */}
+                  onCheckBoxChange={handleCheckboxChange} />
               </div>
             </div>
             <div className='d-flex gap-2 justify-content-end mt-4'>
                 <Buttonn 
                   className={"bg-white text-primary"}
-                  label="Batal" />
+                  label="Batal"
+                  onClick={onClose} 
+                  disabled={loading}/>
                 <Buttonn 
                   className={"bg-button"}
                   label="Simpan"
                   type="submit"
+                  onClick={handleSubmit}
                   disabled={loading} />
             </div>
           </Form>
           </div>
+        </div>
+
+        <div>
+              <ModalSucces
+                  isOpen={showSuccessModal}
+                  onClose={() => setShowSuccessModal(false)} />
+              <FailedModal
+                  isOpen={showFailedModal} 
+                  onClose={() => setShowFailedModal (false)} />
         </div>
         </>
     )

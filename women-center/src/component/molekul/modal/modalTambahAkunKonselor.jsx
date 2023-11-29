@@ -47,7 +47,10 @@ const ModalTambahAkunKonselor = () => {
         <>
       <ButtonTambah onClick={handleShow} label="Buat Akun Konselor"/>
 
-      <Modal show={show} onHide={handleClose} size="sm">
+      <Modal 
+        show={show} 
+        onHide={handleClose} 
+        style={{width: '380px', transform: 'translate(-50%, -50%)', top: '50%', left: '50%'}}>
 
         <Modal.Header >
           <Modal.Title className='fs-6'>Tambah Konselor</Modal.Title>
