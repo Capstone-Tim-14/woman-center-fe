@@ -1,5 +1,5 @@
 /* Header Styles */
-.header {
+.header-profile {
   width: 100%;
   background-color: #FCFCFC;
   padding: 10px 15px;
@@ -80,107 +80,120 @@
   object-fit: cover;
 }
 
-
-
 .table-container {
-    font-family: Raleway;
-    display: flex;
-    height: 52px;
-    padding: 8px 16px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    align-self: stretch;
-    border-radius: 8px;
-    background: var(--input-default-background, rgba(239, 241, 249, 0.60));
-    max-width: 375px;
-    width: 369px;
-    position: relative; /* Tambahkan properti position: relative */
-    margin-left: 16px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
-  }
+  font-family: Raleway;
+  display: flex;
+  height: 52px;
+  padding: 8px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 8px;
+  background: var(--input-default-background, rgba(239, 241, 249, 0.60));
+  max-width: 375px;
+  width: 375px;
+  position: relative; /* Tambahkan properti position: relative */
+  margin-left: 16px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
+}
 
-  
-  
-  .table-row {
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .side-image {
-    width: 172px;
-    height: 160px;
-    flex-shrink: 0;
-  }
-  
-  .dropdown-button {
-    display: flex;
-    width: 142px;
-    padding: 8px 16px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    align-self: stretch;
-    border-radius: 8px;
-    background: var(--input-default-background, rgba(239, 241, 249, 0.60));
-    cursor: pointer;
-    color: var(--black-2, #EFF1F999); /* Warna font hitam */
-    font-family: 'Raleway', sans-serif; /* Font family Raleway */
-    font-size: 16px; /* Ukuran font 16px */
-    position: relative;
-    z-index: 2; /* Set the z-index to be above the dropdown-menu */
-  }
-  
-  .dropdown-menu {
-    display: none;
-    width: 142px;
-    padding: 8px 16px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    border-radius: 8px;
-    background: var(--input-default-background, rgba(239, 241, 249, 0.60));
-    color: var(--black-2, #EFF1F999); /* Warna font hitam */
-    font-family: 'Raleway', sans-serif; /* Font family Raleway */
-    font-size: 16px; /* Ukuran font 16px */
-    z-index: 1; /* Ensure the dropdown is above the form */
-    position: absolute;
-    top: 100%; /* Position the dropdown below the dropdown-button */
-    left: 0; /* Align the left edge of the dropdown with the left edge of the dropdown-button */
-  }
-  
-  .table-row.with-dropdown:hover .dropdown-menu {
-    display: flex;
-  }
-  
-  .form-container {
-    display: flex;
-    padding: 5px 10px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    flex: 1 0 0;
-    align-self: stretch;
-    border-radius: 6px;
-    position: relative;
-    z-index: 2;
-    margin-left: 25px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
-  }
-  
-  .form-container label {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    color: #eff1f96a; /* Set the desired text color */
-    background: var(--input-default-background, rgba(233, 234, 238, 0.6)); /* Set the same background color as the form container */
-    border-radius: 6px; /* Add border-radius if needed */
-    padding: 5px 10px; /* Add padding if needed */
-    position: relative;
-    z-index: 2;
-  }
-  
-  .side-image {
-    width: 172px;
-    height: 160px;
-    flex-shrink: 0;
-    margin-left: 16px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
-  }
+.table-container2 {
+  font-family: Raleway;
+  display: flex;
+  height: 52px;
+  padding: 8px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  border-radius: 8px;
+  background: var(--input-default-background, rgba(239, 241, 249, 0.60));
+  max-width: 375px;
+  width: 375px;
+  position: relative; /* Tambahkan properti position: relative */
+/* Tambahkan margin untuk menjauhkan dari tepi kanan */
+}
+
+
+.table-row {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.side-image {
+  width: 172px;
+  height: 160px;
+  flex-shrink: 0;
+}
+
+.dropdown-button {
+  display: flex;
+  width: 142px;
+  padding: 8px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 8px;
+  background: var(--input-default-background, rgba(239, 241, 249, 0.60));
+  cursor: pointer;
+  color: var(--black-2, #EFF1F999); /* Warna font hitam */
+  font-family: 'Raleway', sans-serif; /* Font family Raleway */
+  font-size: 16px; /* Ukuran font 16px */
+  position: relative;
+  z-index: 2; /* Set the z-index to be above the dropdown-menu */
+}
+
+.dropdown-menu {
+  display: none;
+  width: 142px;
+  padding: 8px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--input-default-background, rgba(239, 241, 249, 0.60));
+  color: var(--black-2, #EFF1F999); /* Warna font hitam */
+  font-family: 'Raleway', sans-serif; /* Font family Raleway */
+  font-size: 16px; /* Ukuran font 16px */
+  z-index: 1; /* Ensure the dropdown is above the form */
+  position: absolute;
+  top: 100%; /* Position the dropdown below the dropdown-button */
+  left: 0; /* Align the left edge of the dropdown with the left edge of the dropdown-button */
+}
+
+.table-row.with-dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.form-container {
+  display: flex;
+  padding: 5px 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1 0 0;
+  align-self: stretch;
+  border-radius: 6px;
+  position: relative;
+  z-index: 2;
+  margin-left: 25px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
+}
+
+.form-container label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #eff1f96a; /* Set the desired text color */
+  background: var(--input-default-background, rgba(233, 234, 238, 0.6)); /* Set the same background color as the form container */
+  border-radius: 6px; /* Add border-radius if needed */
+  padding: 5px 10px; /* Add padding if needed */
+  position: relative;
+  z-index: 2;
+}
+
+.side-image {
+  width: 172px;
+  height: 160px;
+  flex-shrink: 0;
+  margin-left: 16px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
+}

@@ -13,6 +13,11 @@ const Profile = () => {
     dropdown3: 'DKI Jakarta',
   });
 
+  const countries = ['Indonesia'];
+  const provinces = [ 'Aceh', 'Sumatra Utara', 'Sumatra Barat', 'Riau', 'Kepulauan Riau', 'Jambi', 'Bengkulu', 'Sumatra Selatan', 'Kepulauan Bangka Belitung', 'Lampung', 'Banten', 'Jawa Barat',
+  'DKI Jakarta', 'Jawa Tengah', 'DI Yogyakarta', 'Jawa Timur', 'Bali', 'Nusa Tenggara Barat', 'Nusa Tenggara Timur', 'Kalimantan Barat', 'Kalimantan Tengah', 'Kalimantan Selatan', 'Kalimantan Timur',
+  'Kalimantan Utara', 'Sulawesi Utara', 'Gorontalo', 'Sulawesi Tengah', 'Sulawesi Barat', 'Sulawesi Selatan', 'Sulawesi Tenggara', 'Maluku', 'Maluku Utara', 'Papua Barat', 'Papua',
+];
   const handleDropdownSelect = (dropdownKey, option) => {
     setSelectedOptions((prevSelectedOptions) => ({
       ...prevSelectedOptions,
@@ -25,209 +30,89 @@ const Profile = () => {
     // Tambahkan logika pengiriman formulir di sini jika diperlukan
   };
 
-  const [countryInfo, setCountryInfo] = useState({
-    country: '',
-    capital: '',
-  });
-
-  const [countries, setCountries] = useState([]);
-  const [filteredCountries, setFilteredCountries] = useState([]);
-
-  useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await axios.get('https://restcountries.com/v3.1/all');
-        setCountries(response.data);
-        setFilteredCountries(response.data);
-      } catch (error) {
-        console.error('Error fetching countries', error);
-      }
-    };
-
-    fetchCountries();
-  }, []); // Dependency array kosong agar negara hanya diambil sekali
-
-  const handleCountrySearch = (searchTerm) => {
-    const filtered = countries.filter((country) =>
-      country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredCountries(filtered);
-  };
-
-  const handleCountrySelect = async (selectedCountry) => {
-    try {
-      const response = await axios.get(`https://restcountries.com/v3/name/${selectedCountry}`);
-      const countryData = response.data[0];
-      const countryName = countryData.name.common;
-      const capital = countryData.capital[0];
-      setCountryInfo({
-        country: countryName,
-        capital: capital,
-      });
-
-      // Setelah memilih negara, reset dropdown "Pilih Provinsi" dan data provinsi
-      handleDropdownSelect('dropdown2', countryName);
-      setProvinces([]);
-      setFilteredProvinces([]);
-    } catch (error) {
-      console.error('Error fetching country information', error);
-    }
-  };
-
-  const [provinces, setProvinces] = useState([]);
-  const [filteredProvinces, setFilteredProvinces] = useState([]);
-
-  useEffect(() => {
-    const fetchProvinces = async () => {
-      try {
-        // Ganti URL sesuai dengan API yang menyediakan data provinsi berdasarkan negara
-        const response = await axios.get(`https://api.example.com/provinces/${selectedOptions.dropdown2}`);
-        setProvinces(response.data);
-        setFilteredProvinces(response.data);
-      } catch (error) {
-        console.error('Error fetching provinces', error);
-      }
-    };
-
-    fetchProvinces();
-  }, [selectedOptions.dropdown2]); // Menggunakan selectedOptions.dropdown2 sebagai dependency
-
-  const handleProvinceSearch = (searchTerm) => {
-    const filtered = provinces.filter((province) =>
-      province.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredProvinces(filtered);
-  };
-
-  const handleProvinceSelect = (selectedProvince) => {
-    // Lakukan sesuatu dengan data provinsi yang dipilih
-  };
-
   const handleUpdateButtonClick = () => {
-    // Add logic for updating or editing data here
-    console.log('Update button clicked');
+    // Tambahkan logika untuk memperbarui atau mengedit data di sini
+    console.log('Tombol Update diklik');
   };
 
   return (
     <div style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
-      <div className="header">
-      <div className="header-content">
-        <h3>Profil</h3>
-        <div className="subtitle">
-          <div className="icon-home">
-            <img className="icon-home-img" src="public/asset/Home.svg" alt="Home Icon" />
-          </div>
-          <div className="subtitle-text">/ Profil</div>
+    <div className="header-profile">
+    <div className="header-content">
+      <h3>Profil</h3>
+      <div className="subtitle">
+        <div className="icon-home">
+          <img className="icon-home-img" src="public/asset/Home.svg" alt="Home Icon" />
         </div>
-      </div>
-      <div className="header-icons">
-        {/* Notification Icon */}
-        <div className="div-icon">
-          <div className="div-icon-inner">
-            <img className="div-icon-bar" src="public/asset/Notification.svg" alt="Notification Icon" />
-          </div>
-        </div>
-
-        {/* Profile Image */}
-        <img className="div-image" src="public/asset/profile 1.jpg" alt="Profile Image" />
+        <div className="subtitle-text">/ Profil</div>
       </div>
     </div>
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px', marginTop: '16px' }}>
-        <p style={{ fontSize: '30px', marginRight: '40px', font:'Raleway-medium/Medium 20', marginLeft:'16px' }}>Pengaturan Akun</p>
+    <div className="header-icons">
+      {/* Notification Icon */}
+      <div className="div-icon">
+        <div className="div-icon-inner">
+          <img className="div-icon-bar" src="public/asset/Notification.svg" alt="Notification Icon" />
+        </div>
+      </div>
+
+      {/* Profile Image */}
+      <img className="div-image" src="public/asset/profile 1.jpg" alt="Profile Image" />
+    </div>
+  </div>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
+        <p style={{ fontSize: '30px', marginRight: '40px', font: 'Raleway-medium/Medium 20', marginLeft: '16px' }}>Pengaturan Akun</p>
         <a href="/profile/editprofile">
         <button
-        className="btn btn-primary"
-        onClick={handleUpdateButtonClick}
-        style={{
-          width: '120px',
-          marginLeft: '625px',
-          borderRadius: '12px',
-          background: 'var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%))',
-          border: 'none', // Remove the border
-          color: 'white', // Set the text color to white
-        }}>
-          
-        Update
-      </button>
-      </a>
-
+          className="btn btn-primary"
+          onClick={handleUpdateButtonClick}
+          style={{
+            width: '120px',
+            marginLeft: '625px',
+            borderRadius: '12px',
+            background: 'var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%))',
+            border: 'none',
+            color: 'white',
+          }}>
+          Edit
+        </button>
+        </a>
       </div>
 
       <div style={{ display: 'flex' }}>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <p style={{ marginLeft: '16px' }}>First Name</p>
           <div className="table-container">
-          <div className="table-row">
-            <BsPeople size={20} style={{ marginRight: '8px' }} /> Row 1
-          </div>
+            <div className="table-row">
+              <BsPeople size={20} style={{ marginRight: '8px' }} /> Row 1
+            </div>
           </div>
 
           <div style={{ margin: '16px' }}></div>
           <p style={{ marginLeft: '20px' }}>Last Name</p>
           <div className="table-container">
-          <div className="table-row">
-            <BsPeople size={20} style={{ marginRight: '8px' }} /> Row 2
-          </div>
+            <div className="table-row">
+              <BsPeople size={20} style={{ marginRight: '8px' }} /> Row 2
+            </div>
           </div>
 
           <div style={{ margin: '16px' }}></div>
           <p style={{ marginLeft: '20px' }}>Email</p>
           <div className="table-container">
             <div className="table-row with-dropdown">
-            <div className="table-row">
-            <LuMail size={20} style={{ marginRight: '8px' }} /> Row 3
-            </div><br/><br/>
+              <div className="table-row">
+                <LuMail size={20} style={{ marginRight: '8px' }} /> Row 3
+              </div><br /><br />
 
-              <div className="dropdown">
-                <button
-                  className="btn btn-secondary dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton1"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                   <IoFlagOutline size={20} style={{ marginRight: '8px' }} />
-                  {selectedOptions.dropdown1}
-                </button>
-                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <a
-                    className="dropdown-item"
-                    href="#"
-                    onClick={() => handleDropdownSelect('dropdown1', '+60')}
-                  >
-                     <IoFlagOutline size={20} style={{ marginRight: '8px' }} />
-                    +60
-                  </a>
-                  <a
-                    className="dropdown-item"
-                    href="#"
-                    onClick={() => handleDropdownSelect('dropdown1', '+61')}
-                  >
-                     <IoFlagOutline size={20} style={{ marginRight: '8px' }} />
-                    +61
-                  </a>
-                  <a
-                    className="dropdown-item"
-                    href="#"
-                    onClick={() => handleDropdownSelect('dropdown1', '+62')}
-                  >
-                     <IoFlagOutline size={20} style={{ marginRight: '8px' }} />
-                    +62
-                  </a>
+            <div style={{ margin: '1px' }}></div>
+                <p >Nomor Telepon</p>
+                <div className="table-container2">
+                  <div className="table-row with-dropdown">
+                    <div className="table-row">
+                      <p>{selectedOptions.dropdown1}</p>
+                    </div>
+                    <br /><br />
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div style={{ marginLeft: '100px' }}>
-            <br />
-            <div>
-              <form className="form-container" onSubmit={handleSubmit}>
-                <label className="form-label" style={{ color: 'var(--black-4, #5E6366)', marginBottom: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'flex-start', flex: '1 0 0', alignSelf: 'stretch', fontFamily: 'Raleway', fontSize: '16px', fontStyle: 'normal', fontWeight: 400, lineHeight: 'normal' }}>
-                  <input type="text" style={{ color: 'var(--black-4, #5E6366)', padding: '8px 16px', borderRadius: '8px', background: 'var(--input-default-background, rgba(239, 241, 249, 0.60))', border: 'none' }} />
-                </label>
-              </form>
             </div>
           </div>
         </div>
@@ -236,9 +121,9 @@ const Profile = () => {
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <p style={{ marginLeft: '20px' }}>Alamat</p>
           <div className="table-container">
-          <div className="table-row">
-            <FiMapPin size={20} style={{ marginRight: '8px' }} /> Row 2
-          </div>
+            <div className="table-row">
+              <FiMapPin size={20} style={{ marginRight: '8px' }} /> Row 2
+            </div>
           </div>
 
           <div style={{ margin: '16px' }}></div>
@@ -264,20 +149,14 @@ const Profile = () => {
                         {selectedOptions.dropdown2}
                       </button>
                       <div className="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Search country"
-                          onChange={(e) => handleCountrySearch(e.target.value)}
-                        />
-                        {filteredCountries.map((country) => (
+                        {countries.map((country) => (
                           <a
-                            key={country.name.common}
+                            key={country}
                             className="dropdown-item"
                             href="#"
-                            onClick={() => handleCountrySelect(country.name.common)}
+                            onClick={() => handleDropdownSelect('dropdown2', country)}
                           >
-                            {country.name.common}
+                            {country}
                           </a>
                         ))}
                       </div>
@@ -297,20 +176,14 @@ const Profile = () => {
                         {selectedOptions.dropdown3}
                       </button>
                       <div className="dropdown-menu" aria-labelledby="dropdownMenuButton6">
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Search province"
-                          onChange={(e) => handleProvinceSearch(e.target.value)}
-                        />
-                        {filteredProvinces.map((province) => (
+                        {provinces.map((province) => (
                           <a
-                            key={province.name}
+                            key={province}
                             className="dropdown-item"
                             href="#"
-                            onClick={() => handleProvinceSelect(province.name)}
+                            onClick={() => handleDropdownSelect('dropdown3', province)}
                           >
-                            {province.name}
+                            {province}
                           </a>
                         ))}
                       </div>
@@ -323,13 +196,13 @@ const Profile = () => {
         </div>
 
         <div style={{ margin: '16px' }}></div>
-          <img
-            src="/src/assets/icon/profile 2.png"
-            alt="Side Image"
-            className="side-image"
-            style={{ width: '172px', height: '172px', alignSelf: 'flex-start', marginRight: '16px', borderRadius: '12px' }}
-          />
-        </div>
+        <img
+          src="/src/assets/icon/profile 2.png"
+          alt="Side Image"
+          className="side-image"
+          style={{ width: '172px', height: '172px', alignSelf: 'flex-start', marginRight: '16px', borderRadius: '12px' }}
+        />
+      </div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import './ModalSucces';
+import '../../../styles/ModalSucces.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

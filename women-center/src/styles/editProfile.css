@@ -1,5 +1,85 @@
 /* Profile.css */
+/* Header Styles */
+.header {
+  width: 100%;
+  background-color: #FCFCFC;
+  padding: 10px 15px;
+  color: #45464E;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: flex;
+  top: 0;
+  z-index: 1000;
+  border-radius: 8px;
+}
 
+.header-logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header-navigation {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.header-navigation a {
+  color: #45464E;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Icon Home Styles */
+.icon-home {
+  margin-right: 5px;
+}
+
+.icon-home-img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Subtitle Styles */
+.subtitle {
+  display: flex;
+  align-items: center;
+  color: #888;
+}
+
+/* Profile and Notification Styles */
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+
+.div-icon {
+  margin-right: 10px;
+}
+
+.div-icon-inner {
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div-icon-bar {
+  width: 20px;
+  height: 20px;
+}
+
+.div-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
 /* Desktop Styles */
 .form-container {
@@ -13,7 +93,7 @@
   border-radius: 6px;
   position: relative;
   z-index: 2;
-  margin-left: 1px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
+  margin-left: 25px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
 }
 
 .form-container1 {
@@ -21,13 +101,24 @@
   padding: 1px 10px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 5px;
   flex: 1 0 0;
   border-radius: 6px;
   position: relative;
   z-index: 2;
-  margin-left: 1px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
+  margin-left: 25px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
 }
+
+.form-container2 {
+  display: flex;
+  padding: 1px 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 0 0;
+  border-radius: 1px;
+  position: relative;
+  z-index: 2;
+}
+
 
 
 .form-container .form-row {
@@ -70,9 +161,8 @@
   height: 45px;
   padding: 8px 10px;
   border-radius: 8px;
-  margin-right: 100px;
+  margin-right: 10px;
   border: 1px solid #1F1F1F;
-  gap: 0px;
   background: linear-gradient(0deg, rgba(248, 249, 253, 0.999), rgba(239, 241, 249, 0.999)),
               linear-gradient(0deg, #1F1F1F, #1F1F1F);
 }
