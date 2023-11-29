@@ -54,6 +54,17 @@ const Karir = () => {
     }
   };
 
+  const handleSaveChanges = () => {
+    console.log('Save Changes button clicked');
+    setModalOpen(true);
+    // Add logic to save changes to the backend or perform necessary actions
+  };
+
+  const handleCancel = () => {
+    console.log('Cancel button clicked');
+    // Add logic to handle cancel action, e.g., navigate back or reset the form
+  };
+
   return (
     <div>
       <button onClick={openModal}>Buka Modal</button>
@@ -249,6 +260,15 @@ const Karir = () => {
                     </form>
                 </div>
             </div>
+                  {/* Save Changes and Cancel buttons */}
+      <div style={{ display: 'flex', gap: '16px', position: 'absolute', bottom: '10px', right: '10px' }}>
+        <button onClick={handleCancel} style={{ width: '175px', height: '37px', background: '#F8E8EE', color: 'white', border: 'none', borderRadius: '12px', cursor: 'pointer' }}>
+          Cancel
+        </button>
+        <button onClick={handleSaveChanges} style={{ width: '175px', height: '37px', background: 'linear-gradient(257.34deg, #FD8BA3 0%, #FF5BCD 100%)', color: 'white', border: 'none', borderRadius: '12px', cursor: 'pointer' }}>
+          Save Changes
+        </button>
+      </div>
         </div>
     </div>
         
