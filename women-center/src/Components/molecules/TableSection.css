@@ -1,0 +1,71 @@
+/* TableSection.css */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.data-table td {
+    border: none; /* Remove border lines from td */
+}
+
+.data-table th {
+    background-color: #f2f2f2;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+.status-review {
+    border-radius: 8px;
+    background: rgba(10, 62, 183, 0.1);
+    color: var(--info-info-100, #146EFF);
+    text-align: center;
+}
+
+
+.status-approved {
+    border-radius: 8px;
+    background: rgba(50, 147, 111, 0.16);
+    color: var(--success-success, #339A1A);
+    text-align: center;
+}
+
+
+.status-rejected {
+    border-radius: 8px;
+    background: rgba(255, 56, 45, 0.10);
+    color: var(--danger-danger, #FF382D);
+    text-align: center;
+}
+
+/* Your existing styles... */
+
+.delete-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.5em; /* Adjust the size as needed */
+    color: #ff4b8e; /* Pink color */
+  }
+  
+  

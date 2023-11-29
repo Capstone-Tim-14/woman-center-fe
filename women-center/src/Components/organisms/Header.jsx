@@ -1,5 +1,6 @@
-// Header.js
 import React from 'react';
+import { GoHomeFill } from 'react-icons/go';
+import { IoNotifications } from 'react-icons/io5';
 
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
         <h1>Artikel</h1>
         <div className="subtitle">
           <div className="icon-home">
-            <img className="icon-home-img" src="public/asset/Home.jpg" alt="Home Icon" />
+            <GoHomeFill className="icon-home-img" />
           </div>
           <div className="subtitle-text">/ Artikel</div>
         </div>
@@ -17,7 +18,7 @@ const Header = () => {
         {/* Notification Icon */}
         <div className="div-icon">
           <div className="div-icon-inner">
-            <img className="div-icon-bar" src="public/asset/Notification.jpg" alt="Notification Icon" />
+            <IoNotifications className="div-icon-bar" />
           </div>
         </div>
 

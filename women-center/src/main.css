@@ -17,100 +17,116 @@ body {
 
 /* Header Styles */
 .header {
-    width: 100%;
-    background-color: #fff;
-    padding: 10px 15px;
-    color: #45464E;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: flex;
-    top: 0;
-    z-index: 1000;
-    border-radius: 8px;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px 15px;
+  color: #45464E;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: flex;
+  top: 0;
+  z-index: 1000;
+  border-radius: 8px;
 }
 
 .header-logo {
-    font-size: 20px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .header-navigation {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .header-navigation a {
-    color: #45464E;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  color: #45464E;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 /* Icon Home Styles */
 .icon-home {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .icon-home-img {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
+  color: #F4518D; /* Warna pink */
 }
 
 /* Subtitle Styles */
 .subtitle {
-    display: flex;
-    align-items: center;
-    color: #888;
+  display: flex;
+  align-items: center;
+  color: #888;
 }
 
 /* Profile and Notification Styles */
 .header-icons {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .div-icon {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .div-icon-inner {
-    background-color: transparent;
-    border-radius: 50%;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .div-icon-bar {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
+  fill: #F4518D; 
 }
 
 .div-image {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
 }
+
 
 /* CSS untuk Tata Letak Sub Containers */
 .sub-containers {
-    width: 100%;
-    margin: 20px auto 5px; /* Adjusted margin */
-    display: flex;
-    justify-content: space-between;
-    gap: 5px; /* Sesuaikan dengan jarak yang diinginkan antar elemen */
-    padding-left: 10px;
-    padding-right: 10px;
+  width: 95%;
+  margin: 20px auto 5px; /* Adjusted margin */
+  display: flex;
+  justify-content: space-between;
+  gap: 5px; /* Sesuaikan dengan jarak yang diinginkan antar elemen */
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* CSS untuk Tata Letak Left Container */
 .interaksi-kontributor {
-    width: calc(50% - 10px); /* 50% lebar dan dikurangi margin */
+  width: calc(50% - 5px); /* 50% lebar dan dikurangi margin */
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 5px 5px 10px 0; /* Adjusted margin */
+  background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+}
+
+/* CSS untuk Tata Letak Left Container */
+.interaksi-kontributor {
+    width: calc(50% - 5px); /* 50% lebar dan dikurangi margin */
     max-width: 600px;
     display: flex;
     flex-direction: column;
@@ -123,24 +139,53 @@ body {
     background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
 }
 
+/* Add this to your existing styles or create a new CSS file */
+
+.icon-box {
+  display: inline-block;
+  padding: 5px; /* Adjust the padding as needed */
+  border: 1px solid transparent; /* Black border, change color as needed */
+  border-radius: 10px; /* Adjust the border radius as needed */
+  background-color: #fff;
+}
+
+/* Add this to your existing styles or create a new CSS file */
+
+.colored-icon {
+  position: center;
+}
+
+.colored-icon::before,
+.colored-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: black; /* Set the color for the front part */
+}
+
+.colored-icon::after {
+  left: 50%;
+  background-color: pink; /* Set the color for the back part */
+}
+
 .div-header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
 }
 
 .div-header-content {
     display: flex;
     align-items: center;
+    font-family: "Raleway", sans-serif;
 }
 
 .div-header-left {
     margin-right: 10px;
-}
-
-.icon-image {
-    width: 32px;
-    height: 32px;
 }
 
 .div-title-DashboardSummary {
@@ -148,6 +193,7 @@ body {
     font-size: 20px;
     font-weight: 600;
     word-wrap: break-word;
+    font-family: "Raleway", sans-serif;
 }
 
 .div-footer {
@@ -162,38 +208,40 @@ body {
 
 .div-footer-item {
     text-align: center;
+    font-family: "Raleway", sans-serif;
 }
 
 .div-footer-title-left {
     color: #fff;
     font-size: 14px;
     font-weight: 400;
+    font-family: "Raleway", sans-serif;
 }
 
 .div-footer-data-left {
     color: #fff;
     font-size: 18px;
     font-weight: 500;
+    font-family: "Raleway", sans-serif;
 }
 
 .div-footer-percentage-left {
     color: #fff;
     font-size: 14px;
     font-weight: 500;
+    font-family: "Raleway", sans-serif;
 }
 
 /* Right Container Styles */
 .Interaksi-user {
-    width: calc(50% - 10px); /* 50% lebar dan dikurangi margin */
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 25px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    margin-left: 5px; /* Adjusted margin */
+  width: calc(50% - 5px); /* 50% lebar dan dikurangi margin */
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 5px 0 10px 5px; /* Adjusted margin */
 }
 
 .div-header {
@@ -218,6 +266,7 @@ body {
     font-size: 20px;
     font-weight: 500;
     word-wrap: break-word;
+    font-family: "Raleway", sans-serif;
 }
 
 /* Bottom Section of Right Container */
@@ -235,24 +284,28 @@ body {
 
 .div-footer-item {
     text-align: center;
+    font-family: "Raleway", sans-serif;
 }
 
 .div-footer-title {
     color: #8B8D97;
     font-size: 14px;
     font-weight: 400;
+    font-family: "Raleway", sans-serif;
 }
 
 .div-footer-data {
     color: black;
     font-size: 18px;
     font-weight: 500;
+    font-family: "Raleway", sans-serif;
 }
 
 .div-footer-percentage {
     color: #FF1493;
     font-size: 14px;
     font-weight: 500;
+    font-family: "Raleway", sans-serif;
 }
 
 /* AddArticleButton Styles */
@@ -276,109 +329,20 @@ body {
 .create-article-button span {
     margin-left: 5px;
     margin-right: 5px;
+
 }
 
 /* UserText Styles */
 .user-text {
     font-size: 20px;
-    margin-top: -5px;
+    margin-top: -25px;
     margin-bottom: 10px;
     text-align: left;
     margin-right: auto;
     font-family: sans-serif;
 }
 
-/* SearchBar Styles */
-.search-bar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Move to the right */
-    margin-left: 1000px;
-    margin-bottom: 10px; /* Set to the same value as UserText margin-bottom */
-    margin-top: -20px; /* Adjust the negative margin to move it up */
-}
-
-.search-icon {
-    margin-right: 10px; /* Adjust the distance */
-}
-
-.search-button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.filter-date-icon {
-    margin-right: -50px; /* Adjust the distance from the right */
-    margin-left: 10px;
-  }
-  
-
-input {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.table-container {
-    overflow-x: auto;
-    width: 100%;
-  }
-  
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  /* Status Styles */
-.status {
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-
-.status-review {
-    border-radius: 8px;
-    background: rgba(10, 62, 183, 0.1);
-    color: var(--info-info-100, #146EFF);
-    text-align: center;
-}
-
-
-.status-approved {
-    border-radius: 8px;
-    background: rgba(50, 147, 111, 0.16);
-    color: var(--success-success, #339A1A);
-    text-align: center;
-}
-
-
-.status-rejected {
-    border-radius: 8px;
-    background: rgba(255, 56, 45, 0.10);
-    color: var(--danger-danger, #FF382D);
-    text-align: center;
-}
-
-/* Jika delete button memiliki kelas khusus, misalnya .delete-button */
-.delete-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
+ 
 .delete-confirmation-modal {
     position: fixed;
     top: 50%;
@@ -424,36 +388,6 @@ input {
     color: #fff;
   }
   
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .popup {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .cancel-button {
-    background: #ccc;
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  
-/* Add this CSS to your stylesheet or component style block */
 /* Add this CSS to your stylesheet or component style block */
 
 :root {
@@ -486,27 +420,19 @@ input {
     align-items: center;
     margin-bottom: 15px;
     font-family: "Poppins", sans-serif;
+    font-size: 15px;
   }
   
   .popup-header h2 {
     margin: 0;
-  }
-  
-  .close-button {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .close-button:hover {
-    color: #ff0000;
+    font-size: 18px;
   }
   
   .popup div {
     margin-bottom: 15px;
   }
-  
+
+
   label {
     display: block;
     margin-bottom: 5px; /* Adjusted spacing */
@@ -611,4 +537,22 @@ select {
   color: #555;
 }
 
+/* YourButtonComponent.css */
 
+button {
+  background-color: transparent;
+  color: black;
+  border: none;
+  padding: 0px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 0 4px;
+  border-radius: 4px;
+}
+
+button:disabled {
+  background-color: #ccc;
+  color: #666;
+  border: 1px solid #ccc;
+  cursor: not-allowed;
+}

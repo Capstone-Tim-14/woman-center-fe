@@ -1,4 +1,5 @@
 import React from 'react';
+import { HiOutlineUsers } from 'react-icons/hi2';
 
 const LeftContainer = () => (
   <div className="interaksi-kontributor">
@@ -6,8 +7,10 @@ const LeftContainer = () => (
     <div className="div-header">
       <div className="div-header-content">
         <div className="div-header-left">
-          {/* Icon */}
-          <img className="icon-image" src="public/asset/Two-user.jpg" alt="Icon" />
+          {/* Colored Icon with a small box */}
+          <div className="icon-box">
+            <HiOutlineUsers className="icon-image colored-icon" />
+          </div>
         </div>
         <div className="div-header-title">
           {/* Tulisan "Interaksi Kontributor" dan Option */}

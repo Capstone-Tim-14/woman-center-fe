@@ -31,7 +31,7 @@ const MainContainer = () => {
         <AddArticleButton />
       </div>
 
-      {/* User Text */}
+      {/* UserText */}
       <UserText />
 
       {/* Search Bar */}
