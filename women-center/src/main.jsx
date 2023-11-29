@@ -1,17 +1,17 @@
 /* eslint-disable react/no-deprecated */
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";  // Change the import path
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
 
 import { BrowserRouter as Router } from "react-router-dom";
 
-ReactDOM.render(
+// Use createRoot instead of ReactDOM.render
+createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
-        <App />
+      <App />
     </Router>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );

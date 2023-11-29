@@ -1,7 +1,9 @@
-import Layout from './components/Layout/layout'
+import React from "react";
+import ReactDOM from 'react-dom';
+import Karir from "./component/Karir";
 
 function App() {
-  return <Layout/>
+  return <Karir/>
 }
 
 export default App;
