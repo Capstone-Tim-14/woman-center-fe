@@ -138,22 +138,6 @@ const KontenJadwal = () => {
                         </div>
                     </div>
                 </div>
-                <div className="position-absolute bottom-0 end-0 p-3">
-                    <div className='d-flex gap-2'>
-                        <Buttonn 
-                            className={"bg-white text-primary"}
-                            label="Batal" 
-                            // onClick nya diisi sesuai kondisi
-                            onClick={""}
-                        /> 
-                        <Buttonn 
-                            className={"bg-button"}
-                            label="Simpan" 
-                             // onClick nya diisi sesuai kondisi
-                            onClick={""}
-                        />
-                    </div>
-                </div>
             </div>
 
         </>
