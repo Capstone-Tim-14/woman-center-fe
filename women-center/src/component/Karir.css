@@ -55,7 +55,7 @@
   }
   
   .form-container {
-    display: flex;
+    display: flex-column;
     gap: 20px; /* Adjust the gap as needed */
     flex-wrap: wrap; /* Wrap to the next line if the forms exceed the container width */
     line-height: 10px;

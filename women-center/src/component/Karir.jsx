@@ -184,7 +184,7 @@ const Karir = () => {
                 </form>
               </div>
             </div>
-
+            <div>
             <div className="checkbox-container">
                 <p>Job style:</p>
                 <label>
@@ -219,6 +219,7 @@ const Karir = () => {
                   <input type="checkbox" />
                   Sementara
                 </label>
+              </div>
               </div>
 
 
