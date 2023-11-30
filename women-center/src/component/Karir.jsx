@@ -163,7 +163,7 @@ const Karir = () => {
             </div>
             </div>
             
-
+              {/* mulai form */}
             <div className="form-container">
               {/* Form 1 and 2 */}
               <div className="horizontal-forms">
@@ -184,6 +184,43 @@ const Karir = () => {
                 </form>
               </div>
             </div>
+
+            <div className="checkbox-container">
+                <p>Job style:</p>
+                <label>
+                  <input type="checkbox" />
+                  Full-Time
+                </label>
+                <label>
+                  <input type="checkbox" />
+                  Freelance
+                </label>
+                <label>
+                  <input type="checkbox" />
+                  Kontrak
+                </label>
+                <label>
+                  <input type="checkbox" />
+                  Magang
+                </label>
+                <label>
+                  <input type="checkbox" />
+                  Remote
+                </label>
+                <label>
+                  <input type="checkbox" />
+                  Proyek
+                </label>
+                <label>
+                  <input type="checkbox" />
+                  Shift
+                </label>
+                <label>
+                  <input type="checkbox" />
+                  Sementara
+                </label>
+              </div>
+
 
             <div className="form-container">
               {/* Form 3 and the rest */}

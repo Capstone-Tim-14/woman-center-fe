@@ -58,6 +58,7 @@
     display: flex;
     gap: 20px; /* Adjust the gap as needed */
     flex-wrap: wrap; /* Wrap to the next line if the forms exceed the container width */
+    line-height: 10px;
   }
   .horizontal-forms {
     display: flex;
@@ -74,22 +75,16 @@
 }
 
 
-/* Karir.css */
-
-/* Other existing styles */
-
-.modal-content styled-form1 {
-    display: flex;
-    height: 146px;
-    padding: 8px 16px 15px 10px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    align-self: stretch;
-    border-radius: 8px;
-    border: 1px solid var(--neutral-0-c-0-c-0-c-neutral, #1F1F1F);
-    background: var(--input-default-background, rgba(239, 241, 249, 0.60));
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--black-5, #2B2F32);
+  font-family: 'Raleway';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 750px; /* Posisikan di pojok kanan */
 }
-
 
 
