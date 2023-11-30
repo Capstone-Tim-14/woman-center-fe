@@ -1,175 +1,34 @@
-
 /* Global Styles */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #f5f4f1;
     max-height: 100vh; /* Sesuaikan dengan tinggi yang diinginkan */
-}
-
-
-.main-layout-database {
-    width: 100%;
+  }
+  
+  /* Main layout database Styles */
+  .main-layout-database {
+    width: 79%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: start;
-}
-/* Header Styles */
-.header {
+    align-items: center;
+  }
+
+.sub-summary-database {
     width: 100%;
-    background-color: #fff;
-    padding: 10px 15px;
-    color: #45464E;
+    margin: 20px auto 5px; /* Adjusted margin */
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    position: flex;
-    top: 0;
-    z-index: 1000;
-    border-radius: 8px;
-}
-
-
-.header-logo {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.header-navigation {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.header-navigation a {
-    color: #45464E;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-/* Icon Home Styles */
-.icon-home {
-    margin-right: 5px;
-}
-
-.icon-home-img {
-    width: 20px;
-    height: 20px;
-}
-
-/* Subtitle Styles */
-.subtitle {
-    display: flex;
-    align-items: center;
-    color: #888;
-}
-
-/* Profile and Notification Styles */
-.header-icons {
-    display: flex;
-    align-items: center;
-}
-
-.div-icon {
-    margin-right: 10px;
-}
-
-.div-icon-inner {
-    background-color: transparent;
-    border-radius: 50%;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.div-icon-bar {
-    width: 20px;
-    height: 20px;
-}
-
-.div-image {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.interaksi-kontributor {
-    width: calc(50% - 10px); /* 50% lebar dan dikurangi margin */
-    max-width: 450px;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 25px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    margin-right: 5px; /* Adjusted margin */
-    background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
-}
-
-.div-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.div-header-content {
-    display: flex;
-    align-items: center;
-}
-
-.div-header-left {
-    margin-right: 10px;
+    gap: 5px; /* Sesuaikan dengan jarak yang diinginkan antar elemen */
+    padding-left: 15px;
+    padding-right: 10px;
 }
 
 .icon-image {
-    width: 32px;
-    height: 32px;
-}
-
-.div-title-DashboardSummary {
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
-    word-wrap: break-word;
-}
-
-.div-footer {
-    display: flex;
-    flex-direction: column;
-}
-
-.div-footer-content {
-    display: flex;
-    justify-content: space-between;
-}
-
-.div-footer-item {
-    text-align: center;
-}
-
-.div-footer-title-left {
-    color: #fff;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.div-footer-data-left {
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.div-footer-percentage-left {
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-}
+    width: 20px;
+    height: 20px;
+  }
 
 .custom-button {
     background: rgba(244, 81, 141, 0.20) !important;
@@ -202,3 +61,57 @@ body {
     border: none !important;
     color: #8B8D97 !important;
 }
+
+.page-selector-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 20px;
+    width: 100%;
+    }
+    
+    .items-perpage {
+    display: flex;
+    align-items: center;
+    margin-left: -25px;
+    }
+    
+    .items-per-page-select {
+    margin-right: 10px;
+    }
+    
+    .items-per-page-select p1 {
+    vertical-align: middle;
+    margin-bottom: 0; /* Hilangkan margin bawah dari elemen p1 */
+    margin-left: 5px;
+    }
+    
+    select {
+    padding: 8px;
+    background: rgba(94, 99, 102, 0.08);
+    border-radius: 5px;
+    font-size: 14px;
+    }
+    
+    .page-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    margin-left: 10px; /* Sesuaikan jarak antara elemen */
+    }
+    
+    /* CSS untuk PageOptions */
+    .page-options-artikel {
+    display: flex;
+    align-items: center;
+    margin-right: -35px;
+    }
+    
+    .page-options-artikel p {
+    margin: 0;
+    margin-left: 5px;
+    font-size: 14px;
+    color: #555;
+    }
+    

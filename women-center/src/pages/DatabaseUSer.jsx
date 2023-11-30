@@ -1,29 +1,18 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import "../styles/tabelKonselor.css";
+import "../styles/Database.css";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import "../styles/sidebar.css";
-import Header from "../components/Organism/HeaderArtikel";
+import Header from "../components/Organism/HeaderDatabase";
 import UserText from "../components/Atom/UserText";
-import { TiChevronRight } from "react-icons/ti";
-import { TbHomeHeart } from "react-icons/tb";
-import { TbChecklist } from "react-icons/tb";
-import { GoPeople } from "react-icons/go";
-import { GrArticle } from "react-icons/gr";
-import { BsChatText } from "react-icons/bs";
-import { BsFillMenuButtonWideFill } from "react-icons/bs";
+import { HiOutlineUsers } from 'react-icons/hi2';
 import { AiFillHome } from "react-icons/ai";
 import { IoNotifications } from "react-icons/io5";
-import { BsChevronDown } from "react-icons/bs";
-import { IoSettingsOutline } from "react-icons/io5";
-import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
-import { MdOutlineWorkOutline } from "react-icons/md";
-import { HiOutlineLogout } from "react-icons/hi";
 import ModalTambahAkunUser from '../components/Molekul/Modal/modalTambahAkunUser.jsx';
-import SearchBar from "../components/Molekul/searchBar.jsx";
+import SearchBar from "../components/Atom/SearchBar.jsx";
 import NewTabelUser from '../components/Organism/TabelUser.jsx';
+import PageSelector from "../components/Organism/PageSelector"; 
 
 
 const DatabaseUser = () => {
@@ -87,20 +76,14 @@ const DatabaseUser = () => {
 
   return (
     <div className="main-layout-database"> 
-      <div className="content">
-        <div className="line">
-          <p>User</p>
-          <IoNotifications className="notification-icon" />
-          <a href="#"><img src="/src/assets/img/profile1.png" className='admin-icon' alt="Admin" style={{ marginRight: '8px', width: '24px', height: '24px' }} /></a>
-        </div><p/>
+      <Header />
 
-        <div className="logo">
-          <div><Link to="/"><AiFillHome /> / User</Link></div><br/>
+        <div className="sub-summary-database">
           <table className="custom-table">
             <thead>
               <tr>
                 <th></th>
-                <th><GoPeople style={{ marginRight: '8px' }} />User</th>
+                <th><img src="src/assets/icon/icon.svg" alt="User Icon" />User</th>
                 <th></th><th></th>
                 <th></th><th></th>
                 <th></th><th></th>
@@ -139,15 +122,16 @@ const DatabaseUser = () => {
           </div>
           <div className="">
             <Row>
-              <Col>
-                <h5>User</h5>
-              </Col>
-              <Col className="d-flex justify-content-end">
+            <UserText />
+              <Col className="d-flex justify-content">
                 <SearchBar />
               </Col>
             </Row>
           </div>
           <NewTabelUser />
+          <footer className="page-selector-footer">
+          <PageSelector />
+          </footer>
           {/* <Table hover borderless>
             <thead className="table-header">
               <tr>
@@ -235,7 +219,6 @@ const DatabaseUser = () => {
             </Row>
           </div> */}
         </div>
-      </div>
       </div>
 
   );

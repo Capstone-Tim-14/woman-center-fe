@@ -56,7 +56,7 @@ const SearchBar = () => {
 
       <div className="filter-date-icon" onClick={togglePopup}>
         {/* Replace the image with LuCalendarDays icon */}
-        <LuCalendarDays size={23} />
+        <LuCalendarDays size={25} />
       </div>
 
       <PopUpModal isOpen={isOpen} togglePopup={togglePopup}>
