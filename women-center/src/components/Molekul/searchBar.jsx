@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
-import PopUpModal from '../Organism/PopUpModal';
+import PopUpModal from '../Molekul/popUpModal.jsx';
 import { LuCalendarDays } from 'react-icons/lu';
-import '../../styles/SearchBar.css';
+import '../../styles/searchBar.css';
 
 
 const Searching = ({ value, onChange, onSearch }) => (
-  <div className="d-flex align-items-center py-2 px-3 border rounded-2">
+  <div className="d-flex align-items-center py-1 px-2 border rounded-2">
     <FiSearch className='me-3' />
     <input
       type="text"
@@ -18,7 +18,7 @@ const Searching = ({ value, onChange, onSearch }) => (
           onSearch(); // Trigger search on Enter key press
         }
       }}
-      style={{ border: 'none', outline: 'none', backgroundColor: 'transparent' }}
+      style={{ border: 'none', outline: 'none', backgroundColor: 'white' }}
     />
   </div>
 );
@@ -56,7 +56,7 @@ const SearchBar = () => {
 
       <div className="filter-date-icon" onClick={togglePopup}>
         {/* Replace the image with LuCalendarDays icon */}
-        <LuCalendarDays size={23} />
+        <LuCalendarDays size={25} />
       </div>
 
       <PopUpModal isOpen={isOpen} togglePopup={togglePopup}>

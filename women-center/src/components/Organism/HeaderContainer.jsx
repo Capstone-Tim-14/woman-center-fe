@@ -1,6 +1,5 @@
 // Header.js
 import React from 'react';
-import '../../styles/Header.css';
 import { GoHomeFill } from 'react-icons/go';
 import { IoNotifications } from 'react-icons/io5';
 

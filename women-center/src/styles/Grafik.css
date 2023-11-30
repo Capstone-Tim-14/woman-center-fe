@@ -1,6 +1,7 @@
 /* Grafik.css */
-
-.header {
+.header-grafik {
+    margin-left: 20px;
+    background-color: transparent;
     font-size: 16px;
     font-family: 'Raleway', sans-serif;
     font-weight: bold; /* Membuat tulisan menjadi bold */
@@ -12,6 +13,8 @@
   }
   
   .slider-container {
+    margin-left: 30px;
+
     position: relative;
     width: 300px;
   }

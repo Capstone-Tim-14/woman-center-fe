@@ -1,25 +1,29 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import LoginPages from "../pages/loginPages.jsx";
 import Dashboard from "../pages/Dashboard.jsx";
-import DatabaseUser from "../pages/tabelUSer.jsx";
-import DatabaseKonselor from "../pages/tabelKonselor.jsx";
-import Jadwal from "../pages/jadwal.jsx";
-//import DataKonselor from "../pages/DataKonselor.jsx";
-//import DataUser from "../pagesDataUser.jsx";
+import DatabaseUser from "../pages/DatabaseUSer.jsx";
+import DatabaseKonselor from "../pages/DatabaseKonselor.jsx";
+//import Jadwal from "../pages/jadwal.jsx";
+import DataKonselor from "../pages/DataKonselor.jsx";
+import DataUser from "../pages/DataUser.jsx";
 import Profile from "../pages/Profile.jsx";
 import EditProfile from "../pages/editProfile.jsx";
 import Artikel from "../pages/ArtikelContainer.jsx";
-import AddArtikel from "../pages/AddArtikel.jsx";
+//import AddArtikel from "../pages/AddArtikel.jsx";
 
 
 const Routers = () => {
   return (
     <Routes>
+      <Route path="/login" element={<LoginPages />} />
       <Route path="/" element={<Navigate to="/dashboard" />} />
       <Route path="/dashboard" element={<Dashboard />} />
-      {/*<Route path="/database/konselor" element={<DatabaseKonselor />} />*/}
+      <Route path="/database/konselor" element={<DatabaseKonselor />} />
       <Route path="/database/user" element={<DatabaseUser />} />
+      {/*<Route path="/database/data-konselor" element={<DataKonselor />} />
+      <Route path="/database/data-user" element={<DataUser />} />*/}
       {/*<Route path="/jadwal" element={<Jadwal />} />*/}
       <Route path="/artikel" element={<Artikel />} />
       {/*<Route path ="/artikel/addartikel" element={<AddArtikel/>} />*/}

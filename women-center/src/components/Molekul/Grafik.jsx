@@ -139,7 +139,7 @@ function Grafik() {
 
   return (
     <div className="App">
-      <header className="header">Articles growth</header>
+      <header className="header-grafik">Articles growth</header>
       <div className="slider-container">
         <input
           type="range"
@@ -158,7 +158,7 @@ function Grafik() {
       </div>
       <div className="row">
         <div className="col-4">
-          <Chart options={state.options} series={state.series} type="bar" width="450" />
+          <Chart options={state.options} series={state.series} type="bar" width="550" />
         </div>
       </div>
     </div>

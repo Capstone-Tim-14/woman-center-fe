@@ -250,7 +250,7 @@ body {
 }
 
 .div-footer-percentage {
-  color: #FF1493;
+  color: #ffffff;
   font-size: 14px;
   font-weight: 500;
 }
@@ -277,6 +277,8 @@ body {
   margin-left: 5px;
   margin-right: 5px;
 }
+
+
 
 /* UserText Styles */
 .user-text {
@@ -378,7 +380,6 @@ th {
 .delete-button {
   background: transparent;
   border: none;
-  cursor: pointer;
 }
 
 .delete-confirmation-modal {
@@ -556,7 +557,7 @@ width: 100%;
 .items-perpage {
 display: flex;
 align-items: center;
-margin-left: -35px;
+margin-left: -25px;
 }
 
 .items-per-page-select {
@@ -584,13 +585,13 @@ margin-left: 10px; /* Sesuaikan jarak antara elemen */
 }
 
 /* CSS untuk PageOptions */
-.page-options {
+.page-options-artikel {
 display: flex;
 align-items: center;
 margin-right: -35px;
 }
 
-.page-options p {
+.page-options-artikel p {
 margin: 0;
 margin-left: 5px;
 font-size: 14px;

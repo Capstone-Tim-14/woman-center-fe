@@ -17,7 +17,7 @@ const Listartikel = () => {
                 <CiSearch size={20} style={{ position: 'absolute', left: 10, top: 10 }} />
                 <Form.Control type="text" placeholder="Search" style={{ paddingLeft: 30, height: 40 }} />
             </div>
-        </Form>
+                </Form>
                 <p className="txt-view" onClick={handleViewMoreClick}>View More</p>
             </div>
             <div className="list-artikel-dashboard">

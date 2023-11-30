@@ -1,6 +1,6 @@
-import CheckBox from "../Atom/checkBox"
-import Searching from "../Atom/inputanSearch"
-import ModalHapus from "./modalHapus"
+import CheckBox from "../Atom/checkBox/checkBox"
+import Searching from "../Atom/inputan/inputanSearch"
+import ModalHapus from "./Modal/modalHapus"
 const Artikel = () => {
     return(
         <>

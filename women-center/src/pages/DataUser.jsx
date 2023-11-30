@@ -1,6 +1,6 @@
 import React from "react"
-import Header from "../component/organisms/header/Headers"
-import KontenDataUser from "../component/organisms/konten/kontenDataUser"
+import Header from "../components/Organism/header/Headers"
+import KontenDataUser from "../components/Organism/konten/kontenDataUser"
 const DataUser = () => {
     return (
         <section>
