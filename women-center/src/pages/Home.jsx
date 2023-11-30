@@ -7,13 +7,12 @@ import Konselinglangsung from "../components/Konseling/konselinglangsung";
 import Konselorhome from "../components/Konseling/konseling.jsx";
 import { Container, Row, Col,} from "reactstrap";
 import "../styles/home.css";
-import Playgoogle from "../assets/googleplay.png"
-import Appstore from "../assets/appstore.png"
 import ReviewSlider from "../components/Review/Review.jsx";
 import Karir from "../assets/karir.png"
 import artikel01 from "../assets/image 2.png"
 import artikel02 from "../assets/image 3.png"
 import artikel03 from "../assets/image 4.png"
+import Download from "../components/Download/download.jsx";
 
 
 const Home = () => {
@@ -119,25 +118,7 @@ const Home = () => {
             </Col>
 
             <Col lg='12'>
-              <div id="download" className="Download">
-                <h6 className="Title_dwn">Download</h6>
-                <h1 className="txt_unduh">Unduh Aplikasi Sekarang!</h1>
-                <p className="subt_unduh">Segera unduh dan nikmati fitur-fitur unggulan kami! <br />
-                Tetap bergabung untuk menggali potensi terbaik dalam diri Anda!</p>
-                <div className="download_btn">
-                <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer">
-                  <button className="playgoogle__btn">
-                    <img src={Playgoogle} alt="google-img" />
-                  </button>
-                </a>
-
-                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
-                  <button className="apple-btn">
-                    <img src={Appstore} alt="apple-img" />
-                  </button>
-                </a>
-                </div>
-              </div>
+              <Download/>
             </Col>
           </Row>
         </Container>

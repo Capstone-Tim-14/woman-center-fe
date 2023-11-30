@@ -1,11 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import HeaderKonselor from '../components/Header/headerKonselor'
 import CardProfil from '../components/card/cardProfil'
-import Playgoogle from "../assets/googleplay.png"
-import Appstore from "../assets/appstore.png"
 import BannerKonselor from '../components/card/BannerKonselor'
 import { TbMoodSmileBeam } from "react-icons/tb";
-import { Link } from 'react-router-dom';
+import Download from '../components/Download/download'
 
 function Konselor() {
   return (
@@ -73,25 +72,7 @@ function Konselor() {
       </section>
 
       <section>
-        <div className='container-xxl'>
-          <div className='row'>
-            <div className="Download">
-              <h6 className="Title_dwn">Download</h6>
-              <h3 className="txt_unduh">Unduh Aplikasi Sekarang!</h3>
-              <p className="subt_unduh">Segera unduh dan nikmati fitur-fitur unggulan kami! <br />
-                  Tetap bergabung untuk menggali potensi terbaik dalam diri Anda!</p>
-              <div className="download_btn">
-                  <button className="playgoogle__btn">
-                    <Link to='/playgoogle'><img src={Playgoogle} alt="google-img" /></Link> 
-                  </button>
-
-                  <button className="apple-btn">
-                    <Link to='/appstore'><img src={Appstore} alt="apple-img" /></Link> 
-                  </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Download/>
       </section>
 
 

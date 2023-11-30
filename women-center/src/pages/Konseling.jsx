@@ -6,11 +6,9 @@ import '../styles/konselingpage.css'
 import imgkonseling2 from '../assets/masalah.png'
 import imgkonseling3 from '../assets/img-konseling4.png'
 import imgkonseling4 from '../assets/hal.png'
-import Playgoogle from "../assets/googleplay.png"
-import Appstore from "../assets/appstore.png"
-import {Link} from "react-router-dom"
 import { FaCheck } from "react-icons/fa6";
 import CardProfil from "../components/card/cardProfil";
+import Download from "../components/Download/download";
 
 const KonselingPage = () => {
     return (
@@ -351,23 +349,10 @@ const KonselingPage = () => {
 
             <Col>
             <p className="more-button">Lebih Banyak</p>
+            <Download/>
             </Col>
-              <div className="Download">
-                <h6 className="Title_dwn">Download</h6>
-                <h1 className="txt_unduh">Unduh Aplikasi Sekarang!</h1>
-                <p className="subt_unduh">Segera unduh dan nikmati fitur-fitur unggulan kami! <br />
-                Tetap bergabung untuk menggali potensi terbaik dalam diri Anda!</p>
-                <div className="download_btn">
-                  <button className="playgoogle__btn">
-                   <Link to='/playgoogle'><img src={Playgoogle} alt="google-img" /></Link> 
-                  </button>
+             
 
-                  <button className="apple-btn">
-                  <Link to='/appstore'><img src={Appstore} alt="apple-img" /></Link> 
-                  </button>
-                </div>
-
-              </div>
        
         </div>
         
