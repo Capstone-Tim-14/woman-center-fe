@@ -1,0 +1,23 @@
+.category-input {
+    border-radius: 100px;
+    background: var(--14-f-9-f-5-f-6, #F9F5F6);
+    border: none;
+    font-weight: bold;
+    box-sizing: border-box;
+    color: #646464;
+    font-size: 12px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    width: 97%;
+    margin-top: 5px;
+}
+
+.add-category {
+    color: #fff; 
+    border-radius: 100px;
+    background: var(--14-f-4518-d, #F4518D);
+    border: none;
+    font-weight: bold;
+    box-sizing: border-box;
+    width: 97%
+}

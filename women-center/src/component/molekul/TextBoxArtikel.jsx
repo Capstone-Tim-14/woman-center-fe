@@ -41,7 +41,7 @@ const TextBoxArtikel = ({ onTitleChange, onArticleContentChange, onSubmit  }) =>
         </Row>
         <Row>
 
-            <p>Isi Artikel</p>
+            <p className='title-content'>Isi Artikel</p>
             <FormWithEditor onTextChange={handleArticleContentChange} ></FormWithEditor> 
 
         </Row>

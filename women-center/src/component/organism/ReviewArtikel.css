@@ -63,30 +63,43 @@ div {
 
 .close-button {
     display: flex;
-    width: 180px;
+    width: 48%;
     padding: 17px 16px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
     border-radius: 12px;
     background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
-    border: none;
-    font-family: Raleway;
+    border: 2px transparent;
+    
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    position: relative; /* or 'relative' */
-    /* Add other styles as needed */
+    position: relative; 
+    font-family: 'Raleway', sans-serif;
       
 }
 
-.close-button .reject {
-    border: none;
+.close-button-reject {
+    display: flex;
+    width: 48%;
+    padding: 15px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
     border-radius: 12px;
     border: 2px solid var(--Primary, #5570F1);
     color: var(--Primary, #5570F1);
+    background-color: transparent;
     text-align: center;
+    
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    font-family: 'Raleway', sans-serif; 
 }
 
 

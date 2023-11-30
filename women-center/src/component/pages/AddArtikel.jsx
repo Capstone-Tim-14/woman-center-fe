@@ -6,6 +6,7 @@ import TitleBar from '../atom/ArtikelTitle';
 
 import ArtikelBaru from '../organism/ArtikelBaru';
 import ArtikelModal from '../organism/BacaArtikel';
+import ReviewArtikel from '../organism/ReviewArtikel';
 
 const AddArtikel = () => {
    
@@ -50,9 +51,9 @@ const AddArtikel = () => {
         title={articleData.title} 
       />
       <ArtikelBaru onTitleChange={handleTitleChange} />
-        <Button onClick={handleShowPopup}>Open Popup</Button>
+        
        
-        <ArtikelModal show={showPopup} handleClose={handleClosePopup}> </ArtikelModal>
+        
          </>
     );
   };

@@ -124,3 +124,30 @@ margin-bottom: 12px
   .upload-description p {
     font-size: 12px;
   }
+
+  p{
+    color: var(--black-30, #8B8D97);
+
+
+
+    /* Raleway-semibold/Semibold 12 */
+    font-family: 'Raleway'  , sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    
+    line-height: normal;
+  }
+
+  h6{
+    color: var(--black-30, #8B8D97);
+    font-family: 'Raleway'  , sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    
+    line-height: normal;
+  }
+
+  strong{
+
+    color: var(--black-90, #2C2D33);
+  }

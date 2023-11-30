@@ -7,9 +7,22 @@ import { BsBookmark } from "react-icons/bs";
 import { BiSortAlt2 } from "react-icons/bi";
 import { FaRegComment } from "react-icons/fa";
 import './TableSection.css';
+import ReviewArtikel from '../../component/organism/ReviewArtikel';
 
 const TableSection = () => {
   const navigate = useNavigate();
+
+  const [selectedRow, setSelectedRow] = useState(null);
+  const [showReviewModal, setShowReviewModal] = useState(false);
+
+  const handleRowClick = (row) => {
+    setSelectedRow(row);
+    setShowReviewModal(true);
+  };
+
+  const handleCloseReviewModal = () => {
+    setShowReviewModal(false);
+  };
 
   // State untuk menyimpan data tabel
   const [tableData, setTableData] = useState([
@@ -78,9 +91,6 @@ const TableSection = () => {
     setTableData(sortedData);
   };
 
-  const handleRowClick = (articleId) => {
-    navigate(`/articles/${articleId}`);
-  };
 
   const confirmDelete = () => {
     // Tambahkan logika konfirmasi atau hapus di sini
@@ -88,6 +98,7 @@ const TableSection = () => {
   };
 
   return (
+   <div className= "body-container">
     <div className="table-container">
       <table className="data-table">
         <thead>
@@ -116,7 +127,7 @@ const TableSection = () => {
         </thead>
         <tbody>
           {tableData.map((row) => (
-            <tr key={row.id}>
+            <tr key={row.id} onClick={() => handleRowClick(row)}>
               <td><input type="checkbox" /></td>
               <td>{row.title}</td>
               <td>{row.contributor}</td>
@@ -145,7 +156,16 @@ const TableSection = () => {
         </tbody>
       </table>
     </div>
+    
+    {selectedRow && (
+        <ReviewArtikel
+          show={showReviewModal}
+          handleClose={handleCloseReviewModal}
+        />
+    )}
+  </div>
+
   );
-};9
+};
 
 export default TableSection;

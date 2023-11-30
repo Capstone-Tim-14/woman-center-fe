@@ -8,7 +8,7 @@ const TextBoxAtom = ({ title, placeholder, value, onChange, className}) => {
   return (
     <Form.Group controlId={`textBox${title}`} className="text-box-atom">
       <div>
-        <Form.Label>{title}</Form.Label>
+        <Form.Label className="title-label">{title}</Form.Label>
       </div>
       <div>
        

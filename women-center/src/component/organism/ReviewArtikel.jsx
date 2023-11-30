@@ -1,18 +1,18 @@
 import React from 'react';
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
-import './BacaArtikel.css'
+import './ReviewArtikel.css'
 import artikelplaceholder from "../../assets/artikelplaceholder.png"
 
-const ArtikelModal = ({ show, handleClose }) => {
+const ReviewArtikel = ({ show, handleClose }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton style={{ border: 'none' }}>
-        <Modal.Title><h5>Baca Artikel</h5></Modal.Title>
+        <Modal.Title><h5>Review Artikel</h5></Modal.Title>
       </Modal.Header>
       <Modal.Body >
 
       <Container >
-      <label htmlFor="popupTextarea">Review Artikel</label>
+      <label htmlFor="popupTextarea">Judul Artikel</label>
           <Row className="h-100 custom-flex-row">
             <Col md={8}>
               <div className="textarea-container h-100">
@@ -35,7 +35,7 @@ const ArtikelModal = ({ show, handleClose }) => {
                 />
               </div>
               <div className="d-flex justify-content-between mt-auto align-items-end">
-              <Button className="close-button reject" onClick={handleClose}>
+              <Button className="close-button-reject" onClick={handleClose}>
               Reject
             </Button>
             <Button className="close-button" onClick={handleClose}>
@@ -57,4 +57,4 @@ const ArtikelModal = ({ show, handleClose }) => {
   );
 };
 
-export default ArtikelModal;
+export default ReviewArtikel;

@@ -1,11 +1,22 @@
 import React, { useState } from 'react';
 import CategoryButton from '../atom/CategoryButton';
 import { Row, Col, Container } from 'react-bootstrap';
+import './CategorySelect.css'
 
 
 const CategorySelect = ({ onCategoryChange }) => {
 
     const [selectedCategories, setSelectedCategories] = useState([]);
+    const [newCategoryInput, setNewCategoryInput] = useState('');
+    const [categories, setCategories] = useState([
+      'Berita Wanita',
+      'Teknologi',
+      'Karier',
+      'Seni & Kreativitas',
+      'Gaya Hidup',
+      'Mental Health',
+    ]);
+
     const handleCategoryToggle = (category) => {
         
         setSelectedCategories((prevSelected) =>
@@ -21,8 +32,22 @@ const CategorySelect = ({ onCategoryChange }) => {
       
       };
     
-      
-      
+      const handleInputButtonClick = () => {
+    if (newCategoryInput.trim() !== '') {
+      setCategories((prevCategories) => [...prevCategories, newCategoryInput]);
+      setNewCategoryInput('');
+    }
+  };
+    
+      const handleInputChange = (event) => {
+        setNewCategoryInput(event.target.value);
+      };
+
+       const handleInputKeyDown = (event) => {
+        if (event.key === 'Enter') {
+          handleInputButtonClick();
+        }
+      };
       const margin = {
         marginLeft: '16px',
         
@@ -36,50 +61,24 @@ const CategorySelect = ({ onCategoryChange }) => {
         <Row>
           <p>Kategori</p>
           
-          
-         
-              
-            <CategoryButton
-                title="Berita Wanita"
-                onClick={() => handleCategoryToggle('Berita Wanita')}
-                selected={selectedCategories.includes('Berita Wanita')}
-            />
-            <CategoryButton
-                title="Teknologi"
-                onClick={() => handleCategoryToggle('Teknologi')}
-                selected={selectedCategories.includes('Teknologi')}
-            />
-            <CategoryButton
-                title="Karier"
-                onClick={() => handleCategoryToggle('Karier')}
-                selected={selectedCategories.includes('Karier')}
-            />
-            <CategoryButton
-                title="Seni & Kreativitas"
-                onClick={() => handleCategoryToggle('Seni')}
-                selected={selectedCategories.includes('Seni')}
-            />
-            <CategoryButton
-                title="Gaya Hidup"
-                onClick={() => handleCategoryToggle('Gaya')}
-                selected={selectedCategories.includes('Gaya')}
-            />
-            <CategoryButton
-                title="Mental Health"
-                onClick={() => handleCategoryToggle('Mental')}
-                selected={selectedCategories.includes('Mental')}
-            />
-            <CategoryButton
-                title="+Tambah Kategori"
-                onClick={() => handleCategoryToggle('Tambah')}
-                selected={selectedCategories.includes('Tambah')}
-            />
-
-        
-            
-         
-          
-        </Row>
+          {categories.map((category) => (
+          <CategoryButton
+            key={category}
+            title={category}
+            onClick={() => handleCategoryToggle(category)}
+            selected={selectedCategories.includes(category)}
+          />
+        ))}
+            <input
+          type="text"
+          placeholder="Type your category"
+          value={newCategoryInput}
+          onChange={handleInputChange}
+          onKeyDown={handleInputKeyDown}
+          className="category-input"
+        />
+        <button className='add-category' onClick={handleInputButtonClick}>+Tambah Kategori</button>
+      </Row>
         </Container>
           
         
