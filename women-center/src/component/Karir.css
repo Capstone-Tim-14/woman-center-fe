@@ -4,7 +4,7 @@
     display: none;
     position: fixed;
     background: white;
-    padding: 20px;
+    padding: 100px;
     z-index: 1000;
   }
   
@@ -35,8 +35,8 @@
   }
   
   .fotoprofile {
-    width: 154px;
-    height: 154px;
+    width: 120px;
+    height: 120px;
     border-radius: 12px;
     border: 1px solid var(--Grey, #E1E2E9);
     background: var(--Main-Background, #F4F5FA);
@@ -47,8 +47,8 @@
   
   .fotosampul {
     display: flex;
-    width: 480px;
-    height: 154px;
+    width: 455px;
+    height: 120px;
     border-radius: 12px;
     border: 1px solid var(--Grey, #E1E2E9);
     background: var(--Main-Background, #F4F5FA);
@@ -95,8 +95,8 @@
 
 .forminput{
   display: flex;
-  width: 85%;
-  height: 52px;
+  width: 98%;
+  height: 43px;
   padding: 8px 16px;
   flex-direction: column;
   align-items: flex-start;
@@ -146,7 +146,8 @@
   flex-shrink: 0;
   border-radius: 12px;
   background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
-  margin-left: 10px;
+  margin-right: 50px;
+  margin-left: 15px;
   margin-top: 80px;
 }
 
