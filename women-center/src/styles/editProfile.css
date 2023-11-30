@@ -1,8 +1,11 @@
 /* Profile.css */
-/* Header Styles */
+.editprofile {
+  width: 1200px;
+}
+
 .header {
   width: 100%;
-  background-color: #FCFCFC;
+  background-color: #fff;
   padding: 10px 15px;
   color: #45464E;
   display: flex;
@@ -41,6 +44,7 @@
 .icon-home-img {
   width: 20px;
   height: 20px;
+  color: #F4518D; /* Warna pink */
 }
 
 /* Subtitle Styles */
@@ -72,6 +76,7 @@
 .div-icon-bar {
   width: 20px;
   height: 20px;
+  fill: #F4518D; 
 }
 
 .div-image {
@@ -161,7 +166,7 @@
   height: 45px;
   padding: 8px 10px;
   border-radius: 8px;
-  margin-right: 10px;
+  margin-right: 5px;
   border: 1px solid #1F1F1F;
   background: linear-gradient(0deg, rgba(248, 249, 253, 0.999), rgba(239, 241, 249, 0.999)),
               linear-gradient(0deg, #1F1F1F, #1F1F1F);

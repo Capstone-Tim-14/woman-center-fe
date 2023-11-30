@@ -5,6 +5,8 @@ import { BsPeople } from "react-icons/bs";
 import { LuMail } from "react-icons/lu";
 import { FiMapPin } from "react-icons/fi";
 import { IoFlagOutline } from "react-icons/io5";
+import { GoHomeFill } from 'react-icons/go';
+import { IoNotifications } from 'react-icons/io5';
 
 const Profile = () => {
   const [selectedOptions, setSelectedOptions] = useState({
@@ -36,29 +38,30 @@ const Profile = () => {
   };
 
   return (
-    <div style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
-    <div className="header-profile">
-    <div className="header-content">
-      <h3>Profil</h3>
-      <div className="subtitle">
-        <div className="icon-home">
-          <img className="icon-home-img" src="public/asset/Home.svg" alt="Home Icon" />
-        </div>
-        <div className="subtitle-text">/ Profil</div>
-      </div>
-    </div>
-    <div className="header-icons">
-      {/* Notification Icon */}
-      <div className="div-icon">
-        <div className="div-icon-inner">
-          <img className="div-icon-bar" src="public/asset/Notification.svg" alt="Notification Icon" />
+    <div className="profile" style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+    <div className="header">
+      <div className="header-content">
+        <h3>Dashboard</h3>
+        <div className="subtitle">
+          <div className="icon-home">
+            <GoHomeFill className="icon-home-img" />
+          </div>
+          <div className="subtitle-text">/ Dashboard</div>
         </div>
       </div>
+      <div className="header-icons">
+        {/* Notification Icon */}
+        <div className="div-icon">
+          <div className="div-icon-inner">
+            <IoNotifications className="div-icon-bar" />
+          </div>
+        </div>
 
-      {/* Profile Image */}
-      <img className="div-image" src="public/asset/profile 1.jpg" alt="Profile Image" />
+        {/* Profile Image */}
+        <img className="div-image" src="public/asset/profile 1.jpg" alt="Profile Image" />
+      </div>
     </div>
-  </div>
+
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
         <p style={{ fontSize: '30px', marginRight: '40px', font: 'Raleway-medium/Medium 20', marginLeft: '16px' }}>Pengaturan Akun</p>
         <a href="/profile/editprofile">
@@ -67,7 +70,7 @@ const Profile = () => {
           onClick={handleUpdateButtonClick}
           style={{
             width: '120px',
-            marginLeft: '625px',
+            marginLeft: '660px',
             borderRadius: '12px',
             background: 'var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%))',
             border: 'none',
@@ -78,9 +81,9 @@ const Profile = () => {
         </a>
       </div>
 
-      <div style={{ display: 'flex' }}>
+      <div className="tabel-profile" style={{ display: 'flex' }}>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <p style={{ marginLeft: '16px' }}>First Name</p>
+          <p style={{ marginLeft: '25px' }}>First Name</p>
           <div className="table-container">
             <div className="table-row">
               <BsPeople size={20} style={{ marginRight: '8px' }} /> Row 1
@@ -88,7 +91,7 @@ const Profile = () => {
           </div>
 
           <div style={{ margin: '16px' }}></div>
-          <p style={{ marginLeft: '20px' }}>Last Name</p>
+          <p style={{ marginLeft: '25px' }}>Last Name</p>
           <div className="table-container">
             <div className="table-row">
               <BsPeople size={20} style={{ marginRight: '8px' }} /> Row 2
@@ -96,7 +99,7 @@ const Profile = () => {
           </div>
 
           <div style={{ margin: '16px' }}></div>
-          <p style={{ marginLeft: '20px' }}>Email</p>
+          <p style={{ marginLeft: '25px' }}>Email</p>
           <div className="table-container">
             <div className="table-row with-dropdown">
               <div className="table-row">
@@ -104,7 +107,7 @@ const Profile = () => {
               </div><br /><br />
 
             <div style={{ margin: '1px' }}></div>
-                <p >Nomor Telepon</p>
+                <p style={{ marginLeft: '-7px' }}>Nomor Telepon</p>
                 <div className="table-container2">
                   <div className="table-row with-dropdown">
                     <div className="table-row">
@@ -200,7 +203,7 @@ const Profile = () => {
           src="/src/assets/icon/profile 2.png"
           alt="Side Image"
           className="side-image"
-          style={{ width: '172px', height: '172px', alignSelf: 'flex-start', marginRight: '16px', borderRadius: '12px' }}
+          style={{ width: '172px', height: '172px', alignSelf: 'flex-start', marginRight: '40px', borderRadius: '12px' }}
         />
       </div>
     </div>

@@ -1,7 +1,12 @@
 /* Header Styles */
-.header-profile {
+
+.profile {
+  width: 1200px;
+}
+
+.header {
   width: 100%;
-  background-color: #FCFCFC;
+  background-color: #fff;
   padding: 10px 15px;
   color: #45464E;
   display: flex;
@@ -40,6 +45,7 @@
 .icon-home-img {
   width: 20px;
   height: 20px;
+  color: #F4518D; /* Warna pink */
 }
 
 /* Subtitle Styles */
@@ -71,6 +77,7 @@
 .div-icon-bar {
   width: 20px;
   height: 20px;
+  fill: #F4518D; 
 }
 
 .div-image {
@@ -78,6 +85,10 @@
   height: 32px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.table-profile {
+  width: 1200px;
 }
 
 .table-container {
@@ -94,7 +105,7 @@
   max-width: 375px;
   width: 375px;
   position: relative; /* Tambahkan properti position: relative */
-  margin-left: 16px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
+  margin-left: 25px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
 }
 
 .table-container2 {
@@ -109,7 +120,8 @@
   background: var(--input-default-background, rgba(239, 241, 249, 0.60));
   max-width: 375px;
   width: 375px;
-  position: relative; /* Tambahkan properti position: relative */
+  position: relative; 
+  margin-left: -10px; /* Tambahkan properti position: relative */
 /* Tambahkan margin untuk menjauhkan dari tepi kanan */
 }
 
@@ -195,5 +207,5 @@
   width: 172px;
   height: 160px;
   flex-shrink: 0;
-  margin-left: 16px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
+  margin-left: 3px; /* Tambahkan margin untuk menjauhkan dari tepi kanan */
 }

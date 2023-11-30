@@ -1,14 +1,16 @@
 import React from 'react';
 import '../../styles/Header.css';
+import { GoHomeFill } from 'react-icons/go';
+import { IoNotifications } from 'react-icons/io5';
 
 const Header = () => {
   return (
     <div className="header">
       <div className="header-content">
-        <h1>Dashboard</h1>
+        <h3>Dashboard</h3>
         <div className="subtitle">
           <div className="icon-home">
-            <img className="icon-home-img" src="public/asset/Home.svg" alt="Home Icon" />
+            <GoHomeFill className="icon-home-img" />
           </div>
           <div className="subtitle-text">/ Dashboard</div>
         </div>
@@ -17,7 +19,7 @@ const Header = () => {
         {/* Notification Icon */}
         <div className="div-icon">
           <div className="div-icon-inner">
-            <img className="div-icon-bar" src="public/asset/Notification.jpg" alt="Notification Icon" />
+            <IoNotifications className="div-icon-bar" />
           </div>
         </div>
 

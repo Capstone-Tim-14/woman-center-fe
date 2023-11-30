@@ -6,6 +6,8 @@ import { FiMapPin } from 'react-icons/fi';
 import { FaRegBuilding, FaTrash, FaUpload } from 'react-icons/fa';
 import { LuTrash } from 'react-icons/lu';
 import { FiUploadCloud } from 'react-icons/fi';
+import { GoHomeFill } from 'react-icons/go';
+import { IoNotifications } from 'react-icons/io5';
 import Modal from "../components/Molekul/Modal/successModal";
 import FailedModal from "../components/Molekul/Modal/failedModal";
 
@@ -120,29 +122,29 @@ const EditProfile = () => {
   };
 
   return (
-    <div style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+    <div className="editprofile" style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
     <div className="header">
-    <div className="header-content">
-      <h3>Profil</h3>
-      <div className="subtitle">
-        <div className="icon-home">
-          <img className="icon-home-img" src="public/asset/Home.svg" alt="Home Icon" />
-        </div>
-        <div className="subtitle-text">/ Profil</div>
-      </div>
-    </div>
-    <div className="header-icons">
-      {/* Notification Icon */}
-      <div className="div-icon">
-        <div className="div-icon-inner">
-          <img className="div-icon-bar" src="public/asset/Notification.svg" alt="Notification Icon" />
+      <div className="header-content">
+        <h3>Dashboard</h3>
+        <div className="subtitle">
+          <div className="icon-home">
+            <GoHomeFill className="icon-home-img" />
+          </div>
+          <div className="subtitle-text">/ Dashboard</div>
         </div>
       </div>
+      <div className="header-icons">
+        {/* Notification Icon */}
+        <div className="div-icon">
+          <div className="div-icon-inner">
+            <IoNotifications className="div-icon-bar" />
+          </div>
+        </div>
 
-      {/* Profile Image */}
-      <img className="div-image" src="public/asset/profile 1.jpg" alt="Profile Image" />
+        {/* Profile Image */}
+        <img className="div-image" src="src/assets/icon/profile 1.jpg" alt="Profile Image" />
+      </div>
     </div>
-  </div>
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginTop: '20px' }}>
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
         <p style={{ fontSize: '30px', marginRight: '40px', font: 'Raleway-medium/Medium 20', marginLeft: '16px' }}>Pengaturan Akun</p>
@@ -166,13 +168,16 @@ const EditProfile = () => {
             </div>
           </div>
 
-          <div className="form-container1">
+          <div className="form-container">
             <p style={{ marginLeft: '20px', marginBottom: '4px' }}>Email</p>
+            <div className="form-row">
+              <LuMail size={20} style={{ marginRight: '8px' }} />
+              <input type="text" style={{ marginBottom: '8px' }} />
+            </div>
+          </div>
+
+          <div className="form-container1">
             <div className="form-row with-dropdown">
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <LuMail size={20} style={{ marginRight: '8px' }} />
-                <input type="text" style={{ marginBottom: '8px' }} />
-              </div>
               <br />
               <p style={{ marginRight: '100px' }}>Nomor Telepon</p>
               <div style={{ display: 'flex', marginBottom: '8px' }}>

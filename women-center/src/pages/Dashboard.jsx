@@ -6,9 +6,10 @@ import MainBox from "../components/Organism/MainBox";
 import GrafikArtikel from "../components/Organism/GrafikArtikel";
 
 
+
 const Dashboard = () => {
     return (
-        <div>
+        <div > 
             <Header />
             <MainBox />
             <GrafikArtikel />
