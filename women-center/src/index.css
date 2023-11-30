@@ -1,6 +1,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Istok+Web&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Poppins&display=swap');
 
 
 * {
@@ -9,33 +10,8 @@
   box-sizing: border-box;
 }
 
-
-body {
-  background: #fcfcfc;
-  font-family: "Istok Web", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "RocknRoll One", sans-serif !important;
-}
-
-a {
-  text-decoration: none;
-  color: unset;
-}
-
-h1,
-h2 {
-  font-size: 2.1rem;
-  font-weight: 600;
-  color: #212245;
-}
-
-section {
-  padding: 60px 0px;
+:root {
+  --font-raleway: "Raleway", sans-serif;
+  --font-istok-web: "Istok Web", sans-serif;
+  --font-poppins: "Poppins", sans-serif !important;
 }
