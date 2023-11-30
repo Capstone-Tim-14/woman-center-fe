@@ -29,7 +29,8 @@ import { HiOutlineLogout } from "react-icons/hi";
 import ModalTambahAkunUser from '../molekul/modal/modalTambahAkunUser';
 import ModalDataUser from '../molekul/modal/modalDataUser';
 import ModalHapus from '../molekul/modal/modalHapus';
-
+import SearchBar from '../../nova/searchBar';
+import NewTabelUser from './newTabelUser';
 const TabelUser = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDatabaseOpen, setIsDatabaseOpen] = useState(false);
@@ -189,26 +190,25 @@ const TabelUser = () => {
 
 
         <div className="mt-5 p-4">
-          <div className="d-flex justify-content-end mb-3">
+          <div className="d-flex justify-content-end">
           <ModalTambahAkunUser 
             onAddUser={handleAddUser}
             newUserData={newUserData}
             setNewUserData={setNewUserData}
             />
           </div>
-          <div className="mb-3 ">
+          <div className="">
             <Row>
               <Col>
                 <h5>User</h5>
               </Col>
               <Col className="d-flex justify-content-end">
-                <SearchKonselor />
-                <IconCalendar />
-                <IconExport />
+                <SearchBar />
               </Col>
             </Row>
           </div>
-          <Table hover borderless>
+          <NewTabelUser />
+          {/* <Table hover borderless>
             <thead className="table-header">
               <tr>
                 <th>ID User</th>
@@ -293,7 +293,7 @@ const TabelUser = () => {
                 </div>
               </Col>
             </Row>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

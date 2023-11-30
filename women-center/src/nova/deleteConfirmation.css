@@ -1,0 +1,44 @@
+.delete-confirmation-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    max-width: 400px; /* Sesuaikan lebar maksimal sesuai kebutuhan */
+    width: 100%;
+    text-align: center;
+  }
+  
+  .delete-confirmation-modal p {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .delete-confirmation-modal button {
+    margin-top: 10px; /* Tambahkan margin atas */
+    margin-right: 10px; /* Tambahkan margin kanan */
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-confirmation-modal button.cancel-btn {
+    background-color: #fff; /* Warna putih untuk tombol batal */
+    color: #5570F1; /* Warna teks tombol batal */
+    border: 2px solid #5570F1; /* Pinggiran border warna ungu */
+  }
+  
+  .delete-confirmation-modal button.confirm-btn {
+    background: linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%); /* Warna gradasi untuk tombol konfirmasi */
+    color: #fff;
+  }

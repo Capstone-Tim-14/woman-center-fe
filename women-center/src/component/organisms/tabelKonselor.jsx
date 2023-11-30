@@ -30,6 +30,8 @@ import { HiOutlineLogout } from "react-icons/hi";
 import ModalTambahAkunKonselor from '../molekul/modal/modalTambahAkunKonselor';
 import ModalDataKonselor from '../molekul/modal/modalDataKonselor';
 import ModalHapus from '../molekul/modal/modalHapus';
+import NewTabelKonselor from './newTabelKonselor';
+import SearchBar from '../../nova/searchBar';
 const TabelKonselor = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDatabaseOpen, setIsDatabaseOpen] = useState(false);
@@ -184,26 +186,25 @@ const TabelKonselor = () => {
         </div>
 
         <div className="mt-5 p-4">
-          <div className="d-flex justify-content-end mb-3">
+          <div className="d-flex justify-content-end">
           <ModalTambahAkunKonselor 
             onAddKonselor={handleAddKonselor}
             newKonselorData={newKonselorData}
             setNewKonselorData={setNewKonselorData}
           />
           </div>
-          <div className="mb-3 ">
+          <div>
             <Row>
-              <Col>
+              <Col >
                 <h5>Konselor</h5>
               </Col>
               <Col className="d-flex justify-content-end">
-                <SearchKonselor />
-                <IconCalendar />
-                <IconExport />
+                <SearchBar />
               </Col>
             </Row>
           </div>
-          <Table hover borderless>
+          <NewTabelKonselor />
+          {/* <Table hover borderless>
             <thead className="table-header">
               <tr>
                 <th>ID User</th>
@@ -294,7 +295,7 @@ const TabelKonselor = () => {
                 </div>
               </Col>
             </Row>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
