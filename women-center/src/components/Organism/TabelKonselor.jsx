@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import DeleteButton from '../Atom/DeleteButton';
 import { useNavigate } from 'react-router-dom';
-import { IoEyeOutline } from "react-icons/io5";
-import { BsBookmark } from "react-icons/bs";
 import { BiSortAlt2 } from "react-icons/bi";
-import { FaRegComment } from "react-icons/fa";
 import { Button } from 'react-bootstrap';
 import '../../styles/TabelDatabase.css';
 import ModalJadwal from '../Molekul/modal/modalJadwal';

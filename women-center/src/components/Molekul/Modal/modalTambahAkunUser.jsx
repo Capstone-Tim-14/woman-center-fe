@@ -45,7 +45,7 @@ const ModalTambahAkunUser = () => {
     return(
         <>
 
-      <ButtonTambah onClick={handleShow} label="Buat Akun User"/>
+      <ButtonTambah style={{backgroundColor: '#F4518D'}} onClick={handleShow} label="Buat Akun User"/>
 
       <Modal 
         show={show} 

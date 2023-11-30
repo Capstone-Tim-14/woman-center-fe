@@ -6,9 +6,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Header from "../components/Organism/HeaderDatabase";
 import UserText from "../components/Atom/UserText";
-import { HiOutlineUsers } from 'react-icons/hi2';
-import { AiFillHome } from "react-icons/ai";
-import { IoNotifications } from "react-icons/io5";
 import ModalTambahAkunUser from '../components/Molekul/Modal/modalTambahAkunUser.jsx';
 import SearchBar from "../components/Atom/SearchBar.jsx";
 import NewTabelUser from '../components/Organism/TabelUser.jsx';
@@ -113,7 +110,7 @@ const DatabaseUser = () => {
 
 
         <div className="mt-5 p-4">
-          <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-end" >
           <ModalTambahAkunUser 
             onAddUser={handleAddUser}
             newUserData={newUserData}

@@ -109,7 +109,7 @@ const DatabaseKonselor = () => {
         </div>
 
         <div className="mt-5 p-4 ">
-          <div className="d-flex justify-content-end-database">
+          <div className="d-flex justify-content-end">
           <ModalTambahAkunKonselor 
             onAddKonselor={handleAddKonselor}
             newKonselorData={newKonselorData}

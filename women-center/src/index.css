@@ -12,7 +12,7 @@
 
 body {
   background: #fcfcfc;
-  font-family: "Istok Web", sans-serif;
+  font-family: 'Raleway' !important;
 }
 
 h1,
@@ -21,7 +21,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "RocknRoll One", sans-serif !important;
+  font-family: 'Raleway' !important;
 }
 
 a {
