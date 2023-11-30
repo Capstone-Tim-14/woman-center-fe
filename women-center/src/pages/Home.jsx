@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import Header from "../components/Header/header";
-import Fitur from "../components/Fitur/fitur";
-import Fiturdata from "../components/Fitur/fiturdata";
-import Konselinglangsung from "../components/Konseling/konselinglangsung";
+import Header from "../components/Header/header.jsx";
+import Fitur from "../components/Fitur/fitur.jsx";
+import Fiturdata from "../components/Fitur/fiturdata.jsx";
+import Konselinglangsung from "../components/Konseling/konselinglangsung.jsx";
 import Konselorhome from "../components/Konseling/konseling.jsx";
 import { Container, Row, Col,} from "reactstrap";
 import "../styles/home.css";
