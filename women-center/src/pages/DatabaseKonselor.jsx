@@ -80,7 +80,7 @@ const DatabaseKonselor = () => {
             <thead>
               <tr>
                 <th></th>
-                <th><img src="src/assets/icon/icon.svg" alt="User Icon" />User</th>
+                <th><img src="src/assets/icon/icon.svg" alt="Konselor Icon" />Konselor</th>
                 <th></th><th></th>
                 <th></th><th></th>
                 <th></th><th></th>
@@ -94,13 +94,13 @@ const DatabaseKonselor = () => {
             </thead>
             <tbody>
               <tr>
-                <td>User Baru</td>
+                <td>Konselor Baru</td>
                 <td></td><td></td>
                 <td></td><td></td>
-                <td>User Aktif</td>
+                <td>Konselor Aktif</td>
                 <td></td><td></td>
                 <td></td><td></td>
-                <td>Konseling</td>
+                <td>Sesi Konseling</td>
                 <td></td><td></td>
                 <td></td><td></td>
               </tr>
