@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SubContainers from "../components/Organism/SubContainer";
 import AddArticleButton from "../components/Atom/AddArticleButton";
-import Header from "../components/Organism/HeaderContainer";
+import Header from "../components/Organism/HeaderArtikel";
 import UserText from "../components/Atom/UserText";
 import SearchBar from "../components/Atom/SearchBar";
 import TableSection from "../components/Molekul/TableSection";
@@ -33,7 +33,7 @@ const ArtikelContainer = () => {
         <AddArticleButton />
       </div>
 
-      {/* User Text */}
+      {/* UserText */}
       <UserText />
 
       {/* Search Bar */}

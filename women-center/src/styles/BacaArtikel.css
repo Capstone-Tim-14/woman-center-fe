@@ -75,6 +75,9 @@ div {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    position: relative; /* or 'relative' */
+    /* Add other styles as needed */
+      
 }
 
 .close-button .reject {

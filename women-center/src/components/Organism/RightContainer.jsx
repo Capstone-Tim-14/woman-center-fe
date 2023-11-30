@@ -1,4 +1,5 @@
 import React from 'react';
+import { HiOutlineUser } from "react-icons/hi2";
 
 const RightContainer = () => (
   <div className="Interaksi-user">
@@ -6,7 +7,10 @@ const RightContainer = () => (
     <div className="div-header">
       <div className="div-header-content">
         <div className="div-header-right">
-          <img className="icon-image" src="public/asset/User.png" alt="Icon" />
+          {/* Icon */}
+          <div className="icon-box">
+            <HiOutlineUser className="icon-image colored-icon" />
+          </div>
           <div className="div-header-title">Interaksi User</div>
         </div>
       </div>

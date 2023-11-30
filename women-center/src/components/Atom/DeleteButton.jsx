@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DeleteConfirmation from './DeleteConfirmation';
+import { MdDelete } from 'react-icons/md';
 
 const DeleteButton = () => {
   const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -21,7 +22,7 @@ const DeleteButton = () => {
   return (
     <div>
       <button className="delete-button" onClick={handleDeleteClick}>
-        <img src="public/asset/sampah.png" alt="delete-button" />
+        <MdDelete />
       </button>
 
       <DeleteConfirmation

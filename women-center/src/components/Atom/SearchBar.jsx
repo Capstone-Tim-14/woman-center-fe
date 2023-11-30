@@ -1,48 +1,72 @@
-// SearchBar.jsx
 import React, { useState } from 'react';
-import PopUpModal from '../Organism/PopUpModal'; // Impor komponen PopUpModal dari file terpisah
+import { FiSearch } from 'react-icons/fi';
+import PopUpModal from '../Organism/PopUpModal';
+import { LuCalendarDays } from 'react-icons/lu';
+import '../../styles/SearchBar.css';
+
+
+const Searching = ({ value, onChange, onSearch }) => (
+  <div className="d-flex align-items-center py-2 px-3 border rounded-2">
+    <FiSearch className='me-3' />
+    <input
+      type="text"
+      placeholder="Search"
+      value={value}
+      onChange={onChange}
+      onKeyPress={(e) => {
+        if (e.key === 'Enter') {
+          onSearch(); // Trigger search on Enter key press
+        }
+      }}
+      style={{ border: 'none', outline: 'none', backgroundColor: 'transparent' }}
+    />
+  </div>
+);
 
 const SearchBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchText, setSearchText] = useState('');
+  const [searchResults, setSearchResults] = useState([]); // State to store search results
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
 
   const handleSearch = () => {
-    // Lakukan logika pencarian sesuai dengan nilai searchText
     console.log(`Searching for: ${searchText}`);
-    // Tambahkan logika lainnya sesuai kebutuhan, misalnya tampilkan hasil pencarian.
+    // Simulate API call by filtering dummy data
+    const dummyData = [
+      { id: 1, name: 'John Doe' },
+      { id: 2, name: 'Jane Doe' },
+      { id: 3, name: 'Alice Smith' },
+      // Add more dummy data as needed
+    ];
+
+    const filteredData = dummyData.filter(item =>
+      item.name.toLowerCase().includes(searchText.toLowerCase())
+    );
+
+    setSearchResults(filteredData);
+    togglePopup(); // Optionally close the modal after search
   };
 
   return (
     <div className="search-bar">
-      {/* Tombol pencarian */}
-      <button className="search-button" onClick={handleSearch}>
-        <img src='public/asset/Search.jpg' alt="Search-Icon" />
-      </button>
+      <Searching value={searchText} onChange={(e) => setSearchText(e.target.value)} onSearch={handleSearch} />
 
-      {/* Kotak pencarian */}
-      <input
-        type="text"
-        placeholder="Search..."
-        value={searchText}
-        onChange={(e) => setSearchText(e.target.value)}
-        onKeyPress={(e) => {
-          if (e.key === 'Enter') {
-            handleSearch();
-          }
-        }}
-      />
-
-      {/* Ikon filter date */}
       <div className="filter-date-icon" onClick={togglePopup}>
-        <img src='public/asset/filterdate.png' alt="Filter-Date-Icon" />
+        {/* Replace the image with LuCalendarDays icon */}
+        <LuCalendarDays size={25} />
       </div>
 
-      {/* Memanggil komponen PopUpModal */}
-      <PopUpModal isOpen={isOpen} togglePopup={togglePopup} />
+      <PopUpModal isOpen={isOpen} togglePopup={togglePopup}>
+        {/* Display search results */}
+        <ul>
+          {searchResults.map(result => (
+            <li key={result.id}>{result.name}</li>
+          ))}
+        </ul>
+      </PopUpModal>
     </div>
   );
 };

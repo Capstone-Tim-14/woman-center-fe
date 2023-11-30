@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+
 const PopUpModal = ({ isOpen, togglePopup }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [startDate, setStartDate] = useState(null);
@@ -110,9 +111,6 @@ const PopUpModal = ({ isOpen, togglePopup }) => {
         <div className="popup">
           <div className="popup-header">
             <h2>Berdasarkan Tanggal</h2>
-            <button className="close-button" onClick={handleClose}>
-              X
-            </button>
           </div>
           <div>
             {/* Checkbox untuk memilih rentang tanggal */}

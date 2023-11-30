@@ -1,11 +1,12 @@
+
 import React, { useState } from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
-import TextBoxAtom from '../Atom/TextBoxAtom';
-import "../../styles/TextBoxArtikel.css";
+import TextBoxAtom from '../atom/TextBoxAtom';
+import '../../styles/TextBoxArtikel.css';
 
-import FormWithEditor from '../Atom/TextEditor';
+import FormWithEditor from '../atom/TextEditor';
 
-const TextBoxArtikel = ({ onTitleChange, onArticleContentChange }) => {
+const TextBoxArtikel = ({ onTitleChange, onArticleContentChange, onSubmit  }) => {
     const [title, setTitle] = useState('');
     const [articleContent, setArticleContent] = useState('');
   
@@ -17,6 +18,11 @@ const TextBoxArtikel = ({ onTitleChange, onArticleContentChange }) => {
     const handleArticleContentChange = (e) => {
       setArticleContent(e.target.value);
       onArticleContentChange(e.target.value);
+    };
+
+    const handleSubmitForm = () => {
+      // Call the onSubmit prop with the form data
+      onSubmit(title, articleContent);
     };
   
     return (

@@ -338,8 +338,9 @@ th, td {
 }
 
 th {
-  background-color: #fff;
+  background-color: transparent;
 }
+
 
 /* Status Styles */
 .status {
@@ -373,8 +374,9 @@ th {
 }
 
 /* Jika delete button memiliki kelas khusus, misalnya .delete-button */
+
 .delete-button {
-  background: #fff;
+  background: transparent;
   border: none;
   cursor: pointer;
 }
@@ -546,7 +548,7 @@ input[type="date"] {
 display: flex;
 justify-content: space-between;
 align-items: center;
-background-color: #fff;
+background-color: transparent;
 padding: 20px;
 width: 100%;
 }

@@ -1,13 +1,15 @@
-// PageOptions.jsx
 import React, { useState } from 'react';
+import { GrFormPrevious } from "react-icons/gr";
+import { GrFormNext } from "react-icons/gr";
 
-const PageOptions = () => {
+const PageOptions = ({ onPageChange }) => {
   const [selectedPage, setSelectedPage] = useState(1);
-  const totalPages = 44; // Ganti sesuai kebutuhan
+  const totalPages = 44; // Change as needed
 
   const handlePageChange = (newPage) => {
     // Handle logic when page is changed (e.g., fetching data for the new page)
     setSelectedPage(newPage);
+    onPageChange(newPage);
   };
 
   const generatePageOptions = () => {
@@ -28,6 +30,12 @@ const PageOptions = () => {
         {generatePageOptions()}
       </select>
       <p>of {totalPages} pages</p>
+      <button onClick={() => handlePageChange(selectedPage - 1)} disabled={selectedPage === 1}>
+        <GrFormPrevious />
+      </button>
+      <button onClick={() => handlePageChange(selectedPage + 1)} disabled={selectedPage === totalPages}>
+        <GrFormNext />
+      </button>
     </div>
   );
 };
