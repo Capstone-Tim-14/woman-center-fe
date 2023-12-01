@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Karir from './Karir';
+import DeleteConfirmation from './atom/DeleteConfirmation';
 import DeleteButton from './atom/DeleteButton';
 import { useNavigate } from 'react-router-dom';
 import { IoEyeOutline } from "react-icons/io5";
@@ -138,7 +140,7 @@ const TabelKarir = () => {
     </div>
     
     {selectedRow && (
-        <ReviewArtikel
+        <Karir
           show={showReviewModal}
           handleClose={handleCloseReviewModal}
         />
