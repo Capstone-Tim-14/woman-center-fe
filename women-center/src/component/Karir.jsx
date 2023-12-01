@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './Karir.css';
 import { FiUploadCloud, FiTrash2 } from "react-icons/fi";
 import { MdEditSquare } from "react-icons/md";
+import { CiSquarePlus } from "react-icons/ci";
+import JobType from './molekul/JobTypeModal';
 
 // Main component
 const Karir = () => {
@@ -46,7 +48,12 @@ const Karir = () => {
 
   return (
     <>
-      <MdEditSquare color='#F4518D'className="icon-button" onClick={openModal} />
+    {/* ini button edit */}
+      <button onClick={openModal} className="icon-button" style={{background: 'none', border: 'none'}} >
+        <MdEditSquare color='#F4518D'/>
+      </button>
+      
+    {/* ini isinya ketika di klik */}
       {isModalOpen && (
         <div className="modal show">
           <div className="modal-content">
@@ -185,6 +192,17 @@ const Karir = () => {
                         <input type="checkbox" id="sementara" />
                         <label htmlFor="sementara">Sementara</label>
                       </div>
+                      <div className="form-group formcheckbox">
+                        
+                    <button 
+                      type="button"
+                      id="sementara"
+                      style={{ justifyContent: 'center', alignItems: 'center', width: '24px', height: '24px', border: 'none', borderRadius: '6px', cursor: 'pointer', backgroundColor: '#fff'}}>
+                      <CiSquarePlus style={{ color: 'var(--Primary, #5570F1)', fontSize: '18px', cursor: "pointer" }}/>
+                    </button>
+                    
+                      <label htmlFor="sementara">Tambah Jobtype</label>
+                    </div>
                     </div>
                   </div>
                   <div className='row'>

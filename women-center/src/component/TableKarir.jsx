@@ -139,30 +139,16 @@ const TabelKarir = () => {
               <td>{row.uploadDate}</td>
               <div style={{ display: "flex" }}>
               <div
-                style={{ innerWidth: "23px", color: "#F4518D", marginTop: "7px", marginLeft: "50px", cursor: "pointer" }}
-                onClick={() => openKarirModal(row)}
-                >
-                <MdEditSquare />
+                style={{ innerWidth: "23px", color: "#F4518D", marginTop: "7px", marginLeft: "50px", cursor: "pointer" }}>
+                  <Karir/>
                 </div>
-                  <DeleteButton style={{marginLeft:"60px", padding:"10px"}} onClick={confirmDelete} />
+                  <DeleteButton style={{marginLeft:"60px", padding:"10px"}}/>
                 </div>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
-    
-    
-    {showKarirModal && (
-        <Karir closeModal={handleCloseKarirModal} selectedKarir={selectedKarir} />
-      )}
-
-    {selectedRow && (
-        <DeleteConfirmation
-          show={showReviewModal}
-          handleClose={handleCloseReviewModal}
-        />
-    )}
   </div>
 
   );
