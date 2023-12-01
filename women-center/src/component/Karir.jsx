@@ -1,171 +1,220 @@
 import React, { useState } from 'react';
-import DeleteButton from '../atoms/DeleteButton';
-import { useNavigate } from 'react-router-dom';
-import ArtikelModal from '../../component/organism/BacaArtikel';
-import { IoEyeOutline } from "react-icons/io5";
-import { BsBookmark } from "react-icons/bs";
-import { BiSortAlt2 } from "react-icons/bi";
-import { FaRegComment } from "react-icons/fa";
-import './TableSection.css';
-import ReviewArtikel from '../../component/organism/ReviewArtikel';
+import 'bootstrap/dist/css/bootstrap.css';
+import './Karir.css';
+import { FiUploadCloud, FiTrash2 } from "react-icons/fi";
+import { MdEditSquare } from "react-icons/md";
 
-const TableSection = () => {
-  const navigate = useNavigate();
+// Main component
+const Karir = () => {
+  // State variables
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [profileImage, setProfileImage] = useState(null);
+  const [coverImage, setCoverImage] = useState(null);
 
-  const [selectedRow, setSelectedRow] = useState(null);
-  const [showReviewModal, setShowReviewModal] = useState(false);
-
-  const handleRowClick = (row) => {
-    setSelectedRow(row);
-    setShowReviewModal(true);
+  // Modal open/close functions
+  const openModal = () => {
+    console.log('Opening modal');
+    setIsModalOpen(true);
   };
 
-  const handleCloseReviewModal = () => {
-    setShowReviewModal(false);
+  const closeModal = () => {
+    console.log('Closing modal');
+    setIsModalOpen(false);
   };
 
-  // State untuk menyimpan data tabel
-  const [tableData, setTableData] = useState([
-    {
-      id: 1,
-      title: "Article Title 1",
-      contributor: "Contributor 1",
-      engagement: "",
-      userType: "User Type 1",
-      uploadDate: "2023-01-01",
-      status: "Review",
-      viewStatus: true, // Default view status is true
-      commentStatus: true, // Default comment status is true
-      saveStatus: true, // Default save status is true
-    },
-    {
-      id: 2,
-      title: "Article Title 2",
-      contributor: "Contributor 2",
-      engagement: "",
-      userType: "User Type 2",
-      uploadDate: "2023-01-02",
-      status: "Approved",
-      viewStatus: true, // Default view status is false
-      commentStatus: true, // Default comment status is false
-      saveStatus: true, // Default save status is false
-    },
-    {
-      id: 3,
-      title: "Article Title 3",
-      contributor: "Contributor 3",
-      engagement: "",
-      userType: "User Type 3",
-      uploadDate: "2023-01-03",
-      status: "Rejected",
-      viewStatus: true, // Default view status is true
-      commentStatus: true, // Default comment status is true
-      saveStatus: true, // Default save status is true
-    },
-    // Add more rows as needed
-  ]);
-
-  // State untuk menyimpan arah sort dan jenis kolom yang sedang di-sort
-  const [sortConfig, setSortConfig] = useState({
-    key: null,
-    direction: 'ascending',
-  });
-
-  // Fungsi untuk mengurutkan tabel
-  const sortTable = (key) => {
-    let direction = 'ascending';
-    if (sortConfig.key === key && sortConfig.direction === 'ascending') {
-      direction = 'descending';
+  const handleProfileImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setProfileImage(URL.createObjectURL(file));
     }
-    setSortConfig({ key, direction });
-
-    // Lakukan pengurutan data
-    const sortedData = [...tableData].sort((a, b) => {
-      if (direction === 'ascending') {
-        return a[key].localeCompare(b[key]);
-      } else {
-        return b[key].localeCompare(a[key]);
-      }
-    });
-
-    setTableData(sortedData);
   };
 
+  const handleCoverImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setCoverImage(URL.createObjectURL(file));
+    }
+  };
 
-  const confirmDelete = () => {
-    // Tambahkan logika konfirmasi atau hapus di sini
-    console.log('Delete button clicked');
+  const handleDeleteProfileImage = () => {
+    setProfileImage(null);
+  };
+
+  const handleDeleteCoverImage = () => {
+    setCoverImage(null);
   };
 
   return (
-   <div className= "body-container">
-    <div className="table-container">
-      <table className="data-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th onClick={() => sortTable('title')}>
-              Judul Artikel <BiSortAlt2 />
-            </th>
-            <th onClick={() => sortTable('contributor')}>
-              Kontributor <BiSortAlt2 />
-            </th>
-            <th onClick={() => sortTable('engagement')}>
-              Engagement <BiSortAlt2 />
-            </th>
-            <th onClick={() => sortTable('userType')}>
-              Tipe User <BiSortAlt2 />
-            </th>
-            <th onClick={() => sortTable('uploadDate')}>
-              Tanggal Upload <BiSortAlt2 />
-            </th>
-            <th onClick={() => sortTable('status')}>
-              Status <BiSortAlt2 />
-            </th>
-            <th>Aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-          {tableData.map((row) => (
-            <tr key={row.id} onClick={() => handleRowClick(row)}>
-              <td><input type="checkbox" /></td>
-              <td>{row.title}</td>
-              <td>{row.contributor}</td>
-              <td>
-                {row.viewStatus ? <IoEyeOutline /> : null}
-                {row.viewStatus && <span>10</span>} {/* Tambahkan jarak jika viewStatus aktif */}
-                {row.commentStatus ? <FaRegComment /> : null}
-                {row.commentStatus && <span>5</span>} {/* Tambahkan jarak jika commentStatus aktif */}
-                {row.saveStatus ? <BsBookmark /> : null}
-                {row.saveStatus && <span>3</span>} {/* Tambahkan jarak jika saveStatus aktif */}
-              </td>
-              <td>{row.userType}</td>
-              <td>{row.uploadDate}</td>
-              <div className={`status status-${row.status.toLowerCase()}`}>
-                  {row.status === 'Review' && 'Review'}
-                  {row.status === 'Approved' && 'Approved'}
-                  {row.status === 'Rejected' && 'Rejected'}
-                  {/* Tambahkan kondisi untuk status lain jika diperlukan */}
-              </div>
-              <td>
-                <DeleteButton onClick={confirmDelete} />
-                {/* You can add additional buttons/actions here */}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-    
-    {selectedRow && (
-        <ReviewArtikel
-          show={showReviewModal}
-          handleClose={handleCloseReviewModal}
-        />
-    )}
-  </div>
+    <>
+      <MdEditSquare color='#F4518D'className="icon-button" onClick={openModal} />
+      {isModalOpen && (
+        <div className="modal show">
+          <div className="modal-content">
+            <span className="close" onClick={closeModal}>
+              &times;
+            </span>
 
+            <div className='mainText'>
+              <h5 style={{ color: 'black' }}>Edit Rekomendasi Karier</h5>
+              <form className=' m-5'>
+                <div className='row auto'>
+                  <div className='col-3 text-start' style={{ color: 'black' }}>
+                    <label htmlFor="profileImage">Foto Profil</label>
+                    <div className='fotoprofile'>
+                      <div>
+                        {profileImage && (
+                          <>
+                            <div className="uploaded-image-container">
+                              <img
+                                src={profileImage}
+                                alt="Profile Image"
+                                className="uploaded-image"
+                              />
+                            </div>
+                            <FiTrash2 className='delete-icon' onClick={handleDeleteProfileImage} />
+                          </>
+                        )}
+                        <label htmlFor='profileImage' className='upload-icon'>
+                          <FiUploadCloud />
+                          <input
+                            type='file'
+                            id='profileImage'
+                            accept='image/*'
+                            onChange={handleProfileImageChange}
+                            style={{ display: 'none' }}
+                          />
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col-6 text-start' style={{ marginLeft: '-85px', color: 'black' }}>
+                    <label htmlFor="coverImage">Foto Sampul</label>
+                    <div className='fotosampul'>
+                      <div >
+                        {coverImage && (
+                          <>
+                            <img
+                              src={coverImage}
+                              alt="Cover Image"
+                              className="uploaded-image"
+                            />
+                            <FiTrash2 className='delete-icon' onClick={handleDeleteCoverImage} />
+                          </>
+                        )}
+                        <label htmlFor='coverImage' className='upload-icon'>
+                          <FiUploadCloud />
+                          <input
+                            type='file'
+                            id='coverImage'
+                            accept='image/*'
+                            onChange={handleCoverImageChange}
+                            style={{ display: 'none' }}
+                          />
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div className=' row p-2'>
+                  <div className=' col-4 text-start'>
+                  <div className="form-group">
+                      <label htmlFor="namaKarir">Nama Karir</label>
+                      <input type="text" className="forminput" id="namaKarir" placeholder="Nama Karir" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="tanggalDitambahkan">Tanggal Ditambahkan</label>
+                      <input type="text" className="forminput" id="tanggalDitambahkan" placeholder="Tanggal Ditambahkan" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="skillRequirement">Skill Requirement</label>
+                      <input type="text" className="forminput" id="skillRequirement" placeholder="Skill Requirement" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="linkLinkedin">Link Linkedin</label>
+                      <input type="text" className="forminput" id="linkLinkedin" placeholder="Link Linkedin" />
+                    </div>
+                  </div>
+                  <div className=' col-4 text-start'>
+                    <div className="form-group">
+                      <label htmlFor="namaPerusahaan">Nama Perusahaan</label>
+                      <input type="text" className='forminput' id="namaPerusahaan"  placeholder="Nama Perusahaan" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="ukuranPerusahaan">Ukuran Perusahaan Dan Departemen</label>
+                      <input type="text" className='forminput' id="ukuranPerusahaan"  placeholder="Ukuran Perusahaan"/>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="lokasi">Lokasi</label>
+                      <input type="text" className='forminput' id="lokasi"  placeholder="Lokasi" />
+                    </div>
+                  </div>
+                  <div className=' col-4 text-start '>
+                    <label htmlFor="jobType">Job Type</label><br />
+                    <div className='row '>
+                      <div className="form-group formcheckbox">
+                        <input type="checkbox" id="fullTime" />
+                        <label htmlFor="fullTime">Full-Time</label>
+                      </div>
+                      <div className="form-group formcheckbox">
+                        <input type="checkbox" id="freelance" />
+                        <label htmlFor="freelance">Freelance</label>
+                      </div>
+                      <div className="form-group formcheckbox">
+                        <input type="checkbox" id="kontrak" />
+                        <label htmlFor="kontrak">Kontrak</label>
+                      </div>
+                      <div className="form-group formcheckbox">
+                        <input type="checkbox" id="magang" />
+                        <label htmlFor="magang">Magang</label>
+                      </div>
+                      <div className="form-group formcheckbox">
+                        <input type="checkbox" id="remote" />
+                        <label htmlFor="remote">Remote</label>
+                      </div>
+                      <div className="form-group formcheckbox">
+                        <input type="checkbox" id="proyek" />
+                        <label htmlFor="proyek">Proyek</label>
+                      </div>
+                      <div className="form-group formcheckbox">
+                        <input type="checkbox" id="shift" />
+                        <label htmlFor="shift">Shift</label>
+                      </div>
+                      <div className="form-group formcheckbox">
+                        <input type="checkbox" id="sementara" />
+                        <label htmlFor="sementara">Sementara</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='row'>
+                    <div className='col-4 text-start '>
+                      <div className="form-group">
+                        <label htmlFor="aboutJob">About The Job</label> <br />
+                        <textarea className='formabout' id="aboutJob"  placeholder="About The Job"></textarea>
+                      </div>
+                    </div>
+                    <div className='col-4 text-start'>
+                      <div className="form-group">
+                        <label htmlFor="aboutCompany">About The Company</label> <br />
+                        <textarea className='formabout' id="aboutCompany"  placeholder="About The Company"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='row'>
+                    <div className='col text-end'>
+                      <button className='btnbatal'>Batal</button>
+                      <button className='buttonsave'>Simpan</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
-export default TableSection;
+export default Karir;
