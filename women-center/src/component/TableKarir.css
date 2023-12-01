@@ -1,0 +1,9 @@
+.mainText{
+    color: var(--black-4, #5E6366);
+    font-family: Raleway-regular/12;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+  }
