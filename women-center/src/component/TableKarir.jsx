@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { IoEyeOutline } from "react-icons/io5";
 import { BsBookmark } from "react-icons/bs";
 import { BiSortAlt2 } from "react-icons/bi";
+import { MdEditSquare } from "react-icons/md";
 import { FaRegComment } from "react-icons/fa";
 import './TableKarir.css';
+
 
 const TabelKarir = () => {
   const navigate = useNavigate();
@@ -27,9 +29,9 @@ const TabelKarir = () => {
     {
       id: 1,
       title: "Article Title 1",
-      contributor: "Contributor 1",
+      contributor: "Karir 1",
       engagement: "",
-      userType: "User Type 1",
+      userType: "Nama Perusahaan",
       uploadDate: "2023-01-01",
       status: "Review",
       viewStatus: true, // Default view status is true
@@ -39,9 +41,9 @@ const TabelKarir = () => {
     {
       id: 2,
       title: "Article Title 2",
-      contributor: "Contributor 2",
+      contributor: "Karir 2",
       engagement: "",
-      userType: "User Type 2",
+      userType: "Nama Perusahaan",
       uploadDate: "2023-01-02",
       status: "Approved",
       viewStatus: true, // Default view status is false
@@ -51,9 +53,9 @@ const TabelKarir = () => {
     {
       id: 3,
       title: "Article Title 3",
-      contributor: "Contributor 3",
+      contributor: "Karir 3",
       engagement: "",
-      userType: "User Type 3",
+      userType: "Nama Perusahaan",
       uploadDate: "2023-01-03",
       status: "Rejected",
       viewStatus: true, // Default view status is true
@@ -103,22 +105,16 @@ const TabelKarir = () => {
           <tr>
             <th></th>
             <th onClick={() => sortTable('title')}>
-              Judul Artikel <BiSortAlt2 />
+              ID Karir <BiSortAlt2 />
             </th>
             <th onClick={() => sortTable('contributor')}>
-              Kontributor <BiSortAlt2 />
+              Karir <BiSortAlt2 />
             </th>
             <th onClick={() => sortTable('engagement')}>
-              Engagement <BiSortAlt2 />
-            </th>
-            <th onClick={() => sortTable('userType')}>
-              Tipe User <BiSortAlt2 />
+              Nama Perusahaan <BiSortAlt2 />
             </th>
             <th onClick={() => sortTable('uploadDate')}>
-              Tanggal Upload <BiSortAlt2 />
-            </th>
-            <th onClick={() => sortTable('status')}>
-              Status <BiSortAlt2 />
+              Tanggal Ditambahkan <BiSortAlt2 />
             </th>
             <th>Aksi</th>
           </tr>
@@ -127,28 +123,14 @@ const TabelKarir = () => {
           {tableData.map((row) => (
             <tr key={row.id} onClick={() => handleRowClick(row)}>
               <td><input type="checkbox" /></td>
-              <td>{row.title}</td>
+              <td>{row.id}</td>
               <td>{row.contributor}</td>
-              <td>
-                {row.viewStatus ? <IoEyeOutline /> : null}
-                {row.viewStatus && <span>10</span>} {/* Tambahkan jarak jika viewStatus aktif */}
-                {row.commentStatus ? <FaRegComment /> : null}
-                {row.commentStatus && <span>5</span>} {/* Tambahkan jarak jika commentStatus aktif */}
-                {row.saveStatus ? <BsBookmark /> : null}
-                {row.saveStatus && <span>3</span>} {/* Tambahkan jarak jika saveStatus aktif */}
-              </td>
               <td>{row.userType}</td>
               <td>{row.uploadDate}</td>
-              <div className={`status status-${row.status.toLowerCase()}`}>
-                  {row.status === 'Review' && 'Review'}
-                  {row.status === 'Approved' && 'Approved'}
-                  {row.status === 'Rejected' && 'Rejected'}
-                  {/* Tambahkan kondisi untuk status lain jika diperlukan */}
-              </div>
-              <td>
-                <DeleteButton onClick={confirmDelete} />
-                {/* You can add additional buttons/actions here */}
-              </td>
+              <div style={{ display: "flex" }}>
+                    <MdEditSquare style={{innerWidth:"23px", color: "#F4518D", marginTop: "10px", marginLeft: "50px"}} onClick={() => handleEdit(row)} />
+                    <DeleteButton style={{marginLeft:"60px", padding:"10px"}} onClick={confirmDelete} />
+                  </div>
             </tr>
           ))}
         </tbody>
