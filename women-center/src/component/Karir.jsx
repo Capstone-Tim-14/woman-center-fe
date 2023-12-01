@@ -44,9 +44,8 @@ const Karir = () => {
     setCoverImage(null);
   };
 
-  return (
+  return ( 
     <>
-      <MdEditSquare color='#F4518D'className="icon-button" onClick={openModal} />
       {isModalOpen && (
         <div className="modal show">
           <div className="modal-content">

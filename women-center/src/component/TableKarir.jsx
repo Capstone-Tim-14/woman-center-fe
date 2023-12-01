@@ -3,8 +3,6 @@ import Karir from './Karir';
 import DeleteConfirmation from './atom/DeleteConfirmation';
 import DeleteButton from './atom/DeleteButton';
 import { useNavigate } from 'react-router-dom';
-import { IoEyeOutline } from "react-icons/io5";
-import { BsBookmark } from "react-icons/bs";
 import { BiSortAlt2 } from "react-icons/bi";
 import { MdEditSquare } from "react-icons/md";
 import { FaRegComment } from "react-icons/fa";
@@ -16,6 +14,8 @@ const TabelKarir = () => {
 
   const [selectedRow, setSelectedRow] = useState(null);
   const [showReviewModal, setShowReviewModal] = useState(false);
+  const [showKarirModal, setShowKarirModal] = useState(false);
+  const [selectedKarir, setSelectedKarir] = useState(null);
 
   const handleRowClick = (row) => {
     setSelectedRow(row);
@@ -26,6 +26,14 @@ const TabelKarir = () => {
     setShowReviewModal(false);
   };
 
+  const handleCloseKarirModal = () => {
+    setShowKarirModal(false);
+  };
+
+  const openKarirModal = (row) => {
+    setSelectedKarir(row); // Set the selectedKarir state
+    setShowKarirModal(true);
+  };
   // State untuk menyimpan data tabel
   const [tableData, setTableData] = useState([
     {
@@ -130,17 +138,27 @@ const TabelKarir = () => {
               <td>{row.userType}</td>
               <td>{row.uploadDate}</td>
               <div style={{ display: "flex" }}>
-                    <MdEditSquare style={{innerWidth:"23px", color: "#F4518D", marginTop: "10px", marginLeft: "50px"}} onClick={() => handleEdit(row)} />
-                    <DeleteButton style={{marginLeft:"60px", padding:"10px"}} onClick={confirmDelete} />
-                  </div>
+              <div
+                style={{ innerWidth: "23px", color: "#F4518D", marginTop: "7px", marginLeft: "50px", cursor: "pointer" }}
+                onClick={() => openKarirModal(row)}
+                >
+                <MdEditSquare />
+                </div>
+                  <DeleteButton style={{marginLeft:"60px", padding:"10px"}} onClick={confirmDelete} />
+                </div>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
     
+    
+    {showKarirModal && (
+        <Karir closeModal={handleCloseKarirModal} selectedKarir={selectedKarir} />
+      )}
+
     {selectedRow && (
-        <Karir
+        <DeleteConfirmation
           show={showReviewModal}
           handleClose={handleCloseReviewModal}
         />

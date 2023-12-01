@@ -1,4 +1,5 @@
 import React from 'react';
+import './DeleteConfirmation.css';
 
 const DeleteConfirmation = ({ isOpen, onCancel, onConfirm }) => {
   return (
