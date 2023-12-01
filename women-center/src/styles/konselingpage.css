@@ -4,7 +4,7 @@
 }
 
 .konseling{
-  margin-bottom: 190px;
+  margin-bottom: 110px;
     
 }
 .title-konseling{
@@ -89,7 +89,7 @@
   font-weight: 700;
   line-height: normal;
   margin-left: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
  
 .img-ksl{
@@ -242,6 +242,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: absolute;
   z-index: 2;
+  margin-top: -50px;
 }
   
 .text-container h2 {
@@ -352,7 +353,7 @@
 .original-price{
   text-align: right;
   font-family: 'Raleway';
-  font-size: 24px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
