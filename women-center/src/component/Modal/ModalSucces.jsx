@@ -22,7 +22,7 @@ const ModalSucces = ({ isOpen, onClose }) => {
   return (
     <div className="modal" style={modalStyle}>
       <div className="modal-content d-flex flex-column gap-1">
-        <img src="src/assets/Group.svg" alt="Ceklis" style={imageStyle} />
+        <img src="src/assets/gambar/x.png" alt="Ceklis" style={imageStyle} />
         <h5 style={{ textAlign: 'center' }}>BERHASIL!</h5>
 
         <div className='d-flex flex-column align-items-center'>

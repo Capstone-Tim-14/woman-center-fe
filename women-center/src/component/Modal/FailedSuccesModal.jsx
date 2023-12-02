@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Modal from './modalsucces';  // Perbaiki impor sesuai dengan nama komponen
-import FailedModal from './failedmodal';  // Sesuaikan impor dengan nama yang benar
-import './modal.css';
+import Modal from './ModalSucces';  // Sesuaikan impor dengan nama yang benar
+import FailedModal from './FailedModal';  // Sesuaikan impor dengan nama yang benar
+import './Modal.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
