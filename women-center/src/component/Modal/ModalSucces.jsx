@@ -27,7 +27,7 @@ const ModalSucces = ({ isOpen, onClose }) => {
     <div className="modal" style={modalStyle}>
       <div className="modal-content d-flex flex-column gap-1">
         <img src="src/assets/gambar/x.png" alt="Ceklis" style={imageStyle} />
-        <h5 style={{ ...centerText, fontSize: '24px', marginLeft:'80px' }}>BERHASIL!</h5>
+        <h5 style={{ ...centerText, fontSize: '24px', marginLeft:'80px', marginTop:'10px' }}>BERHASIL!</h5>
         <div className='d-flex flex-column align-items-center'>
           <p style={{ textAlign: 'center', marginLeft:'10px' }}>Data berhasil disimpan dengan baik</p>
           <button onClick={onClose} id='closeSucces' className='rounded-3 btn btn-primary' style={{width:'140px', marginLeft:'20px'}}>OK</button>
