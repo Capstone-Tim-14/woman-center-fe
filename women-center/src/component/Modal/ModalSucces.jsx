@@ -1,14 +1,11 @@
 import React from 'react';
-import './Modal.css'
+import './Modal.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 const ModalSucces = ({ isOpen, onClose }) => {
   const modalStyle = {
     display: isOpen ? 'block' : 'none',
-    // Mengatur posisi menjadi fixed untuk memudahkan pemrosesan
     position: 'fixed',
-    // Menengahkan modal di tengah vertikal dan horizontal
     top: '50%',
     left: '50%',
     width: '360px',
@@ -18,8 +15,8 @@ const ModalSucces = ({ isOpen, onClose }) => {
   const imageStyle = {
     width: '100px',
     height: '100px',
-    margin: '0 auto',  // Menengahkan gambar secara horizontal
-    display: 'block',  // Mengatasi margin: auto yang hanya berfungsi pada elemen block
+    margin: '0 auto',
+    display: 'block',
   };
 
   return (
@@ -28,11 +25,9 @@ const ModalSucces = ({ isOpen, onClose }) => {
         <img src="src/assets/Group.svg" alt="Ceklis" style={imageStyle} />
         <h5 style={{ textAlign: 'center' }}>BERHASIL!</h5>
 
-        <div  className='d-flex flex-column'>
-          <p style={{ textAlign: 'center' }}>Data berhasil di simpan dengan baik</p>
-          <div className='d-flex justify-content-center'>
-            <button onClick={onClose} id='closeSucces' className='rounded-3'>OK</button>
-          </div>
+        <div className='d-flex flex-column align-items-center'>
+          <p style={{ textAlign: 'center' }}>Data berhasil disimpan dengan baik</p>
+          <button onClick={onClose} id='closeSucces' className='rounded-3 btn btn-primary'>OK</button>
         </div>
       </div>
     </div>
