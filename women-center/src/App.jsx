@@ -6,7 +6,7 @@ import Medel from "./component/Modal/FailedSuccesModal";
 import JobType from "./component/molekul/JobTypeModal";
 
 function App() {
-  return <Medel/>
+  return <TabelKarir/>
 }
 
 export default App;

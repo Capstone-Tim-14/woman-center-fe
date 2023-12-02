@@ -27,7 +27,7 @@
 }
 
 
-button {
+.button-modal {
   background: linear-gradient(257.34deg, #FD8BA3 0%, #FF5BCD 100%);
   color: #fff;
   padding: 10px 20px;
@@ -36,6 +36,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button-modal:hover {
   background: linear-gradient(257.34deg, #FF5BCD 0%, #FD8BA3 100%);
 }

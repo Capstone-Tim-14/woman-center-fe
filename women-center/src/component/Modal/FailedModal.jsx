@@ -32,7 +32,7 @@ const FailedModal = ({ isOpen, onClose }) => {
         <h5 style={{ ...centerText, fontSize: '24px', marginLeft:'95px', marginTop:'10px' }}>GAGAL!</h5>
         <div className='d-flex flex-column align-items-center'>
           <p style={{ textAlign: 'center', marginLeft:'10px' }}>Data berhasil disimpan dengan baik</p>
-          <button onClick={onClose} id='closeSucces' className='rounded-3 btn btn-primary' style={{width:'140px', marginLeft:'20px'}}>OK</button>
+          <button onClick={onClose} id='closeSucces' className='rounded-3 btn button-modal' style={{width:'140px', marginLeft:'20px', color:'white'}}>OK</button>
         </div>
       </div>
     </div>
