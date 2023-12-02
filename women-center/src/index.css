@@ -8,10 +8,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: 1px solid red; */
 }
 
 :root {
   --font-raleway: "Raleway", sans-serif;
   --font-istok-web: "Istok Web", sans-serif;
   --font-poppins: "Poppins", sans-serif !important;
+}
+
+td{
+  word-break: break-all;
+  overflow-x: auto;
 }

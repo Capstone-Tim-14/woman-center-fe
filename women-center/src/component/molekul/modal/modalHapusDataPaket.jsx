@@ -3,7 +3,7 @@ import { Modal } from 'react-bootstrap';
 import Buttons from '../../atom/button/buttons';
 import ButtonClose from '../../atom/button/buttonsClose';
 
-function ModalHapusData() {
+function ModalHapusData (props) {
   
   const [show, setShow] = useState(false);
 
@@ -15,7 +15,10 @@ function ModalHapusData() {
     <button
       style={{border: 'none', background: 'none'}}
       onClick={handleShow}>
-      <img src="src/assets/icons/Delete.png" alt="" />
+      <img 
+        src="src/assets/icons/Delete.png" 
+        alt="" 
+        style={{width: '16px', height: '18px'}}/>
     </button>
 
     <Modal 
@@ -37,8 +40,8 @@ function ModalHapusData() {
             </div>
 
             <div className='d-flex justify-content-center gap-2'>
-              <Buttons variant="secondary" onClick={handleClose} teks="Batal"/>
-              <Buttons variant="primary" onClick={handleClose} teks="Hapus"/>
+              <Buttons variant="secondary" onclick={handleClose} teks="Batal"/>
+              <Buttons variant="primary" onclick={(e) => props.clicked(e)} teks="Hapus"/>
             </div>
           </div>
         </div>

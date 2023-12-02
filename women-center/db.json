@@ -1,0 +1,22 @@
+{
+  "Sesi": [
+    {
+      "id": 1,
+      "user": "Rahmat Siregar",
+      "konselor": "Nindy Amelia",
+      "paket": "Paket 1",
+      "tglDibuat": "01-03-2022",
+      "tglPertemuan": "22-03-2022",
+      "status": "Menunggu"
+    },
+    {
+      "id": 2,
+      "user": "Uzumaki Naruto",
+      "konselor": "Hinata Hyuga",
+      "paket": "Paket 2",
+      "tglDibuat": "01-04-2022",
+      "tglPertemuan": "01-05-2022",
+      "status": "Menunggu"
+    }
+  ]
+}
