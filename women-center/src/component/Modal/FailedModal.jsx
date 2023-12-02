@@ -14,21 +14,25 @@ const FailedModal = ({ isOpen, onClose }) => {
   };
 
   const imageStyle = {
-    width: '100px',
-    height: '100px',
+    width: '200px',
+    height: '200px',
     margin: '0 auto',
     display: 'block',
   };
+
+  const centerText = {
+    textAlign: 'center',
+  };
+
 
   return (
     <div className="modal" style={modalStyle}>
       <div className="modal-content d-flex flex-column gap-1">
         <img src="src/assets/gambar/ceklis.png" alt="Ceklis" style={imageStyle} />
-        <h5 style={{ textAlign: 'center' }}>Gagal!</h5>
-
+        <h5 style={{ ...centerText, fontSize: '24px', marginLeft:'95px' }}>GAGAL!</h5>
         <div className='d-flex flex-column align-items-center'>
-          <p style={{ textAlign: 'center' }}>Data berhasil disimpan dengan baik</p>
-          <button onClick={onClose} id='closeSucces' className='rounded-3 btn btn-primary'>OK</button>
+          <p style={{ textAlign: 'center', marginLeft:'10px' }}>Data berhasil disimpan dengan baik</p>
+          <button onClick={onClose} id='closeSucces' className='rounded-3 btn btn-primary' style={{width:'140px', marginLeft:'20px'}}>OK</button>
         </div>
       </div>
     </div>
