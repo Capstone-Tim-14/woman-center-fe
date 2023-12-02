@@ -192,17 +192,11 @@ const Karir = () => {
                         <input type="checkbox" id="sementara" />
                         <label htmlFor="sementara">Sementara</label>
                       </div>
+
                       <div className="form-group formcheckbox">
-                        
-                    <button 
-                      type="button"
-                      id="sementara"
-                      style={{ justifyContent: 'center', alignItems: 'center', width: '24px', height: '24px', border: 'none', borderRadius: '6px', cursor: 'pointer', backgroundColor: '#fff'}}>
-                      <CiSquarePlus style={{ color: 'var(--Primary, #5570F1)', fontSize: '18px', cursor: "pointer" }}/>
-                    </button>
-                    
-                      <label htmlFor="sementara">Tambah Jobtype</label>
-                    </div>
+                      {/* ini yang ditambahkan */}
+                      <JobType label="Tambah Jobtype"/>
+                      </div>
                     </div>
                   </div>
                   <div className='row'>

@@ -1,22 +1,28 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { CiSquarePlus } from "react-icons/ci";
 import './JobTypeModal.css';
 
-function JobType() {
+function JobType({label}) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = (e) =>{
+    e.preventDefault();
+    setShow(true);
+  }
 
   return (
     <>
-      <button onClick={openModal} className="icon-button" style={{background: 'none', border: 'none'}} >
+      <button 
+        onClick={handleShow} 
+        className="icon-button" 
+        style={{background: 'none', border: 'none'}}>
         <CiSquarePlus style={{ color: 'var(--Primary, #5570F1)', fontSize: '18px'}}/>
+        {label}
       </button>
 
-
-<div className="job-type-modal">
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title className='head-text'>Tambahkan Jobtype Lainnya</Modal.Title>
@@ -57,7 +63,6 @@ function JobType() {
 
             </Modal.Footer>
       </Modal>
-</div>
     </>
   );
 }

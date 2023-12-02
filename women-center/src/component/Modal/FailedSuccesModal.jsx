@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Modal from './ModalSucces';
-import FailedModal from './FailedModal';
-import "./Modal.css"
+import Modal from './successModal';
+import FailedModal from './failedModal';
+import './ModalSuccess.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

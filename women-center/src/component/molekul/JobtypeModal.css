@@ -1,22 +1,4 @@
-.job-type-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 28px 24px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 28px;
-    border-radius: 12px;
-    background: #FFF;
-    z-index: 1000;
-    max-width: 10px; /* Adjust the maximum width as needed */
-    width: 10%;
-    text-align: left;
-  }
-  
-  
-  
+
   .head-text{
     color: var(--neutral-neutral, #1F1F1F);
     text-align: center;
