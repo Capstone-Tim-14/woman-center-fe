@@ -29,14 +29,17 @@ function JobType({ label }) {
       handleClose();
 
       // Additional logic to show success or failure modal based on the result
+      setShowMedel(true);
+
       if (saveSuccessful) {
         setModalType('success');
       } else {
         setModalType('failed');
       }
-
-      setShowMedel(true);
-    }, 2000); // Simulating an asynchronous operation
+  
+      handleClose(); // Close the modal after saving
+  
+    }, 200); // Simulating an asynchronous operation
   };
 
   const handleCloseMedel = () => {
