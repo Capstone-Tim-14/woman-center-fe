@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './Karir.css';
 import { FiUploadCloud, FiTrash2 } from "react-icons/fi";
 import { MdEditSquare } from "react-icons/md";
-import { CiSquarePlus } from "react-icons/ci";
+import FailedModal from './Modal/FailedModal';
+import ModalSucces from './Modal/ModalSucces';
 import JobType from './molekul/JobTypeModal';
 
 // Main component
@@ -12,6 +13,20 @@ const Karir = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [profileImage, setProfileImage] = useState(null);
   const [coverImage, setCoverImage] = useState(null);
+  const [modalFailed, setModalFailed] = useState(false);
+  const [modalSuccess, setModalSuccess] = useState(false);
+
+  // Form data nanti kamu sesuaiin dengan nama data yang kamu buat
+  const [formData, setFormData] = useState({
+    namaKarir: '',
+    tanggalDitambahkan: '',
+    skillRequirement: '',
+    linkLinkedin: '',
+    namaPerusahaan: '',
+    emailPerusahaan: '',
+    ukuranPerusahaan: '',
+    lokasi: ''
+  })
 
   // Modal open/close functions
   const openModal = () => {
@@ -45,6 +60,28 @@ const Karir = () => {
   const handleDeleteCoverImage = () => {
     setCoverImage(null);
   };
+
+  // handle form data juga perlu diubah dengan nama data yang kamu buat sama masukin image
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  }
+
+  // menyimpan Data
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Tambahkan logika untuk menyimpan data pake axios Ociiiiiiiiii
+
+    if (!formData.namaKarir || !formData.tanggalDitambahkan || !formData.skillRequirement) {
+      setModalFailed(true); // Tampilkan modal kegagalan jika ada data yang tidak lengkap
+      return;
+    }else{
+      setModalSuccess(true);
+    }
+  }
 
   return (
     <>
@@ -128,33 +165,81 @@ const Karir = () => {
                   <div className=' col-4 text-start'>
                   <div className="form-group">
                       <label htmlFor="namaKarir">Nama Karir</label>
-                      <input type="text" className="forminput" id="namaKarir" placeholder="Nama Karir" />
+                      <input 
+                        type="text" 
+                        className="forminput"
+                        value={formData.namaKarir}
+                        name="namaKarir"
+                        id="namaKarir"
+                        onChange={handleChange}
+                        placeholder="Nama Karir" />
                     </div>
                     <div className="form-group">
                       <label htmlFor="tanggalDitambahkan">Tanggal Ditambahkan</label>
-                      <input type="text" className="forminput" id="tanggalDitambahkan" placeholder="Tanggal Ditambahkan" />
+                      <input 
+                        type="text" 
+                        className="forminput"
+                        value={formData.tanggalDitambahkan}
+                        onChange={handleChange}
+                        name="tanggalDitambahkan" 
+                        id="tanggalDitambahkan" 
+                        placeholder="Tanggal Ditambahkan" />
                     </div>
                     <div className="form-group">
                       <label htmlFor="skillRequirement">Skill Requirement</label>
-                      <input type="text" className="forminput" id="skillRequirement" placeholder="Skill Requirement" />
+                      <input 
+                        type="text" 
+                        className="forminput"
+                        value={formData.skillRequirement}
+                        onChange={handleChange}
+                        name="skillRequirement" 
+                        id="skillRequirement" 
+                        placeholder="Skill Requirement"/>
                     </div>
                     <div className="form-group">
                       <label htmlFor="linkLinkedin">Link Linkedin</label>
-                      <input type="text" className="forminput" id="linkLinkedin" placeholder="Link Linkedin" />
+                      <input 
+                        type="text" 
+                        className="forminput" 
+                        value={formData.linkLinkedin}
+                        onChange={handleChange}
+                        name="linkLinkedin" 
+                        id="linkLinkedin" 
+                        placeholder="Link Linkedin" />
                     </div>
                   </div>
                   <div className=' col-4 text-start'>
                     <div className="form-group">
                       <label htmlFor="namaPerusahaan">Nama Perusahaan</label>
-                      <input type="text" className='forminput' id="namaPerusahaan"  placeholder="Nama Perusahaan" />
+                      <input 
+                        type="text" 
+                        className='forminput'
+                        value={formData.namaPerusahaan}
+                        onChange={handleChange} 
+                        name="namaPerusahaan"  
+                        id="namaPerusahaan"  
+                        placeholder="Nama Perusahaan" />
                     </div>
                     <div className="form-group">
                       <label htmlFor="ukuranPerusahaan">Ukuran Perusahaan Dan Departemen</label>
-                      <input type="text" className='forminput' id="ukuranPerusahaan"  placeholder="Ukuran Perusahaan"/>
+                      <input 
+                        type="text" 
+                        className='forminput'
+                        value={formData.ukuranPerusahaan}
+                        onChange={handleChange}
+                        name="ukuranPerusahaan"  
+                        placeholder="Ukuran Perusahaan"/>
                     </div>
                     <div className="form-group">
                       <label htmlFor="lokasi">Lokasi</label>
-                      <input type="text" className='forminput' id="lokasi"  placeholder="Lokasi" />
+                      <input 
+                        type="text" 
+                        className='forminput' 
+                        value={formData.lokasi}
+                        onChange={handleChange}
+                        name="lokasi"
+                        id="lokasi"  
+                        placeholder="Lokasi" />
                     </div>
                   </div>
                   <div className=' col-4 text-start '>
@@ -216,11 +301,18 @@ const Karir = () => {
                   <div className='row'>
                     <div className='col text-end'>
                       <button className='btnbatal'>Batal</button>
-                      <button className='buttonsave'>Simpan</button>
+                      <button className='buttonsave' onClick={handleSubmit}>Simpan</button>
                     </div>
                   </div>
                 </div>
               </form>
+              <FailedModal 
+                isOpen={modalFailed} 
+                onClose={() => setModalFailed(false)}/>
+              <ModalSucces 
+                isOpen={modalSuccess}
+                teks="Sukses merubah informasi karier"
+                onClose={() => setModalSuccess(false)}/>
             </div>
           </div>
         </div>

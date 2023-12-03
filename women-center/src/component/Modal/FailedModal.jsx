@@ -31,7 +31,7 @@ const FailedModal = ({ isOpen, onClose }) => {
         <img src="src/assets/gambar/ceklis.png" alt="Ceklis" style={imageStyle} />
         <h5 style={{ ...centerText, fontSize: '24px', marginLeft:'95px', marginTop:'10px' }}>GAGAL!</h5>
         <div className='d-flex flex-column align-items-center'>
-          <p style={{ textAlign: 'center', marginLeft:'10px' }}>Data berhasil disimpan dengan baik</p>
+          <p style={{ textAlign: 'center', marginLeft:'10px' }}>Telah terjadi kesalahan coba lagi</p>
           <button onClick={onClose} id='closeSucces' className='rounded-3 btn button-modal' style={{width:'140px', marginLeft:'20px', color:'white'}}>OK</button>
         </div>
       </div>
