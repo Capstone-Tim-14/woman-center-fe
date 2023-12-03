@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style/Berhasil.css';
+import '../../../style/Berhasil.css';
 import OKButton from '../../atom/button/OKButton';
 
 const Berhasil = ({ handleClose }) => {

@@ -2,6 +2,7 @@ import React from 'react'
 import Tabel from 'react-bootstrap/Table'
 import ModalHapusData from '../modal/modalHapusDataPaket'
 import SearchPaket from '../../atom/inputan/searchPaket'
+import TambahPaket from '../modal/tambahpaket'
 
 
 function TabelPaket() {
@@ -15,7 +16,7 @@ function TabelPaket() {
         <p className='m-0'>Paket</p>
         <div className='d-flex align-items-center gap-2'>
           <SearchPaket />
-          <ModalHapusData />
+          <TambahPaket />
         </div>
       </div>
 

@@ -7,7 +7,7 @@
       "paket": "Paket 1",
       "tglDibuat": "01-03-2022",
       "tglPertemuan": "22-03-2022",
-      "status": "Menunggu"
+      "status": "Today"
     },
     {
       "id": 2,
@@ -16,7 +16,34 @@
       "paket": "Paket 2",
       "tglDibuat": "01-04-2022",
       "tglPertemuan": "01-05-2022",
-      "status": "Menunggu"
+      "status": "Today"
+    },
+    {
+      "id": 3,
+      "user": "Uzumaki Naruto",
+      "konselor": "Hinata Hyuga",
+      "paket": "Paket 2",
+      "tglDibuat": "01-04-2022",
+      "tglPertemuan": "01-05-2022",
+      "status": "Today"
+    },
+    {
+      "id": 4,
+      "user": "Uzumaki Naruto",
+      "konselor": "Hinata Hyuga",
+      "paket": "Paket 2",
+      "tglDibuat": "01-04-2022",
+      "tglPertemuan": "01-05-2022",
+      "status": "Completed"
+    },
+    {
+      "id": 5,
+      "user": "Uzumaki Naruto",
+      "konselor": "Hinata Hyuga",
+      "paket": "Paket 2",
+      "tglDibuat": "01-04-2022",
+      "tglPertemuan": "01-05-2022",
+      "status": "Upcoming"
     }
   ]
 }
