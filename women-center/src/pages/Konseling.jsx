@@ -8,8 +8,9 @@ import imgkonseling3 from '../assets/img-konseling4.png'
 import imgkonseling4 from '../assets/hal.png'
 import { FaCheck } from "react-icons/fa6";
 import CardProfil from "../components/card/cardProfil";
-import Download from "../components/Download/download";
-
+import vector3 from "../assets/Vector (2).png"
+import vector from "../assets/Vector (1).png"
+import vector2 from "../assets/Ellipse 24.png"
 const KonselingPage = () => {
     return (
     <>
@@ -53,6 +54,8 @@ const KonselingPage = () => {
                     <div className='img-ksl' >
                         <img src={imgkonseling2} alt="img-ksl" style={{ boxShadow: '0px 4px 24px 0px rgba(33, 33, 33, 0.10)', borderRadius: '20px'}}/>
                     </div>
+
+                    <img src={vector3} alt="vector2" className="vector-3"/>
 
                     <div className="col-md-6">
           <div className="text-container" id="text1">
@@ -296,8 +299,9 @@ const KonselingPage = () => {
                     <p className="txt-paket">Bertemu dengan konselor-konselor kami yang berpengalaman,  <br />
                     serta siap memberikan dukungan dan panduan untuk setiap perjalanan kehidupan Anda. </p>
 
-                    
-
+            <img src={vector3} alt="vector2" className="vector-7"/>
+            <img src={vector2} alt="vector2" className="vector-9"/>
+            
             <div className='row gap-5'>
             <div className='d-flex justify-content-center'>
                 <div className='d-flex flex-column gap-4'>
@@ -349,13 +353,10 @@ const KonselingPage = () => {
 
             <Col>
             <p className="more-button">Lebih Banyak</p>
-            <Download/>
             </Col>
-             
-
-       
         </div>
         
+          <img src={vector} alt="vector-1" className="vector-8" />
     </section>
     </>    
     )

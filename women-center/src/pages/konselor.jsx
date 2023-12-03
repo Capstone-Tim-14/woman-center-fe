@@ -4,7 +4,6 @@ import HeaderKonselor from '../components/Header/headerKonselor'
 import CardProfil from '../components/card/cardProfil'
 import BannerKonselor from '../components/card/BannerKonselor'
 import { TbMoodSmileBeam } from "react-icons/tb";
-import Download from '../components/Download/download'
 
 function Konselor() {
   return (
@@ -70,11 +69,6 @@ function Konselor() {
           </div>
         </div>
       </section>
-
-      <section>
-        <Download/>
-      </section>
-
 
     </>
   )

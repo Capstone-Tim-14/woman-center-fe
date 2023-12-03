@@ -79,11 +79,11 @@ const Review = () => {
                     </Carousel>
                 </div>
                 <div className="slider-buttons">
-                    <Button onClick={previous} className="mr-2">
-                    <FaLongArrowAltLeft />
+                    <Button onClick={previous} className="buttonslide">
+                    <FaLongArrowAltLeft className="arrowleft" />
                     </Button>
-                    <Button onClick={next}>
-                    <FaLongArrowAltRight />
+                    <Button onClick={next} className="buttonslide">
+                    <FaLongArrowAltRight className="arrowright" />
                     </Button>
                 </div>
             </Container>

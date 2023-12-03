@@ -420,3 +420,34 @@ margin-top: 12px !important;
   margin-bottom: 140px;
   margin-top: 76px
 }
+
+.vector-7{
+  width: 755px;
+  height: 555px;
+  flex-shrink: 0;
+  position: absolute;
+  z-index: -1;
+  margin-top: 1000px;
+  margin-left: -520px;
+  }
+
+.vector-8{
+  width: 1005.458px;
+  height: 719.672px;
+  flex-shrink: 0;
+  margin-left: 700px;
+  position: absolute;
+  z-index: -1;
+  margin-right: -100px;
+}
+
+.vector-9{
+  width: 555px;
+  height: 455px;
+  flex-shrink: 0;
+  position: absolute;
+  z-index: -1;
+  margin-right: -820px;;
+  margin-top: -1100px;
+  rotate: 90deg;
+}

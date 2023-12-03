@@ -1,0 +1,194 @@
+#hero-artikel-page{
+    background-image: url('../assets/bg-artikelpage.png');
+    background-repeat: no-repeat;    
+}
+
+#artikel-page{
+    background-image: url('../assets/back-konseling.png'); 
+    height: 868px;
+    top: 2146px;
+}
+
+.baca-artikel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.img-artikel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+
+.judul-artikel{
+    color: var(--neutral-0-c-0-c-0-c-neutral, #1F1F1F);
+    font-family: 'Raleway' !important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.biodata-artikel{
+    display: flex;
+    align-items: center;
+    gap: 16px; 
+}
+
+.text-biodata{
+    margin-top: 20px;
+}
+.nama-author{
+    color: var(--neutral-0-c-0-c-0-c-neutral, #1F1F1F);
+    font-family: 'Raleway'!important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.publish-artikel{
+    color: var(--neutral-neutral-80, var(--neutral-neutral-80, #6F6F6F));
+    font-family: 'Raleway' !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 166.667% */
+}
+.insight-topartikel{
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    color: #939393;
+}
+
+.icon-dashboard-top{
+    display: flex;
+    size: 12;
+    align-items: center;
+    color: var(--neutral-neutral-60, #939393);
+    font-family: 'Raleway' !important;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+hr {
+    width: 100%; /* Sesuaikan panjang garis sesuai kebutuhan */
+  }
+
+.content-artikel-page{
+    color: var(--neutral-neutral-100, #4B4B4B);
+    font-family: 'Raleway' !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 157.143% */
+}
+
+.sub-content-artikel-page{
+    color: var(--neutral-neutral-100, #4B4B4B);
+    font-family: 'Raleway' !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.sub-content-artikel-page-baca{
+    color: var(--neutral-neutral-100, #4B4B4B);
+    font-family: 'Raleway' !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+    
+}
+
+.bacaselengkapnya{
+    color: var(--primary-f-4518-d, #F4518D);
+    font-family: 'Raleway' !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 157.143% */
+    }
+
+
+.artikel-page-content{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+    padding-left: 64px;
+    padding-top: 150px;
+}
+
+.head-artikelpage{
+    color: var(--primary-f-4518-d, #F4518D);
+    text-align: right;
+    font-family: 'Raleway' !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+   
+}
+
+.body-artikelpage{
+    color: var(--primary-f-9-f-5-f-6, var(--14-f-9-f-5-f-6, #F9F5F6));
+    text-align: right;
+    font-family: 'Raleway' !important;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 56px; /* 155.556% */
+}
+
+.txt-artikelpage{
+    color: var(--primary-f-9-f-5-f-6, var(--14-f-9-f-5-f-6, #F9F5F6));
+    text-align: justify;
+    font-family: 'Raleway' !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 175% */
+    
+}
+
+.artikelpage-button{
+    color: #F9F5F6;
+    padding: 6px 40px;
+    gap: 10px;
+    border-radius: 30px;
+    border: 1px solid var(--primary-f-4518-d, #F4518D);
+    margin: 0 auto;
+    width: fit-content;
+    background-color: #F4518D;
+    font-family: 'Raleway'!important;
+}
+
+.vector1{
+    width: 412px;
+    height: 703px;
+    position: absolute;
+    z-index: -1;
+    margin-right: 1200px;
+
+}
+
+.vector2{
+    position: absolute;
+    z-index: -1;
+    margin-right: 1200px;
+    width: 1005.458px;
+    height: 409.672px;
+    flex-shrink: 0;
+    margin-top: -700px;
+    margin-left: 700px;
+}

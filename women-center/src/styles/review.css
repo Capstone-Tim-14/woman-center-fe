@@ -74,3 +74,18 @@
   font-weight: 400;
   line-height: 28px; /* 175% */
 }
+
+.slider-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+.arrowleft,
+.arrowright,
+.buttonslide {
+    background-color: transparent !important;
+    color: #F4518D;
+    border: none !important;
+    outline: none !important;
+    margin-top: 10px;
+}
