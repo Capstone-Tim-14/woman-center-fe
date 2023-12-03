@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import '../style/TambahPaket.css';
-import CloseButton from '../../atom/button/Closebutton';
 import Batal from '../../atom/button/Batal';
-import Tambah from '../../atom/button/Tambah';
+import Simpan from '../../atom/button/Simpan';
+import CloseButton from '../../atom/button/Closebutton';
 
-const TambahPaket = ({ isOpen, togglePopup }) => {
+const EditPaket = ({ isOpen, togglePopup }) => {
   const [namaPaket, setNamaPaket] = useState('');
   const [hargaNominal, setHargaNominal] = useState('');
   const [hargaSatuan, setHargaSatuan] = useState('');
@@ -84,7 +84,7 @@ const TambahPaket = ({ isOpen, togglePopup }) => {
       <div className="modal-overlay">
         <div className="popup">
           <div className="popup-header">
-            <h2>Tambah Paket</h2>
+            <h2>Edit Paket</h2>
             < CloseButton handleClose={handleClose} />
           </div>
           <form className="popup-content">
@@ -241,7 +241,7 @@ const TambahPaket = ({ isOpen, togglePopup }) => {
           </form>
           <div className="button">
             <Batal handleClose={handleClose} />
-            <Tambah handleSubmit={handleSubmit} />
+            <Simpan handleSubmit={handleSubmit} />
           </div>
         </div>
         </div>
@@ -249,4 +249,4 @@ const TambahPaket = ({ isOpen, togglePopup }) => {
   );
 };
 
-export default TambahPaket;
+export default EditPaket;
