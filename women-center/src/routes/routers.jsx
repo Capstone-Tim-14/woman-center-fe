@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import Konselor from "../pages/konselor";
 import KonselingPage from "../pages/Konseling";
 import ArtikelPage from "../pages/ArtikelPage";
+import KarierPage from "../pages/KarierPage";
 
 
 
@@ -17,6 +18,7 @@ const Routers = () => {
       <Route path="/konselor" element={<Konselor />} />
       <Route path="/konseling" element={<KonselingPage />} />
       <Route path="/artikel" element={<ArtikelPage />} />
+      <Route path="/karier" element={<KarierPage />} />
     </Routes>
   );
 };

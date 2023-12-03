@@ -1,0 +1,248 @@
+.hero-karirpage{
+    background-color: #F8E8EE;
+    width: 1440px;
+    height: 565px;
+    flex-shrink: 0;
+}
+
+.img-herokarier{
+    width: 553px;
+    height: 436px;
+    flex-shrink: 0;
+    margin-top: 50px;
+    margin-left: -100px;
+}
+
+.text-herokarier{
+    display: flex;
+    width: 561px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 150px;
+    
+}
+
+.title-herokarier{
+    font-family: 'Raleway' !important;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 56px; /* 155.556% */
+    background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subt-herokarier{
+    color: var(--neutral-646464-neutral-100, var(--14646464, #646464));
+    font-family: 'Raleway'!important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 175% */
+}
+.chatbot-karirpage{
+    gap: 128px;
+}
+
+.txt-chatbot{
+    display: flex;
+    width: 505px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 100px;
+}
+
+.title-chatbot{
+    color: var(--neutral-0-c-0-c-0-c-neutral, #1F1F1F);
+    text-align: right;
+    font-family: 'Raleway' !important;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 50px;
+}
+
+.title-chatbot span{
+    color: var(--neutral-646464-neutral-100, #646464);
+    font-family: 'Raleway' !important;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.subt-chatbot{
+    color: var(--neutral-646464-neutral-100, var(--14646464, #646464));
+    font-family: 'Raleway'!important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 175% */
+}
+
+.rekomendasi-konseling{
+    background-image: url(../assets/back-konseling.png);
+    height: 868px;
+    top: 2146px;
+    background-repeat: no-repeat;
+}
+
+.title-container-karir{
+    color: var(--primary-f-4518-d, #F4518D);
+    font-family: 'Raleway'!important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.title-karirlandingpage{
+    color: var(--primary-f-9-f-5-f-6, var(--14-f-9-f-5-f-6, #F9F5F6));
+    font-family: 'Raleway'!important;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 56px; /* 155.556% */
+    width: 552px;
+}
+
+.subtitle-karirlandingpage{
+    color: var(--primary-f-9-f-5-f-6, var(--14-f-9-f-5-f-6, #F9F5F6));
+    font-family: 'Raleway'!important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 175% */
+}
+
+.karierpage-button{
+    color: #F9F5F6;
+    padding: 6px 40px;
+    gap: 10px;
+    border-radius: 30px;
+    border: 1px solid var(--primary-f-4518-d, #F4518D);
+    margin: 0 auto;
+    width: fit-content;
+    background-color: #F4518D;
+    font-family: 'Raleway'!important;
+}
+
+.content-rekomendasikonseling{
+    margin-top: 300px;
+}
+
+.rekomendasi-karir{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+}
+
+.title-rekomendasi-karir{
+    color: var(--neutral-0-c-0-c-0-c-neutral, #1F1F1F);
+    text-align: center;
+    font-family: 'Raleway'!important;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 56px; /* 155.556% */
+    
+}
+
+.box-rekomendasikarir{
+    display: flex;
+    height: 420px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.40);
+}
+
+.all-box-rekomendasi-karir{
+    display: flex;
+    align-items: flex-start;
+    gap: 64px;
+}
+
+.posisi-karir{
+    color: var(--neutral-0-c-0-c-0-c-neutral, #1F1F1F);
+    font-family: 'Raleway' !important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 28px; /* 140% */
+}
+
+.mitra-karir{
+    color: var(--neutral-646464-neutral-100, var(--14646464, #646464));
+    font-family: 'Raleway' !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 175% */
+    width: 266px;
+}
+
+.lokasi-karir{
+    color: var(--primary-646464, var(--14646464, #646464));
+    font-family: 'Raleway' !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: -15px;
+    width: 266px;
+    }
+
+.contentbox-rekomendasi{
+    display: flex;
+    padding: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+    margin-left: 32px;
+    margin-right: 32px;
+}
+
+.rekomendasikarir-btn{
+    color: #F4518D;
+    padding: 6px 40px;
+    gap: 10px;
+    border-radius: 30px;
+    border: 1px solid var(--primary-f-4518-d, #F4518D);
+    margin: 0 auto;
+    width: fit-content;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.vector-1-footer{
+    width: 555px;
+    height: 555px;
+    flex-shrink: 0;
+    position: absolute;
+    z-index: -1;
+    margin-left: 800px;
+    margin-top: -200px;
+}
+
+.vector-2-footer{
+    width: 555px;
+    height: 555px;
+    flex-shrink: 0;
+    position: absolute;
+    z-index: -1;
+    margin-left: 750px;
+    margin-top: -300px;
+}
