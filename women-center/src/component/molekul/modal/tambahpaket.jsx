@@ -214,44 +214,71 @@ const TambahPaket = ({  togglePopup }) => {
                     <label>Benefit Paket</label>
                     <ul>
                     <li>
-                        <input type="checkbox" id="static-checkbox-1" />
-                        <label htmlFor="static-checkbox-1">Durasi Konsultasi 1 Jam/Sesi</label>
+                    <input
+                      type="checkbox"
+                      id="static-checkbox-1"
+                    />
+                    <label htmlFor="static-checkbox-1">Durasi Konsultasi 1Jam/Sesi</label>
+                    </li>
+                    <li>
+                    <input
+                      type="checkbox"
+                      id="static-checkbox-2"
+                    />
+                    <label htmlFor="static-checkbox-2">1on1 Dengan Konselor</label>
+                    </li>
+                    <li>
+                    <input
+                      type="checkbox"
+                      id="static-checkbox-3"
+                    />
+                    <label htmlFor="static-checkbox-3">Privasi Dijamin 100% Aman</label>
+                    </li>
+                    <li>
+                    <input
+                      type="checkbox"
+                      id="static-checkbox-4"
+                    />
+                    <label htmlFor="static-checkbox-4">Tes Kesehatan Mental</label>
+                    </li>
+                    <li>
+                    <input
+                      type="checkbox"
+                      id="static-checkbox-5"
+                    />
+                    <label htmlFor="static-checkbox-5">Tes Kepribadian</label>
+                    </li>
+                    <li>
+                    <input
+                      type="checkbox"
+                      id="static-checkbox-6"
+                    />
+                    <label htmlFor="static-checkbox-6">Tes Minat Karir</label>
+                    </li>
+                    <li>
+                    <input
+                      type="checkbox"
+                      id="static-checkbox-7"
+                    />
+                    <label htmlFor="static-checkbox-7">Langsung Bertemu Psikolog & Konseling Tatap Muka</label>
+                    </li>
+                    <li>
+                    <input
+                      type="checkbox"
+                      id="static-checkbox-8"
+                    />
+                    <label htmlFor="static-checkbox-8">Ruang Konseling Yang Nyaman & Aman</label>
+                    </li>
+                    {checkboxes.map((checkbox, index) => (
+                      <li key={index}>
+                        <input
+                          type="checkbox"
+                          id={`checkbox-${index}`}
+                        />
+                        <label htmlFor={`checkbox-${index}`}>{`Checkbox ${index + 1}`}</label>
                       </li>
-                      <li>
-                        <input type="checkbox" id="static-checkbox-2" />
-                        <label htmlFor="static-checkbox-2">1on1 Dengan Konselor</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="static-checkbox-3" />
-                        <label htmlFor="static-checkbox-3">Privasi Dijamin 100% Aman</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="static-checkbox-4" />
-                        <label htmlFor="static-checkbox-4">Tes Kesehatan Mental</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="static-checkbox-5" />
-                        <label htmlFor="static-checkbox-5">Tes Kepribadian</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="static-checkbox-6" />
-                        <label htmlFor="static-checkbox-6">Tes Minat Karir</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="static-checkbox-7" />
-                        <label htmlFor="static-checkbox-7">Langsung Bertemu Psikolog & Konseling Tatap Muka</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="static-checkbox-8" />
-                        <label htmlFor="static-checkbox-8">Ruang Konseling Yang Nyaman & Aman</label>
-                      </li>
-                      {checkboxes.map((checkbox, index) => (
-                        <li key={index}>
-                          <input type="checkbox" id={`checkbox-${index}`} />
-                          <label htmlFor={`checkbox-${index}`}>{checkbox}</label>
-                        </li>
-                      ))}
-                    </ul>
+                        ))}
+                      </ul>
                     <button type="button" onClick={handleAddCheckbox}>
                       +
                     </button>

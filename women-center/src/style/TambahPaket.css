@@ -187,4 +187,32 @@
     font-weight: 400;
   }
   
+  /* Gaya checkbox saat tidak dicentang */
+  .d-flex .flex-column label input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .d-flex .flex-column label input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Symbol ✓ as a checkmark */
+    font-size: 20px;
+    background-color: blue; /* Ganti warna latar belakang saat checkbox checked */
+    border-radius: 5px;
+    color: white; /* Ganti warna simbol */
+    text-align: center;
+    line-height: 16px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   
