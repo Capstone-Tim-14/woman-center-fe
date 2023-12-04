@@ -1,0 +1,229 @@
+.head-kalender-left{
+    display: flex;
+    padding: 0px 8px;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: stretch;
+    width: 100%;
+}
+
+.txt-kalender-left{
+    font-family: Raleway;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(252, 252, 252, 1);
+    
+}
+
+.sub-Note-kalender {
+    width: calc(75% - 10px); /* 50% lebar dan dikurangi margin */
+    max-width: 628px;
+    height: 80px; 
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(257.34deg, #FD8BA3 0%, #FF5BCD 100%);
+    border-radius: 15px;
+    padding: 0px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 0px; /* Adjusted margin */
+  }
+
+.head-Note-kalender{
+    display: flex;
+    padding: 0px 8px;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: stretch;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.txt-Note-kalender{
+    color: #fff;
+    font-family: 'Raleway' !important;
+    font-size: 20px;
+    font-style: normal;
+    margin-top: 30px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.txt-Note-kalender2{
+    color: rgba(100, 100, 100, 1);
+    font-family: 'Raleway' !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.garis{
+    border: none;
+    border: 1px solid rgba(225, 226, 233, 1);
+    width: 375px;
+    margin-left: 4px;
+    margin-bottom: 5px;
+    background: rgba(225, 226, 233, 1);
+
+}
+
+.showall-Note-kalender{
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1 0 0;
+}
+
+.all-Note-kalender{
+    float: right;
+    margin-right: -150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.all-Note-kalender2{
+    float: right;
+    margin-top: 0px;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background: linear-gradient(257.34deg, #FD8BA3 0%, #FF5BCD 100%);
+    border-radius: 15px;
+}
+
+.show-Note-kalender{
+    display: flex;
+    padding: 12px;
+    width: 70%;
+    align-items: center;
+    gap: 32px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: #FFF;
+    box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.40);
+}
+
+.content-Note-kalender{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+    flex: 1 0 0;
+}
+
+.tanggal{
+    width: 112px;
+    height: 112px;
+}
+
+.title-Note-kalender{
+    align-self: stretch;
+    color: var(--neutral-0-c-0-c-0-c-neutral, #1F1F1F);
+    font-family: 'Raleway' !important;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.sub-title-Note-kalender{
+    align-self: stretch;
+    color: rgba(44, 45, 51, 1);
+    font-family: 'Raleway' !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.sub-title-Note-kalender{
+    align-self: stretch;
+    color: rgba(31, 31, 31, 1);
+    font-family: 'Raleway' !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.subtitle-Note-kalender{
+    color: rgba(147, 147, 147, 1);
+    font-family: 'Raleway' !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 166.667% */
+    margin-bottom: 0px;
+}
+
+.subtitle-Note-kalender2{
+    color: rgba(147, 147, 147, 1);
+    font-family: 'Raleway' !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 166.667% */
+    margin-bottom: 10px;
+}
+
+.page-selector-footer-sesi-konseling {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 20px;
+    width: 100%;
+    }
+    
+    .items-perpage-sesi-konseling {
+    display: flex;
+    align-items: center;
+    margin-left: -25px;
+    }
+    
+    .items-per-page-select-sesi-konseling {
+    margin-right: 10px;
+    }
+    
+    .items-per-page-select-sesi-konseling p1 {
+    vertical-align: middle;
+    margin-bottom: 0; /* Hilangkan margin bawah dari elemen p1 */
+    margin-left: 5px;
+    }
+    
+    select {
+    padding: 8px;
+    background: rgba(94, 99, 102, 0.08);
+    border-radius: 5px;
+    font-size: 14px;
+    }
+    
+    .page-info-sesi-konseling p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    margin-left: 10px; /* Sesuaikan jarak antara elemen */
+    }
+    
+    /* CSS untuk PageOptions */
+    .page-options-artikel-sesi-konseling {
+    display: flex;
+    align-items: center;
+    margin-right: -35px;
+    }
+    
+    .page-options-artikel-sesi-konseling p {
+    margin: 0;
+    margin-left: 5px;
+    font-size: 14px;
+    color: #555;
+    }
+    
+    
+    

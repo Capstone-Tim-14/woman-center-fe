@@ -1,0 +1,30 @@
+p {
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.container-textbox {
+    background-color: #FFFFFF;
+    width: 60%;
+    border-radius: 12px;
+    margin: 20px
+}
+
+.container-image {
+    background-color: #FFFFFF;
+    width: 34%;
+    border-radius: 12px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px
+}
+.artikel-baru-page {
+    background-color: #FCFCFC;
+}
+
+.justify-content-md-center {
+    background-color: transparent;
+}

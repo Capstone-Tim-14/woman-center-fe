@@ -1,0 +1,35 @@
+
+
+.text-box-atom {
+    margin-bottom: 35px;
+    position: relative;
+    
+    
+  }
+
+.text-box-atom input {  
+  padding : 8px 20px;
+  box-sizing: border-box;
+}
+.text-box-atom textarea {
+    
+    height: 508px;
+    box-sizing: border-box;
+    padding: 46px 25px 8px;
+  }
+  
+  .text-box-atom .formatting-toolbar {
+    position: absolute;
+    top: 50px;
+    left: 16px;
+    z-index: 1;
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    border-radius: 0; 
+    transition: border-radius 0.3s ease; 
+    padding: 0px;
+  }
+  
+  .text-box-atom .formatting-toolbar:hover {
+    border-radius: 0; 
+  }
