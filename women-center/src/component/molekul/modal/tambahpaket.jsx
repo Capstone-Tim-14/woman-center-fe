@@ -87,13 +87,22 @@ const TambahPaket = ({  togglePopup }) => {
   
   return (
       <>
-      <button 
-        className='rounded-2 px-3'
-        style={{fontSize: '12px',border: 'none', height: '30px', fontWeight: 'bold'}}
-        onClick={handleShowPaket}>
-        + Buat Paket
-      </button>
-
+      <button
+      className='rounded-2 px-3'
+      style={{
+        fontSize: '14px',
+        borderRadius: '4px',
+        border: 'none',
+        height: '30px',
+        fontWeight: '600',
+        fontFamily: 'Raleway, sans-serif',
+        backgroundImage: 'linear-gradient(to right, #FD8BA3 0%, #FF5BCD 100%)', // Ganti warna gradasi sesuai keinginan Anda
+        color: 'white', // Ubah warna teks agar sesuai dengan latar belakang yang digunakan
+      }}
+      onClick={handleShowPaket}
+    >
+      + Buat Paket
+    </button>
       <Modal show={show} onHide={handleClosePaket}>
         <div className="modal-overlay">
           <div className="popup">
@@ -142,6 +151,7 @@ const TambahPaket = ({  togglePopup }) => {
                             value="Video Call"
                             checked={selectedTipePaket === 'Video Call'}
                             onChange={handleTipePaketChange}
+                            style={{ marginRight: '10px' }} // Style untuk menyesuaikan jarak antara checkbox dan teks
                           />
                           Video Call
                         </label>
@@ -151,6 +161,7 @@ const TambahPaket = ({  togglePopup }) => {
                             value="Chat"
                             checked={selectedTipePaket === 'Chat'}
                             onChange={handleTipePaketChange}
+                            style={{ marginRight: '10px' }} // Style untuk menyesuaikan jarak antara checkbox dan teks
                           />
                           Chat
                         </label>
@@ -162,6 +173,7 @@ const TambahPaket = ({  togglePopup }) => {
                             value="Voice Call"
                             checked={selectedTipePaket === 'Voice Call'}
                             onChange={handleTipePaketChange}
+                            style={{ marginRight: '10px' }} // Style untuk menyesuaikan jarak antara checkbox dan teks
                           />
                           Voice Call
                         </label>
@@ -171,6 +183,7 @@ const TambahPaket = ({  togglePopup }) => {
                             value="Langsung"
                             checked={selectedTipePaket === 'Langsung'}
                             onChange={handleTipePaketChange}
+                            style={{ marginRight: '10px' }} // Style untuk menyesuaikan jarak antara checkbox dan teks
                           />
                           Langsung
                         </label>
