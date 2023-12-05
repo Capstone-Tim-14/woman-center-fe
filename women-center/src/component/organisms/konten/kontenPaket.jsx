@@ -8,7 +8,7 @@ function KontenPaket() {
     <div className='container-md my-2 d-flex justify-content-start'>
         <div className='d-flex flex-column gap-3'>
             <TabelSesi/>
-            <div className='d-flex gap-3'>
+            <div className='d-flex gap-4'>
                 <TabelPaket/>
                 <GrafikPaket/>
             </div>

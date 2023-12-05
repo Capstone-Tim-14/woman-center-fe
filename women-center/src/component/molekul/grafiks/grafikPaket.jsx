@@ -58,6 +58,8 @@ function GrafikPaket() {
 
   return (
     <>
+      <div className='d-flex flex-column'>
+        <p className='m-0 ps-4' style={{fontWeight: '500'}}>Paket Teratas</p>
         <div className='d-flex'>
           <Chart 
             options={dataPaket.options} 
@@ -65,6 +67,7 @@ function GrafikPaket() {
             type='donut' 
             width={380} />
         </div>
+      </div>
     </>
   )
 }

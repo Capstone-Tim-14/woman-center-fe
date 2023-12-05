@@ -58,5 +58,84 @@
       "name": "Langsung",
       "data": 20
     }
+  ],
+  "Paket": [
+    {
+      "id": 1,
+      "namapaket": "Paket 1",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 2,
+      "namapaket": "Paket 1",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 3,
+      "namapaket": "Paket 1",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 4,
+      "namapaket": "Paket 1",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 5,
+      "namapaket": "Paket 1",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 6,
+      "namapaket": "Paket 1",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 7,
+      "namapaket": "Paket 1",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 8,
+      "namapaket": "Paket 1",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 9,
+      "namapaket": "Paket 1",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 10,
+      "namapaket": "Paket 1",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 11,
+      "namapaket": "Paket 1",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    }
   ]
 }

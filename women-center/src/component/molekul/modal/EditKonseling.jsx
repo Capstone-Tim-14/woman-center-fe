@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import EditKonselingButton from '../../atom/button/EditKonselingButton';
 import CloseButton from '../../atom/button/Closebutton';
+import Modal from 'react-bootstrap/Modal'
 import '../../../style/EditKonseling.css';
 
-const EditKonseling = ({ showModal, toggleModal }) => {
+const EditKonseling = () => {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const [keterangan, setKeterangan] = useState({
     namaPaket: '',
     namaKonselor: '',
@@ -77,11 +84,6 @@ const EditKonseling = ({ showModal, toggleModal }) => {
     toggleModal();
   };
 
-  const handleClose = () => {
-    console.log('Closing popup');
-    toggleModal();
-  };
-
   const handleCancel = () => {
     console.log('Canceling action');
     handleClose(); // Jika diperlukan, tambahkan logika lainnya untuk pembatalan
@@ -110,7 +112,16 @@ const EditKonseling = ({ showModal, toggleModal }) => {
 
   return (
     <>
-      {showModal && (
+        <button
+        style={{border: 'none', background: 'none'}}
+        onClick={handleShow}>
+        <img 
+          src="src/assets/icons/Edit Square.png" 
+          alt="" 
+          style={{width: '16px', height: '18px'}}/>
+      </button>
+
+        <Modal show={show} onHide={handleClose} size='lg'>
         <div className="modal-konseling">
           <div className="modal-content-konseling">
             <h1>Edit Konseling</h1>
@@ -315,7 +326,7 @@ const EditKonseling = ({ showModal, toggleModal }) => {
               </form>
           </div>
         </div>
-      )}
+      </Modal>
     </>
   );
 };

@@ -18,7 +18,7 @@ function TabelSesi() {
 
   // Get Data From Database
   const getTabelSesi = async () => {
-    axios.get('http://localhost:3000/Sesi')
+    await axios.get('http://localhost:3000/Sesi')
     .then((response) => {
       setSesi(response.data)
       console.log(response.data)
@@ -135,7 +135,7 @@ function TabelSesi() {
                 <td>{item.status}</td>
                 <td className='d-flex justify-content-between align-items-center'>
                   <Invoice />
-                  {/* <EditKonseling />  */}
+                  <EditKonseling /> 
                   <ModalHapusData clicked={() => clicked(item.id)} />
                 </td>
               </tr>
