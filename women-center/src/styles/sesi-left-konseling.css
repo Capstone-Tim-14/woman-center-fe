@@ -1,0 +1,196 @@
+
+.head-dashboard-sesi-konseling{
+    display: flex;
+    padding: 0px 8px;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: stretch;
+    width: 100%;
+}
+
+.txt-dashboard-sesi-konseling{
+    color: #000;
+    font-family: 'Raleway' !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.txt-dashboard2-sesi-konseling{
+    color: rgba(100, 100, 100, 1);
+    font-family: 'Raleway' !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.garis{
+    border: none;
+    border: 1px solid rgba(225, 226, 233, 1);
+    width: 375px;
+    margin-left: 4px;
+    margin-bottom: 5px;
+    background: rgba(225, 226, 233, 1);
+
+}
+
+.showall-sesi-konseling{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1 0 0;
+}
+
+.all-sesi-konseling{
+    float: right;
+    margin-right: -150px;
+}
+
+.show-sesi-konseling{
+    display: flex;
+    padding: 12px;
+    width: 70%;
+    align-items: center;
+    gap: 32px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: #FFF;
+    box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.40);
+}
+
+.content-sesi-konseling{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+    flex: 1 0 0;
+}
+
+.button-edit-acara {
+    width: 20px;
+    margin-left: 80px;
+    background-color: #FFF;
+    border-color: transparent;
+}
+
+.button-edit-konseling {
+    width: 20px;
+    margin-left: 10px;
+    background-color: #FFF;
+    border-color: transparent;
+}
+
+.img-sesi-konseling{
+    width: 112px;
+    height: 112px;
+    border-radius: 8px;
+    background:lightgray 50% / cover no-repeat;  
+}
+
+.title-sesi-konseling{
+    align-self: stretch;
+    color: var(--neutral-0-c-0-c-0-c-neutral, #1F1F1F);
+    font-family: 'Raleway' !important;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.sub-title-sesi-konseling{
+    align-self: stretch;
+    color: rgba(44, 45, 51, 1);
+    font-family: 'Raleway' !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.sub-title-sesi-konseling2{
+    align-self: stretch;
+    color: rgba(31, 31, 31, 1);
+    font-family: 'Raleway' !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.subtitle-sesi-konseling{
+    color: rgba(147, 147, 147, 1);
+    font-family: 'Raleway' !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 166.667% */
+    margin-bottom: 0px;
+}
+
+.subtitle-sesi-konseling2{
+    color: rgba(147, 147, 147, 1);
+    font-family: 'Raleway' !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 166.667% */
+    margin-bottom: 10px;
+}
+
+.page-selector-footer-sesi-konseling {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 20px;
+    width: 100%;
+    }
+    
+    .items-perpage-sesi-konseling {
+    display: flex;
+    align-items: center;
+    margin-left: -25px;
+    }
+    
+    .items-per-page-select-sesi-konseling {
+    margin-right: 10px;
+    }
+    
+    .items-per-page-select-sesi-konseling p1 {
+    vertical-align: middle;
+    margin-bottom: 0; /* Hilangkan margin bawah dari elemen p1 */
+    margin-left: 5px;
+    }
+    
+    select {
+    padding: 8px;
+    background: rgba(94, 99, 102, 0.08);
+    border-radius: 5px;
+    font-size: 14px;
+    }
+    
+    .page-info-sesi-konseling p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    margin-left: 10px; /* Sesuaikan jarak antara elemen */
+    }
+    
+    /* CSS untuk PageOptions */
+    .page-options-artikel-sesi-konseling {
+    display: flex;
+    align-items: center;
+    margin-right: -35px;
+    }
+    
+    .page-options-artikel-sesi-konseling p {
+    margin: 0;
+    margin-left: 5px;
+    font-size: 14px;
+    color: #555;
+    }
+    
