@@ -1,113 +1,117 @@
 /* Modal Style */
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%; /* Sesuaikan dengan kebutuhan Anda */
-    height: 100%; /* Sesuaikan dengan kebutuhan Anda */
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .modal-content {
-    background-color: white;
-    padding: 20px;
-    width: 80%; /* Sesuaikan dengan kebutuhan Anda */
-    max-width: 600px; /* Atur lebar maksimum jika diperlukan */
-    border-radius: 8px;
-    position: relative;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .modal-content h1 {
-    font-size: 20px; /* ukuran font judul */
-    margin-bottom: 20px; /* ruang bantal di bawah judul */
-    text-align: left; /* Pusatkan judul */
-    color: #333; /* warna teks judul */
-    font-family: 'Poppins' ;
-  }
-  
-  /* Tambahan untuk membuat modal berada di tengah */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  width: 80%; 
+  max-width: 600px; 
+  border-radius: 8px;
+  position: relative;
+}
+
+.modal-content h1 {
+  font-size: 20px; 
+  margin-bottom: 20px; 
+  text-align: left; 
+  color: #333; 
+  font-family: 'Poppins' ;
+}
+
+/* Tambahan untuk membuat modal berada di tengah */
 @media (max-width: 768px) {
-    .modal-content {
-      width: 50%;
-      height: 30%;
-    }
-  }
-  
-  /* Close Button Styling */
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    color: #333;
-  }
-  
-  
-  /* Form Style */
-  .form-container {
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
+  .modal-content {
     width: 50%;
-    gap: 8px;
+    height: 30%;
   }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 16px;
-    font-family: 'Poppins';
+}
 
-  }
+/* Close Button Styling */
 
-  /* Gaya CSS untuk input teks */
-input[type="text"] {
-    width: 50%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: 'Inter';
-    background-color: rgba(239, 241, 249, 0.6);
-  }
-  
-  /* Placeholder Style */
-  input[type="text"]::placeholder {
-    color: rgba(31, 31, 31, 1);
-  }
-  
-  input[type="text"],
-  input[type="date"],
-  input[type="checkbox"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .flex-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
+/* .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+} */
 
-  }
-  
-  .sesi-title {
-    font-size: 16px; /* Ukuran font */
-    color: #1F1F1F; /* Warna teks */
-    margin-bottom: 10px; /* Ruang bantal di bawah h2 */
-    font-family: 'Poppins';
-    margin-top: -15px;
-  }
+
+/* Form Style */
+
+/* .form-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 50%;
+  gap: 8px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-family: 'Poppins';
+
+} */
+
+/* Gaya CSS untuk input teks */
+
+/* input[type="text"] {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Inter';
+  background-color: rgba(239, 241, 249, 0.6);
+} */
+
+/* Placeholder Style */
+
+/* input[type="text"]::placeholder {
+  color: rgba(31, 31, 31, 1);
+}
+
+input[type="text"],
+input[type="date"],
+input[type="checkbox"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+}
+
+.sesi-title {
+  font-size: 16px; 
+  color: #1F1F1F; 
+  margin-bottom: 10px; 
+  font-family: 'Poppins';
+  margin-top: -15px;
+}
 
   .column {
     flex: 1;
@@ -142,7 +146,7 @@ input[type="text"] {
     top: 1px;
   }
   
-  input-[type="checkbox"]:checked + p:before {
+  input[type="checkbox"]:checked + p:before {
     content: '\2713';
     font-size: 14px;
     background-color: rgba(85, 112, 241, 1);
@@ -153,30 +157,29 @@ input[type="text"] {
   
   /* EditKonselingButton.css */
 
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .button-container button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .button-container button:first-child {
-    background-color: #fff; /* Warna latar belakang untuk tombol Batal */
-    color: #5570F1;
-    border: 2px solid var(--Primary, #5570F1);
-    border-radius: 12px;
-    margin-left: 310px;
-  }
-  
-  .button-container button:last-child {
-    background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
-    color: #fff; /* Warna teks untuk tombol Submit */
-  }
-  
+/* .button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button-container button:first-child {
+  background-color: #fff; 
+  color: #5570F1;
+  border: 2px solid var(--Primary, #5570F1);
+  border-radius: 12px;
+  margin-left: 310px;
+}
+
+.button-container button:last-child {
+  background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+  color: #fff; 
+} */

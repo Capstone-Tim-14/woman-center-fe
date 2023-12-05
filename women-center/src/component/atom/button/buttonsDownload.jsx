@@ -1,8 +1,14 @@
 import React from 'react'
+import { TbDownload } from "react-icons/tb";
 
-function ButtonsDownload() {
+function ButtonsDownload({onClick}) {
   return (
-    <div>buttonsDownload</div>
+    <button
+            style={{border: 'none'}}
+            className="p-1 rounded-1 d-flex justify-items-center"
+            onClick={onClick}>
+            <TbDownload />
+        </button>
   )
 }
 

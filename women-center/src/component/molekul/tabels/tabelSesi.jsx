@@ -4,6 +4,7 @@ import Invoice from '../modal/invoice'
 import ModalHapusData from '../modal/modalHapusDataPaket'
 import SearchPaket from '../../atom/inputan/searchPaket'
 import ButtonsSort from '../../atom/button/buttonsSort'
+import EditKonseling from '../modal/EditKonseling'
 import axios from 'axios'
 
 function TabelSesi() {
@@ -73,7 +74,7 @@ function TabelSesi() {
 
   return (
     <div 
-      className='container-xl d-flex flex-column gap-2'
+      className='d-flex flex-column gap-2'
       style={{width: '1020px'}}>
 
       <div className='d-flex justify-content-between align-items-center'>
@@ -90,7 +91,7 @@ function TabelSesi() {
           <thead>
             <tr 
               style={{fontSize: '14px'}}>
-              <th>
+              <th id='checkboxSesi'>
                 <input type="checkbox" />
               </th>
               <th>
@@ -134,7 +135,7 @@ function TabelSesi() {
                 <td>{item.status}</td>
                 <td className='d-flex justify-content-between align-items-center'>
                   <Invoice />
-                  <ModalHapusData />
+                  {/* <EditKonseling />  */}
                   <ModalHapusData clicked={() => clicked(item.id)} />
                 </td>
               </tr>

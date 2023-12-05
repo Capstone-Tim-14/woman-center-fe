@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import '../style/TambahPaket.css';
+import '../../../style/TambahPaket.css';
 import Batal from '../../atom/button/Batal';
 import Simpan from '../../atom/button/Simpan';
 import CloseButton from '../../atom/button/Closebutton';
+import Modal from 'react-bootstrap/Modal'
 
 const EditPaket = ({ isOpen, togglePopup }) => {
   const [namaPaket, setNamaPaket] = useState('');
@@ -13,6 +14,11 @@ const EditPaket = ({ isOpen, togglePopup }) => {
   const [selectedTipePaket, setSelectedTipePaket] = useState('');
   const [newBenefit, setNewBenefit] = useState('');
   const [checkboxes, setCheckboxes] = useState([]);
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleNamaPaketChange = (e) => {
     setNamaPaket(e.target.value);
@@ -69,18 +75,19 @@ const EditPaket = ({ isOpen, togglePopup }) => {
       togglePopup();
     }
   };
-
-  const handleClose = () => {
-    console.log('Closing popup');
-    if (typeof togglePopup === 'function') {
-      togglePopup();
-    } else {
-      console.error('togglePopup is not a function:', togglePopup);
-    }
-  };
   
   return (
-    isOpen && (
+    <>
+      <button
+        style={{border: 'none', background: 'none'}}
+        onClick={handleShow}>
+        <img 
+          src="src/assets/icons/Edit Square.png" 
+          alt="" 
+          style={{width: '16px', height: '18px'}}/>
+      </button>
+      
+      <Modal show={show} onHide={handleClose}>
       <div className="modal-overlay">
         <div className="popup">
           <div className="popup-header">
@@ -272,7 +279,8 @@ const EditPaket = ({ isOpen, togglePopup }) => {
           </div>
         </div>
         </div>
-    )
+      </Modal>
+    </>
   );
 };
 

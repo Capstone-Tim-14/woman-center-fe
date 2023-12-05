@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import EditKonselingButton from '../../atom/button/EditKonselingButton';
 import CloseButton from '../../atom/button/Closebutton';
-import '../style/EditKonseling.css';
-import { ReactDOM } from 'react';
+import '../../../style/EditKonseling.css';
 
 const EditKonseling = ({ showModal, toggleModal }) => {
   const [keterangan, setKeterangan] = useState({
@@ -28,7 +27,7 @@ const EditKonseling = ({ showModal, toggleModal }) => {
     waktu5: false,
     waktu6: false,
   });
-  
+
   const [sesi3Waktu, setSesi3Waktu] = useState({
     waktu1: false,
     waktu2: false,
@@ -41,13 +40,13 @@ const EditKonseling = ({ showModal, toggleModal }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Data Paket:', { keterangan, sesi1Waktu, sesi2Waktu, sesi3Waktu });
-    
+
     setKeterangan({
       namaPaket: '',
       namaKonselor: '',
       namaUser: ''
     });
-    
+
     setSesi1Waktu({
       waktu1: false,
       waktu2: false,
@@ -56,7 +55,7 @@ const EditKonseling = ({ showModal, toggleModal }) => {
       waktu5: false,
       waktu6: false,
     });
-    
+
     setSesi2Waktu({
       waktu1: false,
       waktu2: false,
@@ -65,7 +64,7 @@ const EditKonseling = ({ showModal, toggleModal }) => {
       waktu5: false,
       waktu6: false,
     });
-    
+
     setSesi3Waktu({
       waktu1: false,
       waktu2: false,
@@ -74,7 +73,7 @@ const EditKonseling = ({ showModal, toggleModal }) => {
       waktu5: false,
       waktu6: false,
     });
-    
+
     toggleModal();
   };
 

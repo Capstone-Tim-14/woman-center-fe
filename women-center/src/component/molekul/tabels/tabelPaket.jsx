@@ -3,13 +3,14 @@ import Tabel from 'react-bootstrap/Table'
 import ModalHapusData from '../modal/modalHapusDataPaket'
 import SearchPaket from '../../atom/inputan/searchPaket'
 import TambahPaket from '../modal/tambahpaket'
+import EditPaket from '../modal/EditPaket'
 
 
 function TabelPaket() {
   
   return (
     <div 
-      className='container-xl d-flex flex-column gap-2'
+      className='d-flex flex-column gap-2'
       style={{width: '550px'}}>
 
       <div className='d-flex justify-content-between align-items-center'>
@@ -38,7 +39,7 @@ function TabelPaket() {
               <td>Voice call</td>
               <td>1 Sesi</td>
               <td className='d-flex justify-content-center align-items-center gap-2'>
-                <ModalHapusData />
+                <EditPaket />
                 <ModalHapusData />
               </td>
             </tr>
