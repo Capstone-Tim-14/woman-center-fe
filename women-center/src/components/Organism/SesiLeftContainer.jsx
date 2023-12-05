@@ -1,6 +1,7 @@
 import React from 'react';
 import "../../styles/sesi-left-konseling.css"
 import imagedashboard from "../../assets/icon/shadow.png"
+//import Button from "../Molekul/Modal/modalEditKonseling"
 
 
 const SesiLeftContainer = () => (

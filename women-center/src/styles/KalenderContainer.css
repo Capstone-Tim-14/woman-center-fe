@@ -1,10 +1,11 @@
 .head-kalender-left{
     display: flex;
-    padding: 0px 8px;
+    padding: 0px 5px;
     justify-content: space-between;
     align-items: flex-end;
     align-self: stretch;
-    width: 100%;
+    width: 65%;
+    background: linear-gradient(257.34deg, #FD8BA3 0%, #FF5BCD 100%);
 }
 
 .txt-kalender-left{
@@ -13,13 +14,15 @@
     font-weight: 700;
     line-height: 28px;
     letter-spacing: 0em;
+    margin-top: 5px;
     text-align: left;
+
     color: rgba(252, 252, 252, 1);
     
 }
 
 .sub-Note-kalender {
-    width: calc(75% - 10px); /* 50% lebar dan dikurangi margin */
+    width: calc(50% - 10px); /* 50% lebar dan dikurangi margin */
     max-width: 628px;
     height: 80px; 
     border-radius: 8px;
