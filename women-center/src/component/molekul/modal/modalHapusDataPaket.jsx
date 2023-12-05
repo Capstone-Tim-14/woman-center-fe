@@ -40,8 +40,8 @@ function ModalHapusData (props) {
             </div>
 
             <div className='d-flex justify-content-center gap-2'>
-              <Buttons variant="secondary" onclick={handleClose} teks="Batal"/>
-              <Buttons variant="primary" onclick={(e) => props.clicked(e)} teks="Hapus"/>
+              <Buttons variant="secondary" onclick={handleClose} teks="Batal" id="buttonBatalPaket"/>
+              <Buttons variant="primary" onclick={(e) => props.clicked(e)} teks="Hapus" id="buttonHapusPaket"/>
             </div>
           </div>
         </div>

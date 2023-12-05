@@ -4,13 +4,13 @@ import axios from 'axios'
 
 function GrafikPaket() {
   const [dataPaket, setDataPaket] = useState({
-    series: [],
+    series: [20, 10, 30, 40],
     options: {
       chart: {
         width: 380,
         type: 'donut',
       },
-      labels: [],
+      labels: [ 'Paket A', 'Paket B', 'Paket C', 'Paket D'],
       dataLabels: {
         enabled: false
       },
