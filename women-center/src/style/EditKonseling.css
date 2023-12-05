@@ -1,96 +1,91 @@
-/* Modal Style */
-.modal {
+/* EditKonseling.css */
+
+/* Gaya untuk modal */
+.modal-konseling {
+  /* Atur properti untuk tampilan modal */
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; 
-  height: 100%; 
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Efek gelap pada latar belakang */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.modal-content {
+/* Gaya untuk konten modal */
+.modal-content-konseling {
+  /* Atur properti untuk kotak konten modal */
   background-color: white;
   padding: 20px;
-  width: 80%; 
-  max-width: 600px; 
   border-radius: 8px;
-  position: relative;
+  width: 70%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.modal-content h1 {
-  font-size: 20px; 
-  margin-bottom: 20px; 
-  text-align: left; 
-  color: #333; 
-  font-family: 'Poppins' ;
-}
-
-/* Tambahan untuk membuat modal berada di tengah */
-@media (max-width: 768px) {
-  .modal-content {
-    width: 50%;
-    height: 30%;
-  }
-}
-
-/* Close Button Styling */
-
-/* .close {
+/* Gaya untuk tombol close */
+/* Sesuaikan dengan desain tombol close yang Anda inginkan */
+.close-button {
+  /* Atur properti untuk tombol close */
   position: absolute;
   top: 10px;
   right: 10px;
   cursor: pointer;
-  font-size: 24px;
-  color: #333;
-} */
+}
 
-
-/* Form Style */
-
-/* .form-container {
+/* Gaya untuk label dan checkbox */
+.checkbox-label-sesi {
   display: flex;
-  flex-direction: column;
-  font-size: 16px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-  width: 50%;
-  gap: 8px;
-}
-
-.form-group label {
-  display: block;
+  align-items: center;
   margin-bottom: 5px;
-  font-size: 16px;
-  font-family: 'Poppins';
-
-} */
-
-/* Gaya CSS untuk input teks */
-
-/* input[type="text"] {
-  width: 50%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  font-size: 16px;
-  font-family: 'Inter';
-  background-color: rgba(239, 241, 249, 0.6);
-} */
-
-/* Placeholder Style */
-
-/* input[type="text"]::placeholder {
-  color: rgba(31, 31, 31, 1);
 }
 
-input[type="text"],
-input[type="date"],
-input[type="checkbox"] {
+/* Gaya untuk teks pada checkbox */
+.checkbox-text-sesi {
+  margin-left: 5px;
+}
+
+/* Gaya untuk input teks dengan class 'np' */
+input.np {
+  /* Atur properti untuk input teks dengan class 'np' */
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+/* Gaya untuk input teks dengan class 'nk' */
+input.nk {
+  /* Atur properti untuk input teks dengan class 'nk' */
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #e6e6e6;
+  color: #444;
+}
+
+/* Gaya untuk input teks dengan class 'nu' */
+input.nu {
+  /* Atur properti untuk input teks dengan class 'nu' */
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #d9d9d9;
+  color: #555;
+}
+
+/* Gaya untuk input tanggal */
+input[type='date'] {
+  /* Atur properti untuk input tanggal */
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
@@ -98,88 +93,23 @@ input[type="checkbox"] {
   border-radius: 4px;
 }
 
-.flex-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-
-}
-
+/* Gaya untuk judul sesi */
 .sesi-title {
-  font-size: 16px; 
-  color: #1F1F1F; 
-  margin-bottom: 10px; 
-  font-family: 'Poppins';
-  margin-top: -15px;
+  /* Atur properti untuk judul sesi */
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
-  .column {
-    flex: 1;
-    padding: 0 10px;
-  }
-  
-  Checkbox Styling
-  label {
-    display: block;
-    position: relative;
-    margin-bottom: 10px;
-  }
-  
-  input[type="checkbox"] {
-    position: absolute;
-    left: -9999px;
-  }
-  
-  input[type="checkbox"] + p {
-    margin-left: 30px;
-  }
-  
-  input[type="checkbox"] + p:before {
-    content: '';
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    position: absolute;
-    left: 0;
-    top: 1px;
-  }
-  
-  input[type="checkbox"]:checked + p:before {
-    content: '\2713';
-    font-size: 14px;
-    background-color: rgba(85, 112, 241, 1);
-    color: #fff;
-    text-align: center;
-    line-height: 18px;
-  }
-  
-  /* EditKonselingButton.css */
-
-/* .button-container {
+/* Gaya untuk tata letak kolom */
+.flex-container-konseling {
+  /* Atur tata letak kolom */
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
 }
 
-.button-container button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 16px;
+/* Gaya untuk kolom */
+.column {
+  /* Atur properti untuk kolom */
+  flex: 1;
+  margin-right: 10px; /* Atur jarak antar kolom */
 }
-
-.button-container button:first-child {
-  background-color: #fff; 
-  color: #5570F1;
-  border: 2px solid var(--Primary, #5570F1);
-  border-radius: 12px;
-  margin-left: 310px;
-}
-
-.button-container button:last-child {
-  background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
-  color: #fff; 
-} */

@@ -111,142 +111,141 @@ const EditKonseling = ({ showModal, toggleModal }) => {
   return (
     <>
       {showModal && (
-        <div className="modal">
-          <div className="modal-content">
+        <div className="modal-konseling">
+          <div className="modal-content-konseling">
             <h1>Edit Konseling</h1>
             < CloseButton handleClose={handleClose} />
-            <form onSubmit={handleSubmit} className="form-container">
-              <div className="form-group">
+            <form onSubmit={handleSubmit} className="form-container-konseling">
+              <div className="form-group-konseling">
                 <label htmlFor="namaPaket">Keterangan Konseling</label>
-                <input type="text" id="namaPaket" name="namaPaket" placeholder="Nama Paket" />
-                <input type="text" id="namaKonselor" name="namaKonselor" placeholder="Nama Konselor" />
-                <input type="text" id="namaUser" name="namaUser" placeholder="Nama User" />
+                <input type="text" id="namaPaket" name="namaPaket" placeholder="Nama Paket" className='np' />
+                <input type="text" id="namaKonselor" name="namaKonselor" placeholder="Nama Konselor" className='nk'/>
+                <input type="text" id="namaUser" name="namaUser" placeholder="Nama User" className='nu'/>
               </div>
-              <div className="flex-container">
+              <div className="flex-container-konseling">
                 <div className="column">
                 <h2 className="sesi-title">Sesi 1</h2>
                   <div>
                     <input type="date" id="tanggalSesi1" name="tanggalSesi1" />
                   </div>
                   <div>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu1"
-                        checked={sesi1Waktu.waktu1}
-                        onChange={handleSesi1Change}
+                  <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu1"
+                      checked={sesi1Waktu.waktu1}
+                      onChange={handleSesi1Change}
                       /> 
-                      <p>08:10</p>
+                  <p className="checkbox-text-sesi">08:10</p>
                     </label>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu2"
-                        checked={sesi1Waktu.waktu2}
-                        onChange={handleSesi1Change}
-                      />
-                      <p>09:20</p>
+                    <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu2"
+                      checked={sesi1Waktu.waktu2}
+                      onChange={handleSesi1Change}
+                      /> 
+                  <p className="checkbox-text-sesi">09:30</p>
                     </label>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu3"
-                        checked={sesi1Waktu.waktu3}
-                        onChange={handleSesi1Change}
-                      />
-                      <p>10:30</p>
+                    <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu3"
+                      checked={sesi1Waktu.waktu3}
+                      onChange={handleSesi1Change}
+                      /> 
+                  <p className="checkbox-text-sesi">10:30</p>
                     </label>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu4"
-                        checked={sesi1Waktu.waktu4}
-                        onChange={handleSesi1Change}
-                      />
-                      <p>13:00</p>
+                    <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu4"
+                      checked={sesi1Waktu.waktu4}
+                      onChange={handleSesi1Change}
+                      /> 
+                  <p className="checkbox-text-sesi">13:00</p>
                     </label>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu5"
-                        checked={sesi1Waktu.waktu5}
-                        onChange={handleSesi1Change}
-                      />
-                      <p>14:10</p>
+                    <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu5"
+                      checked={sesi1Waktu.waktu5}
+                      onChange={handleSesi1Change}
+                      /> 
+                  <p className="checkbox-text-sesi">14:10</p>
                     </label>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu6"
-                        checked={sesi1Waktu.waktu6}
-                        onChange={handleSesi1Change}
-                      />
-                      <p>15:20</p>
+                    <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu6"
+                      checked={sesi1Waktu.waktu6}
+                      onChange={handleSesi1Change}
+                      /> 
+                  <p className="checkbox-text-sesi">15:20</p>
                     </label>
                   </div>
                 </div>
+  
                 <div className="column">
                 <h2 className="sesi-title">Sesi 2</h2>
                   <div>
                     <input type="date" id="tanggalSesi2" name="tanggalSesi2" />
                   </div>
                   <div>
-                  <div>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu1"
-                        checked={sesi2Waktu.waktu1}
-                        onChange={handleSesi2Change}
+                  <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu1"
+                      checked={sesi2Waktu.waktu1}
+                      onChange={handleSesi2Change}
                       /> 
-                      <p>08:30</p>
+                  <p className="checkbox-text-sesi">08:10</p>
                     </label>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu2"
-                        checked={sesi2Waktu.waktu2}
-                        onChange={handleSesi2Change}
-                      />
-                      <p>09:20</p>
+                    <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu2"
+                      checked={sesi2Waktu.waktu2}
+                      onChange={handleSesi2Change}
+                      /> 
+                  <p className="checkbox-text-sesi">09:30</p>
                     </label>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu3"
-                        checked={sesi2Waktu.waktu3}
-                        onChange={handleSesi2Change}
-                      />
-                      <p>10:30</p>
+                    <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu3"
+                      checked={sesi2Waktu.waktu3}
+                      onChange={handleSesi2Change}
+                      /> 
+                  <p className="checkbox-text-sesi">10:30</p>
                     </label>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu4"
-                        checked={sesi1Waktu.waktu4}
-                        onChange={handleSesi2Change}
-                      />
-                      <p>13:00</p>
+                    <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu4"
+                      checked={sesi2Waktu.waktu4}
+                      onChange={handleSesi2Change}
+                      /> 
+                  <p className="checkbox-text-sesi">13:00</p>
                     </label>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu5"
-                        checked={sesi2Waktu.waktu5}
-                        onChange={handleSesi2Change}
-                      />
-                      <p>14:10</p>
+                    <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu5"
+                      checked={sesi2Waktu.waktu5}
+                      onChange={handleSesi2Change}
+                      /> 
+                  <p className="checkbox-text-sesi">14:10</p>
                     </label>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu6"
-                        checked={sesi2Waktu.waktu6}
-                        onChange={handleSesi2Change}
-                      />
-                      <p>15:20</p>
+                    <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu6"
+                      checked={sesi2Waktu.waktu6}
+                      onChange={handleSesi2Change}
+                      /> 
+                  <p className="checkbox-text-sesi">15:20</p>
                     </label>
-                  </div>
                   </div>
                 </div>
                 <div className="column">
@@ -255,67 +254,65 @@ const EditKonseling = ({ showModal, toggleModal }) => {
                     <input type="date" id="tanggalSesi3" name="tanggalSesi3" />
                   </div>
                   <div>
-                  <div>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu1"
-                        checked={sesi3Waktu.waktu1}
-                        onChange={handleSesi3Change}
+                  <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu1"
+                      checked={sesi3Waktu.waktu1}
+                      onChange={handleSesi3Change}
                       /> 
-                      <p>08:10</p>
+                  <p className="checkbox-text-sesi">08:10</p>
                     </label>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu2"
-                        checked={sesi3Waktu.waktu2}
-                        onChange={handleSesi3Change}
-                      />
-                      <p>09:20</p>
+                    <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu2"
+                      checked={sesi3Waktu.waktu2}
+                      onChange={handleSesi3Change}
+                      /> 
+                  <p className="checkbox-text-sesi">09:30</p>
                     </label>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu3"
-                        checked={sesi3Waktu.waktu3}
-                        onChange={handleSesi3Change}
-                      />
-                      <p>10:30</p>
+                    <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu3"
+                      checked={sesi3Waktu.waktu3}
+                      onChange={handleSesi3Change}
+                      /> 
+                  <p className="checkbox-text-sesi">10:30</p>
                     </label>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu4"
-                        checked={sesi3Waktu.waktu4}
-                        onChange={handleSesi3Change}
-                      />
-                      <p>13:00</p>
+                    <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu4"
+                      checked={sesi3Waktu.waktu4}
+                      onChange={handleSesi3Change}
+                      /> 
+                  <p className="checkbox-text-sesi">13:00</p>
                     </label>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu5"
-                        checked={sesi3Waktu.waktu5}
-                        onChange={handleSesi3Change}
-                      />
-                      <p>14:10</p>
+                    <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu5"
+                      checked={sesi3Waktu.waktu5}
+                      onChange={handleSesi3Change}
+                      /> 
+                  <p className="checkbox-text-sesi">14:10</p>
                     </label>
-                    <label>
-                      <input
-                        type="checkbox"
-                        name="waktu6"
-                        checked={sesi3Waktu.waktu6}
-                        onChange={handleSesi3Change}
-                      />
-                      <p>15:20</p>
+                    <label className="checkbox-label-sesi">
+                    <input
+                      type="checkbox"
+                      name="waktu6"
+                      checked={sesi3Waktu.waktu6}
+                      onChange={handleSesi3Change}
+                      /> 
+                  <p className="checkbox-text-sesi">15:20</p>
                     </label>
                   </div>
-                  </div>
-                </div>
+                </div> 
               </div>
               <EditKonselingButton handleCancel={handleCancel} handleSubmit={handleSubmit} />
-            </form>
+              </form>
           </div>
         </div>
       )}
