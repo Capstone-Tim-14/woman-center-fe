@@ -142,7 +142,7 @@ input[type="text"] {
     top: 1px;
   }
   
-  input[type="checkbox"]:checked + p:before {
+  input-[type="checkbox"]:checked + p:before {
     content: '\2713';
     font-size: 14px;
     background-color: rgba(85, 112, 241, 1);
