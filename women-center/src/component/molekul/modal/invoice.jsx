@@ -1,5 +1,8 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
+import html2canvas from 'html2canvas'
+import jsPDF from 'jspdf'
 import ButtonClose from '../../atom/button/buttonsClose'
+import ButtonDownload from '../../atom/button/buttonsDownload'
 import Tabel from 'react-bootstrap/Table'
 import Modal from 'react-bootstrap/Modal'
 
@@ -9,6 +12,18 @@ function Invoice() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const pdfRef = useRef();
+
+  // download pdf
+  const downloadPdf = () => {
+    const input = pdfRef.current;
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4', true);
+      pdf.addImage(imgData, 'PNG', 0, 0);
+      pdf.save("invoice.pdf");
+    });
+  }
 
   return (
     <>
@@ -22,13 +37,13 @@ function Invoice() {
       </button>
 
       <Modal show={show} onHide={handleClose} size='lg'>
-        <div className='container my-3'>
+        <div className='d-flex justify-content-end gap-2 mx-3 mt-2'>
+            <ButtonDownload onClick={downloadPdf}/>
+            <ButtonClose onClick={handleClose}/>
+        </div>
+        <div className='container' ref={pdfRef}>
 
-          <header className='d-flex flex-column gap-2'>
-            <div className='d-flex justify-content-end gap-2'>
-                <ButtonClose onClick={handleClose}/>
-                <ButtonClose onClick={handleClose}/>
-            </div>
+          <header className='d-flex flex-column gap-2 mt-3'>
             <div className='d-flex justify-content-between mx-3'>
                 <div className='d-flex align-items-center gap-2'>
                   <img 
@@ -47,7 +62,7 @@ function Invoice() {
               </div>
           </header>
 
-          <main className='d-flex flex-column gap-4 my-4 mx-3'>
+          <main className='d-flex flex-column gap-4 my-3 mx-3'>
 
             <div className='d-flex justify-content-between' id=''>
               <div className='d-flex flex-column col-4'>
@@ -117,8 +132,6 @@ function Invoice() {
 
           </main>
 
-        </div>
-
           <footer className='container-fluid' style={{borderTop: '1px solid #C4C4C4'}}>
               <div className='d-flex justify-content-between mx-3 py-5'>
                 <p className='m-0'>www.website.com</p>
@@ -126,6 +139,8 @@ function Invoice() {
                 <p className='m-0'>womencenter@wc.com</p>
               </div>
           </footer>
+        </div>
+
       </Modal>
     </>
   )
