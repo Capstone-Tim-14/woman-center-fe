@@ -95,101 +95,114 @@ const EditPaket = ({ isOpen, togglePopup }) => {
             < CloseButton handleClose={handleClose} />
           </div>
           <form className="popup-content">
-            <div className="form-container">
-              <div className="left-column">
-                <div className="form-group">
-                  <label htmlFor="namaPaket">Nama Paket</label>
-                  <input
-                    type="text"
-                    id="namaPaket"
-                    value={namaPaket}
-                    onChange={handleNamaPaketChange}
-                    placeholder="Nama Paket"
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="hargaNominal">Harga</label>
-                  <input
-                    type="text"
-                    id="hargaNominal"
-                    value={hargaNominal}
-                    onChange={handleHargaNominalChange}
-                    placeholder="Harga (IDR)"
-                  />          
-                  <input
-                    type="text"
-                    id="hargaSatuan"
-                    value={hargaSatuan}
-                    onChange={handleHargaSatuanChange}
-                    placeholder="Harga Display (IDR)"
-                  />
-                </div>
-                {/* Tipe Paket Section */}
-                <div className="form-group">
-                  <label>Tipe Paket</label>
-                  <div className="tipe-paket-options d-flex">
-                    <div className="d-flex flex-column">
-                      <label>
-                        <input
-                          type="checkbox"
-                          value="Video Call"
-                          checked={selectedTipePaket === 'Video Call'}
-                          onChange={handleTipePaketChange}
-                        />
-                        Video Call
-                      </label>
-                      <label>
-                        <input
-                          type="checkbox"
-                          value="Chat"
-                          checked={selectedTipePaket === 'Chat'}
-                          onChange={handleTipePaketChange}
-                        />
-                        Chat
-                      </label>
-                    </div>
-                    <div className="d-flex flex-column">
-                      <label>
-                        <input
-                          type="checkbox"
-                          value="Voice Call"
-                          checked={selectedTipePaket === 'Voice Call'}
-                          onChange={handleTipePaketChange}
-                        />
-                        Voice Call
-                      </label>
-                      <label>
-                        <input
-                          type="checkbox"
-                          value="Langsung"
-                          checked={selectedTipePaket === 'Langsung'}
-                          onChange={handleTipePaketChange}
-                        />
-                        Langsung
-                      </label>
+              <div className="form-container">
+                <div className="left-column">
+                  <div className="form-group-namapaket">
+                    <label htmlFor="namaPaket">Nama Paket</label>
+                    <input
+                      type="text"
+                      id="namaPaket"
+                      value={namaPaket}
+                      onChange={handleNamaPaketChange}
+                      placeholder="Nama Paket"
+                      className='nama-paket'
+                    />
+                  </div>
+                  <div className="form-group-harga">
+                    <label htmlFor="hargaNominal">Harga</label>
+                    <input
+                      type="text"
+                      id="hargaNominal"
+                      value={hargaNominal}
+                      onChange={handleHargaNominalChange}
+                      placeholder="Harga (IDR)"
+                      className='harga'
+                    />          
+                    <input
+                      type="text"
+                      id="hargaSatuan"
+                      value={hargaSatuan}
+                      onChange={handleHargaSatuanChange}
+                      placeholder="Harga Display (IDR)"
+                      className='harga-display'
+                    />
+                  </div>
+                  {/* Tipe Paket Section */}
+                  <div className="form-group">
+                  <label style={{fontSize: '16px', color: '#333', marginLeft: '-30px' }}>Tipe Paket</label>
+                    <div className="tipe-paket-options d-flex">
+                      <div className="d-flex flex-column">
+                        <label>
+                          <input
+                            type="checkbox"
+                            value="Video Call"
+                            checked={selectedTipePaket === 'Video Call'}
+                            onChange={handleTipePaketChange}
+                            style={{ marginRight: '10px' }} // Style untuk menyesuaikan jarak antara checkbox dan teks
+                            className='video-call'
+                          />
+                          Video Call
+                        </label>
+                        <label>
+                          <input
+                            type="checkbox"
+                            value="Chat"
+                            checked={selectedTipePaket === 'Chat'}
+                            onChange={handleTipePaketChange}
+                            style={{ marginRight: '10px' }} // Style untuk menyesuaikan jarak antara checkbox dan teks
+                            className='chat'
+                          />
+                          Chat
+                        </label>
+                      </div>
+                      <div className="d-flex flex-column">
+                        <label>
+                          <input
+                            type="checkbox"
+                            value="Voice Call"
+                            checked={selectedTipePaket === 'Voice Call'}
+                            onChange={handleTipePaketChange}
+                            style={{ marginRight: '10px' }} // Style untuk menyesuaikan jarak antara checkbox dan teks
+                            className='voice-call'
+                          />
+                          Voice Call
+                        </label>
+                        <label>
+                          <input
+                            type="checkbox"
+                            value="Langsung"
+                            checked={selectedTipePaket === 'Langsung'}
+                            onChange={handleTipePaketChange}
+                            style={{ marginRight: '10px' }} // Style untuk menyesuaikan jarak antara checkbox dan teks
+                            className='langsung'
+                          />
+                          Langsung
+                        </label>
+                      </div>
                     </div>
                   </div>
+                  {/* Jumlah Sesi and Durasi Sections */}
+                  <div className="form-group-rincianpaket">
+                    <label htmlFor="jumlahSesi">Rincian Paket</label>
+                    <input
+                      type="number"
+                      id="jumlahSesi"
+                      value={jumlahSesi}
+                      onChange={handleJumlahSesiChange}
+                      placeholder="Jumlah Sesi"
+                      className='jumlah-sesi'
+                    />
+                    <input
+                      type="number"
+                      id="durasi"
+                      value={durasi}
+                      onChange={handleDurasiChange}
+                      placeholder="Durasi(Menit)"
+                      className='durasi'
+                    />
+                  </div>
                 </div>
-                {/* Jumlah Sesi and Durasi Sections */}
-                <div className="form-group">
-                  <label htmlFor="jumlahSesi">Rincian Paket</label>
-                  <input
-                    type="number"
-                    id="jumlahSesi"
-                    value={jumlahSesi}
-                    onChange={handleJumlahSesiChange}
-                    placeholder="Jumlah Sesi"
-                  />
-                  <input
-                    type="number"
-                    id="durasi"
-                    value={durasi}
-                    onChange={handleDurasiChange}
-                    placeholder="Durasi(Menit)"
-                  />
-                </div>
-              </div>
-              <div className="right-column">
+                <div className="right-column">
                   <div className="benefits-section">
                     <label>Benefit Paket</label>
                     <ul>
@@ -198,7 +211,7 @@ const EditPaket = ({ isOpen, togglePopup }) => {
                       type="checkbox"
                       id="static-checkbox-1"
                     />
-                    <label htmlFor="static-checkbox-1">Durasi KOnsultasi 1Jam/Sesi</label>
+                    <label htmlFor="static-checkbox-1">Durasi Konsultasi 1Jam/Sesi</label>
                     </li>
                     <li>
                     <input
@@ -254,25 +267,26 @@ const EditPaket = ({ isOpen, togglePopup }) => {
                         <input
                           type="checkbox"
                           id={`checkbox-${index}`}
+                          className='checkbox-dynamic'
                         />
                         <label htmlFor={`checkbox-${index}`}>{`Checkbox ${index + 1}`}</label>
                       </li>
                         ))}
-                    </ul>
-                  <button type="button" onClick={handleAddCheckbox}>
-                    +
-                  </button>
-                  <input
-                    type="text"
-                    id="newBenefit"
-                    value={newBenefit}
-                    onChange={handleNewBenefitChange}
-                    placeholder="Tambah lainnya"
-                  />
+                      </ul>
+                    <button type="button" onClick={handleAddCheckbox}>
+                      +
+                    </button>
+                    <input
+                      type="text"
+                      id="newBenefit"
+                      value={newBenefit}
+                      onChange={handleNewBenefitChange}
+                      placeholder="Tambah lainnya"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          </form>
+            </form>
           <div className="button">
             <Batal handleClose={handleClose} />
             <Simpan handleSubmit={handleSubmit} />

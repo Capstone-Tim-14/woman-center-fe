@@ -113,7 +113,7 @@ const TambahPaket = ({  togglePopup }) => {
             <form className="popup-content">
               <div className="form-container">
                 <div className="left-column">
-                  <div className="form-group">
+                  <div className="form-group-namapaket">
                     <label htmlFor="namaPaket">Nama Paket</label>
                     <input
                       type="text"
@@ -121,9 +121,10 @@ const TambahPaket = ({  togglePopup }) => {
                       value={namaPaket}
                       onChange={handleNamaPaketChange}
                       placeholder="Nama Paket"
+                      className='nama-paket'
                     />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group-harga">
                     <label htmlFor="hargaNominal">Harga</label>
                     <input
                       type="text"
@@ -131,6 +132,7 @@ const TambahPaket = ({  togglePopup }) => {
                       value={hargaNominal}
                       onChange={handleHargaNominalChange}
                       placeholder="Harga (IDR)"
+                      className='harga'
                     />          
                     <input
                       type="text"
@@ -138,11 +140,12 @@ const TambahPaket = ({  togglePopup }) => {
                       value={hargaSatuan}
                       onChange={handleHargaSatuanChange}
                       placeholder="Harga Display (IDR)"
+                      className='harga-display'
                     />
                   </div>
                   {/* Tipe Paket Section */}
                   <div className="form-group">
-                    <label>Tipe Paket</label>
+                  <label style={{fontSize: '16px', color: '#333', marginLeft: '-30px' }}>Tipe Paket</label>
                     <div className="tipe-paket-options d-flex">
                       <div className="d-flex flex-column">
                         <label>
@@ -152,6 +155,7 @@ const TambahPaket = ({  togglePopup }) => {
                             checked={selectedTipePaket === 'Video Call'}
                             onChange={handleTipePaketChange}
                             style={{ marginRight: '10px' }} // Style untuk menyesuaikan jarak antara checkbox dan teks
+                            className='video-call'
                           />
                           Video Call
                         </label>
@@ -162,6 +166,7 @@ const TambahPaket = ({  togglePopup }) => {
                             checked={selectedTipePaket === 'Chat'}
                             onChange={handleTipePaketChange}
                             style={{ marginRight: '10px' }} // Style untuk menyesuaikan jarak antara checkbox dan teks
+                            className='chat'
                           />
                           Chat
                         </label>
@@ -174,6 +179,7 @@ const TambahPaket = ({  togglePopup }) => {
                             checked={selectedTipePaket === 'Voice Call'}
                             onChange={handleTipePaketChange}
                             style={{ marginRight: '10px' }} // Style untuk menyesuaikan jarak antara checkbox dan teks
+                            className='voice-call'
                           />
                           Voice Call
                         </label>
@@ -184,6 +190,7 @@ const TambahPaket = ({  togglePopup }) => {
                             checked={selectedTipePaket === 'Langsung'}
                             onChange={handleTipePaketChange}
                             style={{ marginRight: '10px' }} // Style untuk menyesuaikan jarak antara checkbox dan teks
+                            className='langsung'
                           />
                           Langsung
                         </label>
@@ -191,7 +198,7 @@ const TambahPaket = ({  togglePopup }) => {
                     </div>
                   </div>
                   {/* Jumlah Sesi and Durasi Sections */}
-                  <div className="form-group">
+                  <div className="form-group-rincianpaket">
                     <label htmlFor="jumlahSesi">Rincian Paket</label>
                     <input
                       type="number"
@@ -199,6 +206,7 @@ const TambahPaket = ({  togglePopup }) => {
                       value={jumlahSesi}
                       onChange={handleJumlahSesiChange}
                       placeholder="Jumlah Sesi"
+                      className='jumlah-sesi'
                     />
                     <input
                       type="number"
@@ -206,6 +214,7 @@ const TambahPaket = ({  togglePopup }) => {
                       value={durasi}
                       onChange={handleDurasiChange}
                       placeholder="Durasi(Menit)"
+                      className='durasi'
                     />
                   </div>
                 </div>
@@ -274,6 +283,7 @@ const TambahPaket = ({  togglePopup }) => {
                         <input
                           type="checkbox"
                           id={`checkbox-${index}`}
+                          className='checkbox-dynamic'
                         />
                         <label htmlFor={`checkbox-${index}`}>{`Checkbox ${index + 1}`}</label>
                       </li>
