@@ -1,13 +1,14 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import "../styles/karierlandingpage.css";
-import bgvector from "../assets/Vector (7).png";
+import bgvector from "../assets/herokarirpage.png";
 import imgbot from "../assets/chatbot-img.png";
 import imgossel from "../assets/osselnajaya.png"
 import imgismaya from "../assets/ismaya.png"
 import imggojek from "../assets/gojek.png"
 import { FaLocationDot } from "react-icons/fa6";
 import vector1 from "../assets/Vector (6).png"
+import karierpage from "../assets/karierpage.png"
 
 const KarierPage = () => {
   return (
@@ -21,7 +22,6 @@ const KarierPage = () => {
               </div>
             </Col>
             <Col lg="6">
-              <div className="text-herokarier">
                 <h1 className="title-herokarier">
                   Temukan Langkah Terbaik untuk Masa Depan Anda
                 </h1>
@@ -29,7 +29,7 @@ const KarierPage = () => {
                   Temukan langkah terbaik menuju kesuksesan karir Anda dengan
                   fitur Rekomendasi Karir yang cerdas dan inovatif.
                 </p>
-              </div>
+              
             </Col>
           </Row>
         </Container>
@@ -64,7 +64,7 @@ const KarierPage = () => {
         <Container>
             <Row>
                 <Col lg='6'>
-                    <img src="" alt="" />
+                    <img src={karierpage} alt="img-karir" className="img-karirpage" />
                 </Col>
                 
                 <Col lg='6'>
@@ -99,7 +99,7 @@ const KarierPage = () => {
                     <Col lg='4'>
                         <div className="box-rekomendasikarir">
                             <div className="img-ismaya">
-                                <img src={imgismaya} alt="img-ossel" />
+                                <img src={imgismaya} alt="img-ismaya" />
                             </div>
                             <div className="contentbox-rekomendasi">
                                 <h1 className="posisi-karir">Assistant Sales Banquet Manager</h1>
@@ -111,7 +111,7 @@ const KarierPage = () => {
                     <Col lg='4'>
                         <div className="box-rekomendasikarir">
                             <div className="img-gojek">
-                                <img src={imggojek} alt="img-ossel" />
+                                <img src={imggojek} alt="img-gojek" />
                             </div>
                             <div className="contentbox-rekomendasi">
                                 <h1 className="posisi-karir">Data Engineer - Senior Manager</h1>

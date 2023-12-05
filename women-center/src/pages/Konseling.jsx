@@ -292,7 +292,7 @@ const KonselingPage = () => {
                 </div>
        
             <Col>
-            <p className="button-info">Pesan Sekarang</p>
+            <button className="button-info">Pesan Sekarang</button>
             </Col>
        
             <h3 className="title-paket">Konselor Professional</h3>
@@ -352,7 +352,7 @@ const KonselingPage = () => {
             </div>
 
             <Col>
-            <p className="more-button">Lebih Banyak</p>
+            <button className="more-button">Lebih Banyak</button>
             </Col>
         </div>
         

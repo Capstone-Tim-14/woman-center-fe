@@ -4,6 +4,8 @@ import HeaderKonselor from '../components/Header/headerKonselor'
 import CardProfil from '../components/card/cardProfil'
 import BannerKonselor from '../components/card/BannerKonselor'
 import { TbMoodSmileBeam } from "react-icons/tb";
+import vector1 from "../assets/Vector (6).png"
+
 
 function Konselor() {
   return (
@@ -60,16 +62,16 @@ function Konselor() {
                 </div>
             </div>
 
+
             <div className='d-flex justify-content-center'>
               <BannerKonselor 
                 icon={<TbMoodSmileBeam size={30} />} 
                 text={"Eksplorasi profil konselor kami yang penuh warna, dan temukan keunikan serta keahlian mereka dalam memberikan dukungan"}/>
             </div>
-
           </div>
         </div>
       </section>
-
+      <img src={vector1} alt="vector1" className="vector-2-footer"/>
     </>
   )
 }

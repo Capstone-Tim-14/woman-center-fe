@@ -1,16 +1,20 @@
 .hero-karirpage{
     background-color: #F8E8EE;
     width: 1440px;
-    height: 565px;
+    height: 500px;
     flex-shrink: 0;
 }
 
 .img-herokarier{
-    width: 553px;
-    height: 436px;
+    width: 653px;
+    height: 536px;
     flex-shrink: 0;
-    margin-top: 50px;
+    margin-top: 87px;
     margin-left: -100px;
+}
+
+.img-karirpage{
+    margin-top: 15px;
 }
 
 .text-herokarier{
@@ -33,6 +37,8 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-top: 150px;
+    margin-left: -50px;
 }
 
 .subt-herokarier{
@@ -42,9 +48,12 @@
     font-style: normal;
     font-weight: 400;
     line-height: 28px; /* 175% */
+    margin-left: -50px;
 }
 .chatbot-karirpage{
     gap: 128px;
+    margin-bottom: 100px;
+    margin-top: 100px;
 }
 
 .txt-chatbot{
@@ -88,8 +97,16 @@
 .rekomendasi-konseling{
     background-image: url(../assets/back-konseling.png);
     height: 868px;
-    top: 2146px;
+    top: 1946px;
     background-repeat: no-repeat;
+}
+
+.img-karirpage{
+    width: 209%; /* Set the desired width, it can be a specific value or a percentage */
+  max-width: 135%; /* Ensures that the image does not exceed its natural size */
+  height: 100%; 
+  margin-top: 7px;
+  margin-left: -80px;
 }
 
 .title-container-karir{
@@ -99,6 +116,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin-top: -50px;
 }
 
 .title-karirlandingpage{
@@ -161,7 +179,9 @@
     align-items: flex-start;
     border-radius: 20px;
     background: #FFF;
-    box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.40);
+    box-shadow: 10px 40px 50px 30px rgba(229, 233, 246, 0.40);
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .all-box-rekomendasi-karir{
