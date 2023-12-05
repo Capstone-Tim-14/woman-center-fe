@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
-import ButtonClose from '../../atom/button/buttonsClose'
+import ButtonClose from '../../atom/button/buttonsClosePaket'
 import ButtonDownload from '../../atom/button/buttonsDownload'
 import Tabel from 'react-bootstrap/Table'
 import Modal from 'react-bootstrap/Modal'
@@ -64,7 +64,7 @@ function Invoice() {
 
           <main className='d-flex flex-column gap-4 my-3 mx-3'>
 
-            <div className='d-flex justify-content-between' id=''>
+            <div className='d-flex justify-content-between' id='info'>
               <div className='d-flex flex-column col-4'>
                 <p className='m-0' style={{fontWeight: '700'}}>WOMEN CENTER</p>
                 <p className='m-0'>REG: 123000123000</p>

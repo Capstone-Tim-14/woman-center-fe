@@ -2,6 +2,7 @@ import React from 'react'
 import GrafikPaket from '../../molekul/grafiks/grafikPaket'
 import TabelSesi from '../../molekul/tabels/tabelSesi'
 import TabelPaket from '../../molekul/tabels/tabelPaket'
+import '../../../style/KontenPaket.css'
 
 function KontenPaket() {
   return (

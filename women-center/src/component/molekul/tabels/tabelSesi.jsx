@@ -6,6 +6,7 @@ import ModalHapusData from '../modal/modalHapusDataPaket'
 import SearchPaket from '../../atom/inputan/searchPaket'
 import ButtonsSort from '../../atom/button/buttonsSort'
 import EditKonseling from '../modal/EditKonselingPaket'
+import FilterKalenderPaket from '../modal/filterKalenderPaket';
 import axios from 'axios'
 
 function TabelSesi() {
@@ -94,7 +95,7 @@ function TabelSesi() {
           <SearchPaket 
             value={searchTerm}
             onchange={handleSearch}/>
-          <ModalHapusData />
+          <FilterKalenderPaket />
         </div>
       </div>
 

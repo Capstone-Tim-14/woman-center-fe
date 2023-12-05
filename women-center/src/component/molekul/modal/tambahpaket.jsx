@@ -3,7 +3,6 @@ import '../../../style/TambahPaket.css';
 import CloseButton from '../../atom/button/Closebutton';
 import Batal from '../../atom/button/Batal';
 import Tambah from '../../atom/button/Tambah';
-import Buttons from '../../atom/button/buttons';
 import  Modal  from 'react-bootstrap/Modal';
 
 const TambahPaket = ({  togglePopup }) => {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Modal } from 'react-bootstrap';
-import Buttons from '../../atom/button/buttons';
-import ButtonClose from '../../atom/button/buttonsClose';
+import Buttons from '../../atom/button/buttonsPaket';
+import ButtonClose from '../../atom/button/buttonsClosePaket';
 
 function ModalHapusData (props) {
   
