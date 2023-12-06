@@ -99,7 +99,7 @@ function TabelSesi() {
         </div>
       </div>
 
-      <Tabel responsive>
+      <Tabel responsive id='tabelsesi'>
           <thead style={{ borderTop: '1px solid #E5E5E5'}}>
             <tr 
               style={{fontSize: '14px'}}>

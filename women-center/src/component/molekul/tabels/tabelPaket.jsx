@@ -63,7 +63,7 @@ function TabelPaket() {
         </div>
       </div>
 
-      <Tabel responsive>
+      <Tabel responsive id='tabelpaket'>
         <thead style={{ borderTop: '1px solid #E5E5E5'}}>
           <tr style={{ fontSize: '14px' }}>
             <th>Nama Paket</th>
