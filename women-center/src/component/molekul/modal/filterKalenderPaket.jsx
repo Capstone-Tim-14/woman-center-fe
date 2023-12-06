@@ -9,7 +9,7 @@ const FilterKalenderPaket = () => {
   const [endDate, setEndDate] = useState(null);
   const [filteredArticles, setFilteredArticles] = useState([]);
   const [show, setShow] = useState(false);
-  const [allArticles] = useState([
+  const [allArticles, setAllArticles] = useState([
     { id: 1, title: 'Article 1', date: '2023-11-15' },
     { id: 2, title: 'Article 2', date: '2023-11-20' },
     { id: 3, title: 'Article 3', date: '2023-11-25' },
@@ -20,6 +20,16 @@ const FilterKalenderPaket = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const getTabelSesi = async () => {
+    await axios.get('http://localhost:3000/Sesi')
+    .then((response) => {
+      setAllArticles(response.data)
+      console.log(response.data)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  }
   // Fungsi untuk merefresh data saat ada perubahan pada rentang tanggal
   const refreshData = () => {
     // Implementasikan logika refresh data di sini
@@ -94,6 +104,7 @@ const FilterKalenderPaket = () => {
 
   // Menggunakan useEffect untuk memuat ulang data saat ada perubahan pada startDate atau endDate
   useEffect(() => {
+    getTabelSesi();
     refreshData();
   }, [startDate, endDate]);
 

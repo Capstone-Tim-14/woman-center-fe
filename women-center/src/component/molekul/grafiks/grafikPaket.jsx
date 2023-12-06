@@ -6,6 +6,7 @@ function GrafikPaket() {
   const [dataPaket, setDataPaket] = useState({
     series: [20, 10, 30, 40],
     options: {
+      colors: ['#FD8BA3', '#FFCC91','#97A5EB', '#6F6F6F'],
       chart: {
         width: 380,
         type: 'donut',
