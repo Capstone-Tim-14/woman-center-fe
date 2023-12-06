@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import IconEdit from "../../Atom/iconEdit";
 import KontenDataUser from "../../Organism/konten/kontenDataUser";
+import '../../../styles/modalJadwal.css';
 
 import { Modal } from "react-bootstrap";
 
@@ -26,6 +27,7 @@ const ModalDataUser = () => {
             </button>
 
             {/* Pop-up */}
+            
             <Modal show={showPopup} onHide={closePopup} size="xl" >
                 <Modal.Header closeButton>
                     <Modal.Title>Edit User</Modal.Title>

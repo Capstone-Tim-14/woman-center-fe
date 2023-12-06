@@ -13,6 +13,7 @@ import Profile from "../pages/Profile.jsx";
 import EditProfile from "../pages/editProfile.jsx";
 import Artikel from "../pages/ArtikelContainer.jsx";
 import AddArtikel from "../pages/AddArtikel.jsx";
+import Karier from "../pages/KarirPage.jsx";
 
 
 
@@ -29,6 +30,7 @@ const Routers = () => {
       <Route path="/database/data-user" element={<DataUser />} />*/}
       <Route path="/jadwal" element={<Jadwal />} />
       <Route path="/artikel" element={<Artikel />} />
+      <Route path="/karier" element={<Karier />} />
       <Route path ="/artikel/addartikel" element={<AddArtikel/>} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/profile/editprofile" element={<EditProfile />} />

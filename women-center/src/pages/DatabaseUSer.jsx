@@ -5,6 +5,7 @@ import "../styles/Database.css";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Header from "../components/Organism/HeaderDatabase";
+import SummaryUser from "../components/Organism/SummaryDatabaseUser.jsx";
 import UserText from "../components/Atom/UserText";
 import ModalTambahAkunUser from '../components/Molekul/Modal/modalTambahAkunUser.jsx';
 import SearchBar from "../components/Atom/SearchBar.jsx";
@@ -75,38 +76,9 @@ const DatabaseUser = () => {
     <div className="main-layout-database"> 
       <Header />
 
-        <div className="sub-summary-database">
-          <table className="custom-table">
-            <thead>
-              <tr>
-                <th></th>
-                <th><img src="src/assets/icon/icon.svg" alt="User Icon" />User</th>
-                <th></th><th></th>
-                <th></th><th></th>
-                <th></th><th></th>
-                <th></th><th></th>
-                <th></th><th></th>
-                <th></th><th></th>
-                <th></th><th></th>
-                <th></th><th></th>
-                
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>User Baru</td>
-                <td></td><td></td>
-                <td></td><td></td>
-                <td>User Aktif</td>
-                <td></td><td></td>
-                <td></td><td></td>
-                <td>Konseling</td>
-                <td></td><td></td>
-                <td></td><td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div className="sub-containers">
+        <SummaryUser />
+      </div>
 
 
         <div className="mt-5 p-4">

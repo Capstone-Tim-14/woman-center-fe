@@ -1,0 +1,603 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f4f1;
+    max-height: 100vh; /* Sesuaikan dengan tinggi yang diinginkan */
+  }
+  
+  /* Main Container Styles */
+  .main-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Header Styles */
+  .header {
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 15px;
+    color: #45464E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: flex;
+    top: 0;
+    z-index: 1000;
+    border-radius: 8px;
+  }
+  
+  .header-logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .header-navigation {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .header-navigation a {
+    color: #45464E;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  /* Icon Home Styles */
+  .icon-home {
+    margin-right: 5px;
+  }
+  
+  .icon-home-img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Subtitle Styles */
+  .subtitle {
+    display: flex;
+    align-items: center;
+    color: #888;
+  }
+  
+  /* Profile and Notification Styles */
+  .header-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .div-icon {
+    margin-right: 10px;
+  }
+  
+  .div-icon-inner {
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .div-icon-bar {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .div-image {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* CSS untuk Tata Letak Sub Containers */
+  .sub-containers {
+    width: 100%;
+    margin: 20px auto 5px; /* Adjusted margin */
+    display: flex;
+    justify-content: space-between;
+    gap: 5px; /* Sesuaikan dengan jarak yang diinginkan antar elemen */
+    padding-left: 10px;
+    padding-right: 70px;
+  }
+  
+  /* CSS untuk Tata Letak Left Container */
+  .interaksi-kontributor {
+    width: calc(50% - 10px); /* 50% lebar dan dikurangi margin */
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 5px; /* Adjusted margin */
+    background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+  }
+  
+  .div-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .div-header-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .div-header-left {
+    margin-right: 10px;
+  }
+  
+  .icon-image {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .div-title-DashboardSummary {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    word-wrap: break-word;
+  }
+  
+  .div-footer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .div-footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .div-footer-item {
+    text-align: center;
+  }
+  
+  .div-footer-title-left {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .div-footer-data-left {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .div-footer-percentage-left {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  /* Right Container Styles */
+  .Interaksi-user {
+    width: calc(50% - 10px); /* 50% lebar dan dikurangi margin */
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 5px; /* Adjusted margin */
+  }
+  
+  .div-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .div-header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon-image {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+  }
+  
+  .div-header-title {
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    word-wrap: break-word;
+  }
+  
+  /* Bottom Section of Right Container */
+  .div-footer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 20px;
+  }
+  
+  .div-footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .div-footer-item {
+    text-align: center;
+  }
+  
+  .div-footer-title {
+    color: #8B8D97;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .div-footer-data {
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .div-footer-percentage {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  /* AddArticleButton Styles */
+  .create-article-button {
+    margin-top: 1px;
+    margin-left: auto;
+    margin-right: 15px;
+    padding: 5px 8px;
+    background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+  }
+  
+  .create-article-button span {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  
+  
+  /* UserText Styles */
+  .user-text {
+    font-size: 20px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-right: auto;
+    font-family: sans-serif;
+  }
+  
+  /* SearchBar Styles */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Move to the right */
+    margin-left: 720px;
+    margin-bottom: 10px; /* Set to the same value as UserText margin-bottom */
+    margin-top: -20px; /* Adjust the negative margin to move it up */
+  }
+  
+  .search-icon {
+    margin-right: 10px; /* Adjust the distance */
+  }
+  
+  .search-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  }
+  
+  .filter-date-icon {
+    margin-right: -50px; /* Adjust the distance from the right */
+    margin-left: 10px;
+  }
+  
+  
+  input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .table-container-artikel {
+    overflow-x: auto;
+    width: 98%;
+  }
+  
+  .data-table-artikel {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: transparent;
+  }
+  
+  
+  /* Status Styles */
+  .status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  
+  .status-review {
+    border-radius: 8px;
+    background: rgba(10, 62, 183, 0.1);
+    color: var(--info-info-100, #146EFF);
+    text-align: center;
+  }
+  
+  
+  .status-approved {
+    border-radius: 8px;
+    background: rgba(50, 147, 111, 0.16);
+    color: var(--success-success, #339A1A);
+    text-align: center;
+  }
+  
+  
+  .status-rejected {
+    border-radius: 8px;
+    background: rgba(255, 56, 45, 0.10);
+    color: var(--danger-danger, #FF382D);
+    text-align: center;
+  }
+  
+  /* Jika delete button memiliki kelas khusus, misalnya .delete-button */
+  
+  .delete-button {
+    background: transparent;
+    border: none;
+  
+  }
+  
+  .delete-confirmation-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    max-width: 400px; /* Sesuaikan lebar maksimal sesuai kebutuhan */
+    width: 100%;
+    text-align: center;
+  }
+  
+  .delete-confirmation-modal p {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .delete-confirmation-modal button {
+    margin-top: 10px; /* Tambahkan margin atas */
+    margin-right: 10px; /* Tambahkan margin kanan */
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-confirmation-modal button.cancel-btn {
+    background-color: #fff; /* Warna putih untuk tombol batal */
+    color:   #5570F1; /* Warna teks tombol batal */
+    border: 2px solid #5570F1; /* Pinggiran border warna ungu */
+  }
+  
+  .delete-confirmation-modal button.confirm-btn {
+    background: linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%); /* Warna gradasi untuk tombol konfirmasi */
+    color: #fff;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .popup {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cancel-button {
+    background: #ccc;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  
+  /* Add this CSS to your stylesheet or component style block */
+  /* Add this CSS to your stylesheet or component style block */
+  
+  :root {
+    --gradient-button-grad: linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%);
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+  }
+  
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .popup-header h2 {
+    margin: 0;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .close-button:hover {
+    color: #ff0000;
+  }
+  
+  .popup div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px; /* Adjusted spacing */
+  }
+  
+  /* Align "Dari" and "Sampai" inputs side by side with increased spacing */
+  .popup div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .popup div label {
+    margin-right: 20px; /* Increased spacing */
+  }
+  
+  /* Center the filter button with wider width */
+  .filter-date-button {
+    background: var(--gradient-button-grad);
+    width: 100%;
+    color: #fff;
+    border: none;
+    padding: 12px 20px; /* Wider padding */
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px 0; /* Add margin for spacing */
+    display: block; /* Make the button a block element */
+  }
+  
+  /* Change font to Poppins for date inputs */
+  input[type="date"] {
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* CSS untuk PageSelector */
+  
+  .page-selector-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 20px;
+  width: 100%;
+  }
+  
+  .items-perpage {
+  display: flex;
+  align-items: center;
+  margin-left: -25px;
+  }
+  
+  .items-per-page-select {
+  margin-right: 10px;
+  }
+  
+  .items-per-page-select p1 {
+  vertical-align: middle;
+  margin-bottom: 0; /* Hilangkan margin bawah dari elemen p1 */
+  margin-left: 5px;
+  }
+  
+  select {
+  padding: 8px;
+  background: rgba(94, 99, 102, 0.08);
+  border-radius: 5px;
+  font-size: 14px;
+  }
+  
+  .page-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+  margin-left: 10px; /* Sesuaikan jarak antara elemen */
+  }
+  
+  /* CSS untuk PageOptions */
+  .page-options-artikel {
+  display: flex;
+  align-items: center;
+  margin-right: -35px;
+  }
+  
+  .page-options-artikel p {
+  margin: 0;
+  margin-left: 5px;
+  font-size: 14px;
+  color: #555;
+  }
+  
+  
+  
