@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import DeleteButton from '../Atom/DeleteButton';
 import { useNavigate } from 'react-router-dom';
 import ArtikelModal from '../Organism/BacaArtikel';
@@ -7,57 +8,65 @@ import { BsBookmark } from "react-icons/bs";
 import { BiSortAlt2 } from "react-icons/bi";
 import { FaRegComment } from "react-icons/fa";
 import '../../styles/TableSection.css';
+import { useAuth } from '../Layout/AuthContext'
+import PageOptions from './PageOption';
 
 const TableSection = () => {
-  const navigate = useNavigate();
+  const { token, logout } = useAuth();
 
-  // State untuk menyimpan data tabel
-  const [tableData, setTableData] = useState([
-    {
-      id: 1,
-      title: "Article Title 1",
-      contributor: "Contributor 1",
-      engagement: "",
-      userType: "User Type 1",
-      uploadDate: "2023-01-01",
-      status: "Review",
-      viewStatus: true, // Default view status is true
-      commentStatus: true, // Default comment status is true
-      saveStatus: true, // Default save status is true
-    },
-    {
-      id: 2,
-      title: "Article Title 2",
-      contributor: "Contributor 2",
-      engagement: "",
-      userType: "User Type 2",
-      uploadDate: "2023-01-02",
-      status: "Approved",
-      viewStatus: true, // Default view status is false
-      commentStatus: true, // Default comment status is false
-      saveStatus: true, // Default save status is false
-    },
-    {
-      id: 3,
-      title: "Article Title 3",
-      contributor: "Contributor 3",
-      engagement: "",
-      userType: "User Type 3",
-      uploadDate: "2023-01-03",
-      status: "Rejected",
-      viewStatus: true, // Default view status is true
-      commentStatus: true, // Default comment status is true
-      saveStatus: true, // Default save status is true
-    },
-    // Add more rows as needed
-  ]);
-
-  // State untuk menyimpan arah sort dan jenis kolom yang sedang di-sort
+  const [tableData, setTableData] = useState([]);
+  const [selectedRow, setSelectedRow] = useState(null);
+  const [showReviewModal, setShowReviewModal] = useState(false);
+  const [pagination, setPagination] = useState({
+    page: 1,
+    totalPage: 1,
+    nextPage: null,
+    prevPage: null,
+  });
+  
+  const fetchData = async (page = 1) => {
+    try {
+      if (token) {
+        const response = await axios.get(
+          'https://api-ferminacare.tech/api/v1/admin/articles',
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+  
+        const data = response.data;
+        // Handle the data as needed
+        setTableData(data.data);
+  
+        setPagination({
+          page: data.meta.page,
+          totalPage: data.meta.total_page,
+          nextPage: data.meta.next_page,
+          prevPage: data.meta.previous_page,
+        });
+  
+      } else {
+        console.error('Token not available.');
+        // You might want to redirect to the login page or handle unauthorized access
+        logout();
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+  
+  useEffect(() => {
+    console.log('Stored Token:', localStorage.getItem('token'));
+    fetchData();
+  }, [token, logout]);
+  
   const [sortConfig, setSortConfig] = useState({
     key: null,
     direction: 'ascending',
   });
-
+  
   // Fungsi untuk mengurutkan tabel
   const sortTable = (key) => {
     let direction = 'ascending';
@@ -65,7 +74,7 @@ const TableSection = () => {
       direction = 'descending';
     }
     setSortConfig({ key, direction });
-
+  
     // Lakukan pengurutan data
     const sortedData = [...tableData].sort((a, b) => {
       if (direction === 'ascending') {
@@ -74,18 +83,45 @@ const TableSection = () => {
         return b[key].localeCompare(a[key]);
       }
     });
-
+  
     setTableData(sortedData);
   };
-
+  
   const handleRowClick = (articleId) => {
     navigate(`/articles/${articleId}`);
   };
-
-  const confirmDelete = () => {
-    // Tambahkan logika konfirmasi atau hapus di sini
-    console.log('Delete button clicked');
+  
+  const confirmDelete = (itemId) => {
+    // Implement the logic to show a confirmation dialog or directly call deleteItem
+    deleteItem(itemId);
   };
+  
+  const deleteItem = async (itemId) => {
+    try {
+      const response = await axios.delete(
+        `https://api-ferminacare.tech/api/v1/admin/articles/${itemId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+  
+      if (response.status === 200) {
+        setTableData((prevData) => prevData.filter((item) => item.id !== itemId));
+        console.log('Item deleted:', itemId);
+      } else {
+        console.error('Unexpected status code:', response.status);
+      }
+    } catch (error) {
+      console.error('Error deleting item:', error);
+    }
+  };
+  
+  const goToPage = (page) => {
+    fetchData(page);
+  };
+  
 
   return (
     <div className="table-container-artikel">
@@ -116,10 +152,10 @@ const TableSection = () => {
         </thead>
         <tbody>
           {tableData.map((row) => (
-            <tr key={row.id}>
+            <tr key={row.slug} onClick={() => handleRowClick(row)}>
               <td><input type="checkbox" /></td>
               <td>{row.title}</td>
-              <td>{row.contributor}</td>
+              <td>{row.author.name}</td>
               <td>
                 {row.viewStatus ? <IoEyeOutline /> : null}
                 {row.viewStatus && <span>10</span>} {/* Tambahkan jarak jika viewStatus aktif */}
@@ -128,12 +164,12 @@ const TableSection = () => {
                 {row.saveStatus ? <BsBookmark /> : null}
                 {row.saveStatus && <span>3</span>} {/* Tambahkan jarak jika saveStatus aktif */}
               </td>
-              <td>{row.userType}</td>
-              <td>{row.uploadDate}</td>
+              <td>{row.author.role}</td>
+              <td>{row.published_at}</td>
               <div className={`status status-${row.status.toLowerCase()}`}>
-                  {row.status === 'Review' && 'Review'}
-                  {row.status === 'Approved' && 'Approved'}
-                  {row.status === 'Rejected' && 'Rejected'}
+                  {row.status === 'REVIEW' && 'Review'}
+                  {row.status === 'PUBLISHED' && 'Approved'}
+                  {row.status === 'REJECTED' && 'Rejected'}
                   {/* Tambahkan kondisi untuk status lain jika diperlukan */}
               </div>
               <td>
@@ -144,6 +180,9 @@ const TableSection = () => {
           ))}
         </tbody>
       </table>
+      <div>
+      <PageOptions onPageChange={goToPage} totalPages={pagination.totalPage || 1} />
+      </div>
     </div>
   );
 };9

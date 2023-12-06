@@ -12,11 +12,24 @@ import { IoSettingsOutline }  from "react-icons/io5";
 import { HiOutlineLogout } from "react-icons/hi";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { MdOutlineWorkOutline } from "react-icons/md";
+import { useAuth } from '../Layout/AuthContext.jsx'
+import { useNavigate } from 'react-router-dom';
 
 
 function layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDatabaseOpen, setIsDatabaseOpen] = useState(false);
+
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+  
+    logout();
+    
+    
+    navigate('/');
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -101,7 +114,7 @@ function layout() {
           <a href="/profile"><img src="public/asset/profile 1.jpg" style={{ marginRight: '8px', width: '24px', height: '24px' }} />Admin</a>
           </div><br/>
           <div className='logout'>
-          <a href="/profile"><HiOutlineLogout  style={{ marginRight: '8px' }}/>Keluar</a>
+          <button className= 'logout-button' onClick={handleLogout}><HiOutlineLogout  style={{ marginRight: '8px', cursor: 'pointer'}}/>Keluar</button>
           </div>
         </div>
       </div>

@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import { GrFormPrevious } from "react-icons/gr";
-import { GrFormNext } from "react-icons/gr";
+import { GrFormPrevious, GrFormNext } from 'react-icons/gr';
 
-const PageOptions = ({ onPageChange }) => {
+const PageOptions = ({ onPageChange, totalPages }) => {
   const [selectedPage, setSelectedPage] = useState(1);
-  const totalPages = 44; // Change as needed
 
   const handlePageChange = (newPage) => {
-    // Handle logic when page is changed (e.g., fetching data for the new page)
     setSelectedPage(newPage);
     onPageChange(newPage);
   };
@@ -26,14 +23,25 @@ const PageOptions = ({ onPageChange }) => {
 
   return (
     <div className="page-options-artikel">
-      <select value={selectedPage} onChange={(e) => handlePageChange(parseInt(e.target.value, 10))}>
+      <select
+        value={selectedPage}
+        onChange={(e) => handlePageChange(parseInt(e.target.value, 10))}
+      >
         {generatePageOptions()}
       </select>
       <p>of {totalPages} pages</p>
-      <button className="pages-prevnext" onClick={() => handlePageChange(selectedPage - 1)} disabled={selectedPage === 1}>
+      <button
+        className="pages-prevnext"
+        onClick={() => handlePageChange(selectedPage - 1)}
+        disabled={selectedPage === 1}
+      >
         <GrFormPrevious />
       </button>
-      <button className="pages-prevnext" onClick={() => handlePageChange(selectedPage + 1)} disabled={selectedPage === totalPages}>
+      <button
+        className="pages-prevnext"
+        onClick={() => handlePageChange(selectedPage + 1)}
+        disabled={selectedPage === totalPages}
+      >
         <GrFormNext />
       </button>
     </div>

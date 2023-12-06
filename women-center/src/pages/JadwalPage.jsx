@@ -4,7 +4,7 @@ import KalenderContainers from "../components/Organism/KalenderContainer";
 import SesiContainers from "../components/Organism/SesiContainer";
 import KalenderLeft from '../components/Organism/KalenderLeft';
 import NoteKalender from '../components/Organism/NoteKalender';
-import ModalEditKonseling from '../components/Molekul/Modal/modalEditKonseling.jsx';
+
 import "../styles/Jadwal.css";
 
 

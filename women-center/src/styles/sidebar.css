@@ -235,5 +235,13 @@ a {
   background-color: var(--primary-f-9-f-5-f-6, #F9F5F6);
   padding: 0px 12px;
   color: black;
+  
 }
 
+.logout-button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
