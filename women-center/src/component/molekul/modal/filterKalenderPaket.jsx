@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal'
 import { IoCalendarOutline } from "react-icons/io5";
+import '../../../style/filterKalenderPaket.css'
 
 const FilterKalenderPaket = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -117,9 +118,9 @@ const FilterKalenderPaket = () => {
       </button>
 
       <Modal show={show} onHide={handleClose}>
-        <div className="modal-overlay">
-            <div className="popup">
-            <div className="popup-header">
+        <div className="modal-overlay-kalender">
+            <div className="popup-kalender">
+            <div className="popup-header-kalender">
                 <h2>Berdasarkan Tanggal</h2>
             </div>
             <div>
@@ -165,7 +166,7 @@ const FilterKalenderPaket = () => {
                 />
                 </div>
             )}
-            <button className="filter-date-button" onClick={handleFilterDate}>
+            <button className="filter-date-button-kalender" onClick={handleFilterDate}>
                 Filter
             </button>
             </div>
