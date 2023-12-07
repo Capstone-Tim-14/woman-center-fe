@@ -39,7 +39,6 @@ function GrafikPaket() {
     try {
       const response = await axios.get('http://localhost:3000/series');
       const apiData = response.data;
-      console.log(apiData);
       setDataPaket({
           series: apiData.map((item) => item.data),
           options: {
@@ -47,6 +46,7 @@ function GrafikPaket() {
             labels: apiData.map((item) => item.name),
           },
         });
+    // console.log(apiData);
     }catch (error) {
       console.log(error);
     }

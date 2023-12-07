@@ -14,6 +14,28 @@
     overflow: hidden;
     max-width: 100px;
   }
+
+#tabelsesi .status-upcoming {
+    background: rgba(10, 62, 183, 0.1);
+    color: var(--info-info-100, #146EFF);
+    padding: 1px;
+    text-align: center;
+}
+
+
+#tabelsesi .status-completed {
+    background: rgba(50, 147, 111, 0.16);
+    color: var(--success-success, #339A1A);
+    padding: 1px;
+    text-align: center;
+}
+
+#tabelsesi .status-today {
+    background: rgba(255, 56, 45, 0.10);
+    color: var(--danger-danger, #FF382D);
+    padding: 1px;
+    text-align: center;
+}
   
   #buttonBatalPaket{
     background-color: #fff;

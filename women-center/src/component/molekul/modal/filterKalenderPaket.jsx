@@ -3,41 +3,16 @@ import Modal from 'react-bootstrap/Modal'
 import { IoCalendarOutline } from "react-icons/io5";
 import '../../../style/filterKalenderPaket.css'
 
-const FilterKalenderPaket = () => {
+const FilterKalenderPaket = ({onfilterApply}) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
-  const [filteredArticles, setFilteredArticles] = useState([]);
   const [show, setShow] = useState(false);
-  const [allArticles, setAllArticles] = useState([
-    { id: 1, title: 'Article 1', date: '2023-11-15' },
-    { id: 2, title: 'Article 2', date: '2023-11-20' },
-    { id: 3, title: 'Article 3', date: '2023-11-25' },
-    // Add more dummy articles as needed
-  ]);
+  const [alldates, setAllDates] = useState([]);
 
   
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const getTabelSesi = async () => {
-    await axios.get('http://localhost:3000/Sesi')
-    .then((response) => {
-      setAllArticles(response.data)
-      console.log(response.data)
-    })
-    .catch((error) => {
-      console.log(error)
-    })
-  }
-  // Fungsi untuk merefresh data saat ada perubahan pada rentang tanggal
-  const refreshData = () => {
-    // Implementasikan logika refresh data di sini
-    console.log('Merefresh data dengan rentang tanggal:', startDate, endDate);
-    // Filter artikel berdasarkan rentang tanggal
-    const filteredData = filterArticlesByDate(allArticles, startDate, endDate);
-    setFilteredArticles(filteredData);
-  };
 
   const handleCheckboxChange = (option) => {
     // Hanya satu checkbox yang dapat dipilih
@@ -50,25 +25,7 @@ const FilterKalenderPaket = () => {
     // Set rentang waktu otomatis
     setDefaultDateRange(option);
   };
-
-  const handleDateChange = (event, type) => {
-    const value = event.target.value;
-
-    if (type === 'start') {
-      setStartDate(value);
-    } else if (type === 'end') {
-      setEndDate(value);
-    }
-  };
-
-  const handleFilterDate = () => {
-    // Logika untuk menerapkan filter tanggal
-    console.log('Menerapkan filter dengan rentang tanggal:', startDate, endDate);
-    // TODO: Implement logic to apply date filter
-    refreshData();
-    handleClose();
-  };
-
+  
   // Fungsi untuk mengatur rentang tanggal sesuai dengan opsi yang dipilih
   const setDefaultDateRange = (option) => {
     const currentDate = new Date();
@@ -97,27 +54,29 @@ const FilterKalenderPaket = () => {
 
     setStartDate(newStartDate);
     setEndDate(newEndDate);
-
-    // Memuat ulang data saat ada perubahan rentang tanggal
-    refreshData();
   };
 
-  // Menggunakan useEffect untuk memuat ulang data saat ada perubahan pada startDate atau endDate
+  // value inputan date
+  const handleDateChange = (event) => {
+    const { name, value } = event.target;
+    if (name === 'startDate') {
+      setStartDate(value);
+    } else if (name === 'endDate') {
+      setEndDate(value);
+    }
+  };
+
+  // submit inputan
+  const handleFilterDate = (event) => {
+    event.preventDefault();
+    setAllDates(`${startDate} - ${endDate}`);
+    handleClose();
+    onfilterApply([startDate, endDate]);
+  };
+
   useEffect(() => {
-    getTabelSesi();
-    refreshData();
-  }, [startDate, endDate]);
-
-  // Fungsi untuk filter artikel berdasarkan rentang tanggal
-  const filterArticlesByDate = (articles, start, end) => {
-    return articles.filter((article) => {
-      const articleDate = new Date(article.date);
-      return (
-        (!start || articleDate >= new Date(start)) &&
-        (!end || articleDate <= new Date(end))
-      );
-    });
-  };
+    console.log(alldates);
+  }, [alldates]);
 
   return (
       <>
@@ -166,14 +125,16 @@ const FilterKalenderPaket = () => {
                 <label>Dari </label>
                 <input
                     type="date"
+                    name='startDate'
                     value={startDate}
-                    onChange={(e) => handleDateChange(e, 'start')}
+                    onChange={handleDateChange}
                 />
                 <label>Sampai </label>
                 <input
                     type="date"
+                    name='endDate'
                     value={endDate}
-                    onChange={(e) => handleDateChange(e, 'end')}
+                    onChange={handleDateChange}
                 />
                 </div>
             )}

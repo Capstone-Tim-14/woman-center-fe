@@ -87,7 +87,7 @@
 }
 
 /* Second Paragraph Styles */
-.percentage-type p2 {
+.percentage-type #format {
     font-size: 12px;
     margin-left: 10px; /* Atur jarak dari paragraf pertama */
     color: #fff;

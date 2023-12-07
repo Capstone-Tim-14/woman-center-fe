@@ -41,17 +41,17 @@ const Summary = ({
           <div className="percentage-type">
             <label>Total Sesi Harian</label>
             <p>200</p>
-            <p2>+{formattedPercentageA}%</p2>
+            <p id='format'>+{formattedPercentageA}%</p>
           </div>
           <div className="percentage-type">
             <label>Sesi Baru</label>
             <p>7</p>
-            <p2>+{formattedPercentageB}%</p2>
+            <p id='format'>+{formattedPercentageB}%</p>
           </div>
           <div className="percentage-type">
             <label>Konseling Tersedia</label>
             <p>12</p>
-            <p2>-{formattedPercentageC}%</p2>
+            <p id='format'>-{formattedPercentageC}%</p>
           </div>
         </div>
       </div>

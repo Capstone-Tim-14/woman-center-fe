@@ -19,13 +19,13 @@ function TabelSesi() {
     column: null,
     order: 'ASC'
   })
-
+  const [dateRange, setDateRange] = useState(null)
   // Get Data From Database
   const getTabelSesi = async () => {
     await axios.get('http://localhost:3000/Sesi')
     .then((response) => {
       setSesi(response.data)
-      console.log(response.data)
+      // console.log(response.data)
     })
     .catch((error) => {
       console.log(error)
@@ -64,10 +64,15 @@ function TabelSesi() {
     setSesi(sortedData)
   }
 
-   // Pagination
-   const indexOfLastItem = currentPage * itemsPerPage;
-   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-   const currentItems = sesi.slice(indexOfFirstItem, indexOfLastItem);
+  const handleDateRange = (selectedDateRange) => {
+    setDateRange(selectedDateRange);
+    setCurrentPage(1);
+  }
+
+  // Pagination
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = sesi.slice(indexOfFirstItem, indexOfLastItem);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   const handleItemsPerPage = (e) => setItemsPerPage(parseInt(e.target.value, 10));
@@ -78,6 +83,16 @@ function TabelSesi() {
   const handleSearch = (e) => {
     setSearchTerm(e.target.value)
   }
+
+// filter by date
+  const filteredByDateRange =
+    dateRange && dateRange[0] && dateRange[1]
+      ? filterSesi.filter(
+          (item) =>
+            new Date(item.tglDibuat) >= new Date(dateRange[0]) &&
+            new Date(item.tglDibuat) <= new Date(dateRange[1])
+        )
+      : filterSesi;
 
   // Trigger Data 
   useEffect(() => {
@@ -95,7 +110,7 @@ function TabelSesi() {
           <SearchPaket 
             value={searchTerm}
             onchange={handleSearch}/>
-          <FilterKalenderPaket />
+          <FilterKalenderPaket onfilterApply={handleDateRange}/>
         </div>
       </div>
 
@@ -118,10 +133,10 @@ function TabelSesi() {
               <th>
                 Paket
                 <ButtonsSort onClick={() => sorting('paket')}/></th>
-              <th>
+              <th className='text-center'>
                 Tanggal Dibuat
                 <ButtonsSort onClick={() => sorting('tglDibuat')}/></th>
-              <th>
+              <th className='text-center'>
                 Tanggal Pertemuan
                 <ButtonsSort onClick={() => sorting('tglPertemuan')}/></th>
               <th>
@@ -131,7 +146,7 @@ function TabelSesi() {
             </tr>
           </thead>
           <tbody style={{borderBottom: '1px solid #E5E5E5'}}>
-            {filterSesi.map ((item) => (
+            {filteredByDateRange.map ((item) => (
               <tr 
                 key={item.id}
                 style={{fontSize:'14px', borde: 'none'}}>
@@ -142,10 +157,16 @@ function TabelSesi() {
                 <td>{item.user}</td>
                 <td>{item.konselor}</td>
                 <td>{item.paket}</td>
-                <td>{item.tglDibuat}</td>
-                <td>{item.tglPertemuan}</td>
-                <td>{item.status}</td>
-                <td className='d-flex justify-content-between align-items-center'>
+                <td className='text-center'>{item.tglDibuat}</td>
+                <td className='text-center'>{item.tglPertemuan}</td>
+                <td>
+                  <div className={`status status-${item.status.toLowerCase()} rounded-3`}>
+                    {item.status === 'Today' && 'Today'}
+                    {item.status === 'Completed' && 'Completed'}
+                    {item.status === 'Upcoming' && 'Upcoming'}
+                  </div>
+                </td>
+                <td className='justify-content-center d-flex gap-2'>
                   <Invoice />
                   <EditKonseling /> 
                   <ModalHapusData clicked={() => clicked(item.id)} />
