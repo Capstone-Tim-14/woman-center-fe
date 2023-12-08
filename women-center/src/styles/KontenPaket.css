@@ -1,0 +1,53 @@
+
+#tabelpaket td{
+    border: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100px;
+  }
+
+#tabelsesi td{
+    border: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100px;
+  }
+
+#tabelsesi .status-upcoming {
+    background: rgba(10, 62, 183, 0.1);
+    color: var(--info-info-100, #146EFF);
+    padding: 1px;
+    text-align: center;
+}
+
+
+#tabelsesi .status-completed {
+    background: rgba(50, 147, 111, 0.16);
+    color: var(--success-success, #339A1A);
+    padding: 1px;
+    text-align: center;
+}
+
+#tabelsesi .status-today {
+    background: rgba(255, 56, 45, 0.10);
+    color: var(--danger-danger, #FF382D);
+    padding: 1px;
+    text-align: center;
+}
+  
+  #buttonBatalPaket{
+    background-color: #fff;
+    color: #5570F1;
+  }
+  #buttonHapusPaket{
+    background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+    color: #fff;
+    border: none;
+  }
+  #buttonHapusPaket:hover{
+    background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 100%, #FF5BCD 0%));
+    color: #fff;
+    border: none;
+  }

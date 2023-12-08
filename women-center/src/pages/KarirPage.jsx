@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SummaryKarir from "../components/Organism/SummaryKarir";
-//import AddArticleButton from "../components/Atom/AddArticleButton";
+import KarierButton from "../components/Molekul/Modal/modalTambahKarir";
 import Header from "../components/Organism/HeaderKarir";
 import SearchBar from "../components/Atom/SearchBar";
 import TableKarir from "../components/Organism/TableKarir";
@@ -10,10 +10,10 @@ import "../styles/KarirPage.css";
 
 const KarirPage = () => {
   
-  const [isCreateArticleClicked, setCreateArticleClicked] = useState(false);
+  const [isCreateKarierClicked, setCreateKarierClicked] = useState(false);
 
-  const handleCreateArticleClick = () => {
-    setCreateArticleClicked(true);
+  const handleCreateKarierClick = () => {
+    setCreateKarierClicked(true);
     // Additional logic or actions when the button is clicked
   };
 
@@ -28,7 +28,9 @@ const KarirPage = () => {
       </div>
 
       {/* Button */}
-
+      <div className='create-Karier-button'>
+        <KarierButton />
+      </div>
 
       {/* UserText */}
 

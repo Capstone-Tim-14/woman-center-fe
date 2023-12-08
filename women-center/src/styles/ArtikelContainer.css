@@ -419,7 +419,7 @@ th {
 
 .delete-confirmation-modal button.cancel-btn {
   background-color: #fff; /* Warna putih untuk tombol batal */
-  color: #ffffff; /* Warna teks tombol batal */
+  color:   #5570F1; /* Warna teks tombol batal */
   border: 2px solid #5570F1; /* Pinggiran border warna ungu */
 }
 

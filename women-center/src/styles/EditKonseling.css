@@ -1,0 +1,189 @@
+/* EditKonseling.css */
+
+/* Gaya untuk modal */
+.modal-konseling {
+  /* Atur properti untuk tampilan modal */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Efek gelap pada latar belakang */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gaya untuk konten modal */
+.modal-content-konseling {
+  /* Atur properti untuk kotak konten modal */
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 1000px;
+  height: 90%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS untuk judul konseling */
+.judul-konseling {
+  text-align: left; /* Pusatkan teks */
+  margin-bottom: 20px; /* Jarak bawah */
+}
+
+/* CSS untuk elemen h1 di dalam judul-konseling */
+.judul-konseling h1 {
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: rgba(31, 31, 31, 1); /* Warna teks */
+  margin: 0; /* Hapus margin default */
+}
+
+/* Gaya untuk label di dalam form-group-konseling */
+.form-group-konseling {
+  width: 50%;
+  border: none;
+  box-shadow: 10px;
+  color: #1F1F1F;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}
+
+.form-group-konseling label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+/* Sesuaikan dengan desain tombol close yang Anda inginkan */
+.close-button {
+  /* Atur properti untuk tombol close */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Gaya untuk label dan checkbox */
+.checkbox-label-sesi {
+  display: flex;
+  align-items: center;
+  margin-bottom: -15px;
+  margin-right: 15px; /* Atur margin kanan agar jarak antar checkbox tidak terlalu jauh */
+}
+
+
+/* Gaya untuk teks pada checkbox */
+.checkbox-text-sesi {
+  margin-left: 5px;
+}
+
+/* Gaya untuk input teks dengan class 'np' */
+input.np {
+  /* Atur properti untuk input teks dengan class 'np' */
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(239, 241, 249, 0.6);
+  color: #1F1F1F;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}
+
+/* Gaya untuk input teks dengan class 'nk' */
+input.nk {
+  /* Atur properti untuk input teks dengan class 'nk' */
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(239, 241, 249, 0.6);
+  color: #1F1F1F;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}
+
+/* Gaya untuk input teks dengan class 'nu' */
+input.nu {
+  /* Atur properti untuk input teks dengan class 'nu' */
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(239, 241, 249, 0.6);
+  color: #1F1F1F;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}
+
+/* Gaya untuk input tanggal */
+input[type='date'] {
+  /* Atur properti untuk input tanggal */
+  width: 80%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(239, 241, 249, 0.6);
+}
+
+/* Gaya untuk judul sesi */
+.sesi-title {
+  /* Atur properti untuk judul sesi */
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-family: 'Poppins', 'sans-serif';
+  color: #1F1F1F;
+  margin-top: 5px;
+}
+
+/* Gaya untuk tata letak kolom */
+.flex-container-konseling {
+  /* Atur tata letak kolom */
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Gaya untuk kolom */
+.column {
+  /* Atur properti untuk kolom */
+  flex: 1;
+  margin-right: 10px; /* Atur jarak antar kolom */
+}
+
+/* Gaya untuk container tombol pada bagian akhir */
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* Gaya untuk tombol pada bagian akhir */
+.button-container button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  gap: 10px;
+  font-size: 20px;
+  font-family: 'Inter', 'sans-serif';
+}
+
+/* Gaya untuk tombol 'Batalkan Konseling' */
+.button-container button:nth-child(1) {
+  background-color: #fff;
+  color: #5570F1;
+  border: 1px solid #5570F1;
+}
+
+/* Gaya untuk tombol 'Submit' */
+.button-container button:nth-child(2) {
+  background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+  color: #fff;
+}

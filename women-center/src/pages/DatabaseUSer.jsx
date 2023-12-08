@@ -8,7 +8,7 @@ import Header from "../components/Organism/HeaderDatabase";
 import SummaryUser from "../components/Organism/SummaryDatabaseUser.jsx";
 import UserText from "../components/Atom/UserText";
 import ModalTambahAkunUser from '../components/Molekul/Modal/modalTambahAkunUser.jsx';
-import SearchBar from "../components/Atom/SearchBar.jsx";
+import SearchBar from "../components/Atom/searchBar.jsx";
 import NewTabelUser from '../components/Organism/TabelUser.jsx';
 import PageSelector from "../components/Organism/PageSelector"; 
 

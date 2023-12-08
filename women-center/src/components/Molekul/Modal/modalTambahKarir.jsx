@@ -8,7 +8,7 @@ import ModalSucces from './successModal';
 import JobType from '../JobTypeModal';
 
 // Main component
-const modalEditKarir = () => {
+const modalTambahKarir = () => {
   // State variables
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [profileImage, setProfileImage] = useState(null);
@@ -86,8 +86,8 @@ const modalEditKarir = () => {
   return (
     <>
     {/* ini button edit */}
-      <button onClick={openModal} className="icon-button" style={{background: 'none', border: 'none'}} >
-        <MdEditSquare color='#F4518D'/>
+      <button onClick={openModal} className="btn bg-button text-white fw-medium  rounded-4" style={{background: 'var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%))', width: '200px', backgroundColor: '#F4518D', border: 'none'}} >
+        + Tambah Karier
       </button>
       
     {/* ini isinya ketika di klik */}
@@ -99,7 +99,7 @@ const modalEditKarir = () => {
             </span>
 
             <div className='mainText'>
-              <h5 style={{ color: 'black' }}>Edit Rekomendasi Karier</h5>
+              <h5 style={{ color: 'black' }}>Tambah Rekomendasi Karier</h5>
               <form className=' m-5'>
                 <div className='row auto'>
                   <div className='col-3 text-start' style={{ color: 'black' }}>
@@ -311,7 +311,7 @@ const modalEditKarir = () => {
                 onClose={() => setModalFailed(false)}/>
               <ModalSucces 
                 isOpen={modalSuccess}
-                teks="Sukses merubah informasi karier"
+                teks="Sukses menambah informasi karier"
                 onClose={() => setModalSuccess(false)}/>
             </div>
           </div>
@@ -321,4 +321,4 @@ const modalEditKarir = () => {
   );
 };
 
-export default modalEditKarir;
+export default modalTambahKarir;
