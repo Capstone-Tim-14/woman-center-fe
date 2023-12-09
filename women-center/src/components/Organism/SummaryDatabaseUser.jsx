@@ -1,4 +1,5 @@
 import React from 'react';
+import image from '../../assets/icon/icon_user.svg'
 
 
 const SummaryDatabaseUser = () => {
@@ -11,7 +12,7 @@ const SummaryDatabaseUser = () => {
         <div className="div-header-left">
           {/* Colored Icon with a small box */}
           <div className="icon-box">
-            <img src="src/assets/icon/icon_user.svg" alt="User Icon" />
+            <img src={image} alt="User Icon" />
           </div>
         </div>
         <div className="div-header-title">
@@ -25,23 +26,23 @@ const SummaryDatabaseUser = () => {
     <div className="div-footer">
       <div className="div-footer-content">
         {/* Artikel Diposting */}
-        <div className="div-footer-item">
-          <div className="div-footer-title-left">User Baru</div>
-          <div className="div-footer-data-left">1250</div>
-          <div className="div-footer-percentage-left">+15.80%</div>
+        <div className="percentage-type">
+            <label>User Baru</label>
+            <p>1250</p>
+            <p id='format'>+15.80%</p>
+        </div>
+        <div className="percentage-type">
+            <label>User Aktif</label>
+            <p>1180</p>
+            <p id='format'>+85%</p>
         </div>
         {/* Kontributor Aktif */}
-        <div className="div-footer-item">
-          <div className="div-footer-title-left">User Aktif</div>
-          <div className="div-footer-data-left">1180</div>
-          <div className="div-footer-percentage-left">+85%</div>
-        </div>
+        <div className="percentage-type">
+            <label>Konseling</label>
+            <p>70</p>
+            <p id='format'>-10%</p>
+        </div>        
         {/* Kontributor Baru */}
-        <div className="div-footer-item">
-          <div className="div-footer-title-left">Konseling</div>
-          <div className="div-footer-data-left">70</div>
-          <div className="div-footer-percentage-left">-10%</div>
-        </div>
       </div>
     </div>
   </div>

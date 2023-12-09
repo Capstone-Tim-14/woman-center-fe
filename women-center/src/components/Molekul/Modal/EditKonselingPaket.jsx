@@ -116,7 +116,7 @@ const EditKonseling = () => {
         style={{border: 'none', background: 'none'}}
         onClick={handleShow}>
         <img 
-          src="src/assets/icons/Edit Square.png" 
+          src="src/assets/icon/Edit Square.png" 
           alt="" 
           style={{width: '16px', height: '18px'}}/>
       </button>
@@ -145,7 +145,7 @@ const EditKonseling = () => {
                       type="checkbox"
                       name="waktu1"
                       checked={sesi1Waktu.waktu1}
-                      onChange={handleSesi1Change}
+                      onChange={handleSesi1Change} 
                       /> 
                   <p className="checkbox-text-sesi">08:10</p>
                     </label>

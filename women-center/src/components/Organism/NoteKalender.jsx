@@ -18,7 +18,7 @@ const NoteKalender = () => {
       background: '#FFF', 
       padding:'24px',
       borderRadius: '-20px',
-      height: '440px',
+      height: '300px',
       display: 'flex',
       flexDirection: 'column',
       color: 'white',

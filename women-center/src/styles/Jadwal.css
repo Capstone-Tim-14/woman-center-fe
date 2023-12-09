@@ -130,7 +130,8 @@ body {
 /* CSS untuk Tata Letak Sub Containers Kalender */
 .sub-jadwal-kalender {
   width: 72%;
-  margin: 10px auto 5px; /* Adjusted margin */
+  height: 400px;
+  margin: 25px auto 5px; /* Adjusted margin */
   display: flex;
   justify-content: space-between;
   gap: 1px; /* Sesuaikan dengan jarak yang diinginkan antar elemen */

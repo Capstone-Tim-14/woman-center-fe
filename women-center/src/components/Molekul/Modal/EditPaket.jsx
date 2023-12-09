@@ -82,7 +82,7 @@ const EditPaket = ({ isOpen, togglePopup }) => {
         style={{border: 'none', background: 'none'}}
         onClick={handleShow}>
         <img 
-          src="src/assets/icons/Edit Square.png" 
+          src="src/assets/icon/Edit Square.png" 
           alt="" 
           style={{width: '16px', height: '18px'}}/>
       </button>

@@ -112,6 +112,7 @@ body {
 .interaksi-kontributor {
   width: calc(50% - 10px); /* 50% lebar dan dikurangi margin */
   max-width: 450px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -186,6 +187,7 @@ body {
 .Interaksi-user {
   width: calc(50% - 10px); /* 50% lebar dan dikurangi margin */
   max-width: 450px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   background-color: #fff;

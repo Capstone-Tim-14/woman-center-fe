@@ -5,6 +5,7 @@ import "../styles/Database.css";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Header from "../components/Organism/HeaderDatabase";
+import SummaryKonselor from "../components/Organism/SummaryDatabaseKonselor.jsx";
 import UserText from "../components/Atom/UserText";
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import ModalTambahAkunKonselor from '../components/Molekul/Modal/modalTambahAkunKonselor.jsx';
@@ -75,38 +76,9 @@ const DatabaseKonselor = () => {
     <div className="main-layout-database"> 
       <Header />
 
-        <div className="sub-summary-database">
-          <table className="custom-table">
-            <thead>
-              <tr>
-                <th></th>
-                <th><img src="src/assets/icon/icon.svg" alt="Konselor Icon" />Konselor</th>
-                <th></th><th></th>
-                <th></th><th></th>
-                <th></th><th></th>
-                <th></th><th></th>
-                <th></th><th></th>
-                <th></th><th></th>
-                <th></th><th></th>
-                <th></th><th></th>
-                
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Konselor Baru</td>
-                <td></td><td></td>
-                <td></td><td></td>
-                <td>Konselor Aktif</td>
-                <td></td><td></td>
-                <td></td><td></td>
-                <td>Sesi Konseling</td>
-                <td></td><td></td>
-                <td></td><td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div className="sub-containers">
+        <SummaryKonselor />
+      </div>
 
         <div className="mt-5 p-4 ">
           <div className="d-flex justify-content-end">
