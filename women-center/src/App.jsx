@@ -1,7 +1,7 @@
-import Layout from './components/Layout/layout'
+import Notifikasi from './Components/Notifikasi'
 
 function App() {
-  return <Layout/>
+  return <Notifikasi/>
 }
 
 export default App;
