@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { LuCalendarDays } from 'react-icons/lu';
+
+const dummyArticles = [
+  { id: 1, title: 'Dummy Article 1', date: '2023-12-01' },
+  { id: 2, title: 'Dummy Article 2', date: '2023-12-05' },
+  { id: 3, title: 'Dummy Article 3', date: '2023-12-10' },
+  // Add more dummy articles as needed
+];
 
 const PopUpModal = ({ isOpen, togglePopup, onFilterApply }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [filteredArticles, setFilteredArticles] = useState([]);
-  const [allArticles] = useState([
-    { id: 1, title: 'Article 1', date: '2023-11-15' },
-    { id: 2, title: 'Article 2', date: '2023-11-20' },
-    { id: 3, title: 'Article 3', date: '2023-11-25' },
-    // Add more dummy articles as needed
-  ]);
+  const [allArticles, setAllArticles] = useState([]);
 
-  // Fungsi untuk merefresh data saat ada perubahan pada rentang tanggal
   const refreshData = () => {
     console.log('Merefresh data dengan rentang tanggal:', startDate, endDate);
     const filteredData = filterArticlesByDate(allArticles, startDate, endDate);
@@ -74,6 +76,22 @@ const PopUpModal = ({ isOpen, togglePopup, onFilterApply }) => {
     refreshData();
   }, [startDate, endDate]);
 
+  useEffect(() => {
+    /* 
+    axios.get('YOUR_API_ENDPOINT')
+      .then(response => {
+        const data = response.data;
+        setAllArticles(data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+        setAllArticles(dummyArticles);
+      });
+    */
+    // Temporary use of dummyArticles
+    setAllArticles(dummyArticles);
+  }, []);
+
   const filterArticlesByDate = (articles, start, end) => {
     return articles.filter((article) => {
       const articleDate = new Date(article.date);
@@ -85,60 +103,66 @@ const PopUpModal = ({ isOpen, togglePopup, onFilterApply }) => {
   };
 
   return (
-    isOpen && (
-      <div className="modal-overlay">
-        <div className="popup">
-          <div className="popup-header">
-            <h2>Berdasarkan Tanggal</h2>
-          </div>
-          <div>
-            <label>
-              <input
-                type="checkbox"
-                checked={selectedOption === 'week'}
-                onChange={() => handleCheckboxChange('week')}
-              />
-              Minggu
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={selectedOption === 'month'}
-                onChange={() => handleCheckboxChange('month')}
-              />
-              Bulan
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={selectedOption === 'year'}
-                onChange={() => handleCheckboxChange('year')}
-              />
-              Tahun
-            </label>
-          </div>
-          {selectedOption && (
-            <div>
-              <label>Dari </label>
-              <input
-                type="date"
-                value={startDate}
-                onChange={(e) => handleDateChange(e, 'start')}
-              />
-              <label>Sampai </label>
-              <input
-                type="date"
-                value={endDate}
-                onChange={(e) => handleDateChange(e, 'end')}
-              />
-            </div>
-          )}
-          <button className="filter-date-button" onClick={handleFilterDate}>
-            Filter
-          </button>
-        </div>
+    <div>
+      <div className="filter-date-icon" onClick={togglePopup}>
+        <LuCalendarDays size={20} />
       </div>
-    )
+
+      {isOpen && (
+        <div className="modal-overlay">
+          <div className="popup">
+            <div className="popup-header">
+              <h2>Berdasarkan Tanggal</h2>
+            </div>
+            <div>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={selectedOption === 'week'}
+                  onChange={() => handleCheckboxChange('week')}
+                />
+                Minggu
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={selectedOption === 'month'}
+                  onChange={() => handleCheckboxChange('month')}
+                />
+                Bulan
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={selectedOption === 'year'}
+                  onChange={() => handleCheckboxChange('year')}
+                />
+                Tahun
+              </label>
+            </div>
+            {selectedOption && (
+              <div>
+                <label>Dari </label>
+                <input
+                  type="date"
+                  value={startDate}
+                  onChange={(e) => handleDateChange(e, 'start')}
+                />
+                <label>Sampai </label>
+                <input
+                  type="date"
+                  value={endDate}
+                  onChange={(e) => handleDateChange(e, 'end')}
+                />
+              </div>
+            )}
+            <button className="filter-date-button" onClick={handleFilterDate}>
+              Filter
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 

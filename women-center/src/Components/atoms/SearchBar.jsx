@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
-import PopUpModal from '../organisms/PopUpModal';
-import { LuCalendarDays } from 'react-icons/lu';
 import './SearchBar.css';
-
+import PopUpModal from '../organisms/PopUpModal'; // Import PopUpModal component here
 
 const Searching = ({ value, onChange, onSearch }) => (
   <div className="d-flex align-items-center py-2 px-3 border rounded-2">
@@ -12,10 +10,13 @@ const Searching = ({ value, onChange, onSearch }) => (
       type="text"
       placeholder="Search"
       value={value}
-      onChange={onChange}
+      onChange={(e) => {
+        onChange(e); // Propagate the onChange event
+        onSearch(e.target.value); // Trigger search on input change
+      }}
       onKeyPress={(e) => {
         if (e.key === 'Enter') {
-          onSearch(); // Trigger search on Enter key press
+          onSearch(value); // Trigger search on Enter key press
         }
       }}
       style={{ border: 'none', outline: 'none', backgroundColor: 'white' }}
@@ -24,13 +25,9 @@ const Searching = ({ value, onChange, onSearch }) => (
 );
 
 const SearchBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [searchText, setSearchText] = useState('');
   const [searchResults, setSearchResults] = useState([]); // State to store search results
-
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-  };
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to handle modal display
 
   const handleSearch = () => {
     console.log(`Searching for: ${searchText}`);
@@ -47,26 +44,32 @@ const SearchBar = () => {
     );
 
     setSearchResults(filteredData);
-    togglePopup(); // Optionally close the modal after search
+  };
+
+  const handleToggleModal = () => {
+    setIsModalOpen(!isModalOpen); // Toggle the modal display
   };
 
   return (
     <div className="search-bar">
-      <Searching value={searchText} onChange={(e) => setSearchText(e.target.value)} onSearch={handleSearch} />
+      <Searching
+        value={searchText}
+        onChange={(e) => setSearchText(e.target.value)}
+        onSearch={(text) => {
+          setSearchText(text); // Update the search text state
+          handleSearch(); // Trigger the search function
+        }}
+      />
 
-      <div className="filter-date-icon" onClick={togglePopup}>
-        {/* Replace the image with LuCalendarDays icon */}
-        <LuCalendarDays size={20} />
-      </div>
+      {/* Display search results */}
+      <ul>
+        {searchResults.map(result => (
+          <li key={result.id}>{result.name}</li>
+        ))}
+      </ul>
 
-      <PopUpModal isOpen={isOpen} togglePopup={togglePopup}>
-        {/* Display search results */}
-        <ul>
-          {searchResults.map(result => (
-            <li key={result.id}>{result.name}</li>
-          ))}
-        </ul>
-      </PopUpModal>
+      {/* PopUpModal component */}
+      <PopUpModal isOpen={isModalOpen} togglePopup={handleToggleModal} />
     </div>
   );
 };

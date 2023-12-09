@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { GrFormPrevious } from "react-icons/gr";
-import { GrFormNext } from "react-icons/gr";
+import { GrFormPrevious } from 'react-icons/gr';
+import { GrFormNext } from 'react-icons/gr';
 
 const PageOptions = ({ onPageChange }) => {
   const [selectedPage, setSelectedPage] = useState(1);
-  const totalPages = 44; // Change as needed
+  const totalPages = 44; // Ubah sesuai kebutuhan
 
   const handlePageChange = (newPage) => {
-    // Handle logic when page is changed (e.g., fetching data for the new page)
     setSelectedPage(newPage);
-    onPageChange(newPage);
+    if (typeof onPageChange === 'function') {
+      onPageChange(newPage);
+    }
   };
 
   const generatePageOptions = () => {

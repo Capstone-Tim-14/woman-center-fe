@@ -3,13 +3,13 @@
 .search-bar {
     display: flex;
     align-items: center;
-    margin-left: 1030px;
+    margin-left: 500px;
     margin-bottom: -10px;
   }
   
   .filter-date-icon {
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: -15px;
   }
   
   /* Styling for the PopUpModal (modify as needed) */
