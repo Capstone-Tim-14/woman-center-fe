@@ -41,12 +41,12 @@ const Profile = () => {
     <div className="profile" style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
     <div className="header">
       <div className="header-content">
-        <h3>Dashboard</h3>
+        <h3>Profile</h3>
         <div className="subtitle">
           <div className="icon-home">
             <GoHomeFill className="icon-home-img" />
           </div>
-          <div className="subtitle-text">/ Dashboard</div>
+          <div className="subtitle-text">/ Profile</div>
         </div>
       </div>
       <div className="header-icons">

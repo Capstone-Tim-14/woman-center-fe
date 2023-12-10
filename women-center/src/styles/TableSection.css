@@ -42,11 +42,10 @@
 }
 
 
-.status-approved {
+.status-published {
     border-radius: 8px;
     background: rgba(50, 147, 111, 0.16);
     color: var(--success-success, #339A1A);
-    text-align: center;
 }
 
 

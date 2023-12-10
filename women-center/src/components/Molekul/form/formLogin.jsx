@@ -6,6 +6,7 @@ import { LuEyeOff, LuEye } from "react-icons/lu";
 import { useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import '../../../styles/formLogin.css';
+import { useAuth } from '../../Layout/AuthContext.jsx';
 
 const FormLogin = () => {
     const [email, setEmail] = useState('');
@@ -13,6 +14,8 @@ const FormLogin = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const navigate = useNavigate();
+
+    const { login } = useAuth();
 
     const handleLogin = (e) => {    
         e.preventDefault();
@@ -23,12 +26,13 @@ const FormLogin = () => {
             password: password
         }
         axios.post('https://api-ferminacare.tech/api/v1/admin/auth', data)
-            .then(result => {
-                if (result.status === 200) {
-                    localStorage.setItem('token', result.data.data.token);
-                    console.log(result.data);
-                    navigate('/dashboard');   
-                }
+        .then(result => {
+            if (result.status === 200) {
+                const authToken = result.data.data.token;
+                login(authToken);  // Corrected to pass only the token
+                console.log(result.data);
+                navigate('/dashboard');   
+            }
             })
             .catch(error => {
                 console.error('Error during login:', error);   

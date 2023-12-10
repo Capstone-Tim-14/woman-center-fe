@@ -48,9 +48,7 @@ const ModalTambahAkunUser = () => {
       <ButtonTambah style={{backgroundColor: '#F4518D'}} onClick={handleShow} label="Buat Akun User"/>
 
       <Modal 
-        show={show} 
-        onHide={handleClose} 
-        style={{width: '380px', transform: 'translate(-50%, -50%)', top: '50%', left: '50%'}}>
+        c>
 
         <Modal.Header >
           <Modal.Title className='fs-6'>Tambah User</Modal.Title>

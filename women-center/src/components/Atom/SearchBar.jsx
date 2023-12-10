@@ -18,7 +18,7 @@ const Searching = ({ value, onChange, onSearch }) => (
           onSearch(); // Trigger search on Enter key press
         }
       }}
-      style={{ border: 'none', outline: 'none', backgroundColor: 'transparent' }}
+      style={{ border: 'none', outline: 'none', backgroundColor: 'transparent', marginLeft: '-38px' }}
     />
   </div>
 );

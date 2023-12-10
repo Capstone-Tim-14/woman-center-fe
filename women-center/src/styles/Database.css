@@ -38,6 +38,93 @@ body {
     /* Atur properti CSS lainnya jika diperlukan */
 }
 
+ /* CSS untuk Tata Letak Sub Containers */
+ .sub-containers {
+    width: 100%;
+    margin: 20px auto 5px; /* Adjusted margin */
+    display: flex;
+    justify-content: space-between;
+    gap: 5px; /* Sesuaikan dengan jarak yang diinginkan antar elemen */
+    padding-left: 10px;
+    padding-right: 70px;
+  }
+  
+  /* CSS untuk Tata Letak Left Container */
+  .interaksi-kontributor {
+    width: calc(50% - 10px); /* 50% lebar dan dikurangi margin */
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 5px; /* Adjusted margin */
+    background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+  }
+  
+  .div-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .div-header-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .div-header-left {
+    margin-right: 10px;
+  }
+  
+  .icon-image {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .div-title-DashboardSummary {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    word-wrap: break-word;
+  }
+  
+  .div-footer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .div-footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .div-footer-item {
+    text-align: center;
+  }
+  
+  .div-footer-title-left {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .div-footer-data-left {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .div-footer-percentage-left {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+
+
 .table-header th {
     border-bottom: 1px solid #4B4B4B !important;
     /* Atur warna dan gaya border sesuai kebutuhan */

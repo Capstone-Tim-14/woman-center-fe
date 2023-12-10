@@ -9,7 +9,7 @@ const LeftContainer = () => (
         <div className="div-header-left">
           {/* Colored Icon with a small box */}
           <div className="icon-box">
-            <HiOutlineUsers className="icon-image colored-icon" />
+            <img src="public/asset/icon_user.svg" alt="User Icon" />
           </div>
         </div>
         <div className="div-header-title">
@@ -23,23 +23,23 @@ const LeftContainer = () => (
     <div className="div-footer">
       <div className="div-footer-content">
         {/* Artikel Diposting */}
-        <div className="div-footer-item">
-          <div className="div-footer-title-left">Artikel Diposting</div>
-          <div className="div-footer-data-left">1,250</div>
-          <div className="div-footer-percentage-left">+15.80%</div>
-        </div>
+        <div className="percentage-type">
+            <label>Artikel Diposting</label>
+            <p>1,250</p>
+            <p id='format'>+15.80%</p>
+          </div>
+          <div className="percentage-type">
+            <label>Kontributor Aktif</label>
+            <p>1,180</p>
+            <p id='format'>+85%</p>
+          </div>
         {/* Kontributor Aktif */}
-        <div className="div-footer-item">
-          <div className="div-footer-title-left">Kontributor Aktif</div>
-          <div className="div-footer-data-left">1,180</div>
-          <div className="div-footer-percentage-left">+85%</div>
-        </div>
+        <div className="percentage-type">
+            <label>Kontributor Baru</label>
+            <p>70</p>
+            <p id='format'>-10%</p>
+          </div>
         {/* Kontributor Baru */}
-        <div className="div-footer-item">
-          <div className="div-footer-title-left">Kontributor Baru</div>
-          <div className="div-footer-data-left">70</div>
-          <div className="div-footer-percentage-left">-10%</div>
-        </div>
       </div>
     </div>
   </div>
