@@ -140,12 +140,12 @@ const KontenDataUser = () => {
                 <Artikel 
                   checkboxArtikel={checkboxItemsArtikel} 
                   onCheckBoxChange={handleCheckboxChange} />
-                {/* <Karier 
+                <Karier 
                   checkboxKarier={checkboxItemsArtikel} 
                   onCheckBoxChange={handleCheckboxChange}/>
                 <Konseling 
                   checkboxKonseling={checkboxItemsArtikel} 
-                  onCheckBoxChange={handleCheckboxChange} /> */}
+                  onCheckBoxChange={handleCheckboxChange} /> 
               </div>
             </div>
             <div className='d-flex gap-2 justify-content-end mt-4'>

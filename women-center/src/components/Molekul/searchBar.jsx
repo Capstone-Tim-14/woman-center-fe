@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import PopUpModal from '../Molekul/popUpModal.jsx';
-import { LuCalendarDays } from 'react-icons/lu';
+import FilterKalender from '../Molekul/Modal/filterKalenderPaket';
 import '../../styles/searchBar.css';
 
 
@@ -54,19 +54,7 @@ const SearchBar = () => {
     <div className="search-bar">
       <Searching value={searchText} onChange={(e) => setSearchText(e.target.value)} onSearch={handleSearch} />
 
-      <div className="filter-date-icon" onClick={togglePopup}>
-        {/* Replace the image with LuCalendarDays icon */}
-        <LuCalendarDays size={25} />
-      </div>
-
-      <PopUpModal isOpen={isOpen} togglePopup={togglePopup}>
-        {/* Display search results */}
-        <ul>
-          {searchResults.map(result => (
-            <li key={result.id}>{result.name}</li>
-          ))}
-        </ul>
-      </PopUpModal>
+      <FilterKalender />
     </div>
   );
 };

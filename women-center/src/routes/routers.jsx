@@ -6,7 +6,9 @@ import Dashboard from "../pages/Dashboard.jsx";
 import DatabaseUser from "../pages/DatabaseUSer.jsx";
 import DatabaseKonselor from "../pages/DatabaseKonselor.jsx";
 import Jadwal from "../pages/JadwalPage.jsx";
-import KalenderPage from "../pages/Kalender.jsx";
+import Paket from "../pages/PaketPage.jsx";
+import Karier from "../pages/KarirPage.jsx";
+//import KalenderPage from "../pages/Kalender.jsx";
 import DataKonselor from "../pages/DataKonselor.jsx";
 import DataUser from "../pages/DataUser.jsx";
 import Profile from "../pages/Profile.jsx";
@@ -14,6 +16,7 @@ import EditProfile from "../pages/editProfile.jsx";
 import Artikel from "../pages/ArtikelContainer.jsx";
 import ArtikelBaru from "../components/Organism/ArtikelBaru.jsx"
 import Karier from "../pages/KarirPage.jsx";
+//import AddArtikel from "../pages/AddArtikel.jsx";
 
 
 
@@ -29,9 +32,11 @@ const Routers = () => {
       {/*<Route path="/database/data-konselor" element={<DataKonselor />} />
       <Route path="/database/data-user" element={<DataUser />} />*/}
       <Route path="/jadwal" element={<Jadwal />} />
+      <Route path="/paket" element={<Paket />} />
       <Route path="/artikel" element={<Artikel />} />
       <Route path="/karier" element={<Karier />} />
       <Route path ="/artikel/addartikel" element={<ArtikelBaru/>} />
+      {/*<Route path ="/artikel/addartikel" element={<AddArtikel/>} />*/}
       <Route path="/profile" element={<Profile />} />
       <Route path="/profile/editprofile" element={<EditProfile />} />
     </Routes>

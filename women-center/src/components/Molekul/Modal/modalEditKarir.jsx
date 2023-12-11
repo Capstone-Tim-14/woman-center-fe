@@ -300,7 +300,7 @@ const modalEditKarir = () => {
                   </div>
                   <div className='row'>
                     <div className='col text-end'>
-                      <button className='btnbatal'>Batal</button>
+                      <button className='btnbatal' style={{backgroundColor: '#FFF'}}>Batal</button>
                       <button className='buttonsave' onClick={handleSubmit}>Simpan</button>
                     </div>
                   </div>

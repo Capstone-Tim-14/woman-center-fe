@@ -22,7 +22,7 @@ const ModalDataUser = () => {
         <section>
 
             {/* Tombol untuk membuka pop-up */}
-            <button onClick={openPopup} variant="link" className="bg-white">
+            <button onClick={openPopup} variant="link" className="bg-transparent" style={{ backgroundColor: 'transparent', border: 'none' }}>
                 <IconEdit size={20} />
             </button>
 

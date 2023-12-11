@@ -107,59 +107,64 @@ const PopUpModal = ({ isOpen, togglePopup }) => {
 
   return (
     isOpen && (
-      <div className="modal-overlay">
-        <div className="popup">
-          <div className="popup-header">
-            <h2>Berdasarkan Tanggal</h2>
-          </div>
-          <div>
-            {/* Checkbox untuk memilih rentang tanggal */}
-            <label>
-              <input
-                type="checkbox"
-                checked={selectedOption === 'week'}
-                onChange={() => handleCheckboxChange('week')}
-              />
-              Minggu
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={selectedOption === 'month'}
-                onChange={() => handleCheckboxChange('month')}
-              />
-              Bulan
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={selectedOption === 'year'}
-                onChange={() => handleCheckboxChange('year')}
-              />
-              Tahun
-            </label>
-          </div>
-          {selectedOption && (
-            <div>
-              <label>Dari </label>
-              <input
-                type="date"
-                value={startDate}
-                onChange={(e) => handleDateChange(e, 'start')}
-              />
-              <label>Sampai </label>
-              <input
-                type="date"
-                value={endDate}
-                onChange={(e) => handleDateChange(e, 'end')}
-              />
-            </div>
-          )}
-          <button className="filter-date-button" onClick={handleFilterDate}>
-            Filter
-          </button>
-        </div>
+      <div className="modal-overlay-kalender">
+      <div className="popup-kalender">
+      <div className="popup-header-kalender">
+          <h2>Berdasarkan Tanggal</h2>
       </div>
+      <div>
+          {/* Checkbox untuk memilih rentang tanggal */}
+          <label>
+          <input
+              type="checkbox"
+              style={{marginLeft: '-165px'}}
+              checked={selectedOption === 'week'}
+              onChange={() => handleCheckboxChange('week')}
+          />
+          Minggu
+          </label>
+          <label>
+          <input
+              type="checkbox"
+              style={{marginLeft: '-165px'}}
+              checked={selectedOption === 'month'}
+              onChange={() => handleCheckboxChange('month')}
+          />
+          Bulan
+          </label>
+          <label>
+          <input
+              type="checkbox"
+              style={{marginLeft: '-165px'}}
+              checked={selectedOption === 'year'}
+              onChange={() => handleCheckboxChange('year')}
+          />
+          Tahun
+          </label>
+      </div>
+      {selectedOption && (
+          <div>
+          <label>Dari </label>
+          <input
+              type="date"
+              name='startDate'
+              value={startDate}
+              onChange={handleDateChange}
+          />
+          <label>Sampai </label>
+          <input
+              type="date"
+              name='endDate'
+              value={endDate}
+              onChange={handleDateChange}
+          />
+          </div>
+      )}
+      <button className="filter-date-button-kalender" onClick={handleFilterDate}>
+          Filter
+      </button>
+      </div>
+  </div>
     )
   );
 };

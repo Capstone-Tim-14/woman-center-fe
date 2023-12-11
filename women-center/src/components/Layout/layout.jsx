@@ -12,7 +12,7 @@ import { IoSettingsOutline }  from "react-icons/io5";
 import { HiOutlineLogout } from "react-icons/hi";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { MdOutlineWorkOutline } from "react-icons/md";
-import { useAuth } from '../Layout/AuthContext.jsx'
+import { useAuth } from './AuthContext.jsx'
 import { useNavigate } from 'react-router-dom';
 
 

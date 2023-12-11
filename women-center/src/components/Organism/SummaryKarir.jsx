@@ -2,49 +2,58 @@ import React from 'react';
 
 
 const SummaryKarir = () => {
+  // State untuk menyimpan data total artikel dan persentase untuk setiap jenis
+  const [percentageIncreaseA, setPercentageIncreaseA] = React.useState(15.80);
+  const [percentageIncreaseB, setPercentageIncreaseB] = React.useState(10);
+  const [percentageIncreaseC, setPercentageIncreaseC] = React.useState(10);
+
   return (
-    <div className="sub-containers">
-        <div className="interaksi-kontributor">
-    {/* Top Section of Left Container */}
-    <div className="div-header">
-      <div className="div-header-content">
-        <div className="div-header-left">
-          {/* Colored Icon with a small box */}
-          <div className="icon-box">
+    <div className="summary-container">
+      <Summary
+        percentageIncreaseA={percentageIncreaseA}
+        percentageIncreaseB={percentageIncreaseB}
+        percentageIncreaseC={percentageIncreaseC}
+      />
+    </div>
+  );
+};
+
+const Summary = ({
+  percentageIncreaseA,
+  percentageIncreaseB,
+  percentageIncreaseC,
+}) => {
+  const formattedPercentageA = percentageIncreaseA.toFixed(2); // Format untuk jenis A
+  const formattedPercentageB = percentageIncreaseB.toFixed(2); // Format untuk jenis B
+  const formattedPercentageC = percentageIncreaseC.toFixed(2); // Format untuk jenis C
+
+  return (
+    <div className="box-summary">
+      <div className="box-top">
+        <div className="icon-box">
             <img src="public/asset/icon_user.svg" alt="User Icon" />
+        </div>
+        <p>Interaksi User</p>
+      </div>
+      <div className="box-bottom-user">
+        <div className="percentage-container">
+          <div className="percentage-type">
+            <label>Akses Harian</label>
+            <p>200</p>
+            <p id='format'>+{formattedPercentageA}%</p>
+          </div>
+          <div className="percentage-type">
+            <label>Visit Link</label>
+            <p>7</p>
+            <p id='format'>+{formattedPercentageB}%</p>
+          </div>
+          <div className="percentage-type">
+            <label>Pengguna Chatbot</label>
+            <p>12</p>
+            <p id='format'>-{formattedPercentageC}%</p>
           </div>
         </div>
-        <div className="div-header-title">
-          {/* Tulisan "Interaksi Kontributor" dan Option */}
-          <div className="div-title-DashboardSummary">Interaksi User</div>
-        </div>
       </div>
-    </div>
-
-    {/* Bottom Section of Left Container */}
-    <div className="div-footer">
-      <div className="div-footer-content">
-        {/* Artikel Diposting */}
-        <div className="div-footer-item">
-          <div className="div-footer-title-left">Akses Harian</div>
-          <div className="div-footer-data-left">200</div>
-          <div className="div-footer-percentage-left">+15.80%</div>
-        </div>
-        {/* Kontributor Aktif */}
-        <div className="div-footer-item">
-          <div className="div-footer-title-left">Visit Link</div>
-          <div className="div-footer-data-left">7</div>
-          <div className="div-footer-percentage-left">+10%</div>
-        </div>
-        {/* Kontributor Baru */}
-        <div className="div-footer-item">
-          <div className="div-footer-title-left">Pengguna Chatbot</div>
-          <div className="div-footer-data-left">12</div>
-          <div className="div-footer-percentage-left">-10%</div>
-        </div>
-      </div>
-    </div>
-  </div>
     </div>
   );
 };

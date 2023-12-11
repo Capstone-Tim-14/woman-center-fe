@@ -9,7 +9,7 @@ const RightContainer = () => (
         <div className="div-header-right">
           {/* Icon */}
           <div className="icon-box">
-            <HiOutlineUser className="icon-image colored-icon" />
+          <img src="public/asset/user_artikel.svg" alt="User Icon" />
           </div>
           <div className="div-header-title">Interaksi User</div>
         </div>
