@@ -39,3 +39,16 @@ h2 {
 section {
   padding: 60px 0px;
 }
+
+.bg-button {
+  background-image: linear-gradient(to right, var(--primary-color ), var(--secondary-color ));
+  border: 1.5px solid var(--secondary-color); 
+}
+
+:root {
+  --primary-color: #FF5BCD 2%;
+  --secondary-color: #FD8BA3 ;
+  --third-color: #EFF1F999;
+  --secondary-30: #FFF2E2;
+  --grey: #ABAFB1;
+}

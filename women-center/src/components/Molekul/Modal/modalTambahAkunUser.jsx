@@ -48,7 +48,9 @@ const ModalTambahAkunUser = () => {
       <ButtonTambah style={{backgroundColor: '#F4518D'}} onClick={handleShow} label="Buat Akun User"/>
 
       <Modal 
-        c>
+        show={show} 
+        onHide={handleClose} 
+        style={{width: '430px', height: '670px', transform: 'translate(-50%, -50%)', top: '50%', left: '50%'}}>
 
         <Modal.Header >
           <Modal.Title className='fs-6'>Tambah User</Modal.Title>
@@ -57,7 +59,7 @@ const ModalTambahAkunUser = () => {
 
         <Modal.Body>
           <Form>
-          <Form.Group className="d-flex flex-column gap-3 ">
+          <Form.Group className="d-flex flex-column gap-3" style={{marginRight: '90px'}}>
           <Inputan 
                 type="text" 
                 placeholder="Nama Depan"
@@ -101,7 +103,7 @@ const ModalTambahAkunUser = () => {
           />
             
           <Buttonn 
-            className='bg-button text-white' 
+            className='bg-button text-white style' 
             onClick={handleClick}
             label="Tambah"
           />

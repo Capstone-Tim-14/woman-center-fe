@@ -8,11 +8,21 @@ import GrafikArtikel from "../components/Organism/GrafikArtikel";
 
 const Dashboard = () => {
     return (
-        <div> 
-            <Header />
-            <MainBox />
-            <GrafikArtikel />
-            <Listartikel />
+        <div className="container"> 
+            <div className="row">
+                <div className="col-lg-12">
+                    <Header />
+                </div>
+                <div className="col-lg-12">
+                    <MainBox />
+                </div>
+                <div className="col-lg-12">
+                    <GrafikArtikel />
+                </div>
+                <div className="col-lg-12">
+                    <Listartikel />
+                </div>
+            </div>
         </div>
     );
 }

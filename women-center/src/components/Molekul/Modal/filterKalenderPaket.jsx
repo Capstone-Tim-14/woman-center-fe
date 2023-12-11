@@ -10,6 +10,7 @@ const FilterKalenderPaket = ({onfilterApply}) => {
   const [show, setShow] = useState(false);
   const [alldates, setAllDates] = useState([]);
 
+
   
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -25,6 +26,7 @@ const FilterKalenderPaket = ({onfilterApply}) => {
     // Set rentang waktu otomatis
     setDefaultDateRange(option);
   };
+
   
   // Fungsi untuk mengatur rentang tanggal sesuai dengan opsi yang dipilih
   const setDefaultDateRange = (option) => {
@@ -77,6 +79,8 @@ const FilterKalenderPaket = ({onfilterApply}) => {
   useEffect(() => {
     console.log(alldates);
   }, [alldates]);
+
+  
 
   return (
       <>
