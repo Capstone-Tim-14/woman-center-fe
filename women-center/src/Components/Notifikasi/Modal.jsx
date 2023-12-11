@@ -5,6 +5,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { FaTimes } from 'react-icons/fa'; 
 import imagenotif from '../../Assets/logonotif.png';
+import "../../Components/Notifikasi/Modal.css"
 
 const ModalNotification = ({ isOpen, closeModal}) => {
   const customStyles = {
@@ -28,12 +29,67 @@ const ModalNotification = ({ isOpen, closeModal}) => {
             <FaTimes />
           </button>
         </div>
-        <h2>Notification</h2>
-        <div className= "img-notif">
-            <img src={imagenotif} alt="imgnotif" />
+        <h4 className='title-notif'>Notification</h4>
+        <div className='notifikasi-content'>
+          <div className= "img-notif">
+              <img src={imagenotif} alt="imgnotif" />
+          </div>
+          <div className='text-notif'>
+            <p className='judul-notif'>Pengguna Baru Terdaftar</p>
+            <p className='waktu-notif'>19 Jam yang lalu</p>
+          </div>
         </div>
-        <p>Pengguna Baru Terdaftar</p>
-        <p>19 Jam yang lalu</p>
+
+        <div className='notifikasi-content'>
+          <div className= "img-notif">
+              <img src={imagenotif} alt="imgnotif" />
+          </div>
+          <div className='text-notif'>
+            <p className='judul-notif'>Pengguna Baru Terdaftar</p>
+            <p className='waktu-notif'>19 Jam yang lalu</p>
+          </div>
+        </div>
+
+        <div className='notifikasi-content'>
+          <div className= "img-notif">
+              <img src={imagenotif} alt="imgnotif" />
+          </div>
+          <div className='text-notif'>
+            <p className='judul-notif'>Pengguna Baru Terdaftar</p>
+            <p className='waktu-notif'>19 Jam yang lalu</p>
+          </div>
+        </div>
+
+        <div className='notifikasi-content'>
+          <div className= "img-notif">
+              <img src={imagenotif} alt="imgnotif" />
+          </div>
+          <div className='text-notif'>
+            <p className='judul-notif'>Pengguna Baru Terdaftar</p>
+            <p className='waktu-notif'>19 Jam yang lalu</p>
+          </div>
+        </div>
+
+        <div className='notifikasi-content'>
+          <div className= "img-notif">
+              <img src={imagenotif} alt="imgnotif" />
+          </div>
+          <div className='text-notif'>
+            <p className='judul-notif'>Pengguna Baru Terdaftar</p>
+            <p className='waktu-notif'>19 Jam yang lalu</p>
+          </div>
+        </div>
+
+        <div className='notifikasi-content'>
+          <div className= "img-notif">
+              <img src={imagenotif} alt="imgnotif" />
+          </div>
+          <div className='text-notif'>
+            <p className='judul-notif'>Pengguna Baru Terdaftar</p>
+            <p className='waktu-notif'>19 Jam yang lalu</p>
+          </div>
+        </div>
+
       </div>
     </Modal>
   );
