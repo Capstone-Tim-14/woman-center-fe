@@ -13,7 +13,7 @@ import PageOptions from './PageOption';
 
 const TableSection = () => {
   const { token, logout } = useAuth();
-
+  const [filterText, setFilterText] = useState('');
   const [tableData, setTableData] = useState([]);
   const [selectedRow, setSelectedRow] = useState(null);
   const [showReviewModal, setShowReviewModal] = useState(false);
@@ -24,7 +24,7 @@ const TableSection = () => {
     prevPage: null,
   });
   
-  const fetchData = async (page = 1) => {
+  const fetchData = async (page = 1, filter = '') => {
     try {
       if (token) {
         const response = await axios.get(
@@ -32,6 +32,10 @@ const TableSection = () => {
           {
             headers: {
               Authorization: `Bearer ${token}`,
+            },
+            params: {
+              page,
+              filter, // Pass filter text as a parameter
             },
           }
         );
@@ -59,8 +63,8 @@ const TableSection = () => {
   
   useEffect(() => {
     console.log('Stored Token:', localStorage.getItem('token'));
-    fetchData();
-  }, [token, logout]);
+    fetchData(1, filterText); // Fetch data with filter text
+  }, [token, logout, filterText]);
   
   const [sortConfig, setSortConfig] = useState({
     key: null,

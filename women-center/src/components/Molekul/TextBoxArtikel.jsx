@@ -6,37 +6,43 @@ import '../../styles/TextBoxArtikel.css';
 
 import FormWithEditor from '../atom/TextEditor';
 
-const TextBoxArtikel = ({ onTitleChange, onArticleContentChange, onSubmit  }) => {
-    const [title, setTitle] = useState('');
-    const [articleContent, setArticleContent] = useState('');
-  
-    const handleTitleChange = (e) => {
-      setTitle(e.target.value);
-      onTitleChange(e.target.value);
-    };
-  
-    const handleArticleContentChange = (e) => {
-      setArticleContent(e.target.value);
-      onArticleContentChange(e.target.value);
-    };
+const TextBoxArtikel = ({ onTitleChange, onArticleContentChange, onSubmit }) => {
+  const [title, setTitle] = useState('');
+  const [articleContent, setArticleContent] = useState('');
+  const [imageFile, setImageFile] = useState(null); // State to hold the image file
 
-    const handleSubmitForm = () => {
-      // Call the onSubmit prop with the form data
-      onSubmit(title, articleContent);
-    };
-  
+
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
+    onTitleChange(e.target.value);
+  };
+
+  const handleArticleContentChange = (content) => {
+    setArticleContent(content);
+
+    // Check if onArticleContentChange is defined before calling it
+    if (onArticleContentChange) {
+      onArticleContentChange(content);
+    }
+  };
+
+  const handleSubmitForm = () => {
+    // Call the onSubmit prop with the form data
+    onSubmit(title, articleContent);
+  };
+
     return (
       <Container>
-        <Row className="text-left">
+        <Row >
           
-            <TextBoxAtom
-              className="text-box-artikel"
-              title="Judul"
-              placeholder="Your text goes here"
-              value={title}
-              onChange={handleTitleChange}
-              type="text"
-            />
+        <TextBoxAtom
+  className="text-box-artikel"
+  title="Judul"
+  placeholder="Your text goes here"
+  value={title || ''}  // Use an empty string if 'title' is undefined
+  onChange={handleTitleChange}
+  type="text"
+/>
             
         </Row>
         <Row>

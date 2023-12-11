@@ -44,15 +44,13 @@ const AddArtikel = () => {
     return (
       
         <>
-        <div className="page-container"/>
-        <TitleBar
-        onSubmit={() => handleSubmit()}
-        title={articleData.title} 
-      />
-      <ArtikelBaru onTitleChange={handleTitleChange} />
-        <Button onClick={handleShowPopup}>Open Popup</Button>
+        <div className="page-container">
        
-        <ArtikelModal show={showPopup} handleClose={handleClosePopup}> </ArtikelModal>
+      <ArtikelBaru onTitleChange={handleTitleChange} />
+      /</div>
+        
+       
+        
          </>
     );
   };
