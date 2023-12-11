@@ -33,9 +33,6 @@ const SearchBar = () => {
     console.log(`Searching for: ${searchText}`);
     // Simulate API call by filtering dummy data
     const dummyData = [
-      { id: 1, name: 'John Doe' },
-      { id: 2, name: 'Jane Doe' },
-      { id: 3, name: 'Alice Smith' },
       // Add more dummy data as needed
     ];
 
