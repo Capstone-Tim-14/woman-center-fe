@@ -163,9 +163,7 @@ const TabelKarir = () => {
                   <Karir/>
                 </div>
                   <DeleteButton 
-                  style={{marginLeft:"60px", padding:"10px"}}
-                  onClick={() => handleDelete(row.id)}
-                  />
+                  style={{marginLeft:"60px", padding:"10px"}}/>
                 </div>
             </tr>
           ))}

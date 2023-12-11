@@ -25,6 +25,7 @@ const TextBoxArtikel = ({ onTitleChange, onArticleContentChange, onSubmit }) => 
       onArticleContentChange(content);
     }
   };
+  
 
   const handleSubmitForm = () => {
     // Call the onSubmit prop with the form data

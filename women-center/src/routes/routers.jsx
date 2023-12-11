@@ -15,7 +15,7 @@ import Profile from "../pages/Profile.jsx";
 import EditProfile from "../pages/editProfile.jsx";
 import Artikel from "../pages/ArtikelContainer.jsx";
 import ArtikelBaru from "../components/Organism/ArtikelBaru.jsx"
-import Karier from "../pages/KarirPage.jsx";
+
 //import AddArtikel from "../pages/AddArtikel.jsx";
 
 
