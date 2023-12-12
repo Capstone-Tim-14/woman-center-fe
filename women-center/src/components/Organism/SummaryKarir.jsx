@@ -1,4 +1,5 @@
 import React from 'react';
+import KarirSummary from '../../assets/icon/icon_user.svg'
 
 
 const SummaryKarir = () => {
@@ -31,7 +32,7 @@ const Summary = ({
     <div className="box-summary">
       <div className="box-top">
         <div className="icon-box">
-            <img src="public/asset/icon_user.svg" alt="User Icon" />
+            <img src={KarirSummary} alt="User Icon" />
         </div>
         <p>Interaksi User</p>
       </div>

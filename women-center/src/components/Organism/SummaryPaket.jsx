@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../styles/SummaryContainer.css';
+import PaketSummary from '../../assets/icon/icon_user.svg'
 
 const SummaryContainer = () => {
   // State untuk menyimpan data total artikel dan persentase untuk setiap jenis
@@ -31,7 +32,7 @@ const Summary = ({
     <div className="box-summary">
       <div className="box-top">
         <div className="icon-box">
-            <img src="public/asset/icon_user.svg" alt="User Icon" />
+            <img src={PaketSummary} alt="User Icon" />
         </div>
         <p>Sesi</p>
       </div>

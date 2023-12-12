@@ -1,5 +1,6 @@
 import React from 'react';
 import { HiOutlineUsers } from 'react-icons/hi2';
+import UserSummary from '../../assets/icon/icon_user.svg'
 
 const LeftContainer = () => (
   <div className="interaksi-kontributor">
@@ -9,7 +10,7 @@ const LeftContainer = () => (
         <div className="div-header-left">
           {/* Colored Icon with a small box */}
           <div className="icon-box">
-            <img src="public/asset/icon_user.svg" alt="User Icon" />
+            <img src={UserSummary} alt="User Icon" />
           </div>
         </div>
         <div className="div-header-title">

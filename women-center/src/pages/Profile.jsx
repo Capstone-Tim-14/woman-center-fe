@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "../styles/Profile.css";
+import fotoProfile from '../assets/icon/profile 1.jpg';
+import fotoProfile2 from '../assets/icon/profile 2.png';
 import axios from 'axios';
 import { BsPeople } from "react-icons/bs";
 import { LuMail } from "react-icons/lu";
@@ -7,6 +9,7 @@ import { FiMapPin } from "react-icons/fi";
 import { IoFlagOutline } from "react-icons/io5";
 import { GoHomeFill } from 'react-icons/go';
 import { IoNotifications } from 'react-icons/io5';
+
 
 const Profile = () => {
   const [selectedOptions, setSelectedOptions] = useState({
@@ -58,7 +61,7 @@ const Profile = () => {
         </div>
 
         {/* Profile Image */}
-        <img className="div-image" src="public/asset/profile 1.jpg" alt="Profile Image" />
+        <img className="div-image" src={fotoProfile} alt="Profile Image" />
       </div>
     </div>
 
@@ -200,7 +203,7 @@ const Profile = () => {
 
         <div style={{ margin: '16px' }}></div>
         <img
-          src="/src/assets/icon/profile 2.png"
+          src={fotoProfile2}
           alt="Side Image"
           className="side-image"
           style={{ width: '172px', height: '172px', alignSelf: 'flex-start', marginRight: '40px', borderRadius: '12px' }}

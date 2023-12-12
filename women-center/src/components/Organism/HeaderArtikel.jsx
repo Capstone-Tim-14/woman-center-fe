@@ -1,6 +1,7 @@
 import React from 'react';
 import { GoHomeFill } from 'react-icons/go';
 import { IoNotifications } from 'react-icons/io5';
+import Profile from '../../assets/icon/profile 1.jpg'
 
 const HeaderArtikel = () => {
   return (
@@ -23,7 +24,7 @@ const HeaderArtikel = () => {
         </div>
 
         {/* Profile Image */}
-        <img className="div-image" src="public/asset/profile 1.jpg" alt="Profile Image" />
+        <img className="div-image" src={Profile} alt="Profile Image" />
       </div>
     </div>
   );

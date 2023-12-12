@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DashboardSummarySesiDipesan from '../../assets/icon/tas.svg'
 
 const SesiDipesanContainer = () => {
   // State untuk menyimpan data sesi dipesan
@@ -20,7 +21,7 @@ const SesiDipesan = ({ reservedSessions, percentageIncrease }) => {
   return (
     <div className="box-sesi-dipesan">
       <div className="box-top-dipesan-container">
-        <img src="public/asset/tas.svg" alt="User Icon" />
+        <img src={DashboardSummarySesiDipesan} alt="User Icon" />
         <p>Sesi Dipesan</p>
       </div>
       <div className="box-bottom-dipesan">

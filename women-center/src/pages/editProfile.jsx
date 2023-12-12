@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/editProfile.css';
+import fotoProfile from '../assets/icon/profile 1.jpg';
+import fotoProfile2 from '../assets/icon/profile 2.png';
 import { BsPeople } from 'react-icons/bs';
 import { LuMail } from 'react-icons/lu';
 import { FiMapPin } from 'react-icons/fi';
@@ -59,7 +61,7 @@ const EditProfile = () => {
 
   const [isModalOpen, setModalOpen] = useState(false);
   const [isFailedModalOpen, setFailedModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState('/src/assets/icon/profile 2.png'); // Default image path
+  const [selectedImage, setSelectedImage] = useState(fotoProfile2); // Default image path
 
   const handleCountryChange = (e) => {
     const selectedCountry = e.target.value;
@@ -112,7 +114,7 @@ const EditProfile = () => {
 
   const handleDelete = () => {
     console.log('Delete button clicked');
-    setSelectedImage('/src/assets/icon/profile 2.png'); // Reset image to default
+    setSelectedImage({fotoProfile2}); // Reset image to default
   };
 
   const closeModal = () => {
@@ -142,7 +144,7 @@ const EditProfile = () => {
         </div>
 
         {/* Profile Image */}
-        <img className="div-image" src="src/assets/icon/profile 1.jpg" alt="Profile Image" />
+        <img className="div-image" src={fotoProfile} alt="Profile Image" />
       </div>
     </div>
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginTop: '20px' }}>

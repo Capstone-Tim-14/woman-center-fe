@@ -14,6 +14,7 @@ import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import { useAuth } from './AuthContext.jsx'
 import { useNavigate } from 'react-router-dom';
+import Profile from '../../assets/icon/profile 1.jpg'
 
 
 function layout() {
@@ -111,7 +112,7 @@ function layout() {
             <a href="/settings">< IoSettingsOutline style={{ marginRight: '8px' }}/>Settings</a>
           </div><br/>
           <div className='menu-icon'>
-          <a href="/profile"><img src="public/asset/profile 1.jpg" style={{ marginRight: '8px', width: '24px', height: '24px' }} />Admin</a>
+          <a href="/profile"><img src={Profile} style={{ marginRight: '8px', width: '24px', height: '24px' }} />Admin</a>
           </div><br/>
           <div className='logout'>
           <button className= 'logout-button' onClick={handleLogout}><HiOutlineLogout  style={{ marginRight: '8px', cursor: 'pointer'}}/>Keluar</button>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DashboardSummary from '../../assets/icon/icon_user.svg'
 
 const UserAktifContainer = () => {
   // State untuk menyimpan data total artikel
@@ -22,7 +23,7 @@ const UserAktif = ({ activeUsers, percentageIncrease }) => {
   return (
     <div className="box-user-aktif">
       <div className="box-top">
-        <img src="public/asset/icon_user.svg" alt="User Icon" />
+        <img src={DashboardSummary} alt="User Icon" />
         <p>User Aktif</p>
       </div>
       <div className="box-bottom-user">
