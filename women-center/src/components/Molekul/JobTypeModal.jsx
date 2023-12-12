@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import ModalSucces from '../Molekul/Modal/successModal';
 import { CiSquarePlus } from 'react-icons/ci';
-import '../../styles/JobTypeModal.css';
+import '../../styles/JobtypeModal.css';
 
 function JobType({ label }) {
   const [show, setShow] = useState(false);
