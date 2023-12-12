@@ -101,10 +101,11 @@ function TabelSesi() {
 
   return (
     <div 
+      id='tabel-sesi'
       className='d-flex flex-column gap-2'
-      style={{width: '992px'}}>
+      style={{width: '1020px'}}>
 
-      <div className='d-flex justify-content-between align-items-center'>
+      <div className='d-flex justify-content-between align-items-center' id='header-sesi'>
         <p className='m-0' style={{ fontWeight: '500' }}>Sesi</p>
         <div className='d-flex align-items-center gap-2'>
           <SearchPaket 
@@ -119,7 +120,7 @@ function TabelSesi() {
             <tr 
               style={{fontSize: '14px'}}>
               <th id='checkboxSesi'>
-                <input type="checkbox" />
+                <input style={{display: 'none'}} type="checkbox" />
               </th>
               <th>
                 ID Sesi
@@ -166,7 +167,7 @@ function TabelSesi() {
                     {item.status === 'Upcoming' && 'Upcoming'}
                   </div>
                 </td>
-                <td className='justify-content-center d-flex gap-2'>
+                <td className='justify-content-center d-flex gap-1' id='aksi-sesi'>
                   <Invoice />
                   <EditKonseling /> 
                   <ModalHapusData clicked={() => clicked(item.id)} />
@@ -177,8 +178,8 @@ function TabelSesi() {
       </Tabel>
 
       {/* Pagination */}
-      <div className='d-flex justify-content-between'>
-        <div>
+      <div className='d-flex justify-content-between' id='footer-paginationSesi'>
+        <div id='show-itemsSesi'>
           <span>Show </span>
           <select onChange={handleItemsPerPage} value={itemsPerPage}>
             <option value='5'>5</option>
@@ -187,7 +188,7 @@ function TabelSesi() {
           </select>
           <span> items per page</span>
         </div>
-        <Pagination>
+        <Pagination id='paginationSesi'>
           {[...Array(Math.ceil(sesi.length / itemsPerPage))].map((_, index) => (
             <Pagination.Item
               key={index + 1}

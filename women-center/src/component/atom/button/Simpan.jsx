@@ -18,7 +18,11 @@ const Simpan = ({ handleSubmit }) => {
 
   return (
     <>
-      <button type="button" className="submit" onClick={handleFormSubmit}>
+      <button 
+        id='btn-simpanPaket'
+        type="button" 
+        className="submit" 
+        onClick={handleFormSubmit}>
         Simpan
       </button>
       {/* Render PopupComponent if showPopup is true */}

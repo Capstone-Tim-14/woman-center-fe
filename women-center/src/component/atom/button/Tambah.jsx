@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Berhasil from '../../molekul/modal/BerhasilPaket';
 
-const Tambah = ({ handleSubmit }) => {
+const Tambah = ({ handleSubmit, id }) => {
   const [showPopup, setShowPopup] = useState(false);
 
   const handleFormSubmit = () => {
@@ -18,7 +18,11 @@ const Tambah = ({ handleSubmit }) => {
 
   return (
     <>
-      <button type="button" className="submit" onClick={handleFormSubmit}>
+      <button 
+        id={id}
+        type="button" 
+        className="submit" 
+        onClick={handleFormSubmit}>
         Tambah
       </button>
       {/* Render PopupComponent if showPopup is true */}

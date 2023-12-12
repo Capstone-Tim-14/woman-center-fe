@@ -3,7 +3,10 @@ import '../../../style/Berhasil.css';
 
 const OKButton = ({ handleClick }) => {
   return (
-    <button type="button" className="OK-button" onClick={handleClick}>
+    <button 
+      id='btn-okPaket'
+      type="button" 
+      className="OK-button" onClick={handleClick}>
     OK
   </button>
   );

@@ -8,8 +8,8 @@ const Berhasil = ({ handleClose }) => {
   };
 
   return (
-    <div className="popup-overlay-berhasil">
-      <div className="popup-content-berhasil">
+    <div id="popup-overlay-berhasil">
+      <div id="popup-content-berhasil">
         <h2>BERHASIL</h2>
         {/* Image di bawah judul */}
         <img src="/src/assets/icons/Group.png" alt="Success Icon" />

@@ -2,9 +2,9 @@ import React from 'react';
 import {AiOutlineClose} from "react-icons/ai";
 
 
-const CloseButton = ({ handleClose }) => {
+const CloseButton = ({ handleClose,id }) => {
   return (
-    <button className="close-button" onClick={handleClose}>
+    <button id={id} onClick={handleClose}>
       <AiOutlineClose className="close-icon" />
     </button>
   );

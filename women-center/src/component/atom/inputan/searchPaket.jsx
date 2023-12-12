@@ -4,14 +4,16 @@ import React from 'react';
 
 function SearchPaket({value, onchange}) {
   return (
-    <Form style={{ width: 200 }} id='search'>
+    <Form style={{ width: 200 }} id='form-search'>
         <div 
+          id='input-search'
           style={{ position: 'relative' }} 
           className='d-flex align-items-center'>
             <CiSearch 
               size={18} 
               style={{ position: 'absolute', left: 10}} />
             <Form.Control 
+              id='Form-input-search'
               type="text" 
               value={value}
               onChange={onchange}

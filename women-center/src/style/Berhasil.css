@@ -1,7 +1,7 @@
 /* Berhasil.css */
 
 /* Overlay pop-up */
-.popup-overlay-berhasil {
+#popup-overlay-berhasil {
     position: fixed;
     top: 0;
     left: 0;
@@ -15,7 +15,7 @@
   }
   
   /* Konten dalam pop-up */
-  .popup-content-berhasil {
+  #popup-content-berhasil {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
@@ -23,7 +23,7 @@
     text-align: center;
   }
   
-  .popup-content-berhasil h2 {
+  #popup-content-berhasil h2 {
     /* Gaya untuk judul */
     color: var(--neutral-neutral, #1F1F1F);
     font-family: 'Raleway', sans-serif;
@@ -33,14 +33,14 @@
     margin-bottom: 10px;
   }
   
-  .popup-content-berhasil img {
+  #popup-content-berhasil img {
     /* Gaya untuk gambar */
     max-width: 100px;
     height: auto;
     margin-bottom: 10px;
   }
   
-  .popup-content-berhasil p {
+  #popup-content-berhasil p {
     /* Gaya untuk teks paragraf */
     color: var(--neutral-neutral, #1F1F1F);
     font-family: 'Raleway', sans-serif;
@@ -50,7 +50,7 @@
   }
   
     /* Styling for the OK button */
-    .OK-button {
+    #btn-okPaket {
         padding: 10px 20px;
         font-size: 16px;
         background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));

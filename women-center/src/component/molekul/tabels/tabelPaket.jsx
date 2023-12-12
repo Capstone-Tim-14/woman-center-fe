@@ -54,8 +54,11 @@ function TabelPaket() {
   );
 
   return (
-    <div className='d-flex flex-column gap-2' style={{ width: '576px' }}>
-      <div className='d-flex justify-content-between align-items-center'>
+    <div 
+      id='tabel-paket'
+      className='d-flex flex-column gap-2' 
+      style={{ width: '576px' }}>
+      <div className='d-flex justify-content-between align-items-center' id='header-tabelPaket'>
         <p className='m-0' style={{ fontWeight: '500' }}>Paket</p>
         <div className='d-flex align-items-center gap-2'>
           <SearchPaket value={searchTerm} onchange={handleSearch} />
@@ -90,8 +93,8 @@ function TabelPaket() {
       </Tabel>
 
       {/* Pagination */}
-      <div className='d-flex justify-content-between'>
-        <div>
+      <div className='d-flex justify-content-between' id='Row-Paket'>
+        <div id='show-tabelPaket'>
           <span>Show </span>
           <select onChange={handleItemsPerPage} value={itemsPerPage}>
             <option value='5'>5</option>
@@ -100,7 +103,7 @@ function TabelPaket() {
           </select>
           <span> items per page</span>
         </div>
-        <Pagination>
+        <Pagination id='pagination-tabelpaket'>
           {[...Array(Math.ceil(paket.length / itemsPerPage))].map((_, index) => (
             <Pagination.Item
               key={index + 1}

@@ -1,9 +1,12 @@
 import React from 'react';
 
 
-const Batal = ({ handleClose }) => {
+const Batal = ({ handleClose, id }) => {
   return (
-    <button className="batal" onClick={handleClose}>
+    <button
+      id={id}
+      className="batal" 
+      onClick={handleClose}>
       Batal
     </button>
   );
