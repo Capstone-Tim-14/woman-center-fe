@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../styleS/Berhasil.css';
+import '../../../styles/Berhasil.css';
 
 const OKButton = ({ handleClick }) => {
   return (
