@@ -81,22 +81,26 @@ const TabelKarir = () => {
     direction: 'ascending',
   });
   
-  const handleDelete = async (id) => {
+  const confirmDelete = (articleId) => {
+    
+    deleteItem(articleId);
+  };
+
+  const deleteItem = async (id) => {
     try {
-      
-      const response = await axios.delete(`https://api-ferminacare.tech/api/v1/admin/career/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`, 
-        },
-      });
+      const response = await axios.delete(
+        `https://api-ferminacare.tech/api/v1/admin/career/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
   
-      
       console.log('Item deleted:', response.data);
   
-      
       setTableData((prevData) => prevData.filter((item) => item.id !== id));
     } catch (error) {
-    
       console.error('Error deleting item:', error);
     }
   };
@@ -122,10 +126,7 @@ const TabelKarir = () => {
   };
 
 
-  const confirmDelete = () => {
-    // Tambahkan logika konfirmasi atau hapus di sini
-    console.log('Delete button clicked');
-  };
+
 
   return (
    <div className= "body-container-karier">
@@ -163,6 +164,7 @@ const TabelKarir = () => {
                   <Karir/>
                 </div>
                   <DeleteButton 
+                  onConfirmDelete={() => confirmDelete(row.id)}
                   style={{marginLeft:"60px", padding:"10px"}}/>
                 </div>
             </tr>
