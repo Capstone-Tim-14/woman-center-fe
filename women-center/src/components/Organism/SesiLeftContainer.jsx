@@ -1,6 +1,7 @@
 import React from 'react';
 import "../../styles/sesi-left-konseling.css"
 import imagedashboard from "../../assets/icon/shadow.png"
+import EditKonseling from '../Molekul/Modal/modalEditKonseling'
 
 
 const SesiLeftContainer = () => (
@@ -21,9 +22,7 @@ const SesiLeftContainer = () => (
                     <div className="content-sesi-konseling">
                         <h5 className="title-sesi-konseling">
                             Nama Konselor S.Psi 
-                        <button className='button-edit-konseling'>
-                            ...
-                        </button><br /></h5>
+                        <EditKonseling /><br /></h5>
                         <h5 className="sub-title-sesi-konseling">Nama Paket . Nama User<br /></h5>
                         <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                         <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
@@ -36,9 +35,7 @@ const SesiLeftContainer = () => (
                     <div className="content-sesi-konseling">
                         <h5 className="title-sesi-konseling">
                             Nama Konselor S.Psi 
-                        <button className='button-edit-konseling'>
-                            ...
-                        </button><br /></h5>
+                            <EditKonseling /><br /></h5>
                         <h5 className="sub-title-sesi-konseling">Nama Paket . Nama User<br /></h5>
                         <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                         <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
@@ -51,9 +48,7 @@ const SesiLeftContainer = () => (
                     <div className="content-sesi-konseling">
                         <h5 className="title-sesi-konseling">
                             Nama Konselor S.Psi 
-                        <button className='button-edit-konseling'>
-                            ...
-                        </button><br /></h5>
+                            <EditKonseling /><br /></h5>
                         <h5 className="sub-title-sesi-konseling">Nama Paket . Nama User<br /></h5>
                         <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                         <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
@@ -66,9 +61,7 @@ const SesiLeftContainer = () => (
                     <div className="content-sesi-konseling">
                         <h5 className="title-sesi-konseling">
                             Nama Konselor S.Psi 
-                        <button className='button-edit-konseling'>
-                            ...
-                        </button><br /></h5>
+                            <EditKonseling /><br /></h5>
                         <h5 className="sub-title-sesi-konseling">Nama Paket . Nama User<br /></h5>
                         <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                         <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
@@ -81,9 +74,7 @@ const SesiLeftContainer = () => (
                     <div className="content-sesi-konseling">
                         <h5 className="title-sesi-konseling">
                             Nama Konselor S.Psi 
-                        <button className='button-edit-konseling'>
-                            ...
-                        </button><br /></h5>
+                            <EditKonseling /><br /></h5>
                         <h5 className="sub-title-sesi-konseling">Nama Paket . Nama User<br /></h5>
                         <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                         <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
@@ -96,9 +87,7 @@ const SesiLeftContainer = () => (
                     <div className="content-sesi-konseling">
                         <h5 className="title-sesi-konseling">
                             Nama Konselor S.Psi 
-                        <button className='button-edit-konseling'>
-                            ...
-                        </button><br /></h5>
+                            <EditKonseling /><br /></h5>
                         <h5 className="sub-title-sesi-konseling">Nama Paket . Nama User<br /></h5>
                         <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                         <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
