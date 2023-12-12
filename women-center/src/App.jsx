@@ -14,11 +14,11 @@ function App() {
 
     <Routes>
       <Route path="/login" exact element={<LoginPages />} />
+        <Route path="/acara" element={<ModalTambahAcara />} />
+        <Route path="/editacara" element={<ModalEditAcara />} />
       <Route element={<Layout />}>
         <Route path="/jadwal" element={<Jadwal />} />
         <Route path="/artikel" element={<Artikel />} />
-        <Route path="/acara" element={<ModalTambahAcara />} />
-        <Route path="/editacara" element={<ModalEditAcara />} />
       </Route>
     </Routes>
 
