@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Berhasil from '../../molekul/modal/BerhasilPaket';
+import Berhasil from '../../Molekul/Modal/BerhasilPaket';
 
 const Simpan = ({ handleSubmit }) => {
   const [showPopup, setShowPopup] = useState(false);
