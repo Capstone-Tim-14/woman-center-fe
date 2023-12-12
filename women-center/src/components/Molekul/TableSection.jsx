@@ -35,13 +35,13 @@ const TableSection = () => {
             },
             params: {
               page,
-              filter, // Pass filter text as a parameter
+              filter,
             },
           }
         );
   
         const data = response.data;
-        // Handle the data as needed
+        
         setTableData(data.data);
   
         setPagination({
@@ -53,7 +53,7 @@ const TableSection = () => {
   
       } else {
         console.error('Token not available.');
-        // You might want to redirect to the login page or handle unauthorized access
+    
         logout();
       }
     } catch (error) {
@@ -63,7 +63,7 @@ const TableSection = () => {
   
   useEffect(() => {
     console.log('Stored Token:', localStorage.getItem('token'));
-    fetchData(1, filterText); // Fetch data with filter text
+    fetchData(1, filterText); 
   }, [token, logout, filterText]);
   
   const [sortConfig, setSortConfig] = useState({
@@ -71,7 +71,7 @@ const TableSection = () => {
     direction: 'ascending',
   });
   
-  // Fungsi untuk mengurutkan tabel
+ 
   const sortTable = (key) => {
     let direction = 'ascending';
     if (sortConfig.key === key && sortConfig.direction === 'ascending') {
@@ -79,7 +79,7 @@ const TableSection = () => {
     }
     setSortConfig({ key, direction });
   
-    // Lakukan pengurutan data
+   
     const sortedData = [...tableData].sort((a, b) => {
       if (direction === 'ascending') {
         return a[key].localeCompare(b[key]);
@@ -92,12 +92,20 @@ const TableSection = () => {
   };
   
   const handleRowClick = (articleId) => {
-    navigate(`/articles/${articleId}`);
+   //
+    console.log('Row clicked:', articleId);
+  };
+
+  const handleCheckboxClick = (event, articleId) => {
+  
+    event.stopPropagation();
+    
+    console.log('Checkbox clicked:', articleId);
   };
   
-  const confirmDelete = (itemId) => {
-    // Implement the logic to show a confirmation dialog or directly call deleteItem
-    deleteItem(itemId);
+  const confirmDelete = (articleId) => {
+    
+    deleteItem(articleId);
   };
   
   const deleteItem = async (itemId) => {
@@ -111,9 +119,11 @@ const TableSection = () => {
         }
       );
   
+      console.log('Server Response:', response); 
+  
       if (response.status === 200) {
         setTableData((prevData) => prevData.filter((item) => item.id !== itemId));
-        console.log('Item deleted:', itemId);
+        console.log('article deleted:', itemId);
       } else {
         console.error('Unexpected status code:', response.status);
       }
@@ -155,18 +165,18 @@ const TableSection = () => {
           </tr>
         </thead>
         <tbody>
-          {tableData.map((row) => (
-            <tr key={row.slug} onClick={() => handleRowClick(row)}>
-              <td><input type="checkbox" /></td>
+        {tableData.map((row) => (
+  <tr key={row.slug} onClick={() => handleRowClick(row.id)}>
+    <td><input type="checkbox" onClick={(event) => handleCheckboxClick(event, row.id)} /></td>
               <td>{row.title}</td>
               <td>{row.author.name}</td>
               <td>
                 {row.viewStatus ? <IoEyeOutline /> : null}
-                {row.viewStatus && <span>10</span>} {/* Tambahkan jarak jika viewStatus aktif */}
+                {row.viewStatus && <span>10</span>}
                 {row.commentStatus ? <FaRegComment /> : null}
-                {row.commentStatus && <span>5</span>} {/* Tambahkan jarak jika commentStatus aktif */}
+                {row.commentStatus && <span>5</span>}
                 {row.saveStatus ? <BsBookmark /> : null}
-                {row.saveStatus && <span>3</span>} {/* Tambahkan jarak jika saveStatus aktif */}
+                {row.saveStatus && <span>3</span>} 
               </td>
               <td>{row.author.role}</td>
               <td>{row.published_at}</td>
@@ -174,11 +184,11 @@ const TableSection = () => {
                   {row.status === 'REVIEW' && 'Review'}
                   {row.status === 'PUBLISHED' && 'Approved'}
                   {row.status === 'REJECTED' && 'Rejected'}
-                  {/* Tambahkan kondisi untuk status lain jika diperlukan */}
+                  
               </div>
               <td>
-                <DeleteButton onClick={confirmDelete} />
-                {/* You can add additional buttons/actions here */}
+              <DeleteButton onConfirmDelete={() => confirmDelete(row.id)} />
+                
               </td>
             </tr>
           ))}

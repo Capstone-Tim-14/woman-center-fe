@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DeleteConfirmation from './DeleteConfirmation';
 import { MdDelete } from 'react-icons/md';
 
-const DeleteButton = () => {
+const DeleteButton = ({ onConfirmDelete }) => {
   const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
 
   const handleDeleteClick = () => {
@@ -11,7 +11,7 @@ const DeleteButton = () => {
 
   const handleDeleteConfirm = () => {
     // Handle delete confirmation logic
-    console.log('Item deleted');
+    onConfirmDelete(); // Call the provided callback
     setDeleteModalOpen(false);
   };
 
