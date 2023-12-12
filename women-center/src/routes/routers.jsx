@@ -14,7 +14,7 @@ import DataUser from "../pages/DataUser.jsx";
 import Profile from "../pages/Profile.jsx";
 import EditProfile from "../pages/editProfile.jsx";
 import Artikel from "../pages/ArtikelContainer.jsx";
-import ArtikelBaru from "../components/Organism/ArtikelBaru.jsx"
+import ArtikelBaru from "../components/Organism/ArtikelBaru.jsx";
 
 //import AddArtikel from "../pages/AddArtikel.jsx";
 
@@ -35,8 +35,7 @@ const Routers = () => {
       <Route path="/paket" element={<Paket />} />
       <Route path="/artikel" element={<Artikel />} />
       <Route path="/karier" element={<Karier />} />
-      <Route path ="/artikel/addartikel" element={<ArtikelBaru/>} />
-      {/*<Route path ="/artikel/addartikel" element={<AddArtikel/>} />*/}
+      <Route path="/artikel/addartikel" element={<ArtikelBaru/>} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/profile/editprofile" element={<EditProfile />} />
     </Routes>

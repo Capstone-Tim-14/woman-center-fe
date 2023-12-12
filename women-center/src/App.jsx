@@ -12,7 +12,7 @@ import EditProfile from "./pages/editProfile.jsx";
 import Artikel from "./pages/ArtikelContainer.jsx";
 import Karier from "./pages/KarirPage.jsx";
 import Paket from "./pages/PaketPage.jsx";
-import AddArtikel from "./pages/AddArtikel.jsx";
+import ArtikelBaru from './components/Organism/ArtikelBaru.jsx';
 import { AuthProvider } from './components/Layout/AuthContext';
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
            <Route path="/karier" element={<Karier />} />
            {/*<Route path ="/artikel/addartikel" element={<AddArtikel/>} />*/}
            <Route path="/artikel" element={<Artikel />} />
+           <Route path="/artikel/addartikel" element={<ArtikelBaru/>} />
            <Route path="/profile" element={<Profile />} />
            <Route path="/profile/editprofile" element={<EditProfile />} />
         </Route>     

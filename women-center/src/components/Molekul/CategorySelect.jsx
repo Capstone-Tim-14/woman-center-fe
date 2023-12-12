@@ -5,8 +5,6 @@ import { useAuth } from '../Layout/AuthContext'
 import axios from 'axios';
 
 
-
-
 const CategorySelect = ({ onCategoryChange }) => {
   const { token } = useAuth();
   const [selectedCategories, setSelectedCategories] = useState([]);

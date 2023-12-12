@@ -9,11 +9,29 @@ import CategorySelect from '../Molekul/CategorySelect';
 import { useAuth } from '../Layout/AuthContext'
 import axios from 'axios';
 
+const createSlug = (title) => {
+  return title
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with dashes
+    .replace(/[^a-zA-Z0-9-]/g, '') // Remove non-alphanumeric characters except dashes
+    .replace(/-+/g, '-') // Replace consecutive dashes with a single dash
+    .replace(/^-+/, '') // Trim leading dashes
+    .replace(/-+$/, ''); // Trim trailing dashes
+};
+
+
 const ArtikelBaru = () => {
   const { token } = useAuth();
   const [articleTitle, setArticleTitle] = React.useState('');
   const [articleContent, setArticleContent] = React.useState('');
   const [imagePath, setImagePath] = useState('');
+  const [imageFile, setImageFile] = useState(null);
+  const [selectedCategories, setSelectedCategories] = useState([]);
+
+  const handleCategoryChange = (categories) => {
+    setSelectedCategories(categories);
+  };
+  
 
   const handleTitleChange = (newTitle) => {
     setArticleTitle(newTitle);
@@ -23,20 +41,22 @@ const ArtikelBaru = () => {
     setArticleContent(newContent);
   };
 
-  const handleImageChange = (path) => {
-    setImagePath(path);
+  const handleImageChange = (file) => {
+    setImagePath(file.path);
+    setImageFile(file);
   };
+
 
   const handleSubmit = async () => {
     try {
-      if (token) {
+      if (token && imageFile) {
+        
         const formData = new FormData();
         formData.append('title', articleTitle);
-        formData.append('articleContent', articleContent);
+        formData.append('content', articleContent);
         formData.append('thumbnail', imageFile);
   
-        // Make API request using axios
-        const response = await axios.post(
+        const articleResponse = await axios.post(
           'https://api-ferminacare.tech/api/v1/admin/articles',
           formData,
           {
@@ -46,20 +66,43 @@ const ArtikelBaru = () => {
           }
         );
   
-        // Handle the response as needed
-        console.log('API Response:', response.data);
+        console.log('Article Response Data:', articleResponse.data);
+  
+       
+        if (articleResponse.data.code === 201) {
+          
+          const articleId = articleResponse.data.data.id;
+  
+         
+          const attachCategoriesResponse = await axios.post(
+            `https://api-ferminacare.tech/api/v1/articles/${articleId}/add-category`,
+            {
+              category_id: selectedCategories,
+            },
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+              },
+            }
+          );
+  
+         
+          console.log('Attach Categories Response:', attachCategoriesResponse.data);
+        } else {
+          console.error(`Error: Article creation failed with code ${articleResponse.data.code}`);
+        }
       } else {
-        console.error('Token not available.');
-        // You might want to redirect to the login page or handle unauthorized access
-        logout();
+        console.error('Token or image file not available.');
       }
     } catch (error) {
-      // Handle errors
-      console.error('API Error:', error);
+   
+      console.error('API Error:', error.response || error.message || error);
+      if (error.response && error.response.status === 409) {
+        console.error('Conflict:', error.response.data); 
+      }
     }
   };
-  
-
   return (
     <Container className="artikel-baru-page">
       {/* Submit Button */}
@@ -84,7 +127,7 @@ const ArtikelBaru = () => {
           />
 
           {/* CategorySelect */}
-          <CategorySelect />
+          <CategorySelect onCategoryChange={handleCategoryChange}/>
         </Col>
         <Col className="container-image" lg={4}>
           {/* ImageUploadAdd */}
