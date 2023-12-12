@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import EditKonselingButton from '../../Atom/button/EditKonselingButton';
+import IconEditKonselingJadwal from '../../../assets/icon/edit_konseling.svg'
 import CloseButton from '../../Atom/button/Closebutton';
 import ModalEditKonselingJadwal from 'react-bootstrap/Modal'
 import '../../../styles/EditKonselingJadwal.css';
@@ -112,13 +113,8 @@ const modalEditKonseling = () => {
 
   return (
     <>
-        <button
-        style={{border: 'none', background: 'none'}}
-        onClick={handleShow}>
-        <img 
-          src="src/assets/icon/edit_konseling.svg" 
-          alt="" 
-          style={{width: '10px', height: '18px', marginLeft: '20px'}}/>
+      <button style={{border: 'none', background: 'none'}} onClick={handleShow}>
+        <img src={IconEditKonselingJadwal} alt=""style={{width: '10px', height: '18px', marginLeft: '20px'}}/>
       </button>
 
       <ModalEditKonselingJadwal show={show} onHide={handleClose} className='Edit-konseling-Jadwal'>
