@@ -9,7 +9,7 @@ const NoteKalender = () => {
     <div className="sub-Note-kalender">
     <div className="all-Note-kalender">
     <div className="head-Note-kalender">
-        <h6 className="txt-Note-kalender">9 November 2023</h6>
+        <h6 className="txt-Note-kalender">9 November 2023 <button className='button-tambah-acara'>+Tambah Acara</button></h6>
     </div>
     </div>
     <div className="all-Note-kalender2" style={{ display: 'flex' }}>

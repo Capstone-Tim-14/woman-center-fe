@@ -193,4 +193,14 @@
     font-size: 14px;
     color: #555;
     }
+
+    .button-tambah-acara{
+        margin-left: 70px;
+        background-color: #FFF;
+        border-color: transparent;
+        border-radius: 5px;
+        color: #FF5BCD;
+        font-size: medium;
+        padding: 2px;
+    }
     
