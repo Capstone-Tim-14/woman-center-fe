@@ -2,8 +2,6 @@
 import React from "react";
 import "../styles/list-artikel.css";
 import Search from '../components/Atom/inputan/searchPaket';
-import { CiSearch } from 'react-icons/ci';
-import Form from 'react-bootstrap/Form';
 import image1 from "../assets/icon/image1.png"
 
 const Listartikel = () => {
@@ -12,7 +10,7 @@ const Listartikel = () => {
         console.log('View More clicked!')
     }
     return (
-        <div className="all-list-dashboard">
+        <div className="all-list-dashboard" style={{ width: '100%' }}>
             <div className="head-list-dashboard">
             <Search/>
                 <p className="txt-view" onClick={handleViewMoreClick}>View More</p>

@@ -7,7 +7,7 @@ import Bodybox from './Container';
 
 const MainBox = () => {
   return (
-    <div className="main-box">
+    <div className="main-box" style={{ width: '100%' }}>
       <Headerbox />
       <Bodybox />
     </div>

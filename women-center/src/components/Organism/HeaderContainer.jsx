@@ -5,7 +5,7 @@ import Profile from '../../assets/icon/profile 1.jpg'
 
 const HeaderContainer = () => {
   return (
-    <div className="header">
+    <div className="header" style={{ width: '105%' }}>
       <div className="header-content">
         <h3>Dashboard</h3>
         <div className="subtitle">

@@ -8,7 +8,6 @@ import SearchKonselor from "../components/Atom/inputan/searchKonselor";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import IconCalendar from "../components/Atom/iconCalendar";
-import IconExport from "../components/Atom/iconExport";
 import IconEdit from "../components/Atom/iconEdit";
 import IconDelete from "../components/Atom/iconDelete";
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
@@ -151,7 +150,6 @@ const TabelKonselor = () => {
               <Col className="d-flex justify-content-end">
                 <SearchKonselor />
                 <IconCalendar />
-                <IconExport />
               </Col>
             </Row>
           </div>

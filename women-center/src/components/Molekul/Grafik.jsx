@@ -41,13 +41,13 @@ function Grafik() {
     let option;
     switch (value) {
       case "0":
-        option = "week";
+        option = "Week";
         break;
       case "1":
-        option = "month";
+        option = "Month";
         break;
       case "2":
-        option = "year";
+        option = "Year";
         break;
       default:
         break;
@@ -58,7 +58,7 @@ function Grafik() {
 
   const updateChartData = (option) => {
     switch (option) {
-      case "week":
+      case "Week":
         setState({
           ...state,
           options: {
@@ -69,7 +69,7 @@ function Grafik() {
           },
         });
         break;
-      case "month":
+      case "Month":
         setState({
           ...state,
           options: {
@@ -107,13 +107,13 @@ function Grafik() {
           ],
         });
         break;
-      case "year":
+      case "Year":
         setState({
           ...state,
           options: {
             ...state.options,
             xaxis: {
-              categories: ["2010", "2011", "2012", "2013", "2014", "2015"],
+              categories: ["2018", "2019", "2020", "2021", "2022", "2023"],
             },
           },
           series: [
@@ -145,7 +145,7 @@ function Grafik() {
           type="range"
           min="0"
           max="2"
-          value={selectedOption === "week" ? "0" : selectedOption === "month" ? "1" : "2"}
+          value={selectedOption === "Week" ? "0" : selectedOption === "Month" ? "1" : "2"}
           onChange={(e) => handleSliderChange(e.target.value)}
           list="options"
         />

@@ -5,10 +5,12 @@ import MainBox from "../components/Organism/MainBox";
 import GrafikArtikel from "../components/Organism/GrafikArtikel";
 
 
-
+const containerStyle = {
+    overflowX: "hidden", // This will hide horizontal overflow
+};
 const Dashboard = () => {
     return (
-        <div className="container"> 
+        <div className="container-dashboard" style={containerStyle}> 
             <div className="row">
                 <div className="col-lg-12">
                     <Header />
