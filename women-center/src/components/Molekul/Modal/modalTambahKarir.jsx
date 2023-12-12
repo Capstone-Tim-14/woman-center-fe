@@ -6,17 +6,19 @@ import { MdEditSquare } from "react-icons/md";
 import FailedModal from './failedModal';
 import ModalSucces from './successModal';
 import JobType from '../JobTypeModal';
+import axios from 'axios';
+import { useAuth } from '../../Layout/AuthContext'
 
 // Main component
 const modalTambahKarir = () => {
   // State variables
+  const { token, logout } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [profileImage, setProfileImage] = useState(null);
   const [coverImage, setCoverImage] = useState(null);
   const [modalFailed, setModalFailed] = useState(false);
   const [modalSuccess, setModalSuccess] = useState(false);
 
-  // Form data nanti kamu sesuaiin dengan nama data yang kamu buat
   const [formData, setFormData] = useState({
     namaKarir: '',
     tanggalDitambahkan: '',
@@ -25,8 +27,10 @@ const modalTambahKarir = () => {
     namaPerusahaan: '',
     emailPerusahaan: '',
     ukuranPerusahaan: '',
-    lokasi: ''
-  })
+    lokasi: '',
+    aboutJob: '',       
+    aboutCompany: ''     
+  });
 
   // Modal open/close functions
   const openModal = () => {
@@ -70,19 +74,52 @@ const modalTambahKarir = () => {
     }));
   }
 
-  // menyimpan Data
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Tambahkan logika untuk menyimpan data pake axios Ociiiiiiiiii
-
+  
+    // Check if required fields are filled
     if (!formData.namaKarir || !formData.tanggalDitambahkan || !formData.skillRequirement) {
-      setModalFailed(true); // Tampilkan modal kegagalan jika ada data yang tidak lengkap
+      setModalFailed(true); // Show failure modal if required fields are not filled
       return;
-    }else{
-      setModalSuccess(true);
     }
-  }
-
+  
+    try {
+      // Prepare form data for the API request
+      const apiFormData = new FormData();
+      apiFormData.append('title_job', formData.namaKarir);
+      apiFormData.append('company_name', formData.namaPerusahaan);
+      apiFormData.append('logo', profileImage); // Assuming profileImage is the file from the input
+      apiFormData.append('cover', coverImage); // Assuming coverImage is the file from the input
+      apiFormData.append('location', formData.lokasi);
+      apiFormData.append('size_company_employee', formData.ukuranPerusahaan);
+      apiFormData.append('company_industry', formData.industriPerusahaan); // Change to the actual field name
+      apiFormData.append('required_skill', formData.skillRequirement);
+      apiFormData.append('linkdin_url', formData.linkLinkedin);
+      apiFormData.append('about_job', formData.aboutJob || '');
+      apiFormData.append('about_company', formData.aboutCompany || '');
+  
+      // Make API request using Axios with the token
+      const response = await axios.post(
+        'https://api-ferminacare.tech/api/v1/admin/career',
+        apiFormData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+  
+      // Check if the request was successful
+      if (response.status === 200) {
+        setModalSuccess(true); // Show success modal
+      } else {
+        setModalFailed(true); // Show failure modal if the request was not successful
+      }
+    } catch (error) {
+      console.error('Error submitting data:', error);
+      setModalFailed(true); // Show failure modal if an error occurred
+    }
+  };
   return (
     <>
     {/* ini button edit */}
