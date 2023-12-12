@@ -7,7 +7,7 @@ import { BiSortAlt2 } from "react-icons/bi";
 import { FaRegComment } from "react-icons/fa";
 import { Button } from 'react-bootstrap';
 import '../../styles/TabelDatabase.css';
-import ModalDataUser from '../Molekul/modal/modalDataUser';
+import ModalDataUser from '../Molekul/Modal/modalDataUser';
 const TabelUser = () => {
   const navigate = useNavigate();
 
