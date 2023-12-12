@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
-import TextBoxAtom from '../atom/TextBoxAtom';
+import TextBoxAtom from '../Atom/TextBoxAtom';
 import '../../styles/TextBoxArtikel.css';
 
 import FormWithEditor from '../atom/TextEditor';

@@ -1,5 +1,5 @@
 import React from "react"
-import NavbarEditUser from "../../molekul/navbarEditUser"
+import NavbarEditUser from "../../Molekul/navbarEditUser"
 
 const Header = ({title}) => {
     return(
