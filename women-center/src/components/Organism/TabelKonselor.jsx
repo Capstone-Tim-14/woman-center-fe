@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { BiSortAlt2 } from "react-icons/bi";
 import { Button } from 'react-bootstrap';
 import '../../styles/TabelDatabase.css';
-import ModalJadwal from '../Molekul/modal/modalJadwal';
-import ModalDataKonselor from '../Molekul/modal/modalDataKonselor';
+import ModalJadwal from '../Molekul/Modal/modalJadwal';
+import ModalDataKonselor from '../Molekul/Modal/modalDataKonselor';
 const TabelKonselor = () => {
   const navigate = useNavigate();
 
