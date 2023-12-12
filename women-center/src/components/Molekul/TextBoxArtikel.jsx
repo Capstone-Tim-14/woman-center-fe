@@ -4,7 +4,7 @@ import { Row, Col, Container } from 'react-bootstrap';
 import TextBoxAtom from '../Atom/TextBoxAtom';
 import '../../styles/TextBoxArtikel.css';
 
-import FormWithEditor from '../atom/TextEditor';
+import FormWithEditor from '../Atom/TextEditor';
 
 const TextBoxArtikel = ({ onTitleChange, onArticleContentChange, onSubmit }) => {
   const [title, setTitle] = useState('');
