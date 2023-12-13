@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../../../styles/modalEditKarir.css';
 import { FiUploadCloud, FiTrash2 } from "react-icons/fi";
@@ -18,6 +18,7 @@ const modalTambahKarir = () => {
   const [coverImage, setCoverImage] = useState(null);
   const [modalFailed, setModalFailed] = useState(false);
   const [modalSuccess, setModalSuccess] = useState(false);
+  const [jobTypes, setJobTypes] = useState([]);
 
   const [formData, setFormData] = useState({
     namaKarir: '',
@@ -74,12 +75,35 @@ const modalTambahKarir = () => {
     }));
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    
+    const fetchJobTypes = async () => {
+      try {
+        const response = await axios.get('https://api-ferminacare.tech/api/v1/admin/career/job-type', {
+        headers: {
+          Authorization: `Bearer ${token}`, 
+        },
+      });
+
+      setJobTypes(response.data.data.map(jobType => jobType.name)); 
+      } catch (error) {
+        console.error('Error fetching job types:', error);
+      }
+  };
+
+  fetchJobTypes();
+}, [token]);
+
+    const handleJobTypeAdded = (newJobType) => {
+      setJobTypes((prevJobTypes) => [...prevJobTypes, newJobType]);
+    };
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
   
-    // Check if required fields are filled
+    
     if (!formData.namaKarir || !formData.tanggalDitambahkan || !formData.skillRequirement) {
-      setModalFailed(true); // Show failure modal if required fields are not filled
+      setModalFailed(true); 
       return;
     }
   
@@ -88,8 +112,8 @@ const modalTambahKarir = () => {
       const apiFormData = new FormData();
       apiFormData.append('title_job', formData.namaKarir);
       apiFormData.append('company_name', formData.namaPerusahaan);
-      apiFormData.append('logo', profileImage); // Assuming profileImage is the file from the input
-      apiFormData.append('cover', coverImage); // Assuming coverImage is the file from the input
+      apiFormData.append('logo', profileImage); 
+      apiFormData.append('cover', coverImage); 
       apiFormData.append('location', formData.lokasi);
       apiFormData.append('size_company_employee', formData.ukuranPerusahaan);
       apiFormData.append('company_industry', formData.industriPerusahaan); // Change to the actual field name
@@ -280,47 +304,20 @@ const modalTambahKarir = () => {
                     </div>
                   </div>
                   <div className=' col-4 text-start '>
-                    <label htmlFor="jobType">Job Type</label><br />
-                    <div className='row '>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="fullTime" />
-                        <label htmlFor="fullTime">Full-Time</label>
+                  <label htmlFor="jobType">Job Type</label><br />
+                  <div className='row'>
+                    {jobTypes.map((name, index) => (
+                      <div key={index} className="form-group formcheckbox">
+                        <input type="checkbox" id={`jobType${index}`} />
+                        <label htmlFor={`jobType${index}`}>{name}</label>
                       </div>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="freelance" />
-                        <label htmlFor="freelance">Freelance</label>
-                      </div>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="kontrak" />
-                        <label htmlFor="kontrak">Kontrak</label>
-                      </div>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="magang" />
-                        <label htmlFor="magang">Magang</label>
-                      </div>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="remote" />
-                        <label htmlFor="remote">Remote</label>
-                      </div>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="proyek" />
-                        <label htmlFor="proyek">Proyek</label>
-                      </div>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="shift" />
-                        <label htmlFor="shift">Shift</label>
-                      </div>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="sementara" />
-                        <label htmlFor="sementara">Sementara</label>
-                      </div>
-
-                      <div className="form-group formcheckbox">
-                      {/* ini yang ditambahkan */}
-                      <JobType label="Tambah Jobtype"/>
-                      </div>
+                    ))}
+                    {/* Add JobType component below the checkboxes */}
+                    <div className="form-group formcheckbox">
+                    <JobType label="Tambah Jobtype" onJobTypeAdded={handleJobTypeAdded} />
                     </div>
                   </div>
+                </div>
                   <div className='row'>
                     <div className='col-4 text-start '>
                       <div className="form-group">

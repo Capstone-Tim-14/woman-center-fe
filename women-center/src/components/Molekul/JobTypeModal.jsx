@@ -4,33 +4,83 @@ import Modal from 'react-bootstrap/Modal';
 import ModalSucces from '../Molekul/Modal/successModal';
 import { CiSquarePlus } from 'react-icons/ci';
 import '../../styles/JobtypeModal.css';
+import { useAuth } from '../Layout/AuthContext'
+import axios from 'axios';
 
-function JobType({ label }) {
+function JobType({ label, onJobTypeAdded }) {
+  const { token, logout } = useAuth();
   const [show, setShow] = useState(false);
-  const [jobTypeInput, setJobTypeInput] = useState(''); 
-  const [Success, setSuccess] = useState(false);
+  const [jobTypeInput, setJobTypeInput] = useState('');
+  const [descriptionInput, setDescriptionInput] = useState('');
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleClose = (e) => {
-    e.preventDefault();
-    setShow(false);
-  };
 
   const handleShow = (e) => {
     e.preventDefault();
     setShow(true);
   };
-  
-  const handleChange = (e) => {
-    setJobTypeInput(e.target.value);
-  }
-  
-  // tambahkan fungsi untuk menyimpan perubahan pake Axios Oci trus hubungkan dengan checkbox yang ada di karir
-  const handleSaveChanges = (e) => {
+
+  const handleChange = (e, field) => {
+    if (field === 'jobType') {
+      setJobTypeInput(e.target.value);
+    } else if (field === 'description') {
+      setDescriptionInput(e.target.value);
+    }
+  };
+
+  const handleClose = (e) => {
+    if (e) {
+      e.preventDefault();
+    }
+    setShow(false);
+    resetForm();
+  };
+
+  const handleSaveChanges = async (e) => {
     e.preventDefault();
-    // Tambahkan logika untuk menyimpan perubahan
-    setSuccess(true);
+
+    // Validation
+    if (!jobTypeInput || !descriptionInput) {
+      setError('Please fill out both fields.');
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        'https://api-ferminacare.tech/api/v1/admin/career/job-type',
+        {
+          name: jobTypeInput,
+          description: descriptionInput,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      
+      if (response.status >= 200 && response.status < 300) {
+        setSuccess(true);
+        resetForm();
+
+       
+        onJobTypeAdded(jobTypeInput);
+      } else {
+        setError('Failed to add job type');
+      }
+    } catch (error) {
+      setError(`Error submitting new job type: ${error.message}`);
+    } finally {
+      handleClose();
+    }
+  };
+
+  const resetForm = () => {
     setJobTypeInput('');
-    handleClose(e);
+    setDescriptionInput('');
+    setError(null);
   };
 
   return (
@@ -43,7 +93,7 @@ function JobType({ label }) {
         <CiSquarePlus style={{ color: 'var(--Primary, #5570F1)', fontSize: '18px' }} />
         {label}
       </button>
-
+  
       <Modal show={show}>
         <Modal.Header>
           <Modal.Title className="head-text">Tambahkan Jobtype Lainnya</Modal.Title>
@@ -52,12 +102,21 @@ function JobType({ label }) {
           <div className="main-text">
             <form>
               <input
-                type="text" // Change to text type for jobTypeInput
+                type="text"
                 value={jobTypeInput}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e, 'jobType')}
                 className="main-form"
                 id="FormControlInput1"
                 placeholder="Tambah JobType"
+                required={true}
+              />
+               <input
+                type="text"
+                value={descriptionInput}
+                onChange={(e) => handleChange(e, 'description')}
+                className="main-form"
+                id="FormControlInput2"
+                placeholder="Tambah Deskripsi"
                 required={true}
               />
             </form>
@@ -90,12 +149,14 @@ function JobType({ label }) {
           </Button>
         </Modal.Footer>
       </Modal>
-
-      <ModalSucces 
-        isOpen={Success} 
-        teks="Berhasil menambahkan karier"
-        onClose={() => setSuccess(false)} />
-
+  
+      {success && (
+        <ModalSucces
+          isOpen={success}
+          teks="Berhasil menambahkan karier"
+          onClose={() => setSuccess(false)}
+        />
+      )}
     </>
   );
 }
