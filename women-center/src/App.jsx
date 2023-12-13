@@ -6,6 +6,7 @@ import Jadwal from "./page/jadwal"
 import TabelUser from "./component/organisms/tabelUSer"
 import DataUser from "./page/DataUser";
 import LoginPages from "./page/loginPages";
+import DatabaseUser from './revisi/pages/DatabaseUSer'
 
 
 function App() {
@@ -14,10 +15,11 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginPages />} />
           <Route path="/" element={<TabelUser />} />
-          <Route path="/tabel-konselor" element={<TabelKonselor />} />
+          <Route path="/databaseuser" element={<DatabaseUser />} />
+          {/*<Route path="/tabel-konselor" element={<TabelKonselor />} />
           <Route path="/data-konselor" element={<DataKonselor />} />
           <Route path="/data-user" element={<DataUser />} />
-          <Route path="/jadwal" element={<Jadwal />} />
+          <Route path="/jadwal" element={<Jadwal />} />*/}
         </Routes>
       </Router>
 
