@@ -1,29 +1,29 @@
 /* TableSection.css */
 
-.table-container-database {
+.table-container-database-user {
     width: 98%;
     overflow-x: auto;
     margin-bottom: 5px;
     margin-top: 5px;
 }
 
-.data-table-database {
+.data-table-database-user {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
 
-.data-table-database th, .data-table-database td {
+.data-table-database-user th, .data-table-database-user td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
 }
 
-.data-table-database td {
+.data-table-database-user td {
     border: none; /* Remove border lines from td */
 }
 
-.data-table-database th {
+.data-table-database-user th {
     background-color: #f2f2f2;
 }
 

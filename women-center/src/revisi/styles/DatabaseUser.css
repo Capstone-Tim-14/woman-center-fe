@@ -7,7 +7,7 @@ body {
   }
   
   /* Main layout database Styles */
-  .main-layout-database {
+  .main-layout-database-user {
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -25,10 +25,18 @@ body {
     padding-right: 10px;
 }
 
-.icon-image {
+.icon-image-database-user {
     width: 20px;
     height: 20px;
   }
+
+.icon-home-img-database-user {
+    color:#F4518D
+}
+
+.div-icon-bar-database-user{
+    color:#F4518D
+}
 
 .custom-button {
     background: rgba(244, 81, 141, 0.20) !important;
@@ -39,7 +47,7 @@ body {
 }
 
  /* CSS untuk Tata Letak Sub Containers */
- .sub-containers {
+ .sub-containers-user {
     width: 100%;
     margin: 20px auto 5px; /* Adjusted margin */
     display: flex;
@@ -50,9 +58,10 @@ body {
   }
   
   /* CSS untuk Tata Letak Left Container */
-  .interaksi-kontributor {
+  .interaksi-kontributor-database-user {
     width: calc(50% - 10px); /* 50% lebar dan dikurangi margin */
     max-width: 450px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     background-color: #fff;
@@ -64,60 +73,60 @@ body {
     background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
   }
   
-  .div-header {
+  .div-header-database-user {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
   }
   
-  .div-header-content {
+  .div-header-content-database-user {
     display: flex;
     align-items: center;
   }
   
-  .div-header-left {
+  .div-header-left-database-user {
     margin-right: 10px;
   }
   
-  .icon-image {
+  .icon-image-database-user {
     width: 32px;
     height: 32px;
   }
   
-  .div-title-DashboardSummary {
+  .div-title-DashboardSummary-database-user {
     color: #fff;
     font-size: 20px;
     font-weight: 600;
     word-wrap: break-word;
   }
   
-  .div-footer {
+  .div-footer-database-user {
     display: flex;
     flex-direction: column;
   }
   
-  .div-footer-content {
+  .div-footer-content-database-user {
     display: flex;
     justify-content: space-between;
   }
   
-  .div-footer-item {
+  .div-footer-item-database-user {
     text-align: center;
   }
   
-  .div-footer-title-left {
+  .div-footer-title-left-database-user {
     color: #fff;
     font-size: 14px;
     font-weight: 400;
   }
   
-  .div-footer-data-left {
+  .div-footer-data-left-database-user {
     color: #fff;
     font-size: 18px;
     font-weight: 500;
   }
   
-  .div-footer-percentage-left {
+  .div-footer-percentage-left-database-user {
     color: #fff;
     font-size: 14px;
     font-weight: 500;
@@ -131,6 +140,48 @@ body {
     margin-right: auto;
     font-family: sans-serif;
   }
+
+  /* Percentage Container Styles */
+.percentage-container-database-user {
+  display: flex;
+  gap: 20px; /* Ruang antara elemen di dalam percentage-container */
+}
+
+/* Percentage Type Styles */
+.percentage-type-database-user {
+  flex: 1;
+  text-align: left;
+  padding: 10px;
+  background-color: transparent;
+  margin-top: 5px;
+}
+
+/* Additional Styles for Labels */
+.percentage-type-database-user label {
+  display: flex;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  color: #fff;
+  width: 130px; /* Lebarkan label */
+  font-size: 14px;
+}
+
+/* Styles for Paragraphs */
+.percentage-type-database-user p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0; /* Menghilangkan margin default */
+  display: inline; /* Menjadikan paragraf tampil secara inline (horizontal) */
+}
+
+/* Second Paragraph Styles */
+.percentage-type-database-user #format {
+  font-size: 12px;
+  margin-left: 10px; /* Atur jarak dari paragraf pertama */
+  color: #fff;
+  display: inline; /* Menjadikan paragraf tampil secara inline (horizontal) */
+}
 
 
 .table-header th {
@@ -157,7 +208,7 @@ body {
     color: #8B8D97 !important;
 }
 
-.page-selector-footer {
+.page-selector-footer-user {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -210,3 +261,5 @@ body {
     color: #555;
     }
     
+
+

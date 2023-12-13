@@ -36,9 +36,7 @@ const SearchBar = () => {
     console.log(`Searching for: ${searchText}`);
     // Simulate API call by filtering dummy data
     const dummyData = [
-      { id: 1, name: 'John Doe' },
-      { id: 2, name: 'Jane Doe' },
-      { id: 3, name: 'Alice Smith' },
+
       // Add more dummy data as needed
     ];
 
@@ -51,10 +49,10 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="search-bar">
+    <div className="search-bar-database-user">
       <Searching value={searchText} onChange={(e) => setSearchText(e.target.value)} onSearch={handleSearch} />
 
-      <div className="filter-date-icon" onClick={togglePopup}>
+      <div className="filter-date-icon-database-user" onClick={togglePopup}>
         {/* Replace the image with LuCalendarDays icon */}
         <LuCalendarDays size={25} />
       </div>

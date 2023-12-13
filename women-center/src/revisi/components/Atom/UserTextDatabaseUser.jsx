@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserText = () => {
+const UserTextDatabaseUser = () => {
   return (
     <div className="user-text-database-user" style={{ marginLeft: '-40px'}}>
       User
@@ -8,4 +8,4 @@ const UserText = () => {
   );
 };
 
-export default UserText;
+export default UserTextDatabaseUser;

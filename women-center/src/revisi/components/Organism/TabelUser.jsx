@@ -6,7 +6,7 @@ import { BsBookmark } from "react-icons/bs";
 import { BiSortAlt2 } from "react-icons/bi";
 import { FaRegComment } from "react-icons/fa";
 import { Button } from 'react-bootstrap';
-import '../../styles/TabelDatabase.css';
+import '../../styles/TabelDatabaseUser.css';
 import ModalDataUser from '../Molekul/Modal/modalDataUser';
 const TabelUser = () => {
   const navigate = useNavigate();
@@ -76,8 +76,8 @@ const TabelUser = () => {
   };
 
   return (
-    <div className="table-container-database">
-      <table className="data-table-database">
+    <div className="table-container-database-user">
+      <table className="data-table-database-user">
         <thead>
           <tr>
             <th></th>

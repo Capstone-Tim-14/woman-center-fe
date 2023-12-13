@@ -1,19 +1,19 @@
 /* Add the following styles to your existing CSS file or create a new one */
 
-.search-bar {
+.search-bar-database-user {
     display: flex;
     align-items: center;
     margin-left: 1030px;
     margin-bottom: -10px;
   }
   
-  .filter-date-icon {
+  .filter-date-icon-database-user {
     cursor: pointer;
     margin-left: 10px;
   }
   
   /* Styling for the PopUpModal (modify as needed) */
-  .popup-modal {
+  .popup-modal-database-user {
     position: fixed;
     top: 50%;
     left: 50%;

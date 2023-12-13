@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import "../styles/Database.css";
+import "../styles/DatabaseUser.css";
 import Col from 'react-bootstrap/Col';
 import Header from "../components/Organism/HeaderDatabase";
 import SummaryUser from "../components/Organism/SummaryDatabaseUser.jsx";
@@ -72,10 +72,10 @@ const DatabaseUser = () => {
   useEffect(() => () => setIsDatabaseOpen(false), []);
 
   return (
-    <div className="main-layout-database"> 
+    <div className="main-layout-database-user"> 
       <Header />
 
-      <div className="sub-containers">
+      <div className="sub-containers-user">
         <SummaryUser />
       </div>
           <div className="d-flex justify-content-end" style={{marginLeft: '850px'}}>
@@ -92,7 +92,7 @@ const DatabaseUser = () => {
               </Col>
           </div>
           <NewTabelUser />
-          <footer className="page-selector-footer">
+          <footer className="page-selector-footer-user">
           <PageSelector />
           </footer>
           {/* <Table hover borderless>
