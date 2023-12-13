@@ -44,7 +44,7 @@ const ArtikelContainer = () => {
 
       {/* Page Selector (as Footer) */}
       <footer className="page-selector-footer">
-      <PageSelector />
+      <PageSelector />  
       </footer>
     </div>
   );

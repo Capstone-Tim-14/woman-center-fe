@@ -5,29 +5,32 @@ import SesiContainers from "../components/Organism/SesiContainer";
 import KalenderLeft from '../components/Organism/KalenderLeft';
 import NoteKalender from '../components/Organism/NoteKalender';
 import ModalEditKonseling from '../components/Molekul/Modal/EditKonselingPaket';
+import PageSelector from "../components/Organism/PageSelector"; // Ganti nama import menjadi PageSelector
+
 import "../styles/Jadwal.css";
 
 
 
 const JadwalPage = () => {
-  
-    return (
-        <div className="jadwal-page">
-        {/* Gunakan komponen Header */}
-        <HeaderJadwal />
 
-        <div className="sub-jadwal-kalender">
+  return (
+    <div className="jadwal-page">
+      {/* Gunakan komponen Header */}
+      <HeaderJadwal />
+
+      <div className="sub-jadwal-kalender">
         <KalenderLeft />
         <NoteKalender />
-        </div>
-        
-
-        <div className="sub-content-jadwal-sesi">
-        <SesiContainers />
-        </div>
-
       </div>
-    );
+
+
+      <div className="sub-content-jadwal-sesi">
+        <SesiContainers />
+      </div>
+
+
+    </div>
+  );
 }
 
 export default JadwalPage;
