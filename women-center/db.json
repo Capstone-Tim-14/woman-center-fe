@@ -1,0 +1,125 @@
+{
+  "jadwal": [
+    {
+      "id": 4,
+      "full_name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "profile_picture": "https://pub-86c5755f32914550adb162dd2b8850d0.r2.dev/default-profile.jpg",
+      "description": "Saya adalah seorang konselor dengan pengalaman luas dalam membantu orang mengatasi berbagai masalah.",
+      "schedule": [
+        {
+          "day_schedule": "Senin",
+          "time_schedule": [
+            {
+              "time_start": "18:00:00",
+              "time_finish": "19:00:00"
+            }
+          ]
+        },
+        {
+          "day_schedule": "Kamis",
+          "time_schedule": [
+            {
+              "time_start": "18:00:00",
+              "time_finish": "19:00:00"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "keahlian": [
+    {
+      "id": 5,
+      "name": "Depresi",
+      "description": "Specialist tentang depresi"
+    },
+    {
+      "id": 6,
+      "name": "Depresi1",
+      "description": "Specialist tentang depresi"
+    },
+    {
+      "id": 7,
+      "name": "Testing",
+      "description": "Testing"
+    },
+    {
+      "id": 8,
+      "name": "Techo",
+      "description": "Article ini tentang tech"
+    }
+  ],
+  "konselor": [
+    {
+      "id": 4,
+      "username": "alice.johnson",
+      "first_name": "Alice",
+      "last_name": "Johnson",
+      "email": "alice.johnson@example.com",
+      "profile_picture": "https://pub-86c5755f32914550adb162dd2b8850d0.r2.dev/default-profile.jpg",
+      "description": "Saya adalah seorang konselor dengan pengalaman luas dalam membantu orang mengatasi berbagai masalah.",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 5,
+      "username": "bob.miller",
+      "first_name": "Bob",
+      "last_name": "Miller",
+      "email": "bob.miller@example.com",
+      "profile_picture": "https://pub-86c5755f32914550adb162dd2b8850d0.r2.dev/default-profile.jpg",
+      "description": "Saya fokus pada konseling keluarga dan pernikahan. Mari kita bersama-sama mengatasi tantangan hidup Anda.",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 6,
+      "username": "cynthia.clark",
+      "first_name": "Cynthia",
+      "last_name": "Clark",
+      "email": "cynthia.clark@example.com",
+      "profile_picture": "https://pub-86c5755f32914550adb162dd2b8850d0.r2.dev/default-profile.jpg",
+      "description": "Konselor dengan spesialisasi dalam manajemen stres dan kecemasan. Saya di sini untuk membantu Anda menemukan keseimbangan hidup.",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 7,
+      "username": "david.turner",
+      "first_name": "David",
+      "last_name": "Turner",
+      "email": "david.turner@example.com",
+      "profile_picture": "https://pub-86c5755f32914550adb162dd2b8850d0.r2.dev/default-profile.jpg",
+      "description": "Saya memiliki pengalaman dalam membantu remaja mengatasi masalah mereka. Jangan ragu untuk berbicara dengan saya.",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 8,
+      "username": "emily.roberts",
+      "first_name": "Emily",
+      "last_name": "Roberts",
+      "email": "emily.roberts@example.com",
+      "profile_picture": "https://pub-86c5755f32914550adb162dd2b8850d0.r2.dev/default-profile.jpg",
+      "description": "Konselor anak-anak dengan pendekatan yang ramah dan berempati. Bersama, kita bisa menciptakan lingkungan yang positif.",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 9,
+      "username": "budi.rektor",
+      "first_name": "Budi5",
+      "last_name": "Rektor7",
+      "email": "budi@gmail.com",
+      "profile_picture": "https://pub-86c5755f32914550adb162dd2b8850d0.r2.dev/default-profile.jpg",
+      "description": "Budi rektor koruptor bossss",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 10,
+      "username": "iger123",
+      "first_name": "Iger",
+      "last_name": "Bob",
+      "email": "iger123@gmail.com",
+      "profile_picture": "https://pub-86c5755f32914550adb162dd2b8850d0.r2.dev/default-profile.jpg",
+      "description": "test",
+      "status": "ACTIVE"
+    }
+  ]
+}

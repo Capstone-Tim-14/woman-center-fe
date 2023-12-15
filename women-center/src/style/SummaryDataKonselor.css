@@ -1,0 +1,95 @@
+/* SummaryContainer#css */
+
+/* Container Styles */
+#summary-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Box Summary Styles */
+#box-summary {
+    margin-top: 10px;
+    font-family: 'Raleway', 'sans-serif';
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+    display: flex; /* Menjadikan konten di dalam kotak summary sebagai flex container */
+    flex-direction: column; /* Menjadikan konten di dalam kotak summary menjadi vertikal */
+    align-items: flex-start; /* Mengatur agar konten berada di sisi kiri */
+}
+
+/* Box Top Styles */
+#box-top {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Icon Box Styles */
+#icon-box {
+    display: flex;
+    align-items: center;
+}
+
+/* Icon Image Styles */
+#icon-image {
+    padding: 5px;
+    color: #333;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Box Bottom User Styles */
+#box-bottom-user {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row; /* Menjadikan konten di bagian bawah menjadi horizontal */
+}
+
+/* Percentage Container Styles */
+#percentage-container {
+    display: flex;
+    gap: 20px; /* Ruang antara elemen di dalam percentage-container */
+}
+
+/* Percentage Type Styles */
+#percentage-type {
+    flex: 1;
+    text-align: left;
+    padding: 10px;
+    background-color: transparent;
+    margin-top: -15px;
+}
+
+/* Additional Styles for Labels */
+#percentage-type label {
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: -10px;
+    color: #fff;
+    width: 150px; /* Lebarkan label */
+    font-size: 14px;
+}
+
+/* Styles for Paragraphs */
+#percentage-type p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0; /* Menghilangkan margin default */
+    display: inline; /* Menjadikan paragraf tampil secara inline (horizontal) */
+}
+
+/* Second Paragraph Styles */
+#percentage-type #format {
+    font-size: 12px;
+    margin-left: 10px; /* Atur jarak dari paragraf pertama */
+    color: #fff;
+    display: inline; /* Menjadikan paragraf tampil secara inline (horizontal) */
+}

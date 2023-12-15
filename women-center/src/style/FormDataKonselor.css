@@ -1,0 +1,22 @@
+#formDataKonselor{
+    display: flex;
+    flex-direction: column;
+}
+#form-Konselor{
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+#form-left-dataKonselor{
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+#form-right-dataKonselor{
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
