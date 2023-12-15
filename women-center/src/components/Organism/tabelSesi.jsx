@@ -102,7 +102,7 @@ function TabelSesi() {
   return (
     <div 
       className='d-flex flex-column gap-2'
-      style={{width: '1060px' }}>
+      style={{width: '1000px' }}>
 
       <div className='d-flex justify-content-between align-items-center'>
         <p className='m-0' style={{ fontWeight: '500' }}>Sesi</p>
