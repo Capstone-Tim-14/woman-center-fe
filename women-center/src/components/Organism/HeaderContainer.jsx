@@ -23,7 +23,7 @@ const HeaderContainer = () => {
           <div className="icon-home">
             <GoHomeFill className="icon-home-img" />
           </div>
-          <div className="subtitle-text">/ Dashboard</div>
+          <div className="subtitle-text" style={{ marginTop: '3px' }}>/ Dashboard</div>
         </div>
       </div>
       <div className="header-icons">

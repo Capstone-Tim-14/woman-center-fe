@@ -7,7 +7,7 @@ import Header from "../components/Organism/HeaderDatabase";
 import SummaryUser from "../components/Organism/SummaryDatabaseUser.jsx";
 import UserText from "../components/Atom/UserTextDatabaseUser.jsx";
 import ModalTambahAkunUser from '../components/Molekul/Modal/modalTambahAkunUser.jsx';
-import SearchBar from "../components/Atom/SearchBar.jsx";
+import SearchBar from "../components/Atom/SearchBarDatabase.jsx";
 import NewTabelUser from '../components/Organism/TabelUser.jsx';
 import PageSelector from "../components/Organism/PageSelector"; 
 
@@ -71,14 +71,18 @@ const DatabaseUser = () => {
 
   useEffect(() => () => setIsDatabaseOpen(false), []);
 
+  const containerStyle = {
+    overflowX: "hidden",
+};
+
   return (
-    <div className="main-layout-database"> 
+    <div className="main-layout-database" style={containerStyle}> 
       <Header />
 
       <div className="sub-containers">
         <SummaryUser />
       </div>
-          <div className="d-flex justify-content-end" style={{marginLeft: '850px'}}>
+          <div className="d-flex justify-content-end" style={{marginLeft: '800px'}}>
           <ModalTambahAkunUser 
             onAddUser={handleAddUser}
             newUserData={newUserData}

@@ -7,6 +7,7 @@ import Konseling from '../../Molekul/list/konseling'
 import Buttonn from '../../Atom/button/button'
 import { Form } from 'react-bootstrap'
 import axios from "axios"
+import ImgUrl from "../../../assets/image 36.png"
 
 const KontenDataUser = () => {
 
@@ -133,10 +134,10 @@ const KontenDataUser = () => {
                     onInputChange={handleInputChange}
                   />
                 <Profil 
-                  src={imageUrl}/>
+                  src={ImgUrl}/>
             </div>
             <div className='ms-2 me-5 mt-4'>
-              <div className="d-flex justify-content-start col-12 gap-4">
+              <div className="d-flex justify-content-start col-8 gap-4" style={{marginTop: '-100px'}}>
                 <Artikel 
                   checkboxArtikel={checkboxItemsArtikel} 
                   onCheckBoxChange={handleCheckboxChange} />

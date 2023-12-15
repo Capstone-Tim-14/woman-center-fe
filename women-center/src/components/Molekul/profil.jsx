@@ -7,7 +7,7 @@ const Profil = ({src}) =>{
                 <img 
                     src={src}
                     className="rounded-2 mt-3"
-                    style={{height: '340px', width: '320px', objectFit: 'cover'}}
+                    style={{height: '280px', width: '280px', objectFit: 'cover'}}
                     />
             </div>
         </>

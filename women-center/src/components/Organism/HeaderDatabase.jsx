@@ -5,14 +5,14 @@ import Profile from '../../assets/icon/profile 1.jpg'
 
 const HeaderDatabase = () => {
   return (
-    <div className="header">
+    <div className="header" style={{width: '100%'}}>
       <div className="header-content">
-        <h3>Database</h3>
+        <h3> Database</h3>
         <div className="subtitle">
           <div className="icon-home">
             <GoHomeFill className="icon-home-img" />
           </div>
-          <div className="subtitle-text">/ Database</div>
+          <div className="subtitle-text" style={{marginTop: '3px'}}>/ Database</div>
         </div>
       </div>
       <div className="header-icons">

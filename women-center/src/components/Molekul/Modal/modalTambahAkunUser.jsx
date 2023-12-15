@@ -59,7 +59,7 @@ const ModalTambahAkunUser = () => {
 
         <Modal.Body>
           <Form>
-          <Form.Group className="d-flex flex-column gap-3" style={{marginRight: '90px'}}>
+          <Form.Group className="d-flex flex-column gap-3">
           <Inputan 
                 type="text" 
                 placeholder="Nama Depan"

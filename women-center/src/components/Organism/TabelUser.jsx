@@ -101,7 +101,7 @@ const TabelUser = () => {
         </thead>    
         <tbody>
           {tableData.map((row) => (
-            <tr key={row.id}>
+            <tr key={row.id} style={{margin:-100}}>
               <td><input type="checkbox" /></td>
               <td>{row.title}</td>
               <td>{row.username}</td>
@@ -110,15 +110,49 @@ const TabelUser = () => {
               </td>
               <td>{row.namaBelakang}</td>
               <td>{row.alamatEmail}</td>
-              <td className='d-flex justify-content-center'style={{ alignItems: "center" }}>
-                <ModalDataUser />
-                <DeleteButton onClick={confirmDelete} />
-                {/* You can add additional buttons/actions here */}
-              </td>
+              
             </tr>
           ))}
         </tbody>
       </table>
+      <div className="modal-tabeluser-container">
+      <div className='d-flex justify-content-end' style={{marginTop:"-140px", marginBottom:"30px"}}>
+          <div
+            style={{ innerWidth: "23px", color: "#F4518D",  marginTop : "-38px", cursor: "pointer"}}
+          >
+            <ModalDataUser/>
+          </div>
+          <div style={{marginTop:"20px"}}>
+            <DeleteButton 
+              onConfirmDelete={() => confirmDelete(row.id)}
+            />
+          </div>
+        </div>
+        <div className='d-flex justify-content-end' style={{marginTop:"-110px"}}>
+          <div
+            style={{ innerWidth: "23px", color: "#F4518D",  marginTop : "-38px", cursor: "pointer"}}
+          >
+            <ModalDataUser/>
+          </div>
+          <div style={{marginTop:"20px"}}>
+            <DeleteButton 
+              onConfirmDelete={() => confirmDelete(row.id)}
+            />
+          </div>
+        </div>
+        <div className='d-flex justify-content-end' style={{marginTop:"-85px"}}>
+          <div
+            style={{ innerWidth: "23px", color: "#F4518D",  marginTop : "-38px", cursor: "pointer"}}
+          >
+            <ModalDataUser/>
+          </div>
+          <div style={{marginTop:"20px"}}>
+            <DeleteButton 
+              onConfirmDelete={() => confirmDelete(row.id)}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }; 

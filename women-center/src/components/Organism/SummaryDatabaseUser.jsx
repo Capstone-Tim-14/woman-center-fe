@@ -24,7 +24,7 @@ const SummaryDatabaseUser = () => {
 
     {/* Bottom Section of Left Container */}
     <div className="div-footer">
-      <div className="div-footer-content">
+      <div className="div-footer-content" style={{marginLeft: '-20px'}}>
         {/* Artikel Diposting */}
         <div className="percentage-type">
             <label>User Baru</label>

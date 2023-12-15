@@ -6,7 +6,7 @@ import '../../styles/SearchBar.css';
 
 
 const Searching = ({ value, onChange, onSearch }) => (
-  <div className="d-flex align-items-center py-2 px-3 border rounded-2">
+  <div className="d-flex align-items-center py-2 px-3 border rounded-2" style={{marginRight: '80px'}}>
     <FiSearch className='me-3' />
     <input
       type="text"
@@ -36,7 +36,7 @@ const SearchBar = () => {
     console.log(`Searching for: ${searchText}`);
     // Simulate API call by filtering dummy data
     const dummyData = [
-      { id: 1, name: 'John Doe' },
+      { id: 1, name: 'Bagus' },
       { id: 2, name: 'Jane Doe' },
       { id: 3, name: 'Alice Smith' },
       // Add more dummy data as needed
@@ -51,22 +51,8 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="search-bar" style={{marginRight: '50px'}}>
+    <div className="search-bar" style={{marginRight: '-120px'}}>
       <Searching value={searchText} onChange={(e) => setSearchText(e.target.value)} onSearch={handleSearch} />
-
-      <div className="filter-date-icon" onClick={togglePopup} style={{marginLeft: '-70px'}}>
-        {/* Replace the image with LuCalendarDays icon */}
-        <LuCalendarDays size={25} />
-      </div>
-
-      <PopUpModal isOpen={isOpen} togglePopup={togglePopup}>
-        {/* Display search results */}
-        <ul>
-          {searchResults.map(result => (
-            <li key={result.id}>{result.name}</li>
-          ))}
-        </ul>
-      </PopUpModal>
     </div>
   );
 };
