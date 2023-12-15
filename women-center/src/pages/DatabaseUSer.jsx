@@ -2,11 +2,10 @@ import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "../styles/Database.css";
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Header from "../components/Organism/HeaderDatabase";
 import SummaryUser from "../components/Organism/SummaryDatabaseUser.jsx";
-import UserText from "../components/Atom/UserText";
+import UserText from "../components/Atom/UserTextDatabaseUser.jsx";
 import ModalTambahAkunUser from '../components/Molekul/Modal/modalTambahAkunUser.jsx';
 import SearchBar from "../components/Atom/SearchBar.jsx";
 import NewTabelUser from '../components/Organism/TabelUser.jsx';
@@ -79,23 +78,18 @@ const DatabaseUser = () => {
       <div className="sub-containers">
         <SummaryUser />
       </div>
-
-
-        <div className="mt-5 p-4">
-          <div className="d-flex justify-content-end" >
+          <div className="d-flex justify-content-end" style={{marginLeft: '850px'}}>
           <ModalTambahAkunUser 
             onAddUser={handleAddUser}
             newUserData={newUserData}
             setNewUserData={setNewUserData}
             />
           </div>
-          <div className="">
-            <Row>
+          <div className="database-user-bagian-3">
             <UserText />
               <Col className="d-flex justify-content">
                 <SearchBar />
               </Col>
-            </Row>
           </div>
           <NewTabelUser />
           <footer className="page-selector-footer">
@@ -188,7 +182,6 @@ const DatabaseUser = () => {
             </Row>
           </div> */}
         </div>
-      </div>
 
   );
 };

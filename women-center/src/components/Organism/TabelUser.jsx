@@ -110,7 +110,7 @@ const TabelUser = () => {
               </td>
               <td>{row.namaBelakang}</td>
               <td>{row.alamatEmail}</td>
-              <td className='d-flex justify-content-center'>
+              <td className='d-flex justify-content-center'style={{ alignItems: "center" }}>
                 <ModalDataUser />
                 <DeleteButton onClick={confirmDelete} />
                 {/* You can add additional buttons/actions here */}
