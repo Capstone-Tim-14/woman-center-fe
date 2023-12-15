@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "../../styles/sesi-left-konseling.css"
 import imagedashboard from "../../assets/icon/shadow.png"
 import PageOptions from '../Molekul/PageOption';
+import ModalEditAcara from '../Molekul/Modal/modalEditAcara';
 
 
 const SesiRightContainer = () => {
@@ -70,9 +71,7 @@ const SesiRightContainer = () => {
                             <div className="content-sesi-konseling">
                                 <h5 className="title-sesi-konseling">
                                     Nama Acara
-                                    <button className='button-edit-acara'>
-                                        ...
-                                    </button><br /></h5>
+                                    <ModalEditAcara/></h5>
                                 <h5 className="sub-title-sesi-konseling2">Taman Ismail Marzuki, Jakarta<br /></h5>
                                 <p className="subtitle-sesi-konseling">Tanggal         : 9 November 2023</p>
                                 <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>

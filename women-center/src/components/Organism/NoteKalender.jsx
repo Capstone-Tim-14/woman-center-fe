@@ -1,6 +1,7 @@
 import React from 'react';
 import "../../styles/sesi-left-konseling.css"
 import imagedashboard from "../../assets/icon/shadow.png"
+import ModalNote from '../Molekul/Modal/modalTambahAcara'
 
 
 const NoteKalender = () => {
@@ -9,7 +10,8 @@ const NoteKalender = () => {
     <div className="sub-Note-kalender">
     <div className="all-Note-kalender">
     <div className="head-Note-kalender">
-        <h6 className="txt-Note-kalender">9 November 2023 <button className='button-tambah-acara'>+Tambah Acara</button></h6>
+        <h6 className="txt-Note-kalender">9 November 2023 <ModalNote/>
+        </h6>
     </div>
     </div>
     <div className="all-Note-kalender2" style={{ display: 'flex' }}>
@@ -33,4 +35,4 @@ const NoteKalender = () => {
     )
 }
 
-export default NoteKalender;
+export default NoteKalender;

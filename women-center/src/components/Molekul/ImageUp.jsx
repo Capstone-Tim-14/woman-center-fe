@@ -1,9 +1,10 @@
+import '../../styles/imageUp.css';
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FiUploadCloud } from 'react-icons/fi';
 import { FaImage } from 'react-icons/fa6';
-import '../../styles/imageUp.css';
-const ImageUp = ({ onImageChange }) => {
+
+const ImageUpJadwal = ({ onImageChange }) => {
   const [image, setImage] = useState(null);
 
   const handleImageUpload = (e) => {
@@ -20,21 +21,20 @@ const ImageUp = ({ onImageChange }) => {
     <Container>
       <Row>
         <Col style={{ overflow: 'visible' }}>
-          <h5>Poster Acara</h5>
-          <div className="input-file-containers">
+          <div className="input-file-container-jadwal">
             {/* Move the conditional rendering outside the input */}
             {image && (
-              <div className="image-containers">
+              <div className="image-container-tambahacara">
                 <img
-                  className="image"
+                  className="image-tambahacara"
                   src={URL.createObjectURL(image)}
                   alt="Event Poster"
-                  style={{ maxWidth: '100%', maxHeight: '300px' }}
+                  style={{ maxWidth: '100%', height: 'auto' }}
                 />
               </div>
             )}
             {/* Input file section */}
-            <label htmlFor="imageInput" className="input-file-texts">
+            <label htmlFor="imageInput" className="input-file-text-jadwal">
               <h1>
                 <FaImage />
               </h1>
@@ -53,4 +53,4 @@ const ImageUp = ({ onImageChange }) => {
   );
 };
 
-export default ImageUp;
+export default ImageUpJadwal;
