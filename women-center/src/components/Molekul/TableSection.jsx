@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import DeleteButton from '../Atom/DeleteButton';
 import { useNavigate } from 'react-router-dom';
-import ArtikelModal from '../Organism/BacaArtikel';
+import ArtikelModal from '../Organism/ReviewArtikel';
 import { IoEyeOutline } from "react-icons/io5";
 import { BsBookmark } from "react-icons/bs";
 import { BiSortAlt2 } from "react-icons/bi";
@@ -17,6 +17,7 @@ const TableSection = () => {
   const [tableData, setTableData] = useState([]);
   const [selectedRow, setSelectedRow] = useState(null);
   const [showReviewModal, setShowReviewModal] = useState(false);
+  const [selectedArticleSlug, setSelectedArticleSlug] = useState(null);
   const [pagination, setPagination] = useState({
     page: 1,
     totalPage: 1,
@@ -91,9 +92,11 @@ const TableSection = () => {
     setTableData(sortedData);
   };
   
-  const handleRowClick = (articleId) => {
-   //
-    console.log('Row clicked:', articleId);
+ 
+
+  const handleRowClick = (slug) => {
+    setSelectedArticleSlug(slug);
+    setShowReviewModal(true);
   };
 
   const handleCheckboxClick = (event, articleId) => {
@@ -166,8 +169,7 @@ const TableSection = () => {
         </thead>
         <tbody>
         {tableData.map((row) => (
-  <tr key={row.slug} onClick={() => handleRowClick(row.id)}>
-    <td><input type="checkbox" onClick={(event) => handleCheckboxClick(event, row.id)} /></td>
+          <tr key={row.slug} onClick={() => handleRowClick(row.slug)}>
               <td>{row.title}</td>
               <td>{row.author.name}</td>
               <td>
@@ -193,6 +195,13 @@ const TableSection = () => {
             </tr>
           ))}
         </tbody>
+        <ArtikelModal
+          show={showReviewModal}
+          handleClose={() => setShowReviewModal(false)}
+          articleSlug={selectedArticleSlug}
+          token={token}
+          
+        />
       </table>
       <div>
       <PageOptions onPageChange={goToPage} totalPages={pagination.totalPage || 1} />
