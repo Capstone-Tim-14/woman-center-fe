@@ -1,0 +1,168 @@
+{
+  "Sesi": [
+    {
+      "id": 2,
+      "user": "Uzumaki Naruto",
+      "konselor": "Hinata Hyuga",
+      "paket": "Paket 2",
+      "tglDibuat": "2023-03-14",
+      "tglPertemuan": "01-05-2022",
+      "status": "Today"
+    },
+    {
+      "id": 3,
+      "user": "Uzumaki Naruto",
+      "konselor": "Hinata Hyuga",
+      "paket": "Paket 2",
+      "tglDibuat": "2022-03-14",
+      "tglPertemuan": "01-05-2022",
+      "status": "Today"
+    },
+    {
+      "id": 4,
+      "user": "Uzumaki Naruto",
+      "konselor": "Hinata Hyuga",
+      "paket": "Paket 2",
+      "tglDibuat": "2023-03-14",
+      "tglPertemuan": "01-05-2022",
+      "status": "Completed"
+    },
+    {
+      "id": 5,
+      "user": "Uzumaki Naruto",
+      "konselor": "Hinata Hyuga",
+      "paket": "Paket 2",
+      "tglDibuat": "2023-03-14",
+      "tglPertemuan": "01-05-2022",
+      "status": "Today"
+    },
+    {
+      "id": 6,
+      "user": "Uzumaki Naruto",
+      "konselor": "Hinata Hyuga",
+      "paket": "Paket 2",
+      "tglDibuat": "2023-03-14",
+      "tglPertemuan": "01-05-2022",
+      "status": "Today"
+    },
+    {
+      "id": 7,
+      "user": "Uzumaki Naruto",
+      "konselor": "Hinata Hyuga",
+      "paket": "Paket 2",
+      "tglDibuat": "2023-03-14",
+      "tglPertemuan": "01-05-2022",
+      "status": "Today"
+    },
+    {
+      "id": 8,
+      "user": "Uzumaki Naruto",
+      "konselor": "Hinata Hyuga",
+      "paket": "Paket 2",
+      "tglDibuat": "2023-03-14",
+      "tglPertemuan": "01-05-2022",
+      "status": "Today"
+    }
+  ],
+  "series": [
+    {
+      "id": 1,
+      "name": "Video Call",
+      "data": 25
+    },
+    {
+      "id": 2,
+      "name": "Chat",
+      "data": 10
+    },
+    {
+      "id": 3,
+      "name": "Voice Call",
+      "data": 5
+    },
+    {
+      "id": 4,
+      "name": "Langsung",
+      "data": 20
+    }
+  ],
+  "Paket": [
+    {
+      "id": 1,
+      "namapaket": "Paket 1",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 2,
+      "namapaket": "Paket 2",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 3,
+      "namapaket": "Paket 3",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 4,
+      "namapaket": "Paket 4",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 5,
+      "namapaket": "Paket 5",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 6,
+      "namapaket": "Paket 6",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 7,
+      "namapaket": "Paket 7",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 8,
+      "namapaket": "Paket 8",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 9,
+      "namapaket": "Paket 9",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 10,
+      "namapaket": "Paket 10",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 11,
+      "namapaket": "Paket 11",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    }
+  ]
+}

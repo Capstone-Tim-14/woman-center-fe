@@ -1,45 +1,58 @@
-.modal-content-konseling-jadwal {
+/* EditKonseling.css */
+
+/* Gaya untuk modal */
+#modal-konseling, .modal-konseling {
+  /* Atur properti untuk tampilan modal */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Efek gelap pada latar belakang */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gaya untuk konten modal */
+#modal-konseling, .modal-content-konseling {
   /* Atur properti untuk kotak konten modal */
   background-color: white;
   padding: 20px;
   border-radius: 8px;
-  width: 500px;
-  height: 100%;
-  
+  width: 1000px;
+  height: 90%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.custom-modal-edit-konseling .modal-content-konseling-jadwal {
-  max-height: 500px; /* Adjust the maximum height as needed */
-  overflow-y: auto;
-}
-
 /* CSS untuk judul konseling */
-.judul-konseling-jadwal {
+#modal-konseling, .judul-konseling {
   text-align: left; /* Pusatkan teks */
-  margin-bottom: -15px; /* Jarak bawah */
+  margin-bottom: 20px; /* Jarak bawah */
 }
 
 /* CSS untuk elemen h1 di dalam judul-konseling */
-.judul-konseling-jadwal h1 {
+#modal-konseling, .judul-konseling h1 {
   font-size: 20px;
   font-family: 'Poppins', sans-serif;
   color: rgba(31, 31, 31, 1); /* Warna teks */
-  margin-top: 0px; /* Hapus margin default */
-  margin-bottom: 0px;
+  margin: 0; /* Hapus margin default */
 }
 
 /* Gaya untuk label di dalam form-group-konseling */
-.form-group-konseling-jadwal {
+#modal-konseling, .form-group-konseling {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
   width: 50%;
   border: none;
   box-shadow: 10px;
   color: #1F1F1F;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
 }
 
-.form-group-konseling-jadwal label {
+#modal-konseling, .form-group-konseling label {
   display: block;
   margin-bottom: 5px;
   font-family: 'Poppins', sans-serif;
@@ -47,35 +60,50 @@
 }
 
 /* Sesuaikan dengan desain tombol close yang Anda inginkan */
-.close-button-jadwal {
+#btn-closeKonseling {
   /* Atur properti untuk tombol close */
-  position: absolute;
-  margin-top: 0px;
-  margin-bottom: 0px;
   cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 20px;
 }
 
 /* Gaya untuk label dan checkbox */
-.checkbox-label-sesi-jadwal {
-  
+#modal-konseling, .checkbox-label-sesi {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
-  margin-right: 50px; /* Atur margin kanan agar jarak antar checkbox tidak terlalu jauh */
+  gap: 10px;
+  margin-bottom: -15px;
+  margin-right: 15px; /* Atur margin kanan agar jarak antar checkbox tidak terlalu jauh */
 }
 
+#modal-konseling, .checkbox-sesiPertama {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#modal-konseling, .checkbox-sesiKedua {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#modal-konseling, .checkbox-sesiKetiga {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 /* Gaya untuk teks pada checkbox */
-.checkbox-text-sesi-jadwal {
-  margin-left: 5px;
+#modal-konseling, .checkbox-text-sesi {
+  margin: 0px;
 }
 
 /* Gaya untuk input teks dengan class 'np' */
-input.np-jadwal {
+#modal-konseling, input.np {
   /* Atur properti untuk input teks dengan class 'np' */
   width: 100%;
   padding: 8px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   border-radius: 8px;
   border: none;
   background-color: rgba(239, 241, 249, 0.6);
@@ -85,11 +113,11 @@ input.np-jadwal {
 }
 
 /* Gaya untuk input teks dengan class 'nk' */
-input.nk-jadwal {
+#modal-konseling, input.nk {
   /* Atur properti untuk input teks dengan class 'nk' */
   width: 100%;
   padding: 8px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   border: none;
   border-radius: 8px;
   background-color: rgba(239, 241, 249, 0.6);
@@ -99,7 +127,7 @@ input.nk-jadwal {
 }
 
 /* Gaya untuk input teks dengan class 'nu' */
-input.nu-jadwal {
+#modal-konseling, input.nu {
   /* Atur properti untuk input teks dengan class 'nu' */
   width: 100%;
   padding: 8px;
@@ -113,7 +141,7 @@ input.nu-jadwal {
 }
 
 /* Gaya untuk input tanggal */
-input[type='date'] {
+#modal-konseling, input[type='date'] {
   /* Atur properti untuk input tanggal */
   width: 80%;
   padding: 8px;
@@ -124,38 +152,39 @@ input[type='date'] {
 }
 
 /* Gaya untuk judul sesi */
-.sesi-title-jadwal {
+#modal-konseling, .sesi-title {
   /* Atur properti untuk judul sesi */
-  margin-bottom: 1px;
+  margin-bottom: 10px;
   font-size: 16px;
   font-family: 'Poppins', 'sans-serif';
   color: #1F1F1F;
-  margin-top: 1px;
+  margin-top: 5px;
 }
 
 /* Gaya untuk tata letak kolom */
-.flex-container-konseling-jadwal {
+#modal-konseling, .flex-container-konseling {
   /* Atur tata letak kolom */
   display: flex;
   justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 /* Gaya untuk kolom */
-.column-jadwal {
+#modal-konseling, .column {
   /* Atur properti untuk kolom */
   flex: 1;
   margin-right: 10px; /* Atur jarak antar kolom */
 }
 
 /* Gaya untuk container tombol pada bagian akhir */
-.button-container-jadwal {
+#modal-konseling, .button-container {
   display: flex;
   justify-content: flex-end;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 /* Gaya untuk tombol pada bagian akhir */
-.button-container-jadwal button {
+#modal-konseling, .button-container button {
   margin-left: 10px;
   padding: 10px 20px;
   border: none;
@@ -167,14 +196,14 @@ input[type='date'] {
 }
 
 /* Gaya untuk tombol 'Batalkan Konseling' */
-.button-container-jadwal button:nth-child(1) {
+#modal-konseling, .button-container button:nth-child(1) {
   background-color: #fff;
   color: #5570F1;
   border: 1px solid #5570F1;
 }
 
 /* Gaya untuk tombol 'Submit' */
-.button-container-jadwal button:nth-child(2) {
+#modal-konseling, .button-container button:nth-child(2) {
   background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
   color: #fff;
 }

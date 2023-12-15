@@ -41,7 +41,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="profile" style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+    <div className="profile" style={{ flexDirection: 'column', alignItems: 'flex-start', width: '80%' }}>
     <div className="header">
       <div className="header-content">
         <h3>Profile</h3>
@@ -66,7 +66,7 @@ const Profile = () => {
     </div>
 
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
-        <p style={{ fontSize: '30px', marginRight: '40px', font: 'Raleway-medium/Medium 20', marginLeft: '16px' }}>Pengaturan Akun</p>
+        <p style={{ fontSize: '20px', marginRight: '40px', font: 'Raleway-medium/Medium 20', marginLeft: '16px', marginTop: '10px' }}>Pengaturan Akun</p>
         <a href="/profile/editprofile">
         <button
           className="btn btn-primary"
@@ -84,8 +84,9 @@ const Profile = () => {
         </a>
       </div>
 
-      <div className="tabel-profile" style={{ display: 'flex' }}>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div style={{width: '75%'}}>
+      <div className="tabel-profile" style={{ display: 'flex' , width: '70%' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', width: '70%' }}>
           <p style={{ marginLeft: '25px' }}>First Name</p>
           <div className="table-container">
             <div className="table-row">
@@ -201,13 +202,14 @@ const Profile = () => {
           </div>
         </div>
 
-        <div style={{ margin: '16px' }}></div>
+        <div style={{ margin: '16px'}}></div>
         <img
           src={fotoProfile2}
           alt="Side Image"
           className="side-image"
-          style={{ width: '172px', height: '172px', alignSelf: 'flex-start', marginRight: '40px', borderRadius: '12px' }}
+          style={{ width: '172px', height: '172px', alignSelf: 'flex-start', marginRight: '40px', borderRadius: '12px', }}
         />
+      </div>
       </div>
     </div>
   );

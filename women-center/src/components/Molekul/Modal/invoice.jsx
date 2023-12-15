@@ -1,10 +1,11 @@
 import React, { useRef, useState } from 'react'
 import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
-import ButtonClose from '../../Atom/button/Closebutton'
-import ButtonDownload from '../../Atom/button/buttonsDownload'
+import ButtonClose from '../../atom/button/buttonsClosePaket'
+import ButtonDownload from '../../atom/button/buttonsDownload'
 import Tabel from 'react-bootstrap/Table'
 import Modal from 'react-bootstrap/Modal'
+import '../../../styles/invoice.css'
 
 function Invoice() {
 
@@ -28,120 +29,107 @@ function Invoice() {
   return (
     <>
       <button
-        style={{border: 'none', background: 'none'}}
+        id='invoice'
         onClick={handleShow}>
         <img 
-          src="src/assets/icons/Document.png" 
+          src="src/assets/icon/Document.png" 
           alt="" 
           style={{width: '16px', height: '18px'}}/>
       </button>
 
+      <div id='modal-Invoice'>
       <Modal show={show} onHide={handleClose} size='lg'>
-        <div className='d-flex justify-content-end gap-2 mx-3 mt-2'>
+        <div id='btn-Invoice'>
             <ButtonDownload onClick={downloadPdf}/>
             <ButtonClose onClick={handleClose}/>
         </div>
-        <div className='container' ref={pdfRef}>
+        <div className='container' ref={pdfRef} id='container-Invoice'>
 
-          <header className='d-flex flex-column gap-2 mt-3'>
-            <div className='d-flex justify-content-between mx-3'>
-                <div className='d-flex align-items-center gap-2'>
+          <header>
+            <div id='header-line'>
+                <div id='header-logo'>
                   <img 
-                    src="src/assets/image/MAIN LOGO PINK.png" 
+                    src="src/assets/MAIN LOGO PINK.png" 
                     alt=""/>
-                  <p 
-                    className='m-0'
-                    style={{fontSize: '15px', fontWeight: '700'}}>
-                    WOMEN<br/>CENTER</p>
+                  <p>WOMEN<br/>CENTER</p>
                 </div>
                 <div>
-                  <h4 
-                    style={{fontWeight: '700'}}>
-                    INVOICE</h4>
+                  <h4>INVOICE</h4>
                 </div>
               </div>
           </header>
 
-          <main className='d-flex flex-column gap-4 my-3 mx-3'>
+          <main id='main-Invoice'>
 
-            <div className='d-flex justify-content-between' id='info'>
-              <div className='d-flex flex-column col-4'>
-                <p className='m-0' style={{fontWeight: '700'}}>WOMEN CENTER</p>
-                <p className='m-0'>REG: 123000123000</p>
-                <p className='m-0'>womencenter@wc.com</p>
-                <p className='m-0'>+64 123 1234 123</p>
+            <div id='info-Invoice'>
+              <div id='info-left'>
+                <p id='company'>WOMEN CENTER</p>
+                <p >REG: 123000123000</p>
+                <p >womencenter@wc.com</p>
+                <p >+64 123 1234 123</p>
               </div>
-              <div className='d-flex flex-column col-4'>
-                <p className='m-0 text-end' style={{fontWeight: '700'}}>NAMAWEB.COM</p>
-                <div className='d-flex justify-content-between'>
-                  <p className='m-0'>INVOICE NUMBER:</p>
-                  <p className='m-0'>INV-0002</p>
+              <div id='info-right'>
+                <p id='namaweb'>NAMAWEB.COM</p>
+                <div id='invoice-number'>
+                  <p >INVOICE NUMBER:</p>
+                  <p >INV-0002</p>
                 </div>
-                <div className='d-flex justify-content-between'>
-                  <p className='m-0'>INVOICE DATE:</p>
-                  <p className='m-0'>19 SEP 2023</p>
+                <div id='invoice-date'>
+                  <p >INVOICE DATE:</p>
+                  <p >19 SEP 2023</p>
                 </div>
               </div>
             </div>
             
-            <Tabel responsive>
-              <thead>
-                <tr style={{fontSize: '14px', border: '1px solid #C4C4C4'}}>
-                  <th style={{width: '60%'}}>Nama Paket</th>
-                  <th 
-                    className='text-center'
-                    style={{width: '20%'}}>
-                    Harga</th>
-                  <th 
-                    className='text-center'
-                    style={{width: '20%'}}>
-                    Diskon</th>
+            <Tabel responsive id='table-Invoice'>
+              <thead id='table-head'>
+                <tr>
+                  <th id='paket-invoice'>Nama Paket</th>
+                  <th id='price-invoice'>Harga</th>
+                  <th id='discount-invoice'>Diskon</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr style={{fontSize:'14px', border: '1px solid #C4C4C4'}}>
-                  <td style={{width: '60%'}}>Paket Voice Call</td>
-                  <td
-                    className='text-center'
-                    style={{width: '20%'}}>
+              <tbody id='table-body'>
+                <tr>
+                  <td id='paket-invoice'>Paket Voice Call</td>
+                  <td id='price-invoice'>
                     IDR 350,000</td>
-                  <td 
-                    className='text-center'
-                    style={{width: '20%'}}>
+                  <td id='discount-invoice'>
                     IDR 100,000</td>
                 </tr>
               </tbody>
             </Tabel>
 
-            <div 
-              className='col-5 rounded-2 ms-auto py-2 px-4' 
-              style={{border: '1px solid #C4C4C4', backgroundColor: '#F5F5F5'}}>
+            <div id='total-Invoice'>
               <div className='d-flex justify-content-between'>
                 <div className='d-flex flex-column gap-1'>
-                  <p className='m-0'>Total Harga:</p>
-                  <p className='m-0'>Total Diskon:</p>
-                  <p className='m-0' style={{fontWeight: '700'}}>Total :</p>
+                  <p >Total Harga:</p>
+                  <p >Total Diskon:</p>
+                  <p style={{fontWeight: '700'}}>Total :</p>
                 </div>
                 <div className='d-flex flex-column gap-1'>
-                  <p className='m-0'>IDR 350,000</p>
-                  <p className='m-0'>IDR 100,000</p>
-                  <p className='m-0'>IDR 250,000</p>
+                  <p >IDR 350,000</p>
+                  <p >IDR 100,000</p>
+                  <p >IDR 250,000</p>
                 </div>
               </div>
             </div>
 
           </main>
 
-          <footer className='container-fluid' style={{borderTop: '1px solid #C4C4C4'}}>
-              <div className='d-flex justify-content-between mx-3 py-5'>
-                <p className='m-0'>www.website.com</p>
-                <p className='m-0'>+64 123 1234 123</p>
-                <p className='m-0'>womencenter@wc.com</p>
+          <footer 
+            id='footer-Invoice' 
+            className='container-fluid'>
+              <div id='footerinfo'>
+                <p >www.website.com</p>
+                <p >+64 123 1234 123</p>
+                <p >womencenter@wc.com</p>
               </div>
           </footer>
         </div>
 
       </Modal>
+      </div>
     </>
   )
 }

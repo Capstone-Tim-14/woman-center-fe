@@ -1,0 +1,146 @@
+#invoice {
+    border: none;
+    background: none;
+}
+
+#btn-Invoice{
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+#container-Invoice header{
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+    flex-direction: column;
+}
+
+/* header Invoice */
+header #header-line{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+header #header-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#header-logo p{
+    margin: 0px;
+    font-size: 15px;
+    font-weight:700;
+}
+
+#header-line h4{
+    font-weight: 700;
+}
+
+
+/* main Invoice */
+#main-Invoice{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 20px;
+}
+
+/* info Invoice */
+#info-Invoice{
+    display: flex;
+    justify-content: space-between;
+}
+#info-left{
+    display: flex;
+    flex-direction: column;
+    columns: 4;
+}
+#info-left p{
+    margin: 0px;
+}
+#company{
+    font-weight: 700;
+}
+
+#info-right{
+    display: flex;
+    flex-direction: column;
+    columns: 4;
+}
+#info-right p{
+    margin: 0px;
+}
+#namaweb{
+    text-align: end;
+    font-weight: 700;
+}
+#invoice-number{
+    display: flex;
+    justify-content: space-between;
+}
+#invoice-date{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* tabel-invoice */
+#tabel-Invoice{
+    width: 100%;
+}
+
+#table-head tr{
+    font-size: 14px;
+    border: 1px solid #C4C4C4; 
+}
+#table-body tr{
+    font-size: 14px;
+    border: 1px solid #C4C4C4; 
+}
+#paket-invoice{
+    text-align: start;
+    width: 60%;
+}
+#price-invoice{
+    text-align: center;
+    width: 20%;
+}
+#discount-invoice{
+    text-align: center;
+    width: 20%;
+}
+
+
+/* total-invoice */
+#total-Invoice{
+    border-radius: 5px;
+    padding: 15px 30px;
+    border: 1px solid #C4C4C4;
+    background-color: #F5F5F5;
+    margin-left: auto;
+    width: 40%;
+}
+#total-Invoice p{
+    margin: 0%;
+}
+
+/* footer */
+#footer-Invoice{
+   border-top: 1px solid #C4C4C4;
+}
+#footer-Invoice p{
+    margin: 0%;
+}
+#footerinfo{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}

@@ -13,6 +13,9 @@ import { IoNotifications } from 'react-icons/io5';
 import Modal from "../components/Molekul/Modal/successModal";
 import FailedModal from "../components/Molekul/Modal/failedModal";
 
+const containerStyle = {
+  overflowX: "hidden",
+};
 const EditProfile = () => {
   const [selectedOptions, setSelectedOptions] = useState({
     dropdown1: '+62',
@@ -124,15 +127,15 @@ const EditProfile = () => {
   };
 
   return (
-    <div className="editprofile" style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+    <div className="editprofile" style={containerStyle || { flexDirection: 'column', alignItems: 'flex-start', width: '80%' }}>
     <div className="header">
       <div className="header-content">
-        <h3>Dashboard</h3>
+        <h3>Profile</h3>
         <div className="subtitle">
           <div className="icon-home">
             <GoHomeFill className="icon-home-img" />
           </div>
-          <div className="subtitle-text">/ Dashboard</div>
+          <div className="subtitle-text">/ Edit Profile</div>
         </div>
       </div>
       <div className="header-icons">
@@ -153,7 +156,7 @@ const EditProfile = () => {
       </div>
 
       <form onSubmit={handleSubmit} style={{ display: 'flex', marginBottom: '20px' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px', width: '38%' }}>
           <div className="form-container">
             <p style={{ marginLeft: '16px', marginBottom: '4px' }}>First Name</p>
             <div className="form-row">

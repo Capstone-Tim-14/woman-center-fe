@@ -1,6 +1,6 @@
 /* TambahPaket.css */
 
-.modal-overlay {
+#overlay-tambahpaket {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,14 +12,14 @@
   align-items: center;
 }
 
-.popup {
+#popup-tambahpaket {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
   width: 1000px; /* Adjusted width */
 }
 
-.popup-header {
+#popup-header-tambahpaket {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,52 +29,23 @@
   margin-left: 30px;
 }
 
-.popup-header h2 {
+#popup-header-tambahpaket, h2 {
   margin: 0;
 }
 
-.close-button {
+#close-button-paket {
   background: none;
   border: none;
   font-size: 20px;
   cursor: pointer;
 }
 
-.popup-content {
+#popup-content-tambahpaket {
   margin-top: 20px;
 }
 
-.form-container {
-  display: flex;
-}
-
-.left-column,
-.right-column {
-  flex: 1;
-}
-
-.form-group {
-  margin-bottom: 15px;
-  font-family: 'Poppins, sans-serif';
-  font-size: 16px;
-  font-weight: 400;
-  margin-left: 30px;
-}
-
-.form-button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-}
-
-form label {
-  display: block;
-  margin-bottom: 10px; /* Adjusted spacing here */
-}
-
-.popup input[type="text"],
-.popup input[type="number"] {
+#popup-content-tambahpaket input[type="text"],
+#popup-content-tambahpaket input[type="number"]{
   width: 85%;
   padding: 8px;
   box-sizing: border-box;
@@ -87,76 +58,122 @@ form label {
   font-size: 16px;
 }
 
-.tipe-paket-options {
+#form-container-tambahpaket {
   display: flex;
   justify-content: space-between;
-  width: 70%;
-  margin-left: -30px;
 }
 
-.tipe-paket-options label {
-  margin-bottom: 10px;
-}
-
-.benefits-section {
-  margin-top: 1px;
-  margin-left: 70px;
+#form-group-namapaket {
+  margin-bottom: 15px;
+  font-family: 'Poppins, sans-serif';
   font-size: 16px;
-  font-family: 'Poppins', 'Sans Serif';
   font-weight: 400;
 }
 
-.benefits-section ul {
-  list-style: none;
-  padding: 0;
+#form-group-harga {
+  margin-bottom: 15px;
+  font-family: 'Poppins, sans-serif';
+  font-size: 16px;
+  font-weight: 400;
 }
 
-.benefits-section ul li {
-  margin-bottom: 10px;
+#form-group-tipepaket {
+  margin-bottom: 15px;
+  font-family: 'Poppins, sans-serif';
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#tipe-paket-options{
+  display: flex;
+  gap: 100px;
+}
+
+#checkbox-satu{
+  display: flex;
+  flex-direction: column;
+}
+#checkbox-dua{
+  display: flex;
+  flex-direction: column;
+}
+
+#form-group-rincianpaket {
+  display: flex;
+  flex-direction: column;
+}
+#form-group-rincianpaket, label {
+  font-family: 'Poppins, sans-serif';
+}
+
+
+/* right */
+#benefits-section {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-family: 'Poppins', 'Sans Serif';
+  font-weight: 400;
+  gap: 10px;
+}
+#benefits-section label {
+  margin: 0px;
+}
+
+#benefits-section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#benefits-section li {
   display: flex;
   align-items: center;
+  gap: 10px;
   font-weight: 400;
   font-size: 14px;
   font-family: 'Inter', 'sans serif';
   color: #2B2F32;
 }
 
-.benefits-section button {
+#new-benefit{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 30px;
+}
+
+#add-benefit {
   background: transparent;
-  padding: 8px;
-  cursor: pointer;
-  color: #B7B7B7;
-  border: 1px #ABAFB1;
+  padding: 1px 5px;
+  border-radius: 5px;
+  background-color: #ffff;
+  color: #83898C;
+  border: 1px solid #83898C;
   font-family: 'Poppins', 'sans serif';
   
 }
 
-.benefits-section input[type="text"] {
+#newBenefit {
   width: 70%; /* Adjusted width */
   padding: 8px;
-  box-sizing: border-box;
-  margin-right: 20px; /* Adjusted margin */
-  margin-top: -5px;
-  background-color: transparent; /* Added background color */
+  margin-top: 10px;
+  box-sizing: border-box; /* Adjusted margin */
   border-radius: 5px; /* Added border radius */
   font-size: 14px;
   font-family: 'Inter', 'sans serif';
   color: #83898C;
 }
 
-.benefits-section input[type="checkbox"] {
-  margin-right: 5px;
-  margin-top: -5px;
-}
 
-.button {
+#button-section-paket {
   display: flex; /* Mengaktifkan flexbox */
   justify-content: flex-end; /* Menyebarkan elemen secara merata */
   margin-top: 20px; /* Margin atas sesuai kebutuhan */
 }
 
 /* Styling for the Batal button */
-.batal {
+#btn-batalPaket {
   background-color: #fff; /* Warna latar belakang tombol */
   color: #5570F1; /* Warna teks tombol */
   padding: 8px 16px; /* Padding tombol */
@@ -173,7 +190,7 @@ form label {
 }
 
 
-.submit {
+#btn-TambahPaket {
   background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
   color: #fff; /* Warna teks tombol */
   padding: 8px 16px; /* Padding tombol */

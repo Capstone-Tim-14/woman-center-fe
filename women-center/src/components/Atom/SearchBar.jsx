@@ -51,10 +51,9 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="search-bar" style={{marginRight: '50px'}}>
+    <div className="search-bar" style={{marginRight: '30px'}}>
       <Searching value={searchText} onChange={(e) => setSearchText(e.target.value)} onSearch={handleSearch} />
-
-      <div className="filter-date-icon" onClick={togglePopup} style={{marginLeft: '-70px'}}>
+      <div className="filter-date-icon" onClick={togglePopup}>
         {/* Replace the image with LuCalendarDays icon */}
         <LuCalendarDays size={25} />
       </div>
