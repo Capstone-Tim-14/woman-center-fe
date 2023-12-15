@@ -1,14 +1,10 @@
 import React from 'react'
-import HeaderDataKonselor from '../component/organisms/header/headerDataKonselor'
-import TabelDataKonselor from '../component/molekul/tabels/TabelDataKonselor'
+import KontenTableDataKonselor from '../component/organisms/konten/KontenTableDataKonselor'
 
 function Konselor() {
   return (
     <>
-      <div className='container-xl'>
-        <HeaderDataKonselor />
-        <TabelDataKonselor />
-      </div>
+      <KontenTableDataKonselor />
     </>
   )
 }
