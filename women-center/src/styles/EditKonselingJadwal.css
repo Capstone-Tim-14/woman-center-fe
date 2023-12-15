@@ -1,20 +1,3 @@
-/* EditKonseling.css */
-
-/* Gaya untuk modal */
-.modal-konseling-jadwal {
-  /* Atur properti untuk tampilan modal */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.5); /* Efek gelap pada latar belakang */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Gaya untuk konten modal */
 .modal-content-konseling-jadwal {
   /* Atur properti untuk kotak konten modal */
   background-color: white;
@@ -22,7 +5,13 @@
   border-radius: 8px;
   width: 500px;
   height: 100%;
+  
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-modal-edit-konseling .modal-content-konseling-jadwal {
+  max-height: 500px; /* Adjust the maximum height as needed */
+  overflow-y: auto;
 }
 
 /* CSS untuk judul konseling */
@@ -68,6 +57,7 @@
 
 /* Gaya untuk label dan checkbox */
 .checkbox-label-sesi-jadwal {
+  
   display: flex;
   align-items: center;
   margin-bottom: 5px;

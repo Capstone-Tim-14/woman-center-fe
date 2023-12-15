@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import ButtonTambah from '../../Atom/button/buttonTambahAkun';
+import ButtonTambah from '../../Atom/button/buttonTambahAkunUser';
 import ButtonClose from '../../Atom/button/buttonClose';
 import Inputan from '../../Atom/inputan/Inputan';
 import Buttonn from '../../Atom/button/button';

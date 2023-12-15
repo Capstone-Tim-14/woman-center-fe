@@ -117,7 +117,7 @@ const modalEditKonseling = () => {
         <img src={IconEditKonselingJadwal} alt=""style={{width: '10px', height: '18px', marginLeft: '20px'}}/>
       </button>
 
-      <ModalEditKonselingJadwal show={show} onHide={handleClose} className='Edit-konseling-Jadwal'>
+      <ModalEditKonselingJadwal show={show} onHide={handleClose} size='lg' dialogClassName="custom-modal-edit-konseling" >
         <div className="modal-konseling-jadwal">
           <div className="modal-content-konseling-jadwal">
             <h1>Edit Konseling < CloseButton handleClose={handleClose} className="close-button-jadwal"/></h1>
