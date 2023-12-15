@@ -20,7 +20,7 @@ const KalenderLeft = () => {
         dateFormat="dd/MM/yyyy"
         inline
         calendarContainer={({ className, children }) => (
-          <div style={{ maxWidth: '100%', maxHeight: '100%' }} className={className}>
+          <div style={{ maxWidth: '300%', maxHeight: '100%' }} className={className}>
             {children}
           </div>
         )}

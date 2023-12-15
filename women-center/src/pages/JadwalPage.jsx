@@ -10,11 +10,13 @@ import PageSelector from "../components/Organism/PageSelector"; // Ganti nama im
 import "../styles/Jadwal.css";
 
 
-
+const containerStyle = {
+  overflowX: "hidden",
+};
 const JadwalPage = () => {
 
   return (
-    <div className="jadwal-page">
+    <div className="jadwal-page" style={containerStyle}>
       {/* Gunakan komponen Header */}
       <HeaderJadwal />
 

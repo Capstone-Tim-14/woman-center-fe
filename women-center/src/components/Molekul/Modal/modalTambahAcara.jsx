@@ -19,7 +19,6 @@ const ModalTambahAcara = () => {
     return (
         <section>
 
-            {/* Tombol untuk membuka pop-up */}
             <ButtonTambahAcara onClick={openPopup} variant="link" label="+Tambah Acara">
             </ButtonTambahAcara>
 
