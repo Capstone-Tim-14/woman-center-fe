@@ -6,7 +6,7 @@ import GrafikArtikel from "../components/Organism/GrafikArtikel";
 
 
 const containerStyle = {
-    overflowX: "hidden", // This will hide horizontal overflow
+    overflowX: "hidden",
 };
 const Dashboard = () => {
     return (

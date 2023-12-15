@@ -16,7 +16,7 @@ const HeaderContainer = () => {
   };
 
   return (
-    <div className="header" style={{ width: '105%' }}>
+    <div className="header" style={{ width: '100%' }}>
       <div className="header-content">
         <h3>Dashboard</h3>
         <div className="subtitle">
@@ -28,9 +28,9 @@ const HeaderContainer = () => {
       </div>
       <div className="header-icons">
         {/* Notification Icon */}
-        <div className="div-icon" onClick={openNotificationModal}>
+        <div className="div-icon">
           <div className="div-icon-inner">
-            <IoNotifications className="div-icon-bar" />
+            <IoNotifications className="div-icon-bar" onClick={openNotificationModal}/>
           </div>
         </div>
 
