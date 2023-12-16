@@ -35,22 +35,23 @@ const TextBoxArtikel = ({ onTitleChange, onArticleContentChange, onSubmit }) => 
     return (
       <Container>
         <Row >
-          
+          <Col lg={7}>
         <TextBoxAtom
-  className="text-box-artikel"
-  title="Judul"
-  placeholder="Your text goes here"
-  value={title || ''}  // Use an empty string if 'title' is undefined
-  onChange={handleTitleChange}
-  type="text"
-/>
-            
-        </Row>
+          className="text-box-artikel"
+          title="Judul"
+          placeholder="Your text goes here"
+          value={title || ''}  // Use an empty string if 'title' is undefined
+          onChange={handleTitleChange}
+          type="text"
+        />
+          </Col>
         <Row>
-
+          <Col lg={7}>
             <p>Isi Artikel</p>
             <FormWithEditor onTextChange={handleArticleContentChange} ></FormWithEditor> 
+          </Col>
 
+        </Row>
         </Row>
       </Container>
     );

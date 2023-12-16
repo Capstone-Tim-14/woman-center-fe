@@ -180,8 +180,8 @@ const ModalEditDataKonselor = ({ data }) => {
                           </div>
                         </div>
 
-                          <div className='d-flex gap-3'>
-                              <TopikKeahlian onSelectedTopicsChange={handleSelectedTopicsChange} />
+                          <div className='d-flex gap-3' style={{marginTop: '-20px'}}>
+                              <TopikKeahlian onSelectedTopicsChange={handleSelectedTopicsChange} style={{marginTop: '20px'}} />
                               <Artikel 
                                   artikel={id}
                                   checkboxArtikel={checkboxItemsArtikel} 

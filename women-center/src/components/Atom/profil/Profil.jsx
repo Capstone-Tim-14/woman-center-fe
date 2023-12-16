@@ -8,7 +8,7 @@ function Profil({src}) {
             id='imgProfil'
             src={src}
             className="rounded-2 mt-3"
-            style={{height: '340px', width: '320px', objectFit: 'cover'}}/>
+            style={{height: '300px', width: '300px', objectFit: 'cover'}}/>
     </div>
   )
 }

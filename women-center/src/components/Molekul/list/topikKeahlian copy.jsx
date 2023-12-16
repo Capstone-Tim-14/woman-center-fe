@@ -45,7 +45,7 @@ function TopikKeahlian({onSelectedTopicsChange}) {
 
   return (
     <>
-    <div className='d-flex flex-column gap-3' id='topikKeahlian'>
+    <div className='d-flex flex-column gap-3' id='topikKeahlian' style={{marginTop: '-100px'}}>
       <p className='m-0'>Topik Keahlian</p>
       <Form id='form-topikKeahlian'>
         <div className='d-flex gap-4'>

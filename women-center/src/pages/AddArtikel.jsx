@@ -1,11 +1,6 @@
 import { React, useState } from 'react'
-import { Container, Row, Col, Button } from 'react-bootstrap';
-
-
-import TitleBar from '../components/Atom/ArtikelTitle';
-
 import ArtikelBaru from '../components/Organism/ArtikelBaru';
-import ArtikelModal from '../components/Organism/BacaArtikel';
+import HeaderArtikel from '../components/Organism/header/headerArtikel';
 
 const AddArtikel = () => {
    
@@ -42,16 +37,11 @@ const AddArtikel = () => {
   };
 
     return (
-      
         <>
         <div className="page-container">
-       
-      <ArtikelBaru onTitleChange={handleTitleChange} />
-      /</div>
-        
-       
-        
-         </>
+          <ArtikelBaru onTitleChange={handleTitleChange} />
+        </div>
+      </>
     );
   };
 
