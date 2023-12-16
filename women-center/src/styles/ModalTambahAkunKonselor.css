@@ -1,0 +1,23 @@
+#title-tambahKonselor {
+    font-weight: 700;
+    font-size: 20px;
+}
+#form-tambahKonselor {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#modaltambahKonselor-footer {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+#modaltambahKonselor-footer .custom-button-tambah{
+   background: var(--Primary-Gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%)) !important;
+   color: #ffff !important;
+   border: none;
+}
+
+#modal-tambahAkunKonselor{
+    size: small;
+}

@@ -1,28 +1,29 @@
 import { Form } from "react-bootstrap"
-import Inputan from "../../Atom/inputan/Inputan"
+import InputanDataKonselor from "../../Atom/inputan/InputanDataKonselor"
+import '../../../styles/FormDataKonselor.css'
 
-const FormsDataKonselor = (props) => {
-
+const FormDataKonselor = (props) => {
   const {
     first_name,
     last_name,
     username,
-    pendidikan,
+    education,
     birthday,
     email,
     password,
-    psikologi,
+    description,
     onInputChange,
   } = props
 
     return(
-        <div className="col-8 flex-column">
+        <div id="formDataKonselor">
             <p className="m-0">Informasi Konselor</p>
-            <Form className="mt-3 d-flex justify-content-between gap-2">
+            <Form id="form-Konselor">
                 <Form.Group
-                    className="mb-3 d-flex flex-column col-6 gap-3">
+                    id="form-left-dataKonselor"
+                    className="col-6">
 
-                    <Inputan 
+                    <InputanDataKonselor 
                       type="text"
                       name="first_name"
                       placeholder="Nama Depan"
@@ -31,7 +32,7 @@ const FormsDataKonselor = (props) => {
                       autoFocus={true}
                     />
 
-                    <Inputan 
+                    <InputanDataKonselor 
                       type="text" 
                       name="last_name"
                       placeholder="Nama Belakang"
@@ -39,7 +40,7 @@ const FormsDataKonselor = (props) => {
                       onChange={(e) => onInputChange("last_name", e.target.value)}
                     />
 
-                    <Inputan 
+                    <InputanDataKonselor 
                       type="text" 
                       name="username"
                       placeholder="Username"
@@ -47,44 +48,46 @@ const FormsDataKonselor = (props) => {
                       onChange={(e) => onInputChange("username", e.target.value)}
                     />
                     
-                    <Inputan 
+                    <InputanDataKonselor 
                       type="text" 
                       placeholder="Pendidikan Terakhir"
-                      value={pendidikan}
-                      onChange={(e) => onInputChange("pendidikan", e.target.value)}
+                      value={education}
+                      onChange={(e) => onInputChange("education", e.target.value)}
                     />
                   </Form.Group>
 
                   <Form.Group
-                    className="mb-3 d-flex flex-column col-6 gap-3">
+                    id="form-right-dataKonselor"
+                    className="col-6">
 
-                    <Inputan 
+                    <InputanDataKonselor 
                       type="date"
                       value={birthday}
                       onChange={(e) => onInputChange("birthday", e.target.value)}
                     />
-                    <Inputan 
+                    <InputanDataKonselor 
                       type="email"
                       placeholder="Alamat Email"
                       value={email}
                       onChange={(e) => onInputChange("email", e.target.value)}
                     />
-                    <Inputan 
+                    <InputanDataKonselor 
                       type="password" 
                       placeholder="Password"
                       value={password}
                       onChange={(e) => onInputChange("password", e.target.value)}
                     />
                     <Form.Control 
+                      id="form-psikologi"
                       as="textarea"
                       placeholder="Deskripsi Psikologi"
-                      value={psikologi}
-                      onChange={(e) => onInputChange("psikologi", e.target.value)}
+                      value={description}
+                      onChange={(e) => onInputChange("description", e.target.value)}
                       rows={5}
                       style={{ backgroundColor: "var(--third-color)", resize: "none" }} />
-                    </Form.Group>
+                  </Form.Group>
             </Form>
         </div>
     )
 }
-export default FormsDataKonselor
+export default FormDataKonselor

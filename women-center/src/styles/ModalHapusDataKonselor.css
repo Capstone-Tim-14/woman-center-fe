@@ -1,0 +1,30 @@
+#modal-headerEditHapusKonselor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#main-contentHapus{
+    text-align: center;
+    margin-top: 15px;
+}
+#main-contentHapus p{
+    font-size: 12px;
+    font-family: 'Raleway' !important;
+    font-weight: 500;
+}
+
+#modal-footerHapusEditKonselor {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#modal-footerHapusEditKonselor .custom-buttons{
+   background: var(--Primary-Gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%)) !important;
+   color: #ffff !important;
+   border: none;
+}

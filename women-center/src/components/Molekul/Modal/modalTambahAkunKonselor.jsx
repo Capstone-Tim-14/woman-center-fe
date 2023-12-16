@@ -1,117 +1,128 @@
-import { useState } from 'react';
+import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import ButtonTambah from '../../Atom/button/buttonTambahAkun';
-import ButtonClose from '../../Atom/button/buttonClose';
-import Inputan from '../../Atom/inputan/Inputan';
-import Buttonn from '../../Atom/button/button';
+import ButtonsDataKonselor from '../../Atom/button/ButtonsDataKonselor'
+import InputanDataKonselor from '../../Atom/inputan/InputanDataKonselor'
+import ButtonTambahAkunKonselor from '../../Atom/button/ButtonTambahAkunKonselor'
+import ButtonCloseDataKonselor from '../../Atom/button/ButtonCloseDataKonselor'
+import ModalBerhasilDataKonselor from '../../Molekul/Modal/ModalBerhasilDataKonselor'
+import axios from 'axios';
+import '../../../styles/ModalTambahAkunKonselor.css'
 
-
-const ModalTambahAkunKonselor = () => {
-
+function ModalTambahAkunKonselor() {
     const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    const onAddKonselor = () => setShow(true);
-
     const [NamaDepan, setNamaDepan] = useState("");
     const [NamaBelakang, setNamaBelakang] = useState("");
     const [Username, setUsername] = useState("");
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
+    const [success, setSuccess] = useState(false);
 
-    const handleClick = () => {
-      // Validasi: Pastikan semua field sudah diisi
-      if (!NamaDepan || !NamaBelakang || !Username || !Email || !Password) {
-        // Tampilkan pesan kesalahan atau lakukan tindakan lain sesuai kebutuhan
-        console.error('Harap isi semua field sebelum menambahkan konselor.');
-        return;
-      }
-  
-      onAddKonselor({
-        first_name: "",
-        last_name: "",
-        username: "",
-        email: "",
-        password: "",
-      });
-    
-      handleClose();
-    };
-    const ModalTambahAkunKonselor = ({ onAddKonselor }) => {
-      // ... rest of the component code
-    };
-    
-    return(
-        <>
-      <ButtonTambah onClick={handleShow} label="Buat Akun Konselor"/>
+    const handleCloseBerhasil = () => setSuccess(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
-      <Modal 
-        show={show} 
-        onHide={handleClose} 
-        style={{width: '380px', transform: 'translate(-50%, -50%)', top: '50%', left: '50%'}}>
+    // Fungsi untuk menambahkan data
+    const handleSubmit = async () => {
+        // Validasi input kosong
+        if (!NamaDepan || !NamaBelakang || !Username || !Email || !Password) {
+          alert('Semua kolom harus diisi');
+          return;
+        }
+      
+        try {
+          const response = await axios.post('http://localhost:3000/Konselor', {
+            first_name: NamaDepan,
+            last_name: NamaBelakang,
+            username: Username,
+            email: Email,
+            password: Password,
+          });
+          setSuccess(true);
+          handleClose();
+        } catch (error) {
+          console.error(error);
+          setError('Terjadi kesalahan saat menyimpan data. Silakan coba lagi.');
+        }
+      };
 
-        <Modal.Header >
-          <Modal.Title className='fs-6'>Tambah Konselor</Modal.Title>
-          <ButtonClose onClick={handleClose}/>
+  return (
+    <>
+    <ButtonTambahAkunKonselor 
+        onClick={handleShow} 
+        label="Buat Akun Konselor"/>
+
+    <div id='modal-tambahAkunKonselor'>
+        <Modal 
+            show={show} 
+            onHide={handleClose} 
+            style={{width: '430px', height: '670px', transform: 'translate(-50%, -50%)', top: '50%', left: '50%'}}
+            >
+
+        <Modal.Header id='modal-headertambahKonselor'>
+            <Modal.Title id='title-tambahKonselor'>Tambah Konselor</Modal.Title>
+            <ButtonCloseDataKonselor onClick={handleClose}/>
         </Modal.Header>
 
-        <Modal.Body>
-          <Form onSubmit={handleClick}>
-            <Form.Group className="d-flex flex-column gap-3 ">
-            <Inputan 
-                type="text" 
-                placeholder="Nama Depan"
-                autoFocus={true}
-                value={NamaDepan}
-                onChange={(e) => setNamaDepan(e.target.value)}
-              />
-              <Inputan 
-                type="text" 
-                placeholder="Nama Belakang"
-                value={NamaBelakang}
-                onChange={(e) => setNamaBelakang(e.target.value)}
-              />
-              <Inputan 
-                type="text" 
-                placeholder="Username"
-                value={Username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              <Inputan 
-                type="email" 
-                placeholder="Alamat Email"
-                value={Email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <Inputan 
-                type="password" 
-                placeholder="Password"
-                value={Password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Form.Group>
-          </Form>
+        <Modal.Body id='modal-bodytambahKonselor'>
+            <Form>
+                <Form.Group id='form-tambahKonselor'>
+                    <InputanDataKonselor 
+                        type="text" 
+                        placeholder="Nama Depan"
+                        autoFocus={true}
+                        value={NamaDepan}
+                        onChange={(e) => setNamaDepan(e.target.value)}
+                        />
+                    <InputanDataKonselor 
+                        type="text" 
+                        placeholder="Nama Belakang"
+                        value={NamaBelakang}
+                        onChange={(e) => setNamaBelakang(e.target.value)}
+                        />
+                    <InputanDataKonselor 
+                        type="text" 
+                        placeholder="Username"
+                        value={Username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        />
+                    <InputanDataKonselor 
+                        type="email" 
+                        placeholder="Alamat Email"
+                        value={Email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        />
+                    <InputanDataKonselor 
+                        type="password" 
+                        placeholder="Password"
+                        value={Password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        />
+                </Form.Group>
+            </Form>
         </Modal.Body>
 
-        <Modal.Footer className='d-flex justify-content-between'>
-          <Buttonn 
-            className='text-primary bg-white' 
-            onClick={handleClose}
-            label="Batal"
-          />
+        <Modal.Footer id='modaltambahKonselor-footer' >
+            <ButtonsDataKonselor 
+                className='text-primary bg-white' 
+                onClick={handleClose}
+                label="Batal"/>
             
-            <Buttonn 
-              className='bg-button text-white' 
-              onClick={handleClick}
-              label="Tambah"
-          />
+            <ButtonsDataKonselor 
+                className='custom-button-tambah' 
+                onClick={handleSubmit}
+                label="Tambah"/>
         </Modal.Footer>
-
-      </Modal>
-
-        </>
-    )
+        </Modal>
+    </div>
+    <div>
+        <ModalBerhasilDataKonselor
+            label='Data berhasil di tambahkan'
+            Berhasil={success} 
+            Close={handleCloseBerhasil}/>
+    </div>
+    </>
+  )
 }
+
 export default ModalTambahAkunKonselor

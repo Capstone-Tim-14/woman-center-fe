@@ -1,0 +1,67 @@
+/* Header Styles */
+#header-konselor {
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 15px;
+    color: #45464E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: flex;
+    top: 0;
+    z-index: 1000;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  }
+  
+  /* Icon Home Styles */
+  #icon-home-konselor {
+    margin-right: 5px;
+  }
+  
+  #icon-home-img-konselor {
+    width: 20px;
+    height: 20px;
+    color: #F4518D; /* Warna pink */
+  }
+  
+  /* Subtitle Styles */
+  #subtitle-konselor {
+    display: flex;
+    align-items: center;
+    color: #888;
+  }
+  
+  /* Profile and Notification Styles */
+  #header-icons-konselor {
+    display: flex;
+    align-items: center;
+  }
+  
+  #div-icon-konselor {
+    margin-right: 10px;
+  }
+  
+  #div-icon-inner-konselor {
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #div-icon-bar-konselor {
+    width: 20px;
+    height: 20px;
+    fill: #F4518D; 
+  }
+  
+  #div-image-konselor {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    object-fit: cover;
+  }
+  
