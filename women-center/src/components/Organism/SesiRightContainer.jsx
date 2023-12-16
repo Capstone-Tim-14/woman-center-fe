@@ -69,12 +69,15 @@ const SesiRightContainer = () => {
                                 <img src={imagedashboard} alt="img-sesi-konseling" />
                             </div>
                             <div className="content-sesi-konseling">
-                                <h5 className="title-sesi-konseling">
+                                <h5 className="title-sesi-konseling" style={{display: "flex"}}>
                                     Nama Acara
                                     <ModalEditAcara/></h5>
+                                    <div style={{marginTop: "-120px"}}>
                                 <h5 className="sub-title-sesi-konseling2">Taman Ismail Marzuki, Jakarta<br /></h5>
                                 <p className="subtitle-sesi-konseling">Tanggal         : 9 November 2023</p>
                                 <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
+
+                                    </div>
                             </div>
                         </div>
                         <div className="show-sesi-konseling" >
@@ -82,14 +85,15 @@ const SesiRightContainer = () => {
                                 <img src={imagedashboard} alt="img-sesi-konseling" />
                             </div>
                             <div className="content-sesi-konseling">
-                                <h5 className="title-sesi-konseling">
+                                <h5 className="title-sesi-konseling" style={{display: "flex"}}>
                                     Nama Acara
-                                    <button className='button-edit-acara'>
-                                        ...
-                                    </button><br /></h5>
+                                    <ModalEditAcara/></h5>
+                                    <div style={{marginTop: "-120px"}}>
                                 <h5 className="sub-title-sesi-konseling2">Taman Ismail Marzuki, Jakarta<br /></h5>
                                 <p className="subtitle-sesi-konseling">Tanggal         : 9 November 2023</p>
                                 <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
+
+                                    </div>
                             </div>
                         </div>
                         <div className="show-sesi-konseling" >
@@ -97,14 +101,15 @@ const SesiRightContainer = () => {
                                 <img src={imagedashboard} alt="img-sesi-konseling" />
                             </div>
                             <div className="content-sesi-konseling">
-                                <h5 className="title-sesi-konseling">
+                                <h5 className="title-sesi-konseling" style={{display: "flex"}}>
                                     Nama Acara
-                                    <button className='button-edit-acara'>
-                                        ...
-                                    </button><br /></h5>
+                                    <ModalEditAcara/></h5>
+                                    <div style={{marginTop: "-120px"}}>
                                 <h5 className="sub-title-sesi-konseling2">Taman Ismail Marzuki, Jakarta<br /></h5>
                                 <p className="subtitle-sesi-konseling">Tanggal         : 9 November 2023</p>
                                 <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
+
+                                    </div>
                             </div>
                         </div>
                         <div className="show-sesi-konseling" >
@@ -112,14 +117,15 @@ const SesiRightContainer = () => {
                                 <img src={imagedashboard} alt="img-sesi-konseling" />
                             </div>
                             <div className="content-sesi-konseling">
-                                <h5 className="title-sesi-konseling">
+                                <h5 className="title-sesi-konseling" style={{display: "flex"}}>
                                     Nama Acara
-                                    <button className='button-edit-acara'>
-                                        ...
-                                    </button><br /></h5>
+                                    <ModalEditAcara/></h5>
+                                    <div style={{marginTop: "-120px"}}>
                                 <h5 className="sub-title-sesi-konseling2">Taman Ismail Marzuki, Jakarta<br /></h5>
                                 <p className="subtitle-sesi-konseling">Tanggal         : 9 November 2023</p>
                                 <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
+
+                                    </div>
                             </div>
                         </div>
                         <div className="show-sesi-konseling" >
@@ -127,14 +133,15 @@ const SesiRightContainer = () => {
                                 <img src={imagedashboard} alt="img-sesi-konseling" />
                             </div>
                             <div className="content-sesi-konseling">
-                                <h5 className="title-sesi-konseling">
+                                <h5 className="title-sesi-konseling" style={{display: "flex"}}>
                                     Nama Acara
-                                    <button className='button-edit-acara'>
-                                        ...
-                                    </button><br /></h5>
+                                    <ModalEditAcara/></h5>
+                                    <div style={{marginTop: "-120px"}}>
                                 <h5 className="sub-title-sesi-konseling2">Taman Ismail Marzuki, Jakarta<br /></h5>
                                 <p className="subtitle-sesi-konseling">Tanggal         : 9 November 2023</p>
                                 <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
+
+                                    </div>
                             </div>
                         </div>
                         <div className="show-sesi-konseling" >
@@ -142,14 +149,15 @@ const SesiRightContainer = () => {
                                 <img src={imagedashboard} alt="img-sesi-konseling" />
                             </div>
                             <div className="content-sesi-konseling">
-                                <h5 className="title-sesi-konseling">
+                                <h5 className="title-sesi-konseling" style={{display: "flex"}}>
                                     Nama Acara
-                                    <button className='button-edit-acara'>
-                                        ...
-                                    </button><br /></h5>
+                                    <ModalEditAcara/></h5>
+                                    <div style={{marginTop: "-120px"}}>
                                 <h5 className="sub-title-sesi-konseling2">Taman Ismail Marzuki, Jakarta<br /></h5>
                                 <p className="subtitle-sesi-konseling">Tanggal         : 9 November 2023</p>
                                 <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
+
+                                    </div>
                             </div>
                         </div>
                         <PageOptions onPageChange={goToPage} totalPages={pagination.totalPage || 1} />

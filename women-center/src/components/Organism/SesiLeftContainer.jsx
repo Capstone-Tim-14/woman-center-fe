@@ -55,7 +55,7 @@ const SesiLeftContainer = () => {
 
     return (
         <div className="Sesi-konseling">
-            <div className="all-sesi-konseling">
+            <div className="all-sesi-konseling" style={{ marginTop: '5px' }}>
                 <div className="head-dashboard-sesi-konseling">
                     <h6 className="txt-dashboard-sesi-konseling">Sesi Konseling</h6>
                 </div>
@@ -72,7 +72,7 @@ const SesiLeftContainer = () => {
                             <h5 className="title-sesi-konseling">
                                 Nama Konselor S.Psi
                                 <EditKonseling /><br /></h5>
-                            <h5 className="sub-title-sesi-konseling">Nama Paket . Nama User<br /></h5>
+                            <h5 className="sub-title-sesi-konseling" style={{marginTop: "-20px"}}>Nama Paket . Nama User<br /></h5>
                             <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                             <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
                         </div>
@@ -85,7 +85,7 @@ const SesiLeftContainer = () => {
                             <h5 className="title-sesi-konseling">
                                 Nama Konselor S.Psi
                                 <EditKonseling /><br /></h5>
-                            <h5 className="sub-title-sesi-konseling">Nama Paket . Nama User<br /></h5>
+                            <h5 className="sub-title-sesi-konseling"style={{marginTop: "-20px"}}>Nama Paket . Nama User<br /></h5>
                             <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                             <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
                         </div>
@@ -98,7 +98,7 @@ const SesiLeftContainer = () => {
                             <h5 className="title-sesi-konseling">
                                 Nama Konselor S.Psi
                                 <EditKonseling /><br /></h5>
-                            <h5 className="sub-title-sesi-konseling">Nama Paket . Nama User<br /></h5>
+                            <h5 className="sub-title-sesi-konseling"style={{marginTop: "-20px"}}>Nama Paket . Nama User<br /></h5>
                             <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                             <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
                         </div>
@@ -111,7 +111,7 @@ const SesiLeftContainer = () => {
                             <h5 className="title-sesi-konseling">
                                 Nama Konselor S.Psi
                                 <EditKonseling /><br /></h5>
-                            <h5 className="sub-title-sesi-konseling">Nama Paket . Nama User<br /></h5>
+                            <h5 className="sub-title-sesi-konseling"style={{marginTop: "-20px"}}>Nama Paket . Nama User<br /></h5>
                             <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                             <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
                         </div>
@@ -124,7 +124,7 @@ const SesiLeftContainer = () => {
                             <h5 className="title-sesi-konseling">
                                 Nama Konselor S.Psi
                                 <EditKonseling /><br /></h5>
-                            <h5 className="sub-title-sesi-konseling">Nama Paket . Nama User<br /></h5>
+                            <h5 className="sub-title-sesi-konseling"style={{marginTop: "-20px"}}>Nama Paket . Nama User<br /></h5>
                             <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                             <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
                         </div>
@@ -137,7 +137,7 @@ const SesiLeftContainer = () => {
                             <h5 className="title-sesi-konseling">
                                 Nama Konselor S.Psi
                                 <EditKonseling /><br /></h5>
-                            <h5 className="sub-title-sesi-konseling">Nama Paket . Nama User<br /></h5>
+                            <h5 className="sub-title-sesi-konseling"style={{marginTop: "-20px"}}>Nama Paket . Nama User<br /></h5>
                             <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                             <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
                         </div>

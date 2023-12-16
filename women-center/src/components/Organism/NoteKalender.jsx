@@ -25,7 +25,7 @@ const NoteKalender = () => {
       flexDirection: 'column',
       color: 'white',
     }}>
-        <div className="little-Note-kalender1" style={{ width: '95%', background: 'rgba(255, 212, 39, 1)', height: '20px', marginLeft: '3px', marginTop: '50px', color: 'white', font: 'Raleway', fontSize: '14px'}}>13:00 Sesi Leslie Alexander, S.Psi</div>
+        <div className="little-Note-kalender1" style={{ width: '95%', background: 'rgba(255, 212, 39, 1)', height: '20px', marginLeft: '3px', marginTop: '-100px', color: 'white', font: 'Raleway', fontSize: '14px'}}>13:00 Sesi Leslie Alexander, S.Psi</div>
         <div className="little-Note-kalender2" style={{ width: '95%', background: 'rgba(61, 211, 244, 1)', height: '20px', marginLeft: '3px', marginTop: '10px',  color: 'white', font: 'Raleway', fontSize: '14px'}}>13:00 Improve Your Life with Minimalism</div>
         
     </div>

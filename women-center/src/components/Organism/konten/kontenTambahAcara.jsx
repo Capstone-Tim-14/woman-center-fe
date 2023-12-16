@@ -110,18 +110,18 @@ const KontenTambahAcara = () => {
             </div>
           </div>
           <div className="col-md-6">
-            <div className="content-right">
-              <h5>Poster Acara </h5>
+            <div style={{marginLeft: '100px', width: '300px', height: '300px'}}>
+              <h5 style={{marginLeft: '40px'}}>Poster Acara </h5>
               <ImageUp onImageChange={handleImageSubmit} />
             </div>
           </div>
         </div>
         <div className="">
           <div className="">
-            <h5>Deskripsi Acara</h5>
+            <h5 style={{marginLeft: '150px'}}>Deskripsi Acara</h5>
           </div>
           <div className="m-4">
-            <Form.Control as="textarea" placeholder="Deskripsi" rows={4} name="description" value={eventData.description} onChange={handleInputChange} style={{ backgroundColor: "#EFF1F999 ", width: "100%", height: "271px" }} />
+            <Form.Control as="textarea" placeholder="Deskripsi" rows={4} name="description" value={eventData.description} onChange={handleInputChange} style={{ backgroundColor: "#EFF1F999 ", width: "80%", height: "271px", marginLeft: "130px" }} />
           </div>
           <div className="p-3" >
             <div className='d-flex gap-2 justify-content-end'>

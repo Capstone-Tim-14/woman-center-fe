@@ -5,7 +5,7 @@ const ButtonTambahAcara = ({ onClick, label }) => {
     
                 className="button-tambah-acara"
                 onClick={onClick}
-                style={{marginLeft: "210px"}}
+                style={{marginLeft: "210px", display: "flex", marginTop: "-85px"}}
                 >
                 {label}
             </button>

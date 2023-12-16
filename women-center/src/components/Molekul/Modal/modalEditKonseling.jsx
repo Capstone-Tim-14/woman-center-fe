@@ -114,7 +114,7 @@ const modalEditKonseling = () => {
   return (
     <>
       <button style={{border: 'none', background: 'none'}} onClick={handleShow}>
-        <img src={IconEditKonselingJadwal} alt=""style={{width: '10px', height: '18px', marginLeft: '20px'}}/>
+        <img src={IconEditKonselingJadwal} alt=""style={{width: '10px', height: '18px', marginLeft: '180px', marginTop: '-30px', display: 'flex'}}/>
       </button>
 
       <ModalEditKonselingJadwal show={show} onHide={handleClose} size='lg' dialogClassName="custom-modal-edit-konseling" >

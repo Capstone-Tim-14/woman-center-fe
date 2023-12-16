@@ -23,11 +23,11 @@ const ModalTambahAcara = () => {
             </ButtonTambahAcara>
 
             <div>
-                <Modal show={showPopup} onHide={closePopup} size="lg" scrollable>
+                <Modal show={showPopup} onHide={closePopup}>
                     <Modal.Header closeButton>
                         <Modal.Title>Tambah Acara</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body style={{ maxHeight: '500px', overflowY: 'auto' }}>
+                    <Modal.Body>
                         <KontenTambahAcara onClose={closePopup} />
                     </Modal.Body>
                     {/* <Modal.Footer>

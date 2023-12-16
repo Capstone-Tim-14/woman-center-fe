@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
-import Buttonn from '../../Atom/button/button';
 import InputJadwal from '../../Atom/inputan/inputJadwal';
 import ImageUpJadwal from '../../Molekul/ImageUp';
+import Buttonn from '../../Atom/button/button';
 
 const KontenEditAcara = ({ eventId }) => {
 
@@ -10,7 +10,6 @@ const KontenEditAcara = ({ eventId }) => {
   const [showPopup, setShow] = useState(false);
 
   const [eventData, setEventData] = useState({
-    // Inisialisasi data acara dengan nilai awal atau kosong
     title: '',
     location: '',
     date: '',
@@ -121,18 +120,18 @@ const KontenEditAcara = ({ eventId }) => {
             </div>
           </div>
           <div className="col-md-6">
-            <div className="content-right">
-              <h5>Poster Acara </h5>
+            <div className='content-right' style={{marginLeft: '100px', width: '300px', height: '300px'}}>
+              <h5 style={{marginLeft: '40px'}}>Poster Acara </h5>
               <ImageUpJadwal onImageChange={handleImageChange} />
             </div>
           </div>
         </div>
         <div className="">
           <div className="">
-            <h5>Deskripsi Acara</h5>
+            <h5 style={{marginLeft: '150px'}}>Deskripsi Acara</h5>
           </div>
           <div className="m-4">
-            <Form.Control as="textarea" placeholder="Deskripsi" rows={4} name="description" value={eventData.description} onChange={handleInputChange} style={{ backgroundColor: "#EFF1F999 ", width: "100%", height: "271px" }} />
+            <Form.Control as="textarea" placeholder="Deskripsi" rows={4} name="description" value={eventData.description} onChange={handleInputChange} style={{ backgroundColor: "#EFF1F999 ", width: "80%", height: "271px", marginLeft: "130px" }} />
           </div>
           <div className="p-3" >
             <div className='d-flex gap-2 justify-content-end'>
