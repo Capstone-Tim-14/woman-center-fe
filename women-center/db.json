@@ -69,8 +69,8 @@
       "profile_picture": "https://pub-86c5755f32914550adb162dd2b8850d0.r2.dev/default-profile.jpg",
       "description": "test",
       "status": "ACTIVE"
-}
-],
+    }
+  ],
   "Sesi": [
     {
       "id": 2,
@@ -138,31 +138,37 @@
   ],
   "jadwal": [
     {
-      "id": 4,
       "full_name": "Alice Johnson",
-      "email": "alice.johnson@example.com",
-      "profile_picture": "https://pub-86c5755f32914550adb162dd2b8850d0.r2.dev/default-profile.jpg",
-      "description": "Saya adalah seorang konselor dengan pengalaman luas dalam membantu orang mengatasi berbagai masalah.",
       "schedule": [
         {
           "day_schedule": "Senin",
+          "time_schedule": []
+        },
+        {
+          "day_schedule": "Selasa",
+          "time_schedule": []
+        },
+        {
+          "day_schedule": "Rabu",
           "time_schedule": [
             {
-              "time_start": "18:00:00",
-              "time_finish": "19:00:00"
+              "time_start": "09:20"
+            },
+            {
+              "time_start": "10:30"
             }
           ]
         },
         {
           "day_schedule": "Kamis",
-          "time_schedule": [
-            {
-              "time_start": "18:00:00",
-              "time_finish": "19:00:00"
-            }
-          ]
+          "time_schedule": []
+        },
+        {
+          "day_schedule": "Jumat",
+          "time_schedule": []
         }
-      ]
+      ],
+      "id": 4
     }
   ],
   "keahlian": [
@@ -187,7 +193,6 @@
       "description": "Article ini tentang tech"
     }
   ],
-  
   "series": [
     {
       "id": 1,
@@ -288,6 +293,5 @@
       "type": "Video Call",
       "sesi": 5
     }
-    
   ]
 }
