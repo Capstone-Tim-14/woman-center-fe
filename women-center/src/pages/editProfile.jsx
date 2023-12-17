@@ -12,6 +12,7 @@ import { GoHomeFill } from 'react-icons/go';
 import { IoNotifications } from 'react-icons/io5';
 import Modal from "../components/Molekul/Modal/successModal";
 import FailedModal from "../components/Molekul/Modal/failedModal";
+import ButtonNotif from '../components/Atom/button/ButtonNotif';
 
 const containerStyle = {
   overflowX: "hidden",
@@ -138,13 +139,9 @@ const EditProfile = () => {
           <div className="subtitle-text">/ Edit Profile</div>
         </div>
       </div>
-      <div className="header-icons">
+      <div className="header-icons" style={{gap: '20px'}}>
         {/* Notification Icon */}
-        <div className="div-icon">
-          <div className="div-icon-inner">
-            <IoNotifications className="div-icon-bar" />
-          </div>
-        </div>
+        <ButtonNotif/>
 
         {/* Profile Image */}
         <img className="div-image" src={fotoProfile} alt="Profile Image" />
