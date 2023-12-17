@@ -129,7 +129,7 @@ const EditKonseling = () => {
                 <CloseButton id='btn-closeKonseling' handleClose={handleClose}/>
               </div>
               <form onSubmit={handleSubmit} className="form-container-konseling">
-                <div className="form-group-konseling">
+                <div className="form-group-konseling" style={{gap: '3px'}}>
                   <label htmlFor="namaPaket">Keterangan Konseling</label>
                   <input type="text" id="namaPaket" name="namaPaket" placeholder="Nama Paket" className='np'/>
                   <input type="text" id="namaKonselor" name="namaKonselor" placeholder="Nama Konselor" className='nk'/>

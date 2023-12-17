@@ -18,9 +18,11 @@ const TabelKarir = () => {
   const [showReviewModal, setShowReviewModal] = useState(false);
   const [showKarirModal, setShowKarirModal] = useState(false);
   const [selectedKarir, setSelectedKarir] = useState(null);
+  const [selectedRowId, setSelectedRowId] = useState(null);
 
   const handleRowClick = (row) => {
     setSelectedRow(row);
+    setSelectedRowId(row.id);
     setShowReviewModal(true);
   };
 
@@ -152,7 +154,7 @@ const TabelKarir = () => {
         </thead>
         <tbody>
           {tableData.map((row) => (
-            <tr key={row.id} onClick={() => handleRowClick(row)}>
+            <tr key={row.id} onClick={(e) => handleRowClick(e, row)}>
               <td><input type="checkbox" /></td>
               <td>{row.id}</td>
               <td>{row.title_job}</td>
@@ -161,7 +163,7 @@ const TabelKarir = () => {
               <div style={{ display: "flex" }}>
               <div
                 style={{ innerWidth: "23px", color: "#F4518D", marginTop: "7px", marginLeft: "50px", cursor: "pointer" }}>
-                  <Karir/>
+                <Karir careerId={row.id} />
                 </div>
                   <DeleteButton 
                   onConfirmDelete={() => confirmDelete(row.id)}
