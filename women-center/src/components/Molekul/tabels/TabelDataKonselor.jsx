@@ -42,22 +42,20 @@ const TabelDataKonselor = () => {
 
   // delete data
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3000/konselor/${id}`)
-    .then(() => {
-      getDataKonselor();
-    })
-    .catch((error) => {
-      console.log(error);
-    })
+    try{
+      await axios.delete(`https://api-ferminacare.tech/api/v1/admin/counselors/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        }
+      })
+    }catch(err){
+      console.log(err);
+    }
   }
 
   useEffect(() => {
     getDataKonselor();
-  },[token])
-
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value)
-  }
+  },[])
 
   // Sorting Tabel
   const sortTable = (key) => {
@@ -88,8 +86,13 @@ const TabelDataKonselor = () => {
     setCurrentPage(parseInt(e.target.value, 10));
   };
 
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value)
+  }
+
   // filter searching dan pagination
   const filteredData = tableData.filter((row) => row.first_name.toLowerCase().includes(searchTerm.toLowerCase()));
+  
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;

@@ -131,49 +131,36 @@
   ],
   "jadwal": [
     {
-      "full_name": "Alice Johnson",
+      "full_name": "rizal sahala",
+      "email": "rizal@gmail.com",
+      "profile_picture": "https://pub-86c5755f32914550adb162dd2b8850d0.r2.dev/counselor/picture/5dc90aab-5ece-4e3b-86c8-d5b443e35c72",
+      "description": "konselor baru berpengalaman",
       "schedule": [
         {
           "day_schedule": "Senin",
-          "time_schedule": []
-        },
-        {
-          "day_schedule": "Selasa",
-          "time_schedule": []
-        },
-        {
-          "day_schedule": "Rabu",
           "time_schedule": [
             {
-<<<<<<< HEAD
-              "time_start": "08:10"
+              "time_start": "08:10",
+              "time_finish": "09:20"
             },
             {
-              "time_start": "09:20"
-=======
-              "time_start": "09:20"
-            },
-            {
-              "time_start": "10:30"
->>>>>>> f1c9c599eae36e5f1e18da3df3d9c41b18e342b5
+              "time_start": "10:30",
+              "time_finish": "13.00"
             }
           ]
         },
         {
           "day_schedule": "Selasa",
-          "time_schedule": []
-        },
-        {
-          "day_schedule": "Rabu",
-          "time_schedule": []
-        },
-        {
-          "day_schedule": "Kamis",
-          "time_schedule": []
-        },
-        {
-          "day_schedule": "Jumat",
-          "time_schedule": []
+          "time_schedule": [
+            {
+              "time_start": "08:10",
+              "time_finish": "09:20"
+            },
+            {
+              "time_start": "10:30",
+              "time_finish": "13.00"
+            }
+          ]
         }
       ],
       "id": 4

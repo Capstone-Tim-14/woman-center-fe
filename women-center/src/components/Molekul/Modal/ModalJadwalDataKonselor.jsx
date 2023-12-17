@@ -4,19 +4,20 @@ import Modal from 'react-bootstrap/Modal';
 import ButtonsDataKonselor from '../../Atom/button/ButtonsDataKonselor';
 import FormJadwalKonselor from '../form/FormJadwalDataKonselor';
 import ModalBerhasilDataKonselor from '../../Molekul/Modal/ModalBerhasilDataKonselor'
-import ModalGagalDataKonselor from '../modal/ModalGagalDataKonselor';
+import ModalGagalDataKonselor from '../Modal/ModalGagalDataKonselor';
 import axios from 'axios';
+import { useAuth } from '../../Layout/AuthContext';
 import { Form } from 'react-bootstrap';
 import '../../../styles/ModalJadwalKonselor.css'
 
 function ModalJadwalKonselor({ jadwal }) {
   const id = jadwal.id;
+  const {token} = useAuth();
   const [showPopup, setShow] = useState(false);
   const [success, setSuccess] = useState(false);
   const [failed, setFailed] = useState(false);
   const [formData, setFormData] = useState({
-    schedule: [],
-    full_name: '',
+    full_name: "",
   });
   const [chekboxJadwal, setCheckboxJadwal] = useState([]);
 
@@ -27,12 +28,16 @@ function ModalJadwalKonselor({ jadwal }) {
 
   const getJadwal = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/jadwal/${id}`,);
-      const konselor = response.data;
-      setFormData({
-        full_name: konselor.full_name || '',
-        schedule: konselor.schedule || [],
-      })
+      if(token){
+        const response = await axios.get(`https://api-ferminacare.tech/api/v1/admin/counselor-schedule/${id}`,{
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        });
+        const jadwal = response.data;
+        setFormData(jadwal.data);
+        console.log(jadwal.data);
+      }
     } catch (error) {
       console.error('Error:', error);
     }
@@ -46,11 +51,16 @@ function ModalJadwalKonselor({ jadwal }) {
         return;
       }
 
-      await axios.put(`http://localhost:3000/jadwal/${id}`, {
-        ...formData,
-        schedule: chekboxJadwal,
+      if(token){
+        await axios.put(`http://api-ferminacare.tech/api/v1/admin/counselor/${id}/schedule/`, {
+        chekboxJadwal,
+      }, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        }
       });
       setSuccess(true);
+      }
     } catch (error) {
       console.error('Error:', error);
     }
@@ -62,7 +72,7 @@ function ModalJadwalKonselor({ jadwal }) {
 
   useEffect(() => {
     getJadwal();
-  }, [id]);
+  }, []);
 
   return (
     <>
@@ -72,7 +82,7 @@ function ModalJadwalKonselor({ jadwal }) {
     </button>
 
     <div id="modalJadwal">
-      <Modal show={showPopup} onHide={handleClose} size="xl" style={{width: '890px', height: '700px', marginTop: '30px', transform: 'translate(-50%, -50%)', top: '50%', left: '50%'}}>
+      <Modal show={showPopup} onHide={handleClose} size="xl">
         <Modal.Header closeButton id='modalJadwal-header'>
           <Modal.Title>Jadwal</Modal.Title>
         </Modal.Header>

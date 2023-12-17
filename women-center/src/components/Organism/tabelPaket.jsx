@@ -32,26 +32,36 @@ function TabelPaket() {
       });
   };
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
+  const handleDateRange = (selectedDateRange) => {
+    setDateRange(selectedDateRange);
+    setCurrentPage(1);
+  }
+
+  const handleItemsPerPage = (e) => {
+    setItemsPerPage(parseInt(e.target.value));
+    setCurrentPage(1);
   };
 
-  // Pagination
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = paket.slice(indexOfFirstItem, indexOfLastItem);
+  const handlePageChange = (e) => {
+    setCurrentPage(parseInt(e.target.value, 10));
+  };
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  const handleItemsPerPage = (e) => setItemsPerPage(parseInt(e.target.value, 10));
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value)
+  }
+
+  // Searching Data
+  const filteredData = paket.filter((item) => item.namapaket.toLowerCase().includes(searchTerm.toLowerCase()));
+
+  // Pagination
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const visibleData = filteredData.slice(startIndex, endIndex);
 
   useEffect(() => {
     getTabelPaket();
   }, []);
-
-  // Searching Data
-  const filterPaket = currentItems.filter((item) =>
-    item.namapaket.toLowerCase().includes(searchTerm.toLowerCase())
-  );
 
   return (
     <div className='d-flex flex-column gap-2' style={{ width: '550px' }}>
@@ -74,7 +84,7 @@ function TabelPaket() {
           </tr>
         </thead>
         <tbody style={{ borderBottom: '1px solid #E5E5E5' }}>
-          {filterPaket.map((item) => (
+          {visibleData.map((item) => (
             <tr key={item.id} style={{ fontSize: '14px' }}>
               <td>{item.namapaket}</td>
               <td>IDR {item.price}</td>
@@ -100,17 +110,19 @@ function TabelPaket() {
           </select>
           <span> items per page</span>
         </div>
-        <Pagination>
-          {[...Array(Math.ceil(paket.length / itemsPerPage))].map((_, index) => (
-            <Pagination.Item
-              key={index + 1}
-              active={index + 1 === currentPage}
-              onClick={() => paginate(index + 1)}
-            >
-              {index + 1}
-            </Pagination.Item>
-          ))}
-        </Pagination>
+
+        <div id='pagination-dropdownKonselor'>
+            <span>Page: </span>
+            <select onChange={handlePageChange} value={currentPage}>
+              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+                <option key={page} value={page}>
+                  {page}
+                </option>
+              ))}
+            </select>
+            <span> of {totalPages}</span>
+        </div>
+          
       </div>
     </div>
   );

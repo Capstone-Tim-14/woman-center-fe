@@ -147,7 +147,7 @@ const ModalEditDataKonselor = ({ data }) => {
     getKarier();
     getProfil();
     getArtikel();
-  },[token]);
+  },[]);
 
     return (
         <>
