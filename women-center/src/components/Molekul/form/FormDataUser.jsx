@@ -1,5 +1,5 @@
 import { Form } from "react-bootstrap"
-import Inputan from "../../Atom/inputan/Inputan"
+import Inputan from "../../Atom/inputan/InputanUser"
 
 const FormsDataUser = (props) => {
   const {
@@ -13,7 +13,7 @@ const FormsDataUser = (props) => {
   } = props
   
     return(
-        <div className="col-8 flex-column">
+            <div>
             <p className="m-0">Informasi User</p>
             <Form className="mt-3 d-flex justify-content-between gap-2">
                 <Form.Group

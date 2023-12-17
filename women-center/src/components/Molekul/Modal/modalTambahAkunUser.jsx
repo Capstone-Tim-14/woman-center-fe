@@ -1,117 +1,132 @@
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import ButtonUser from '../../Atom/button/ButtonUser'
 import ButtonTambah from '../../Atom/button/buttonTambahAkunUser';
 import ButtonClose from '../../Atom/button/buttonClose';
-import Inputan from '../../Atom/inputan/Inputan';
-import Buttonn from '../../Atom/button/button';
+import Inputan from '../../Atom/inputan/InputanUser';
+//import Buttonn from '../../Atom/button/button';
+import BerhasilUser from '../../Molekul/Modal/BerhasilUser'
+import axios from 'axios';
+import '../../../styles/ModalTambahAkunKonselor.css';
 
 
-const ModalTambahAkunUser = () => {
+function ModalTambahAkunUser() {
 
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const onAddUser = () => setShow(true);
+    const handleCloseBerhasil = () => setSuccess(false);
 
     const [NamaDepan, setNamaDepan] = useState("");
     const [NamaBelakang, setNamaBelakang] = useState("");
     const [Username, setUsername] = useState("");
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
+    const [success, setSuccess] = useState(false);
 
-    const handleClick = () => {
-      // Validasi: Pastikan semua field sudah diisi
+
+    const handleSubmit = async () => {
+      // Validasi input kosong
       if (!NamaDepan || !NamaBelakang || !Username || !Email || !Password) {
-        // Tampilkan pesan kesalahan atau lakukan tindakan lain sesuai kebutuhan
-        console.error('Harap isi semua field sebelum menambahkan konselor.');
+        alert('Semua kolom harus diisi');
         return;
       }
-      onAddUser({
-        first_name: "",
-        last_name: "",
-        username: "",
-        email: "",
-        password: "",
-      });
     
-      handleClose();
-    };
-    const ModalTambahAkunUser = ({ onAddUser }) => {
-      // ... rest of the component code
+      try {
+        const response = await axios.post('http://localhost:3000/User', {
+          first_name: NamaDepan,
+          last_name: NamaBelakang,
+          username: Username,
+          email: Email,
+          password: Password,
+        });
+        setSuccess(true);
+        handleClose();
+      } catch (error) {
+        console.error(error);
+        setError('Terjadi kesalahan saat menyimpan data. Silakan coba lagi.');
+      }
     };
       
-    return(
-        <>
-
+    return (
+      <>
       <ButtonTambah style={{backgroundColor: '#F4518D'}} onClick={handleShow} label="Buat Akun User"/>
 
-      <Modal 
-        show={show} 
-        onHide={handleClose} 
-        style={{width: '430px', height: '670px', transform: 'translate(-50%, -50%)', top: '50%', left: '50%'}}>
+      <div id='modal-tambahAkunKonselor'>
+        <Modal 
+            show={show} 
+            onHide={handleClose} 
+            style={{width: '430px', height: '670px', transform: 'translate(-50%, -50%)', top: '50%', left: '50%'}}
+            >
 
-        <Modal.Header >
-          <Modal.Title className='fs-6'>Tambah User</Modal.Title>
-          <ButtonClose onClick={handleClose}/>
+        <Modal.Header id='modal-headertambahKonselor'style={{top: '50%', marginBottom: '20px'}}>
+            <Modal.Title id='title-tambahKonselor'>Tambah User</Modal.Title>
+            <ButtonClose onClick={handleClose}/>
         </Modal.Header>
 
-        <Modal.Body>
-          <Form>
-          <Form.Group className="d-flex flex-column gap-3">
-          <Inputan 
-                type="text" 
-                placeholder="Nama Depan"
-                autoFocus={true}
-                value={NamaDepan}
-                onChange={(e) => setNamaDepan(e.target.value)}
-              />
-              <Inputan 
-                type="text" 
-                placeholder="Nama Belakang"
-                value={NamaBelakang}
-                onChange={(e) => setNamaBelakang(e.target.value)}
-              />
-              <Inputan 
-                type="text" 
-                placeholder="Username"
-                value={Username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              <Inputan 
-                type="email" 
-                placeholder="Alamat Email"
-                value={Email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <Inputan 
-                type="password" 
-                placeholder="Password"
-                value={Password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Form.Group>
-          </Form>
+        <Modal.Body id='modal-bodytambahKonselor'>
+            <Form>
+                <Form.Group id='form-tambahKonselor'>
+                    <Inputan
+                        type="text" 
+                        placeholder="Nama Depan"
+                        autoFocus={true}
+                        value={NamaDepan}
+                        onChange={(e) => setNamaDepan(e.target.value)}
+                        />
+                    <Inputan 
+                        type="text" 
+                        placeholder="Nama Belakang"
+                        value={NamaBelakang}
+                        onChange={(e) => setNamaBelakang(e.target.value)}
+                        />
+                    <Inputan 
+                        type="text" 
+                        placeholder="Username"
+                        value={Username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        />
+                    <Inputan 
+                        type="email" 
+                        placeholder="Alamat Email"
+                        value={Email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        />
+                    <Inputan
+                        type="password" 
+                        placeholder="Password"
+                        value={Password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        />
+                </Form.Group>
+            </Form>
         </Modal.Body>
 
-        <Modal.Footer className='d-flex justify-content-between'>
-          <Buttonn 
-            className='text-primary bg-white' 
-            onClick={handleClose}
-            label="Batal"
-          />
+        <Modal.Footer id='modaltambahKonselor-footer' >
+            <ButtonUser 
+                className='text-primary bg-white' 
+                onClick={handleClose}
+                label="Batal"/>
             
-          <Buttonn 
-            className='bg-button text-white style' 
-            onClick={handleClick}
-            label="Tambah"
-          />
+            <ButtonUser 
+                className='custom-button-tambah' 
+                onClick={handleSubmit}
+                label="Tambah"/>
         </Modal.Footer>
+        </Modal>
+    </div>
+    <div>
+        <BerhasilUser
+            label='Data berhasil di tambahkan'
+            Berhasil={success} 
+            Close={handleCloseBerhasil}/>
+    </div>
+    </>
+  )
 
-      </Modal>
-
-        </>
-    )
 }
+
+
 export default ModalTambahAkunUser
