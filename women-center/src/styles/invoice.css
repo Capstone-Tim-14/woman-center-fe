@@ -12,7 +12,7 @@
     margin-top: 20px;
 }
 
-#container-Invoice header{
+#container-Invoice {
     display: flex;
     margin-top: 20px;
     gap: 20px;
@@ -20,14 +20,14 @@
 }
 
 /* header Invoice */
-header #header-line{
+#header-line{
     display: flex;
     justify-content: space-between;
     margin-left: 20px;
     margin-right: 20px;
 }
 
-header #header-logo{
+#header-logo{
     display: flex;
     align-items: center;
     gap: 10px;
@@ -83,10 +83,12 @@ header #header-logo{
 #invoice-number{
     display: flex;
     justify-content: space-between;
+    gap: 100px;
 }
 #invoice-date{
     display: flex;
     justify-content: space-between;
+    gap: 100px;
 }
 
 /* tabel-invoice */

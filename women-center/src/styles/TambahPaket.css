@@ -1,48 +1,9 @@
-/* TambahPaket.css */
-
-#overlay-tambahpaket {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+#form-group-tipepaket{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
-#popup-tambahpaket {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  width: 1000px; /* Adjusted width */
-}
-
-#popup-header-tambahpaket {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: 'Poppins, sans-serif';
-  font-size: 20px;
-  font-weight: 500;
-  margin-left: 30px;
-}
-
-#popup-header-tambahpaket, h2 {
-  margin: 0;
-}
-
-#close-button-paket {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-#popup-content-tambahpaket {
-  margin-top: 20px;
-}
 
 #popup-content-tambahpaket input[type="text"],
 #popup-content-tambahpaket input[type="number"]{
@@ -56,84 +17,6 @@
   border-radius: 5px; /* Added border radius */
   font-family: 'Inter, sans-serif';
   font-size: 16px;
-}
-
-#form-container-tambahpaket {
-  display: flex;
-  justify-content: space-between;
-}
-
-#form-group-namapaket {
-  margin-bottom: 15px;
-  font-family: 'Poppins, sans-serif';
-  font-size: 16px;
-  font-weight: 400;
-}
-
-#form-group-harga {
-  margin-bottom: 15px;
-  font-family: 'Poppins, sans-serif';
-  font-size: 16px;
-  font-weight: 400;
-}
-
-#form-group-tipepaket {
-  margin-bottom: 15px;
-  font-family: 'Poppins, sans-serif';
-  font-size: 16px;
-  font-weight: 400;
-}
-
-#tipe-paket-options{
-  display: flex;
-  gap: 100px;
-}
-
-#checkbox-satu{
-  display: flex;
-  flex-direction: column;
-}
-#checkbox-dua{
-  display: flex;
-  flex-direction: column;
-}
-
-#form-group-rincianpaket {
-  display: flex;
-  flex-direction: column;
-}
-#form-group-rincianpaket, label {
-  font-family: 'Poppins, sans-serif';
-}
-
-
-/* right */
-#benefits-section {
-  display: flex;
-  flex-direction: column;
-  font-size: 16px;
-  font-family: 'Poppins', 'Sans Serif';
-  font-weight: 400;
-  gap: 10px;
-}
-#benefits-section label {
-  margin: 0px;
-}
-
-#benefits-section ul {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-#benefits-section li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 400;
-  font-size: 14px;
-  font-family: 'Inter', 'sans serif';
-  color: #2B2F32;
 }
 
 #new-benefit{

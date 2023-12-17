@@ -28,7 +28,7 @@ const ModalDataUser = () => {
 
             {/* Pop-up */}
             
-            <Modal show={showPopup} onHide={closePopup} size="xl" >
+            <Modal show={showPopup} onHide={closePopup} size="md" >
                 <Modal.Header closeButton>
                     <Modal.Title>Edit User</Modal.Title>
                 </Modal.Header>

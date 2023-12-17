@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Berhasil from '../../Molekul/Modal/BerhasilPaket';
 
-const Simpan = ({ handleSubmit }) => {
+const Simpan = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   const handleFormSubmit = () => {
@@ -18,7 +18,11 @@ const Simpan = ({ handleSubmit }) => {
 
   return (
     <>
-      <button type="button" className="submit" onClick={handleFormSubmit}>
+       <button 
+        id='btn-simpanPaket'
+        type="button" 
+        className="submit" 
+        onClick={handleFormSubmit}>
         Simpan
       </button>
       {/* Render PopupComponent if showPopup is true */}

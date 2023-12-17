@@ -166,7 +166,7 @@ function TabelSesi() {
                     {item.status === 'Upcoming' && 'Upcoming'}
                   </div>
                 </td>
-                <td className='justify-content-center d-flex gap-2'>
+                <td className='d-flex justify-content-center align-items-center gap-1'>
                   <Invoice />
                   <EditKonseling /> 
                   <ModalHapusData clicked={() => clicked(item.id)} />

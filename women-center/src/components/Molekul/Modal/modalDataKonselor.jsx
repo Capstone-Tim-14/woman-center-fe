@@ -24,7 +24,7 @@ const ModalDataKonselor = () => {
             </button>
 
             {/* Pop-up */}
-            <Modal show={showPopup} onHide={closePopup} size="xl">
+            <Modal show={showPopup} onHide={closePopup} size="md">
                 <Modal.Header closeButton>
                     <Modal.Title>Edit Konselor</Modal.Title>
                 </Modal.Header>

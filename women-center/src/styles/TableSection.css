@@ -13,26 +13,17 @@
     margin-top: 10px;
 }
 
-.data-table-artikel th, .data-table-artikel td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
 .data-table-artikel td {
-    border: none; /* Remove border lines from td */
+    border: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 150px;
 }
 
 .data-table-artikel th {
     background-color: #f2f2f2;
 }
-
-.status {
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
 
 .status-review {
     border-radius: 8px;
@@ -46,6 +37,7 @@
     border-radius: 8px;
     background: rgba(50, 147, 111, 0.16);
     color: var(--success-success, #339A1A);
+    text-align: center;
 }
 
 

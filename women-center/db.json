@@ -3,12 +3,14 @@
     {
       "id": 4,
       "username": "alice.johnson",
-      "first_name": "Alice",
+      "first_name": "agim",
       "last_name": "Johnson",
       "email": "alice.johnson@example.com",
       "profile_picture": "https://pub-86c5755f32914550adb162dd2b8850d0.r2.dev/default-profile.jpg",
       "description": "Saya adalah seorang konselor dengan pengalaman luas dalam membantu orang mengatasi berbagai masalah.",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "password": "puyeng",
+      "education": "S1 mobile lejen"
     },
     {
       "id": 5,
@@ -69,8 +71,8 @@
       "profile_picture": "https://pub-86c5755f32914550adb162dd2b8850d0.r2.dev/default-profile.jpg",
       "description": "test",
       "status": "ACTIVE"
-}
-],
+    }
+  ],
   "Sesi": [
     {
       "id": 2,
@@ -125,44 +127,41 @@
       "tglDibuat": "2023-03-14",
       "tglPertemuan": "01-05-2022",
       "status": "Today"
-    },
-    {
-      "id": 8,
-      "user": "Uzumaki Naruto",
-      "konselor": "Hinata Hyuga",
-      "paket": "Paket 2",
-      "tglDibuat": "2023-03-14",
-      "tglPertemuan": "01-05-2022",
-      "status": "Today"
     }
   ],
   "jadwal": [
     {
-      "id": 4,
       "full_name": "Alice Johnson",
-      "email": "alice.johnson@example.com",
-      "profile_picture": "https://pub-86c5755f32914550adb162dd2b8850d0.r2.dev/default-profile.jpg",
-      "description": "Saya adalah seorang konselor dengan pengalaman luas dalam membantu orang mengatasi berbagai masalah.",
       "schedule": [
         {
           "day_schedule": "Senin",
           "time_schedule": [
             {
-              "time_start": "18:00:00",
-              "time_finish": "19:00:00"
+              "time_start": "08:10"
+            },
+            {
+              "time_start": "09:20"
             }
           ]
         },
         {
+          "day_schedule": "Selasa",
+          "time_schedule": []
+        },
+        {
+          "day_schedule": "Rabu",
+          "time_schedule": []
+        },
+        {
           "day_schedule": "Kamis",
-          "time_schedule": [
-            {
-              "time_start": "18:00:00",
-              "time_finish": "19:00:00"
-            }
-          ]
+          "time_schedule": []
+        },
+        {
+          "day_schedule": "Jumat",
+          "time_schedule": []
         }
-      ]
+      ],
+      "id": 4
     }
   ],
   "keahlian": [
@@ -187,7 +186,6 @@
       "description": "Article ini tentang tech"
     }
   ],
-  
   "series": [
     {
       "id": 1,
@@ -212,82 +210,11 @@
   ],
   "Paket": [
     {
-      "id": 1,
-      "namapaket": "Paket 1",
-      "price": 100000,
-      "type": "Video Call",
-      "sesi": 5
-    },
-    {
-      "id": 2,
-      "namapaket": "Paket 2",
-      "price": 100000,
-      "type": "Video Call",
-      "sesi": 5
-    },
-    {
-      "id": 3,
-      "namapaket": "Paket 3",
-      "price": 100000,
-      "type": "Video Call",
-      "sesi": 5
-    },
-    {
-      "id": 4,
-      "namapaket": "Paket 4",
-      "price": 100000,
-      "type": "Video Call",
-      "sesi": 5
-    },
-    {
-      "id": 5,
-      "namapaket": "Paket 5",
-      "price": 100000,
-      "type": "Video Call",
-      "sesi": 5
-    },
-    {
       "id": 6,
       "namapaket": "Paket 6",
       "price": 100000,
       "type": "Video Call",
       "sesi": 5
-    },
-    {
-      "id": 7,
-      "namapaket": "Paket 7",
-      "price": 100000,
-      "type": "Video Call",
-      "sesi": 5
-    },
-    {
-      "id": 8,
-      "namapaket": "Paket 8",
-      "price": 100000,
-      "type": "Video Call",
-      "sesi": 5
-    },
-    {
-      "id": 9,
-      "namapaket": "Paket 9",
-      "price": 100000,
-      "type": "Video Call",
-      "sesi": 5
-    },
-    {
-      "id": 10,
-      "namapaket": "Paket 10",
-      "price": 100000,
-      "type": "Video Call",
-      "sesi": 5
-    },
-    {
-      "id": 11,
-      "namapaket": "Paket 11",
-      "price": 100000,
-      "type": "Video Call",
-      "sesi": 5
     }
-    
   ]
 }

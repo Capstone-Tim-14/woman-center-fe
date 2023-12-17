@@ -11,21 +11,23 @@ import Karier from '../../Molekul/list/karierdatakonselor'
 import { Form } from 'react-bootstrap'
 import axios from 'axios'
 import Modal from 'react-bootstrap/Modal'
+import { useAuth } from '../../Layout/AuthContext'
 import '../../../styles/ModalEditDataKonselor.css'
 import imageedit from "../../../assets/icon/Edit Square.png"
 
 const ModalEditDataKonselor = ({ data }) => {
 
   const id = data.id
+  const {token} = useAuth();
   const [formData, setFormData] = useState({
-    first_name: '',
-    last_name: '',
-    username: '',
-    education: '',
-    birthday: '',
-    email: '',
-    password: '',
-    description: '',
+    first_name: "",
+    last_name: "",
+    email: "",
+    description: "",
+    education: "",
+    birthday: "",
+    username: "",
+    password: "",
   })
 
   const [checkboxItemsArtikel, setCheckboxItemsArtikel] = useState([])
@@ -54,11 +56,17 @@ const ModalEditDataKonselor = ({ data }) => {
   // Fungsi untuk mengambil data profil
   const getProfil = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/konselor/${id}`);
-      const konselor = response.data;
-      setFormData(konselor);
-      setImage(konselor.profile_picture);
-
+      if (token){
+        const response = await axios.get(`https://api-ferminacare.tech/api/v1/admin/counselor/${id}`,{
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        }
+      );
+        const konselor = response.data;
+        setFormData(konselor.data);
+        setImage(konselor.data.profile_picture);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -67,7 +75,7 @@ const ModalEditDataKonselor = ({ data }) => {
   // Fungsi untuk mengambil data artikel
   const getArtikel = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/Articles/${id}`);
+      const response = await axios.get(``);
       const dataKonselor = response.data;
 
       const articles = dataKonselor.article || [];
@@ -111,7 +119,7 @@ const ModalEditDataKonselor = ({ data }) => {
         return;
       }
       // Melakukan request dengan hanya mengirimkan formData
-      await axios.put(`http://localhost:3000/konselor/${id}`, formData);
+      await axios.put(``, formData);
       setSuccess(true);
   
     } catch (error) {
@@ -139,7 +147,7 @@ const ModalEditDataKonselor = ({ data }) => {
     getKarier();
     getProfil();
     getArtikel();
-  },[]);
+  },[token]);
 
     return (
         <>
@@ -180,8 +188,8 @@ const ModalEditDataKonselor = ({ data }) => {
                           </div>
                         </div>
 
-                          <div className='d-flex gap-3' style={{marginTop: '-20px'}}>
-                              <TopikKeahlian onSelectedTopicsChange={handleSelectedTopicsChange} style={{marginTop: '20px'}} />
+                          <div className='d-flex gap-3' >
+                              <TopikKeahlian onSelectedTopicsChange={handleSelectedTopicsChange}/>
                               <Artikel 
                                   artikel={id}
                                   checkboxArtikel={checkboxItemsArtikel} 

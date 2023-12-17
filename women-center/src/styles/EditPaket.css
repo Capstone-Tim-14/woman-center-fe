@@ -1,0 +1,41 @@
+
+  
+  #button-editPaket {
+    display: flex; /* Mengaktifkan flexbox */
+    justify-content: flex-end; /* Menyebarkan elemen secara merata */
+    margin-top: 20px; /* Margin atas sesuai kebutuhan */
+  }
+  
+  /* Styling for the Batal button */
+  #batal-editPaket {
+    background-color: #fff; /* Warna latar belakang tombol */
+    color: #5570F1; /* Warna teks tombol */
+    padding: 8px 16px; /* Padding tombol */
+    border-radius: 12px; /* Rounding border tombol */
+    cursor: pointer; /* Ubah cursor saat diarahkan ke tombol */
+    border: 2px solid #5570F1; /* Border berwarna biru dengan ketebalan 2px */
+    width: 15%;
+    height: 15%;
+    font-family: 'Inter', 'Sans Serif';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    margin-right: 10px;
+  }
+  
+  
+  #btn-simpanPaket {
+    background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+    color: #fff; /* Warna teks tombol */
+    padding: 8px 16px; /* Padding tombol */
+    border-radius: 12px; /* Rounding border tombol */
+    cursor: pointer; /* Ubah cursor saat diarahkan ke tombol */
+    border: none; /* Border berwarna biru dengan ketebalan 2px */
+    width: 15%;
+    height: 15%;
+    font-family: 'Inter', 'Sans Serif';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+  }
+  

@@ -7,6 +7,7 @@ import ButtonTambahAkunKonselor from '../../Atom/button/ButtonTambahAkunKonselor
 import ButtonCloseDataKonselor from '../../Atom/button/ButtonCloseDataKonselor'
 import ModalBerhasilDataKonselor from '../../Molekul/Modal/ModalBerhasilDataKonselor'
 import axios from 'axios';
+import { useAuth } from '../../Layout/AuthContext';
 import '../../../styles/ModalTambahAkunKonselor.css'
 
 function ModalTambahAkunKonselor() {
@@ -17,6 +18,7 @@ function ModalTambahAkunKonselor() {
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
     const [success, setSuccess] = useState(false);
+    const {token} = useAuth();
 
     const handleCloseBerhasil = () => setSuccess(false);
     const handleClose = () => setShow(false);
@@ -31,18 +33,21 @@ function ModalTambahAkunKonselor() {
         }
       
         try {
-          const response = await axios.post('http://localhost:3000/Konselor', {
-            first_name: NamaDepan,
-            last_name: NamaBelakang,
-            username: Username,
-            email: Email,
-            password: Password,
-          });
-          setSuccess(true);
-          handleClose();
+          if(token) {
+              await axios.post('https://api-ferminacare.tech/api/v1/admin/counselors/register', {
+              first_name: NamaDepan,
+              last_name: NamaBelakang,
+              username: Username,
+              email: Email,
+              password: Password,
+            })
+            setSuccess(true);
+            handleClose();
+          }else{
+            alert('Anda harus login terlebih dahulu');
+          }
         } catch (error) {
           console.error(error);
-          setError('Terjadi kesalahan saat menyimpan data. Silakan coba lagi.');
         }
       };
 

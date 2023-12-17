@@ -170,6 +170,7 @@ const TableSection = () => {
         <tbody>
         {tableData.map((row) => (
           <tr key={row.slug} onClick={() => handleRowClick(row.slug)}>
+              <td><input type="checkbox" onClick={(event) => handleCheckboxClick(event, row.id)}/></td>
               <td>{row.title}</td>
               <td>{row.author.name}</td>
               <td>

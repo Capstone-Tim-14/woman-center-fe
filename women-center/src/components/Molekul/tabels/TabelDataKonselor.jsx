@@ -6,10 +6,12 @@ import ModalHapus from '../Modal/ModalHapusDataKonselor';
 import SearchDataKonselor from '../../Atom/inputan/SearchDataKonselor';
 import ModalJadwalKonselor from '../Modal/ModalJadwalDataKonselor';
 import axios from 'axios';
+import { useAuth } from '../../Layout/AuthContext'
 import '../../../styles/TabelDataKonselor.css';
 
 const TabelDataKonselor = () => {
 
+  const { token } = useAuth();
   const [searchTerm, setSearchTerm] = useState('');
   const [tableData, setTableData] = useState([]);
   const [itemsPerPage, setItemsPerPage] = useState(5);
@@ -22,10 +24,17 @@ const TabelDataKonselor = () => {
   // get data
   const getDataKonselor = async () => {
     try{
-      const response = await axios.get('http://localhost:3000/konselor');
-      const dataTabel = response.data;
-      setTableData(dataTabel);
-      console.log(dataTabel);
+        if(token) {
+        const response = await axios.get('https://api-ferminacare.tech/api/v1/admin/counselors',{
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        },
+      );
+        const data = response.data;
+        setTableData(data.data);
+        console.log(data.data);
+      }
     }catch(err){
       console.log(err);
     }
@@ -44,7 +53,7 @@ const TabelDataKonselor = () => {
 
   useEffect(() => {
     getDataKonselor();
-  },[])
+  },[token])
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value)
@@ -80,7 +89,7 @@ const TabelDataKonselor = () => {
   };
 
   // filter searching dan pagination
-  const filteredData = tableData.filter((row) => row.username.toLowerCase().includes(searchTerm.toLowerCase()));
+  const filteredData = tableData.filter((row) => row.first_name.toLowerCase().includes(searchTerm.toLowerCase()));
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -88,7 +97,7 @@ const TabelDataKonselor = () => {
 
   return (
     <div id='container-tabel'>
-      <div id='modal-tambahKonselor' className='d-flex flex-column gap-3'>
+      <div id='modal-tambahKonselor' className='d-flex flex-column gap-3 mb-3'>
         <div className='d-flex justify-content-end'>
           <ModalTambahAkunKonselor />
         </div>
@@ -100,8 +109,8 @@ const TabelDataKonselor = () => {
         </div>
       </div>
 
-      <div className="table-container">
-        <table className="data-table" id='table-konselor'>
+      <div id="table-container" className='d-flex flex-column gap-3'>
+        <table id='table-konselor'>
           <thead>
             <tr>
               <th><input type="cehckbox" style={{display: 'none'}}/></th>
