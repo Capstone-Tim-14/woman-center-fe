@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BiSortAlt2 } from "react-icons/bi";
 import ModalTambahAkunKonselor from '../Modal/modalTambahAkunKonselor';
-import ModalEditDataKonselor from '../Modal/ModalEditDataKonselor';
+import ModalEditDataKonselor from '../modal/ModalEditDataKonselor';
 import ModalHapus from '../Modal/ModalHapusDataKonselor';
 import SearchDataKonselor from '../../Atom/inputan/SearchDataKonselor';
 import ModalJadwalKonselor from '../Modal/ModalJadwalDataKonselor';

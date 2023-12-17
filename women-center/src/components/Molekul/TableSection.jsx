@@ -25,46 +25,40 @@ const TableSection = () => {
     prevPage: null,
   });
   
-  const fetchData = async (page = 1, filter = '') => {
+  const [deleteInProgress, setDeleteInProgress] = useState(false); 
+
+  const fetchData = async (page = 1, itemsPerPage = 10) => {
     try {
-      if (token) {
-        const response = await axios.get(
-          'https://api-ferminacare.tech/api/v1/admin/articles',
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-            params: {
-              page,
-              filter,
-            },
-          }
-        );
+      const response = await axios.get(
+        'https://api-ferminacare.tech/api/v1/admin/articles',
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          params: {
+            page,
+            limit: itemsPerPage, // Use 'limit' instead of 'itemsPerPage' if your API expects 'limit'
+            filter: filterText,
+          },
+        }
+      );
   
-        const data = response.data;
-        
-        setTableData(data.data);
+      const data = response.data;
+      setTableData(data.data);
   
-        setPagination({
-          page: data.meta.page,
-          totalPage: data.meta.total_page,
-          nextPage: data.meta.next_page,
-          prevPage: data.meta.previous_page,
-        });
-  
-      } else {
-        console.error('Token not available.');
-    
-        logout();
-      }
+      setPagination({
+        page: data.meta.page,
+        totalPage: data.meta.total_page,
+        nextPage: data.meta.next_page,
+        prevPage: data.meta.previous_page,
+      });
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
-  
   useEffect(() => {
     console.log('Stored Token:', localStorage.getItem('token'));
-    fetchData(1, filterText); 
+    fetchData(1, 10, filterText); 
   }, [token, logout, filterText]);
   
   const [sortConfig, setSortConfig] = useState({
@@ -136,16 +130,15 @@ const TableSection = () => {
   };
   
   const goToPage = (page) => {
-    fetchData(page);
+    fetchData(page, filterText);
   };
-  
 
   return (
     <div className="table-container-artikel">
+      <div className="table-scroll-container">
       <table className="data-table-artikel">
         <thead>
           <tr>
-            <th></th>
             <th onClick={() => sortTable('title')}>
               Judul Artikel <BiSortAlt2 />
             </th>
@@ -170,7 +163,6 @@ const TableSection = () => {
         <tbody>
         {tableData.map((row) => (
           <tr key={row.slug} onClick={() => handleRowClick(row.slug)}>
-              <td><input type="checkbox" onClick={(event) => handleCheckboxClick(event, row.id)}/></td>
               <td>{row.title}</td>
               <td>{row.author.name}</td>
               <td>
@@ -183,12 +175,13 @@ const TableSection = () => {
               </td>
               <td>{row.author.role}</td>
               <td>{row.published_at}</td>
-              <div className={`status status-${row.status.toLowerCase()}`}>
-                  {row.status === 'REVIEW' && 'Review'}
-                  {row.status === 'PUBLISHED' && 'Approved'}
-                  {row.status === 'REJECTED' && 'Rejected'}
-                  
-              </div>
+              <td className="text-center">
+          <div className={`status status-${row.status.toLowerCase()}`}>
+            {row.status === 'REVIEW' && 'Review'}
+            {row.status === 'PUBLISHED' && 'Approved'}
+            {row.status === 'REJECTED' && 'Rejected'}
+          </div>
+        </td>
               <td>
               <DeleteButton onConfirmDelete={() => confirmDelete(row.id)} />
                 
@@ -204,9 +197,14 @@ const TableSection = () => {
           
         />
       </table>
-      <div>
-      <PageOptions onPageChange={goToPage} totalPages={pagination.totalPage || 1} />
       </div>
+      
+      <PageOptions
+        onPageChange={goToPage}
+        totalPages={pagination.totalPage || 1}
+        fetchData={fetchData}
+      />
+      
     </div>
   );
 };9

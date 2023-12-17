@@ -42,10 +42,7 @@ const ArtikelContainer = () => {
       {/* Table Section */}
       <TableSection />
 
-      {/* Page Selector (as Footer) */}
-      <footer className="page-selector-footer">
-      <PageSelector />  
-      </footer>
+     
     </div>
   );
 };
