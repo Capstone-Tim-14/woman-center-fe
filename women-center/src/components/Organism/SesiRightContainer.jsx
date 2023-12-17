@@ -70,7 +70,7 @@ const SesiRightContainer = () => {
                             </div>
                             <div className="content-sesi-konseling">
                                 <h5 className="title-sesi-konseling" style={{display: "flex"}}>
-                                    Nama Acara
+                                EmpowerHer Leadership
                                     <ModalEditAcara/></h5>
                                     <div style={{marginTop: "-120px"}}>
                                 <h5 className="sub-title-sesi-konseling2">Taman Ismail Marzuki, Jakarta<br /></h5>
@@ -86,7 +86,7 @@ const SesiRightContainer = () => {
                             </div>
                             <div className="content-sesi-konseling">
                                 <h5 className="title-sesi-konseling" style={{display: "flex"}}>
-                                    Nama Acara
+                                Women in Arts Virtual Exhibition
                                     <ModalEditAcara/></h5>
                                     <div style={{marginTop: "-120px"}}>
                                 <h5 className="sub-title-sesi-konseling2">Taman Ismail Marzuki, Jakarta<br /></h5>
@@ -102,7 +102,7 @@ const SesiRightContainer = () => {
                             </div>
                             <div className="content-sesi-konseling">
                                 <h5 className="title-sesi-konseling" style={{display: "flex"}}>
-                                    Nama Acara
+                                Wellness Retreat for Women
                                     <ModalEditAcara/></h5>
                                     <div style={{marginTop: "-120px"}}>
                                 <h5 className="sub-title-sesi-konseling2">Taman Ismail Marzuki, Jakarta<br /></h5>
@@ -118,7 +118,7 @@ const SesiRightContainer = () => {
                             </div>
                             <div className="content-sesi-konseling">
                                 <h5 className="title-sesi-konseling" style={{display: "flex"}}>
-                                    Nama Acara
+                                HerStory Podcast Launch
                                     <ModalEditAcara/></h5>
                                     <div style={{marginTop: "-120px"}}>
                                 <h5 className="sub-title-sesi-konseling2">Taman Ismail Marzuki, Jakarta<br /></h5>
@@ -134,7 +134,7 @@ const SesiRightContainer = () => {
                             </div>
                             <div className="content-sesi-konseling">
                                 <h5 className="title-sesi-konseling" style={{display: "flex"}}>
-                                    Nama Acara
+                                Women in Tech Webinar Series
                                     <ModalEditAcara/></h5>
                                     <div style={{marginTop: "-120px"}}>
                                 <h5 className="sub-title-sesi-konseling2">Taman Ismail Marzuki, Jakarta<br /></h5>

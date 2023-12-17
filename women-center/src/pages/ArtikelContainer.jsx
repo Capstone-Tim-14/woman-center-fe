@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import SubContainers from "../components/Organism/SubContainer";
 import AddArticleButton from "../components/Atom/AddArticleButton";
 import Header from "../components/Organism/HeaderArtikel";
-import UserText from "../components/Atom/UserText";
-import SearchBar from "../components/Atom/SearchBar";
+import SearchUser from "../components/Molekul/SearchUser";
 import TableSection from "../components/Molekul/TableSection";
 import PageSelector from "../components/Organism/PageSelector"; // Ganti nama import menjadi PageSelector
 import "../styles/ArtikelContainer.css";
@@ -33,19 +32,15 @@ const ArtikelContainer = () => {
         <AddArticleButton />
       </div>
 
-      {/* UserText */}
-      <UserText />
-
+      <div style={{marginTop: '40px'}}>
       {/* Search Bar */}
-      <SearchBar />
+      <SearchUser />
+      </div>
 
       {/* Table Section */}
       <TableSection />
 
-      {/* Page Selector (as Footer) */}
-      <footer className="page-selector-footer">
-      <PageSelector />  
-      </footer>
+     
     </div>
   );
 };

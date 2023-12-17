@@ -2,6 +2,7 @@ import React from 'react';
 import { GoHomeFill } from 'react-icons/go';
 import { IoNotifications } from 'react-icons/io5';
 import Profile from '../../assets/icon/profile 1.jpg'
+import ButtonNotif from '../Atom/button/ButtonNotif';
 
 const HeaderJadwal = () => {
   return (
@@ -15,13 +16,9 @@ const HeaderJadwal = () => {
           <div className="subtitle-text">/ Jadwal</div>
         </div>
       </div>
-      <div className="header-icons">
+      <div className="header-icons" style={{gap: '20px'}}>
         {/* Notification Icon */}
-        <div className="div-icon">
-          <div className="div-icon-inner">
-            <IoNotifications className="div-icon-bar" />
-          </div>
-        </div>
+        <ButtonNotif />
 
         {/* Profile Image */}
         <img className="div-image" src={Profile} alt="Profile Image" />

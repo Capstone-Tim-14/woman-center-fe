@@ -78,15 +78,18 @@ const ArtikelModal = ({ show, handleClose, articleSlug,  }) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Container>
-          <label htmlFor="popupTextarea">{articleDetails?.title}</label>
+        <Container fluid>
+          
+          <label htmlFor="popupTextarea" id="artikel-modal-title">{articleDetails?.title}</label>
+          
+          
           <Row className="h-100 custom-flex-row">
             <Col md={8}>
               <div className="textarea-container h-100">
                 <textarea
                   id="popupTextarea"
                   className="artikel-textarea form-control h-100"
-                  rows="5"
+                  
                   readOnly
                   value={articleDetails?.content || ''}
                 ></textarea>
@@ -101,10 +104,10 @@ const ArtikelModal = ({ show, handleClose, articleSlug,  }) => {
                 />
               </div>
               <div className="d-flex justify-content-between mt-auto align-items-end">
-                <Button className="close-button reject" onClick={handleReject}>
+                <Button id="reject-article" onClick={handleReject}>
                   Reject
                 </Button>
-                <Button className="close-button" onClick={handleApprove}>
+                <Button id="approve-article" onClick={handleApprove}>
                   Approve
                 </Button>
               </div>

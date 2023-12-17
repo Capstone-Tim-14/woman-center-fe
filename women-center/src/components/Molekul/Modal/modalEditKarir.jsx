@@ -6,15 +6,20 @@ import { MdEditSquare } from "react-icons/md";
 import FailedModal from './failedModal';
 import ModalSucces from './successModal';
 import JobType from '../JobTypeModal';
+import { useAuth } from '../../Layout/AuthContext'
+import axios from 'axios';
 
 // Main component
-const modalEditKarir = () => {
+const Karir = ({ careerId }) => {
   // State variables
+  const { token, logout } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [profileImage, setProfileImage] = useState(null);
   const [coverImage, setCoverImage] = useState(null);
   const [modalFailed, setModalFailed] = useState(false);
   const [modalSuccess, setModalSuccess] = useState(false);
+  const [profileImageUrl, setProfileImageUrl] = useState(null);
+  const [coverImageUrl, setCoverImageUrl] = useState(null);
 
   // Form data nanti kamu sesuaiin dengan nama data yang kamu buat
   const [formData, setFormData] = useState({
@@ -25,7 +30,9 @@ const modalEditKarir = () => {
     namaPerusahaan: '',
     emailPerusahaan: '',
     ukuranPerusahaan: '',
-    lokasi: ''
+    lokasi: '',
+    aboutJob: '',       
+    aboutCompany: '' 
   })
 
   // Modal open/close functions
@@ -42,46 +49,101 @@ const modalEditKarir = () => {
   const handleProfileImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setProfileImage(URL.createObjectURL(file));
+      setProfileImage(file);
+
+      // Read the contents of the file and set it as the source for the image
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProfileImageUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
     }
   };
 
   const handleCoverImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setCoverImage(URL.createObjectURL(file));
+      setCoverImage(file);
+
+      // Read the contents of the file and set it as the source for the image
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setCoverImageUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
     }
   };
 
   const handleDeleteProfileImage = () => {
     setProfileImage(null);
+    setProfileImageUrl(null); // Clear the image URL
   };
 
   const handleDeleteCoverImage = () => {
     setCoverImage(null);
+    setCoverImageUrl(null); // Clear the image URL
   };
 
-  // handle form data juga perlu diubah dengan nama data yang kamu buat sama masukin image
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
     }));
-  }
+  };  
 
-  // menyimpan Data
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Tambahkan logika untuk menyimpan data pake axios Ociiiiiiiiii
-
+  
     if (!formData.namaKarir || !formData.tanggalDitambahkan || !formData.skillRequirement) {
-      setModalFailed(true); // Tampilkan modal kegagalan jika ada data yang tidak lengkap
+      setModalFailed(true);
       return;
-    }else{
-      setModalSuccess(true);
     }
-  }
+  
+    try {
+      const apiFormData = new FormData();
+      apiFormData.append('title_job', formData.namaKarir);
+      apiFormData.append('company_name', formData.namaPerusahaan);
+      apiFormData.append('location', formData.lokasi);
+      apiFormData.append('size_company_employee', formData.ukuranPerusahaan);
+      apiFormData.append('company_industry', formData.industriPerusahaan);
+      apiFormData.append('required_skill', formData.skillRequirement);
+      apiFormData.append('linkedin_url', formData.linkLinkedin);
+      apiFormData.append('about_job', formData.aboutJob || '');
+      apiFormData.append('about_company', formData.aboutCompany || '');
+  
+      // Append images only if they exist
+      if (profileImage) {
+        apiFormData.append('logo', profileImage);
+      }
+  
+      if (coverImage) {
+        apiFormData.append('cover', coverImage);
+      }
+  
+      // Make API request using Axios with the token
+      const response = await axios.put(
+        `https://api-ferminacare.tech/api/v1/admin/career/${careerId}`, // Use the correct career ID
+        apiFormData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
+  
+      // Check if the request was successful
+      if (response.status === 200) {
+        setModalSuccess(true); // Show success modal
+      } else {
+        setModalFailed(true); // Show failure modal if the request was not successful
+      }
+    } catch (error) {
+      console.error('Error submitting data:', error);
+      setModalFailed(true); // Show failure modal if an error occurred
+    }
+  };
 
   return (
     <>
@@ -106,11 +168,11 @@ const modalEditKarir = () => {
                     <label htmlFor="profileImage">Foto Profil</label>
                     <div className='fotoprofile'>
                       <div>
-                        {profileImage && (
+                        {profileImageUrl && (
                           <>
                             <div className="uploaded-image-container">
                               <img
-                                src={profileImage}
+                                src={profileImageUrl}
                                 alt="Profile Image"
                                 className="uploaded-image"
                               />
@@ -135,10 +197,10 @@ const modalEditKarir = () => {
                     <label htmlFor="coverImage">Foto Sampul</label>
                     <div className='fotosampul'>
                       <div >
-                        {coverImage && (
+                        {coverImageUrl && (
                           <>
                             <img
-                              src={coverImage}
+                              src={coverImageUrl}
                               alt="Cover Image"
                               className="uploaded-image"
                             />
@@ -287,14 +349,28 @@ const modalEditKarir = () => {
                   <div className='row'>
                     <div className='col-4 text-start '>
                       <div className="form-group">
-                        <label htmlFor="aboutJob">About The Job</label> <br />
-                        <textarea className='formabout' id="aboutJob"  placeholder="About The Job"></textarea>
+                      <label htmlFor="aboutJob">About The Job</label> <br />
+                        <textarea
+      className='formabout'
+      id="aboutJob"
+      name="aboutJob"
+      value={formData.aboutJob}
+      onChange={handleChange}
+      placeholder="About The Job"
+    ></textarea>
                       </div>
                     </div>
                     <div className='col-4 text-start'>
                       <div className="form-group">
-                        <label htmlFor="aboutCompany">About The Company</label> <br />
-                        <textarea className='formabout' id="aboutCompany"  placeholder="About The Company"></textarea>
+                      <label htmlFor="aboutCompany">About The Company</label> <br />
+                        <textarea
+      className='formabout'
+      id="aboutCompany"
+      name="aboutCompany"
+      value={formData.aboutCompany}
+      onChange={handleChange}
+      placeholder="About The Company"
+    ></textarea>
                       </div>
                     </div>
                   </div>
@@ -321,4 +397,4 @@ const modalEditKarir = () => {
   );
 };
 
-export default modalEditKarir;
+export default Karir;

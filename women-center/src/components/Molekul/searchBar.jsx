@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
-import PopUpModal from '../Molekul/popUpModal.jsx';
 import FilterKalender from '../Molekul/Modal/filterKalenderPaket';
 import '../../styles/searchBar.css';
-
 
 const Searching = ({ value, onChange, onSearch }) => (
   <div className="d-flex align-items-center py-1 px-2 border rounded-2">
@@ -15,6 +13,7 @@ const Searching = ({ value, onChange, onSearch }) => (
       onChange={onChange}
       onKeyPress={(e) => {
         if (e.key === 'Enter') {
+          e.preventDefault(); // Prevent default behavior (form submission, etc.)
           onSearch(); // Trigger search on Enter key press
         }
       }}
@@ -24,13 +23,8 @@ const Searching = ({ value, onChange, onSearch }) => (
 );
 
 const SearchBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [searchText, setSearchText] = useState('');
   const [searchResults, setSearchResults] = useState([]); // State to store search results
-
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-  };
 
   const handleSearch = () => {
     console.log(`Searching for: ${searchText}`);
@@ -47,14 +41,18 @@ const SearchBar = () => {
     );
 
     setSearchResults(filteredData);
-    togglePopup(); // Optionally close the modal after search
   };
 
   return (
     <div className="search-bar">
       <Searching value={searchText} onChange={(e) => setSearchText(e.target.value)} onSearch={handleSearch} />
 
-      <FilterKalender />
+      {/* Display search results */}
+      <div>
+        {searchResults.map(result => (
+          <div key={result.id}>{result.name}</div>
+        ))}
+      </div>
     </div>
   );
 };

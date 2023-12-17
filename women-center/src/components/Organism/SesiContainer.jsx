@@ -4,7 +4,7 @@ import SesiRightContainer from './SesiRightContainer';
 
 const SesiContainers = () => {
   return (
-    <div className="sub-containers" style={{marginTop: "-100px"}}>
+    <div className="sub-containers" style={{marginTop: "-100px", gap: "100px"}}>
       <SesiLeftContainer />
       <SesiRightContainer />
     </div>

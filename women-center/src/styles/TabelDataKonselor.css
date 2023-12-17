@@ -1,25 +1,6 @@
 /* TableSection.css */
-
-.table-container {
-    margin-top: 10px;
-    
-}
-
-.data-table {
-    width: 295%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    margin-left: -50px;
-}
-
-.data-table th, .data-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
-.data-table td {
-    border: none; /* Remove border lines from td */
+#table-konselor{
+    width: 100%;
 }
 
 .data-table th {
@@ -71,8 +52,6 @@
     background: rgba(244, 81, 141, 0.20) !important;
     border: none !important;
     color: #F4518D !important;
-
-    /* Atur properti CSS lainnya jika diperlukan */
 }
 
 #table-konselor td{

@@ -8,6 +8,10 @@ import { useAuth } from '../Layout/AuthContext'
 import axios from 'axios';
 import HeaderArtikel from './header/headerArtikel';
 
+
+const containerStyle = {
+  overflowX: "hidden",
+};
 const createSlug = (title) => {
   return title
     .toLowerCase()
@@ -104,7 +108,7 @@ const ArtikelBaru = () => {
   };
   return (
 
-    <div>
+    <div style={containerStyle}>
       <HeaderArtikel />
     <div className='container-page-artikel-baru' style={{marginTop: '30px'}}>
       <div className='row'>
@@ -128,13 +132,13 @@ const ArtikelBaru = () => {
             onArticleContentChange={handleArticleContentChange}
             />
     </div>
-    <div className='col-lg-5' style={{marginLeft: '600px', marginTop: '-700px'}}>
+    <div className='col-lg-5' style={{marginLeft: '600px', marginTop: '-700px', marginBottom:'auto'}}>
           {/* ImageUploadAdd */}
           <ImageUploadAdd onImageChange={handleImageChange} />
     </div>
   </div>
     <div className='row'>
-    <div className='col-lg-8' style={{marginTop: '300px', marginBottom: '20px'}}>
+    <div className='col-lg-8' style={{marginTop: '400px', marginBottom: 'auto'}}>
           {/* CategorySelect */}
           <CategorySelect onCategoryChange={handleCategoryChange}/>
     </div>

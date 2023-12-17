@@ -19,6 +19,8 @@ const modalTambahKarir = () => {
   const [modalFailed, setModalFailed] = useState(false);
   const [modalSuccess, setModalSuccess] = useState(false);
   const [jobTypes, setJobTypes] = useState([]);
+  const [profileImageUrl, setProfileImageUrl] = useState(null);
+const [coverImageUrl, setCoverImageUrl] = useState(null);
 
   const [formData, setFormData] = useState({
     namaKarir: '',
@@ -47,14 +49,28 @@ const modalTambahKarir = () => {
   const handleProfileImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setProfileImage(URL.createObjectURL(file));
+      setProfileImage(file);
+  
+      // Read the contents of the file and set it as the source for the image
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProfileImageUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
     }
   };
-
+  
   const handleCoverImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setCoverImage(URL.createObjectURL(file));
+      setCoverImage(file);
+  
+      // Read the contents of the file and set it as the source for the image
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setCoverImageUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
     }
   };
 
@@ -73,7 +89,7 @@ const modalTambahKarir = () => {
       ...prevFormData,
       [name]: value,
     }));
-  }
+  };
 
   useEffect(() => {
     
@@ -98,52 +114,62 @@ const modalTambahKarir = () => {
       setJobTypes((prevJobTypes) => [...prevJobTypes, newJobType]);
     };
 
+   
+
     const handleSubmit = async (e) => {
       e.preventDefault();
-  
     
-    if (!formData.namaKarir || !formData.tanggalDitambahkan || !formData.skillRequirement) {
-      setModalFailed(true); 
-      return;
-    }
-  
-    try {
-      // Prepare form data for the API request
-      const apiFormData = new FormData();
-      apiFormData.append('title_job', formData.namaKarir);
-      apiFormData.append('company_name', formData.namaPerusahaan);
-      apiFormData.append('logo', profileImage); 
-      apiFormData.append('cover', coverImage); 
-      apiFormData.append('location', formData.lokasi);
-      apiFormData.append('size_company_employee', formData.ukuranPerusahaan);
-      apiFormData.append('company_industry', formData.industriPerusahaan); // Change to the actual field name
-      apiFormData.append('required_skill', formData.skillRequirement);
-      apiFormData.append('linkdin_url', formData.linkLinkedin);
-      apiFormData.append('about_job', formData.aboutJob || '');
-      apiFormData.append('about_company', formData.aboutCompany || '');
-  
-      // Make API request using Axios with the token
-      const response = await axios.post(
-        'https://api-ferminacare.tech/api/v1/admin/career',
-        apiFormData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-  
-      // Check if the request was successful
-      if (response.status === 200) {
-        setModalSuccess(true); // Show success modal
-      } else {
-        setModalFailed(true); // Show failure modal if the request was not successful
+      if (!formData.namaKarir || !formData.tanggalDitambahkan || !formData.skillRequirement) {
+        setModalFailed(true);
+        return;
       }
-    } catch (error) {
-      console.error('Error submitting data:', error);
-      setModalFailed(true); // Show failure modal if an error occurred
-    }
-  };
+    
+      try {
+        const apiFormData = new FormData();
+        apiFormData.append('title_job', formData.namaKarir);
+        apiFormData.append('company_name', formData.namaPerusahaan);
+        apiFormData.append('location', formData.lokasi);
+        apiFormData.append('size_company_employee', formData.ukuranPerusahaan);
+        apiFormData.append('company_industry', formData.industriPerusahaan);
+        apiFormData.append('required_skill', formData.skillRequirement);
+        apiFormData.append('linkedin_url', formData.linkLinkedin);
+        apiFormData.append('about_job', formData.aboutJob || '');
+        apiFormData.append('about_company', formData.aboutCompany || '');
+    
+        // Append images only if they exist
+        if (profileImage) {
+          apiFormData.append('logo', profileImage);
+        }
+    
+        if (coverImage) {
+          apiFormData.append('cover', coverImage);
+        }
+    
+        // Make API request using Axios with the token
+        const response = await axios.post(
+          'https://api-ferminacare.tech/api/v1/admin/career',
+          apiFormData,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              'Content-Type': 'multipart/form-data',
+            },
+          }
+        );
+    
+        // Check if the request was successful
+        if (response.status === 200 || response.status === 201) {
+          setModalSuccess(true); // Show success modal
+        } else {
+          setModalFailed(true); // Show failure modal if the request was not successful
+        }
+      } catch (error) {
+        console.error('Error submitting data:', error);
+        setModalFailed(true); // Show failure modal if an error occurred
+      }
+    };
+    
+    
   return (
     <>
     {/* ini button edit */}
@@ -167,18 +193,18 @@ const modalTambahKarir = () => {
                     <label htmlFor="profileImage">Foto Profil</label>
                     <div className='fotoprofile'>
                       <div>
-                        {profileImage && (
-                          <>
-                            <div className="uploaded-image-container">
-                              <img
-                                src={profileImage}
-                                alt="Profile Image"
-                                className="uploaded-image"
-                              />
-                            </div>
-                            <FiTrash2 className='delete-icon' onClick={handleDeleteProfileImage} />
-                          </>
-                        )}
+                      {profileImageUrl && (
+      <>
+        <div className="uploaded-image-container">
+          <img
+            src={profileImageUrl}
+            alt="Profile Image"
+            className="uploaded-image"
+          />
+        </div>
+        <FiTrash2 className='delete-icon' onClick={handleDeleteProfileImage} />
+      </>
+    )}
                         <label htmlFor='profileImage' className='upload-icon'>
                           <FiUploadCloud />
                           <input
@@ -196,16 +222,16 @@ const modalTambahKarir = () => {
                     <label htmlFor="coverImage">Foto Sampul</label>
                     <div className='fotosampul'>
                       <div >
-                        {coverImage && (
-                          <>
-                            <img
-                              src={coverImage}
-                              alt="Cover Image"
-                              className="uploaded-image"
-                            />
-                            <FiTrash2 className='delete-icon' onClick={handleDeleteCoverImage} />
-                          </>
-                        )}
+                      {coverImageUrl && (
+      <>
+        <img
+          src={coverImageUrl}
+          alt="Cover Image"
+          className="uploaded-image"
+        />
+        <FiTrash2 className='delete-icon' onClick={handleDeleteCoverImage} />
+      </>
+    )}
                         <label htmlFor='coverImage' className='upload-icon'>
                           <FiUploadCloud />
                           <input
@@ -322,13 +348,27 @@ const modalTambahKarir = () => {
                     <div className='col-4 text-start '>
                       <div className="form-group">
                         <label htmlFor="aboutJob">About The Job</label> <br />
-                        <textarea className='formabout' id="aboutJob"  placeholder="About The Job"></textarea>
+                        <textarea
+      className='formabout'
+      id="aboutJob"
+      name="aboutJob"
+      value={formData.aboutJob}
+      onChange={handleChange}
+      placeholder="About The Job"
+    ></textarea>
                       </div>
                     </div>
                     <div className='col-4 text-start'>
                       <div className="form-group">
                         <label htmlFor="aboutCompany">About The Company</label> <br />
-                        <textarea className='formabout' id="aboutCompany"  placeholder="About The Company"></textarea>
+                        <textarea
+      className='formabout'
+      id="aboutCompany"
+      name="aboutCompany"
+      value={formData.aboutCompany}
+      onChange={handleChange}
+      placeholder="About The Company"
+    ></textarea>
                       </div>
                     </div>
                   </div>

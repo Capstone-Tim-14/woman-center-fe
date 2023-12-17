@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import "../../styles/sesi-left-konseling.css"
-import imagedashboard from "../../assets/icon/shadow.png"
 import EditKonseling from '../Molekul/Modal/modalEditKonseling'
 import PageOptions from '../Molekul/PageOption';
+import imagekonselor from '../../assets/konselor.png'
+import axios from 'axios';
+import imagekonselor2 from '../../assets/konselor2.png'
 
 
 const SesiLeftContainer = () => {
@@ -66,78 +68,78 @@ const SesiLeftContainer = () => {
                 <div className="showall-sesi-konseling">
                     <div className="show-sesi-konseling" >
                         <div className="img-sesi-konseling">
-                            <img src={imagedashboard} alt="img-sesi-konseling" />
+                            <img src={imagekonselor} alt="img-sesi-konseling" />
                         </div>
                         <div className="content-sesi-konseling">
                             <h5 className="title-sesi-konseling">
-                                Nama Konselor S.Psi
-                                <EditKonseling /><br /></h5>
-                            <h5 className="sub-title-sesi-konseling" style={{marginTop: "-20px"}}>Nama Paket . Nama User<br /></h5>
+                            Maren Mango S.Psi
+                            <EditKonseling /><br /></h5>
+                            <h5 className="sub-title-sesi-konseling" style={{marginTop: "-20px"}}>Paket Voice Call . Anika Workman<br /></h5>
                             <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                             <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
                         </div>
                     </div>
                     <div className="show-sesi-konseling" >
                         <div className="img-sesi-konseling">
-                            <img src={imagedashboard} alt="img-sesi-konseling" />
+                            <img src={imagekonselor2} alt="img-sesi-konseling" />
                         </div>
                         <div className="content-sesi-konseling">
                             <h5 className="title-sesi-konseling">
-                                Nama Konselor S.Psi
+                            Madelyn Calz S.Psi
                                 <EditKonseling /><br /></h5>
-                            <h5 className="sub-title-sesi-konseling"style={{marginTop: "-20px"}}>Nama Paket . Nama User<br /></h5>
+                            <h5 className="sub-title-sesi-konseling"style={{marginTop: "-20px"}}>Paket Voice Call . Aspen Culhane<br /></h5>
                             <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                             <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
                         </div>
                     </div>
                     <div className="show-sesi-konseling" >
                         <div className="img-sesi-konseling">
-                            <img src={imagedashboard} alt="img-sesi-konseling" />
+                            <img src={imagekonselor} alt="img-sesi-konseling" />
                         </div>
                         <div className="content-sesi-konseling">
                             <h5 className="title-sesi-konseling">
-                                Nama Konselor S.Psi
+                            Jocelyn Westervelt S.Psi
                                 <EditKonseling /><br /></h5>
-                            <h5 className="sub-title-sesi-konseling"style={{marginTop: "-20px"}}>Nama Paket . Nama User<br /></h5>
+                            <h5 className="sub-title-sesi-konseling"style={{marginTop: "-20px"}}>Paket All in One . Madelyn Franci<br /></h5>
                             <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                             <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
                         </div>
                     </div>
                     <div className="show-sesi-konseling" >
                         <div className="img-sesi-konseling">
-                            <img src={imagedashboard} alt="img-sesi-konseling" />
+                            <img src={imagekonselor2} alt="img-sesi-konseling" />
                         </div>
                         <div className="content-sesi-konseling">
                             <h5 className="title-sesi-konseling">
-                                Nama Konselor S.Psi
+                            Mira Bergson S.Psi
                                 <EditKonseling /><br /></h5>
-                            <h5 className="sub-title-sesi-konseling"style={{marginTop: "-20px"}}>Nama Paket . Nama User<br /></h5>
+                            <h5 className="sub-title-sesi-konseling"style={{marginTop: "-20px"}}>Paket All in One . Marley Gouse<br /></h5>
                             <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                             <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
                         </div>
                     </div>
                     <div className="show-sesi-konseling" >
                         <div className="img-sesi-konseling">
-                            <img src={imagedashboard} alt="img-sesi-konseling" />
+                            <img src={imagekonselor} alt="img-sesi-konseling" />
                         </div>
                         <div className="content-sesi-konseling">
                             <h5 className="title-sesi-konseling">
-                                Nama Konselor S.Psi
+                            Livia Saris S.Psi
                                 <EditKonseling /><br /></h5>
-                            <h5 className="sub-title-sesi-konseling"style={{marginTop: "-20px"}}>Nama Paket . Nama User<br /></h5>
+                            <h5 className="sub-title-sesi-konseling"style={{marginTop: "-20px"}}>Paket Voice Call . Ariana Brand<br /></h5>
                             <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                             <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
                         </div>
                     </div>
                     <div className="show-sesi-konseling" >
                         <div className="img-sesi-konseling">
-                            <img src={imagedashboard} alt="img-sesi-konseling" />
+                            <img src={imagekonselor2} alt="img-sesi-konseling" />
                         </div>
                         <div className="content-sesi-konseling">
                             <h5 className="title-sesi-konseling">
-                                Nama Konselor S.Psi
+                            Carla Vaccaro S.Psi
                                 <EditKonseling /><br /></h5>
-                            <h5 className="sub-title-sesi-konseling"style={{marginTop: "-20px"}}>Nama Paket . Nama User<br /></h5>
+                            <h5 className="sub-title-sesi-konseling"style={{marginTop: "-20px"}}>Paket Offline . Erin Korsgaard<br /></h5>
                             <p className="subtitle-sesi-konseling">Sesi Tersisa   : 1 Sesi</p>
                             <p className="subtitle-sesi-konseling2">Countdown      : 1 hari, 5 jam 50 menit</p>
                         </div>

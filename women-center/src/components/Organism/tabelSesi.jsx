@@ -69,30 +69,37 @@ function TabelSesi() {
     setCurrentPage(1);
   }
 
-  // Pagination
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = sesi.slice(indexOfFirstItem, indexOfLastItem);
+  const handleItemsPerPage = (e) => {
+    setItemsPerPage(parseInt(e.target.value));
+    setCurrentPage(1);
+  };
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  const handleItemsPerPage = (e) => setItemsPerPage(parseInt(e.target.value, 10));
+  const handlePageChange = (e) => {
+    setCurrentPage(parseInt(e.target.value, 10));
+  };
 
-  // Searching Data
-  const filterSesi = currentItems.filter((item) =>
-    item.user.toLowerCase().includes(searchTerm.toLowerCase()))
   const handleSearch = (e) => {
     setSearchTerm(e.target.value)
   }
 
+  // Searching Data
+  const filteredData = sesi.filter((row) => row.user.toLowerCase().includes(searchTerm.toLowerCase()));
+
 // filter by date
   const filteredByDateRange =
-    dateRange && dateRange[0] && dateRange[1]
-      ? filterSesi.filter(
-          (item) =>
-            new Date(item.tglDibuat) >= new Date(dateRange[0]) &&
-            new Date(item.tglDibuat) <= new Date(dateRange[1])
-        )
-      : filterSesi;
+  dateRange && dateRange[0] && dateRange[1]
+    ? filteredData.filter(
+        (item) =>
+          new Date(item.tglDibuat) >= new Date(dateRange[0]) &&
+          new Date(item.tglDibuat) <= new Date(dateRange[1])
+      )
+    : filteredData;
+
+  // Pagination
+  const totalPages = Math.ceil(filteredByDateRange.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const visibleData = filteredByDateRange.slice(startIndex, endIndex);
 
   // Trigger Data 
   useEffect(() => {
@@ -146,7 +153,7 @@ function TabelSesi() {
             </tr>
           </thead>
           <tbody style={{borderBottom: '1px solid #E5E5E5'}}>
-            {filteredByDateRange.map ((item) => (
+            {visibleData.map ((item) => (
               <tr 
                 key={item.id}
                 style={{fontSize:'14px', borde: 'none'}}>
@@ -166,7 +173,7 @@ function TabelSesi() {
                     {item.status === 'Upcoming' && 'Upcoming'}
                   </div>
                 </td>
-                <td className='justify-content-center d-flex gap-2'>
+                <td className='d-flex justify-content-center align-items-center gap-1'>
                   <Invoice />
                   <EditKonseling /> 
                   <ModalHapusData clicked={() => clicked(item.id)} />
@@ -187,17 +194,19 @@ function TabelSesi() {
           </select>
           <span> items per page</span>
         </div>
-        <Pagination>
-          {[...Array(Math.ceil(sesi.length / itemsPerPage))].map((_, index) => (
-            <Pagination.Item
-              key={index + 1}
-              active={index + 1 === currentPage}
-              onClick={() => paginate(index + 1)}
-            >
-              {index + 1}
-            </Pagination.Item>
-          ))}
-        </Pagination>
+
+        <div id='pagination-dropdownKonselor'>
+            <span>Page: </span>
+            <select onChange={handlePageChange} value={currentPage}>
+              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+                <option key={page} value={page}>
+                  {page}
+                </option>
+              ))}
+            </select>
+            <span> of {totalPages}</span>
+          </div>
+        
       </div>
     </div>
   )

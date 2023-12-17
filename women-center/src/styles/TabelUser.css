@@ -1,0 +1,60 @@
+/* TableSection.css */
+#table-database-user{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.data-table-database-user th {
+    background-color: #f2f2f2;
+}
+
+
+/* Your existing styles... */
+
+.delete-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.5em; /* Adjust the size as needed */
+    color: #ff4b8e; /* Pink color */
+  }
+  
+  .custom-button {
+    background: rgba(244, 81, 141, 0.20) !important;
+    border: none !important;
+    color: #F4518D !important;
+}
+
+#table-konselor td{
+    border: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 110px;
+}
+
+#btn-edit-user{
+    border: none;
+    background: none;
+}
+#header-modal-edit-user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+#footer-modal-edit-user{
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+}
+#footer-modal-edit-user .bg-button{
+   background: var(--Primary-Gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%)) !important;
+   color: #ffff !important;
+   border: none;
+}
+
+#modal--edit-user {
+    width: max-content;
+}

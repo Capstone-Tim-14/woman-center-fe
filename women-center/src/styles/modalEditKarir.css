@@ -43,10 +43,10 @@
     margin-top: 15px;
     position: relative;
     overflow: hidden;
+    object-fit: cover;
   }
   
   .fotosampul {
-    display: flex;
     width: 455px;
     height: 120px;
     border-radius: 12px;
@@ -63,6 +63,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 12px;
+    object-fit: cover;
   }
   
   .delete-icon {

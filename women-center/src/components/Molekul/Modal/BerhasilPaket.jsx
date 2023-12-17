@@ -12,7 +12,7 @@ const Berhasil = ({ handleClose }) => {
       <div className="popup-content-berhasil">
         <h2>BERHASIL</h2>
         {/* Image di bawah judul */}
-        <img src="/src/assets/icons/Group.png" alt="Success Icon" />
+        <img src="src/assets/icon/Group.png" alt="Success Icon" />
         <p>Paket berhasil ditambahkan</p>
         {/* Menggunakan komponen OKButton */}
         <OKButton handleClick={handleOKClick} />

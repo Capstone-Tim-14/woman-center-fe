@@ -13,26 +13,17 @@
     margin-top: 10px;
 }
 
-.data-table-artikel th, .data-table-artikel td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
 .data-table-artikel td {
-    border: none; /* Remove border lines from td */
+    border: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 150px;
 }
 
 .data-table-artikel th {
     background-color: #f2f2f2;
 }
-
-.status {
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
 
 .status-review {
     border-radius: 8px;
@@ -46,6 +37,7 @@
     border-radius: 8px;
     background: rgba(50, 147, 111, 0.16);
     color: var(--success-success, #339A1A);
+    text-align: center;
 }
 
 
@@ -65,6 +57,40 @@
     padding: 0;
     font-size: 1.5em; /* Adjust the size as needed */
     color: #ff4b8e; /* Pink color */
+  }
+  
+  .items-per-page-select {
+    display: flex;
+    align-items: center;
+  }
+  .page-options-artikel {
+    margin-top: 20px;
+    overflow: hidden; /* Hide any content that overflows */
+    padding: 0
+  }
+  
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
+  }
+
+  .page-options-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%
+  }
+
+  .pagination-buttons {
+    margin-left: auto; /* Move the pagination buttons to the right */
+  }
+
+  .article-title-cell {
+    max-width: 150px; /* Adjust the maximum width as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   
   
