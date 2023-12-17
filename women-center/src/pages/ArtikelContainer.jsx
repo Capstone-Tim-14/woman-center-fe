@@ -33,11 +33,10 @@ const ArtikelContainer = () => {
         <AddArticleButton />
       </div>
 
-      {/* UserText */}
-      <UserText />
-
+      <div style={{marginTop: '40px'}}>
       {/* Search Bar */}
       <SearchBar />
+      </div>
 
       {/* Table Section */}
       <TableSection />

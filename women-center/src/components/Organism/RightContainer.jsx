@@ -1,6 +1,7 @@
 import React from 'react';
 import { HiOutlineUser } from "react-icons/hi2";
 import ArtikelSummary from '../../assets/icon/user_artikel.svg'
+import '../../styles/ArtikelContainer.css'
 
 const RightContainer = () => (
   <div className="Interaksi-user">

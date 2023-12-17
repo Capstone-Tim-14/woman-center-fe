@@ -122,6 +122,7 @@ body {
   margin-bottom: 10px;
   margin-right: 5px; /* Adjusted margin */
   background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+  font-family: 'Raleway';
 }
 
 .div-header {
@@ -137,6 +138,7 @@ body {
 
 .div-header-left {
   margin-right: 10px;
+  margin-top: 3px;
 }
 
 .icon-image {
@@ -147,19 +149,15 @@ body {
 .div-title-DashboardSummary {
   color: #fff;
   font-size: 20px;
-  font-weight: 600;
   word-wrap: break-word;
+  font-family: 'Raleway';
 }
 
-.div-footer {
-  display: flex;
-  flex-direction: column;
+.div-footer-summaryartikel {
+  margin-left: -10px;
+  margin-top: 20px;
 }
 
-.div-footer-content {
-  display: flex;
-  justify-content: space-between;
-}
 
 .div-footer-item {
   text-align: center;
@@ -196,6 +194,8 @@ body {
   margin-top: 5px;
   margin-bottom: 10px;
   margin-left: 5px; /* Adjusted margin */
+  font-family: 'Raleway';
+  box-shadow: #b5b4b4 0px 0px 2px;
 }
 
 .div-header {
@@ -218,7 +218,6 @@ body {
 .div-header-title {
   color: black;
   font-size: 20px;
-  font-weight: 500;
   word-wrap: break-word;
 }
 
@@ -259,20 +258,21 @@ body {
 
 /* AddArticleButton Styles */
 .create-article-button {
-  margin-top: 1px;
-  margin-left: auto;
-  margin-right: 15px;
-  padding: 5px 8px;
   background: var(--gradient-button-grad, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
   color: white;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  display: flex;
   align-items: center;
-  border-radius: 15px;
+  border-radius: 10px;
+  width: 150px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: "Raleway";
+  margin-right: 10px;
+  margin-left: auto;
+
 }
 
 .create-article-button span {
