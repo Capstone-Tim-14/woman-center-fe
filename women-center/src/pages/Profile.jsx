@@ -9,6 +9,7 @@ import { FiMapPin } from "react-icons/fi";
 import { IoFlagOutline } from "react-icons/io5";
 import { GoHomeFill } from 'react-icons/go';
 import { IoNotifications } from 'react-icons/io5';
+import ButtonNotif from '../components/Atom/button/ButtonNotif';
 
 
 const Profile = () => {

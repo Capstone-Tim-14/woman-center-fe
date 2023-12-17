@@ -4,6 +4,8 @@ import ButtonTambahAcara from '../../Atom/button/buttontambahacara'
 import KontenTambahAcara from "../../Organism/konten/kontenTambahAcara";
 import axios from 'axios';
 
+import Buttonn from "../../Atom/button/button";
+
 const ModalTambahAcara = () => {
     const [showPopup, setShow] = useState(false);
 
@@ -16,11 +18,8 @@ const ModalTambahAcara = () => {
         setShow(false);
     };
 
-    
-
     return (
         <section>
-
             <ButtonTambahAcara onClick={openPopup} variant="link" label="+Tambah Acara">
             </ButtonTambahAcara>
 
@@ -32,8 +31,16 @@ const ModalTambahAcara = () => {
                     <Modal.Body>
                         <KontenTambahAcara onClose={closePopup} />
                     </Modal.Body>
-                    {/* <Modal.Footer>
-                </Modal.Footer> */}
+                    <Modal.Footer>
+                        <div className="position-absolute   end-0 p-3" style={{marginRight: '185px', marginBottom: '160px'}}>
+                        <Buttonn
+                            className={"bg-white text-primary "}
+                            label="Batal"
+                            // onClick nya diisi sesuai kondisi
+                            onClick={closePopup}
+                        />
+                        </div>
+                    </Modal.Footer>
                 </Modal>
             </div>
 

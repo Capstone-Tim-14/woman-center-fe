@@ -77,7 +77,6 @@ const PopUpModal = ({ onfilterApply }) => {
       {show && (
         <div className="modal-overlay-kalender">
           <div className="popup-kalender">
-            <button className="close-button" onClick={handleClose}>x</button>
             <div className="popup-header-kalender">
               <h2>Berdasarkan Tanggal</h2>
             </div>

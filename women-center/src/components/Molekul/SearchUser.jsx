@@ -5,7 +5,6 @@ import SearchBar from '../Atom/SearchBar';
 const SearchUser = () => {
   return (
     <div className="search-container">
-      <UserText />
       <SearchBar />
     </div>
   );

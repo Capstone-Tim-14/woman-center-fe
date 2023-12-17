@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import InputJadwal from '../../Atom/inputan/inputJadwal';
 import ImageUp from '../../Molekul/ImageUp';
-import Buttonn from '../../Atom/button/button';
+import TambahAcara from '../../Atom/button/TambahAcara';
+import axios from 'axios';
 import { useAuth } from '../../Layout/AuthContext'
 import axios from 'axios';
 
@@ -10,7 +11,6 @@ const KontenTambahAcara = () => {
   const { token, logout } = useAuth();
   const [selectedOption, setSelectedOption] = useState('');
   const [showPopup, setShow] = useState(false);
-
   const [eventData, setEventData] = useState({
     title: '',
     location: '',
@@ -21,6 +21,23 @@ const KontenTambahAcara = () => {
     eventImage: null,
     eventType: '',
   });
+
+  const sendEventDataToAPI = async () => {
+    try {
+      const response = await axios.post('api-ferminacare.tech/api/v1/admin/event', eventData, {
+        headers: {
+          Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZnVsbF9uYW1lIjoiYWRtaW4gYWRtaW5BIiwiZW1haWwiOiJhZG1pbkFAZmVybWluYWNhcmUuY29tIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzAyNzk1MzAyfQ.x5TkL5hZySKIMpqWS5lLzFiNhg3MfVxb5HTLtIB3EQU',
+        },
+      });
+      console.log('Response from API:', response.data);
+      console.log('Response status code:', response.status);
+      // ...
+    } catch (error) {
+      console.error('Error sending data to API:', error.response ? error.response.data : error.message);
+      // ...
+    }
+  };
+
 
   const handleCheckboxChange = (value) => {
     setSelectedOption(value);
@@ -88,6 +105,7 @@ const KontenTambahAcara = () => {
       console.error('Error submitting data:', error);
     }
   };
+  
 
   return (
     <>

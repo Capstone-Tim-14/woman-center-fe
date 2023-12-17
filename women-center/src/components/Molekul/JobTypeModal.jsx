@@ -94,7 +94,7 @@ function JobType({ label, onJobTypeAdded }) {
         {label}
       </button>
   
-      <Modal show={show}>
+      <Modal show={show} className='d-flex justify-content-center modal-jobtype' style={{ maxWidth: '500px', marginLeft: '450px',}} >
         <Modal.Header>
           <Modal.Title className="head-text">Tambahkan Jobtype Lainnya</Modal.Title>
         </Modal.Header>
@@ -105,10 +105,11 @@ function JobType({ label, onJobTypeAdded }) {
                 type="text"
                 value={jobTypeInput}
                 onChange={(e) => handleChange(e, 'jobType')}
-                className="main-form"
+                className="main-form mb-3"
                 id="FormControlInput1"
                 placeholder="Tambah JobType"
                 required={true}
+
               />
                <input
                 type="text"

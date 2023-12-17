@@ -22,10 +22,10 @@ const ModalJadwal = () => {
         <section>
 
             {/* Tombol untuk membuka pop-up */}
-            <Button onClick={openPopup}  className=" custom-button">
+            <Button onClick={openPopup} className=" custom-button">
             Jadwal
             </Button>
-
+            
             {/* Pop-up */}
             <Modal show={showPopup} onHide={closePopup} size="xl">
                 <Modal.Header closeButton>
@@ -42,8 +42,8 @@ const ModalJadwal = () => {
                             label="Batal" 
                             // onClick nya diisi sesuai kondisi
                             onClick={closePopup}
-                        /> 
-                        <Buttonn 
+                        />
+                        <Buttonn
                             className={"bg-button"}
                             label="Simpan" 
                              // onClick nya diisi sesuai kondisi

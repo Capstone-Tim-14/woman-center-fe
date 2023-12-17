@@ -31,8 +31,8 @@ const Karir = ({ careerId }) => {
     emailPerusahaan: '',
     ukuranPerusahaan: '',
     lokasi: '',
-    aboutJob: '',       
-    aboutCompany: '' 
+    aboutJob: '',
+    aboutCompany: ''
   })
 
   // Modal open/close functions
@@ -90,16 +90,16 @@ const Karir = ({ careerId }) => {
       ...prevFormData,
       [name]: value,
     }));
-  };  
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!formData.namaKarir || !formData.tanggalDitambahkan || !formData.skillRequirement) {
       setModalFailed(true);
       return;
     }
-  
+
     try {
       const apiFormData = new FormData();
       apiFormData.append('title_job', formData.namaKarir);
@@ -111,16 +111,16 @@ const Karir = ({ careerId }) => {
       apiFormData.append('linkedin_url', formData.linkLinkedin);
       apiFormData.append('about_job', formData.aboutJob || '');
       apiFormData.append('about_company', formData.aboutCompany || '');
-  
+
       // Append images only if they exist
       if (profileImage) {
         apiFormData.append('logo', profileImage);
       }
-  
+
       if (coverImage) {
         apiFormData.append('cover', coverImage);
       }
-  
+
       // Make API request using Axios with the token
       const response = await axios.put(
         `https://api-ferminacare.tech/api/v1/admin/career/${careerId}`, // Use the correct career ID
@@ -132,7 +132,7 @@ const Karir = ({ careerId }) => {
           },
         }
       );
-  
+
       // Check if the request was successful
       if (response.status === 200) {
         setModalSuccess(true); // Show success modal
@@ -147,12 +147,12 @@ const Karir = ({ careerId }) => {
 
   return (
     <>
-    {/* ini button edit */}
-      <button onClick={openModal} className="icon-button" style={{background: 'none', border: 'none'}} >
-        <MdEditSquare color='#F4518D'/>
+      {/* ini button edit */}
+      <button onClick={openModal} className="icon-button" style={{ background: 'none', border: 'none' }} >
+        <MdEditSquare color='#F4518D' />
       </button>
-      
-    {/* ini isinya ketika di klik */}
+
+      {/* ini isinya ketika di klik */}
       {isModalOpen && (
         <div className="modal show">
           <div className="modal-content_karir">
@@ -225,10 +225,10 @@ const Karir = ({ careerId }) => {
 
                 <div className=' row p-2'>
                   <div className=' col-4 text-start'>
-                  <div className="form-group">
+                    <div className="form-group">
                       <label htmlFor="namaKarir">Nama Karir</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         className="forminput"
                         value={formData.namaKarir}
                         name="namaKarir"
@@ -238,157 +238,157 @@ const Karir = ({ careerId }) => {
                     </div>
                     <div className="form-group">
                       <label htmlFor="tanggalDitambahkan">Tanggal Ditambahkan</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         className="forminput"
                         value={formData.tanggalDitambahkan}
                         onChange={handleChange}
-                        name="tanggalDitambahkan" 
-                        id="tanggalDitambahkan" 
+                        name="tanggalDitambahkan"
+                        id="tanggalDitambahkan"
                         placeholder="Tanggal Ditambahkan" />
                     </div>
                     <div className="form-group">
                       <label htmlFor="skillRequirement">Skill Requirement</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         className="forminput"
                         value={formData.skillRequirement}
                         onChange={handleChange}
-                        name="skillRequirement" 
-                        id="skillRequirement" 
-                        placeholder="Skill Requirement"/>
+                        name="skillRequirement"
+                        id="skillRequirement"
+                        placeholder="Skill Requirement" />
                     </div>
                     <div className="form-group">
                       <label htmlFor="linkLinkedin">Link Linkedin</label>
-                      <input 
-                        type="text" 
-                        className="forminput" 
+                      <input
+                        type="text"
+                        className="forminput"
                         value={formData.linkLinkedin}
                         onChange={handleChange}
-                        name="linkLinkedin" 
-                        id="linkLinkedin" 
+                        name="linkLinkedin"
+                        id="linkLinkedin"
                         placeholder="Link Linkedin" />
                     </div>
                   </div>
                   <div className=' col-4 text-start'>
                     <div className="form-group">
                       <label htmlFor="namaPerusahaan">Nama Perusahaan</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         className='forminput'
                         value={formData.namaPerusahaan}
-                        onChange={handleChange} 
-                        name="namaPerusahaan"  
-                        id="namaPerusahaan"  
+                        onChange={handleChange}
+                        name="namaPerusahaan"
+                        id="namaPerusahaan"
                         placeholder="Nama Perusahaan" />
                     </div>
                     <div className="form-group">
                       <label htmlFor="ukuranPerusahaan">Ukuran Perusahaan Dan Departemen</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         className='forminput'
                         value={formData.ukuranPerusahaan}
                         onChange={handleChange}
-                        name="ukuranPerusahaan"  
-                        placeholder="Ukuran Perusahaan"/>
+                        name="ukuranPerusahaan"
+                        placeholder="Ukuran Perusahaan" />
                     </div>
                     <div className="form-group">
                       <label htmlFor="lokasi">Lokasi</label>
-                      <input 
-                        type="text" 
-                        className='forminput' 
+                      <input
+                        type="text"
+                        className='forminput'
                         value={formData.lokasi}
                         onChange={handleChange}
                         name="lokasi"
-                        id="lokasi"  
+                        id="lokasi"
                         placeholder="Lokasi" />
                     </div>
                   </div>
-                  <div className=' col-4 text-start '>
+                  <div className=' col-4 text-start  ' style={{ width: '12%' }}>
                     <label htmlFor="jobType">Job Type</label><br />
                     <div className='row '>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="fullTime" />
+                      <div className="form-group formcheckbox align-items-center d-flex justify-content-between ">
                         <label htmlFor="fullTime">Full-Time</label>
+                        <input type="checkbox" id="fullTime" style={{ width: '12px', height: '12px', marginTop: '3px' }} />
                       </div>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="freelance" />
+                      <div className="form-group formcheckbox align-items-center d-flex justify-content-between ">
                         <label htmlFor="freelance">Freelance</label>
+                        <input type="checkbox" id="freelance" style={{ width: '12px', height: '12px', marginTop: '3px' }} />
                       </div>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="kontrak" />
+                      <div className="form-group formcheckbox align-items-center d-flex justify-content-between ">
                         <label htmlFor="kontrak">Kontrak</label>
+                        <input type="checkbox" id="kontrak" style={{ width: '12px', height: '12px', marginTop: '3px' }} />
                       </div>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="magang" />
+                      <div className="form-group formcheckbox align-items-center d-flex justify-content-between ">
                         <label htmlFor="magang">Magang</label>
+                        <input type="checkbox" id="magang" style={{ width: '12px', height: '12px', marginTop: '3px' }} />
                       </div>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="remote" />
+                      <div className="form-group formcheckbox align-items-center d-flex justify-content-between ">
                         <label htmlFor="remote">Remote</label>
+                        <input type="checkbox" id="remote" style={{ width: '12px', height: '12px', marginTop: '3px' }} />
                       </div>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="proyek" />
+                      <div className="form-group formcheckbox align-items-center d-flex justify-content-between ">
                         <label htmlFor="proyek">Proyek</label>
+                        <input type="checkbox" id="proyek" style={{ width: '12px', height: '12px', marginTop: '3px' }} />
                       </div>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="shift" />
+                      <div className="form-group formcheckbox align-items-center d-flex justify-content-between ">
                         <label htmlFor="shift">Shift</label>
+                        <input type="checkbox" id="shift" style={{ width: '12px', height: '12px', marginTop: '3px' }} />
                       </div>
-                      <div className="form-group formcheckbox">
-                        <input type="checkbox" id="sementara" />
+                      <div className="form-group formcheckbox align-items-center d-flex justify-content-between ">
                         <label htmlFor="sementara">Sementara</label>
+                        <input type="checkbox" id="sementara" style={{ width: '12px', height: '12px', marginTop: '3px' }} />
                       </div>
 
-                      <div className="form-group formcheckbox">
-                      {/* ini yang ditambahkan */}
-                      <JobType label="Tambah Jobtype"/>
+                      <div className="form-group formcheckbox d-flex " style={{ width: '100%' }} >
+                        {/* ini yang ditambahkan */}
+                        <JobType label="Tambah Jobtype" />
                       </div>
                     </div>
                   </div>
                   <div className='row'>
                     <div className='col-4 text-start '>
                       <div className="form-group">
-                      <label htmlFor="aboutJob">About The Job</label> <br />
+                        <label htmlFor="aboutJob">About The Job</label> <br />
                         <textarea
-      className='formabout'
-      id="aboutJob"
-      name="aboutJob"
-      value={formData.aboutJob}
-      onChange={handleChange}
-      placeholder="About The Job"
-    ></textarea>
+                          className='formabout'
+                          id="aboutJob"
+                          name="aboutJob"
+                          value={formData.aboutJob}
+                          onChange={handleChange}
+                          placeholder="About The Job"
+                        ></textarea>
                       </div>
                     </div>
                     <div className='col-4 text-start'>
                       <div className="form-group">
-                      <label htmlFor="aboutCompany">About The Company</label> <br />
+                        <label htmlFor="aboutCompany">About The Company</label> <br />
                         <textarea
-      className='formabout'
-      id="aboutCompany"
-      name="aboutCompany"
-      value={formData.aboutCompany}
-      onChange={handleChange}
-      placeholder="About The Company"
-    ></textarea>
+                          className='formabout'
+                          id="aboutCompany"
+                          name="aboutCompany"
+                          value={formData.aboutCompany}
+                          onChange={handleChange}
+                          placeholder="About The Company"
+                        ></textarea>
                       </div>
                     </div>
                   </div>
                   <div className='row'>
                     <div className='col text-end'>
-                      <button className='btnbatal' style={{backgroundColor: '#FFF'}}>Batal</button>
+                      <button className='btnbatal' style={{ backgroundColor: '#FFF' }}>Batal</button>
                       <button className='buttonsave' onClick={handleSubmit}>Simpan</button>
                     </div>
                   </div>
                 </div>
               </form>
-              <FailedModal 
-                isOpen={modalFailed} 
-                onClose={() => setModalFailed(false)}/>
-              <ModalSucces 
+              <FailedModal
+                isOpen={modalFailed}
+                onClose={() => setModalFailed(false)} />
+              <ModalSucces
                 isOpen={modalSuccess}
                 teks="Sukses merubah informasi karier"
-                onClose={() => setModalSuccess(false)}/>
+                onClose={() => setModalSuccess(false)} />
             </div>
           </div>
         </div>
