@@ -5,7 +5,7 @@ import ImageUp from '../../Molekul/ImageUp';
 import TambahAcara from '../../Atom/button/TambahAcara';
 import axios from 'axios';
 import { useAuth } from '../../Layout/AuthContext'
-import axios from 'axios';
+
 
 const KontenTambahAcara = () => {
   const { token, logout } = useAuth();
