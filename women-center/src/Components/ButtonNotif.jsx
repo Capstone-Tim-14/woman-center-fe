@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 // Dashboard.js
 import React, { useState } from 'react';
-import ModalNotification from './Notifikasi/Modal';
+import ModalNotification from './Notifikasi/ModalNotifikasi';
 import { FaBell } from 'react-icons/fa'; // Import ikon notifikasi dari react-icons
 
 const Dashboard = () => {
@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      <button onClick={() => openModal('Notification')}>
+      <button onClick={() => openModal('Notification')} style={{border: 'none', background: 'none', cursor: 'pointer', color : 'pink'}}>
         <FaBell />
       </button>
 

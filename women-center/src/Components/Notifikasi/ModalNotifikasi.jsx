@@ -5,7 +5,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { FaTimes } from 'react-icons/fa'; 
 import imagenotif from '../../Assets/logonotif.png';
-import "../../Components/Notifikasi/Modal.css"
+import "../../Components/Notifikasi/ModalNotifikasi.css"
 
 const ModalNotification = ({ isOpen, closeModal}) => {
   const customStyles = {
@@ -25,8 +25,8 @@ const ModalNotification = ({ isOpen, closeModal}) => {
     >
       <div>
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <button onClick={closeModal} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
-            <FaTimes />
+          <button onClick={closeModal} style={{ cursor: 'pointer', border: 'none', background: 'none' }}>
+            <FaTimes className="notif-icon"/>
           </button>
         </div>
         <h4 className='title-notif'>Notification</h4>

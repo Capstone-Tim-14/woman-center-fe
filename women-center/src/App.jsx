@@ -1,4 +1,4 @@
-import Notifikasi from './Components/Notifikasi'
+import Notifikasi from './Components/ButtonNotif'
 
 function App() {
   return <Notifikasi/>
