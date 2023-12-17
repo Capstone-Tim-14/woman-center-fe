@@ -5,10 +5,11 @@ import ModalDataUser from '../../components/Molekul/Modal/modalDataUser';
 import ModalHapus from '../../components/Molekul/Modal/ModalHapusDataKonselor';
 import SearchDataUser from '../../components/Atom/inputan/SearchDataUser';
 import axios from 'axios';
+import { useAuth } from '../Layout/AuthContext'
 //import '../../styles/TabelUser.css';
 
 const TabelUser = () => {
-
+  const { token, logout } = useAuth();
   const [searchTerm, setSearchTerm] = useState('');
   const [tableData, setTableData] = useState([]);
   const [itemsPerPage, setItemsPerPage] = useState(5);
@@ -20,19 +21,25 @@ const TabelUser = () => {
 
   // get data
   const getDataUser = async () => {
-    try{
-      const response = await axios.get('http://localhost:3000/user');
-      const dataTabel = response.data;
+    try {
+      const response = await axios.get('https://api-ferminacare.tech/api/v1/admin/users' ,{
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+
+      const dataTabel = response.data.data; // Assuming the user data is nested under the 'data' property
       setTableData(dataTabel);
       console.log(dataTabel);
-    }catch(err){
+    } catch (err) {
       console.log(err);
     }
   }
 
+
   // delete data
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3000/user/${id}`)
+    await axios.delete(`api-ferminacare.tech/api/v1/admin/users${id}`)
     .then(() => {
       getDataUser();
     })
@@ -79,13 +86,18 @@ const TabelUser = () => {
   };
 
   // filter searching dan pagination
-  const filteredData = tableData.filter((row) => row.username.toLowerCase().includes(searchTerm.toLowerCase()));
-  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const visibleData = filteredData.slice(startIndex, endIndex);
+ const filteredData = tableData.filter((row) => {
+  // Check if row.username is defined before calling toLowerCase()
+  const username = row.username ? row.username.toLowerCase() : '';
+  return username.includes(searchTerm.toLowerCase());
+});
 
+const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+const startIndex = (currentPage - 1) * itemsPerPage;
+const endIndex = startIndex + itemsPerPage;
+const visibleData = filteredData.slice(startIndex, endIndex);
 
+// ... (other code)
   return (
     <div id='container-tabel'>
       <div id='modal-tambah-user' className='d-flex flex-column gap-3' style={{ marginBottom: '20px' }}>
@@ -130,7 +142,7 @@ const TabelUser = () => {
               <tr key={row.id}>
                 <td><input type="checkbox" /></td>
                 <td>us-{String(row.id).padStart(4, '0')}</td>
-                <td>{row.username}</td>
+                <td>{`${row.first_name}${row.last_name}`.toLowerCase()}</td>
                 <td>{row.first_name}</td>
                 <td>{row.last_name}</td>
                 <td>{row.email}</td>

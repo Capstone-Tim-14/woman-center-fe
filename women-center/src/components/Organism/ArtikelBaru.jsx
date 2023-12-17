@@ -7,6 +7,8 @@ import CategorySelect from '../Molekul/CategorySelect';
 import { useAuth } from '../Layout/AuthContext'
 import axios from 'axios';
 import HeaderArtikel from './header/headerArtikel';
+import ImageUp from '../Molekul/ImageUp';
+
 
 
 const containerStyle = {
@@ -134,7 +136,8 @@ const ArtikelBaru = () => {
     </div>
     <div className='col-lg-5' style={{marginLeft: '600px', marginTop: '-700px', marginBottom:'auto'}}>
           {/* ImageUploadAdd */}
-          <ImageUploadAdd onImageChange={handleImageChange} />
+
+          <ImageUp onImageChange={handleImageChange} />
     </div>
   </div>
     <div className='row'>
