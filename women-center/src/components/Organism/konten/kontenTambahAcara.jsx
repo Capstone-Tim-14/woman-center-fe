@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import InputJadwal from '../../Atom/inputan/inputJadwal';
 import ImageUp from '../../Molekul/ImageUp';
-import Buttonn from '../../Atom/button/button';
-import "../../../styles/modalAcara.css";
-import Tambah from '../../Atom/button/Tambah';
+import TambahAcara from '../../Atom/button/TambahAcara';
 import axios from 'axios';
+
 const KontenTambahAcara = () => {
 
   const [selectedOption, setSelectedOption] = useState('');
@@ -144,9 +143,10 @@ const KontenTambahAcara = () => {
           </div>
           <div className="p-3" >
             <div className='d-flex gap-2 justify-content-end'>
-              <Buttonn
+              <TambahAcara
                 className={"bg-button"}
                 label="Tambah"
+                id="btn-TambahAcara" 
                 // onClick nya diisi sesuai kondisi
                 onClick={handleFormSubmit}
               />

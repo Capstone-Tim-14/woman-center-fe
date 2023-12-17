@@ -1,11 +1,15 @@
-.popup-acara {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #ccc;
-    z-index: 999;
-  }
+#btn-TambahAcara {
+  background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+  color: #fff; /* Warna teks tombol */
+  padding: 5px ; /* Padding tombol */
+  border-radius: 12px; /* Rounding border tombol */
+  cursor: pointer; /* Ubah cursor saat diarahkan ke tombol */
+  border: none; /* Border berwarna biru dengan ketebalan 2px */
+  width: 25%;
+  height: 15%;
+  font-family: 'Inter', 'Sans Serif';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+}
   

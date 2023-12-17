@@ -30,7 +30,7 @@ const ModalTambahAcara = () => {
                         <KontenTambahAcara onClose={closePopup} />
                     </Modal.Body>
                     <Modal.Footer>
-                        <div className="position-absolute   end-0 p-3" style={{marginRight: '185px', marginBottom: '158px'}}>
+                        <div className="position-absolute   end-0 p-3" style={{marginRight: '185px', marginBottom: '160px'}}>
                         <Buttonn
                             className={"bg-white text-primary "}
                             label="Batal"
