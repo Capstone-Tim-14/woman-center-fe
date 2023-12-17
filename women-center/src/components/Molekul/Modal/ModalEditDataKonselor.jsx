@@ -111,22 +111,53 @@ const ModalEditDataKonselor = ({ data }) => {
   };
 
 // handle submit
-  const handleSubmit = async () => {
-    try {
-      // Validasi jika formData kosong atau ada propertinya yang kosong
-      if (Object.values(formData).some(value => !value)) {
-        setFailed(true);
-        return;
-      }
-      // Melakukan request dengan hanya mengirimkan formData
-      await axios.put(``, formData);
-      setSuccess(true);
-  
-    } catch (error) {
-      console.error('Error:', error);
+const handleSubmit = async () => {
+  try {
+    // Validasi jika formData kosong atau ada propertinya yang kosong
+    if (Object.values(formData).some((value) => !value)) {
+      setFailed(true);
+      return;
     }
-  };
 
+    // Membuat FormData untuk mengirimkan file gambar
+    const formDataToSend = new FormData();
+    formDataToSend.append('first_name', formData.first_name);
+    formDataToSend.append('last_name', formData.last_name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('phone_number', formData.phone_number);
+    formDataToSend.append('description', formData.description);
+    formDataToSend.append('username', formData.username);
+    formDataToSend.append('password', formData.password);
+    formDataToSend.append('education', formData.education);
+    formDataToSend.append('birthday', formData.birthday);
+
+    // Tambahkan gambar ke FormData jika ada
+    if (image) {
+      formDataToSend.append('picture', image);
+    }
+
+    // Melakukan request dengan FormData
+    const response = await axios.put(
+      `https://api-ferminacare.tech/api/v1/admin/counselors/${id}`,
+      formDataToSend,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'multipart/form-data', // Penting untuk mengirimkan file
+        },
+      }
+    );
+
+    if (response.status === 200) {
+      setSuccess(true);
+    } else {
+      setFailed(true);
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    setFailed(true);
+  }
+};
   const handleCheckboxChangeArtikel = (id) => {
     setCheckboxItemsArtikel((prevItems) =>
       prevItems.map((item) =>
