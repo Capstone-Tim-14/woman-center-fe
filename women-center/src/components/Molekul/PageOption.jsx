@@ -49,7 +49,7 @@ const PageOptions = ({ onPageChange, totalPages, fetchData }) => {
   };
 
   return (
-    <div className="page-options-artikel col-md-12">
+    <div className="page-options-artikel col-md-12" style={{marginLeft: "-20px", marginRight: "130px", gap: "10px"}}>
       
       <div className="page-options-inner">
         

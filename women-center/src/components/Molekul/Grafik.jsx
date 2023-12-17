@@ -3,7 +3,7 @@ import Chart from "react-apexcharts";
 import "../../styles/Grafik.css";
 
 function Grafik() {
-  const [selectedOption, setSelectedOption] = useState("week");
+  const [selectedOption, setSelectedOption] = useState("Week");
   const [state, setState] = useState({
     options: {
       colors: ["#FDCEDF", "#F8E8EE", "#F4518D"],

@@ -83,7 +83,7 @@ const KontenTambahAcara = () => {
                 <InputJadwal type="text" placeholder="Tanggal" autoFocus={true} name="date" value={eventData.date} onChange={handleInputChange} />
               </div>
               <div className="mb-3">
-                <InputJadwal type="text" placeholder="Harga (IDR)" autoFocus={true} name="price" value={eventData.price} onChange={handleInputChange} />
+                <InputJadwal type="number" placeholder="Harga (IDR)" autoFocus={true} name="price" value={eventData.price} onChange={handleInputChange} />
               </div>
               <div className="mb-3">
                 <InputJadwal type="text" placeholder="Link Acara" autoFocus={true} name="eventLink" value={eventData.eventLink} onChange={handleInputChange} />

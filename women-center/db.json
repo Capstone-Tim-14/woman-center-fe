@@ -1,5 +1,5 @@
 {
-  "konselor": [
+  "user": [
     {
       "id": 4,
       "username": "alice.johnson",
@@ -140,12 +140,19 @@
           "day_schedule": "Senin",
           "time_schedule": [
             {
+<<<<<<< HEAD
               "time_start": "08:10",
               "time_finish": "09:20"
             },
             {
               "time_start": "10:30",
               "time_finish": "13.00"
+=======
+              "time_start": "09:20"
+            },
+            {
+              "time_start": "10:30"
+>>>>>>> 11520e525f967c7a5b2e34e9fb29688d0cb34f54
             }
           ]
         },
@@ -211,6 +218,48 @@
     }
   ],
   "Paket": [
+    {
+      "id": 6,
+      "namapaket": "Paket 6",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 6,
+      "namapaket": "Paket 6",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 6,
+      "namapaket": "Paket 6",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 6,
+      "namapaket": "Paket 6",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 6,
+      "namapaket": "Paket 6",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 6,
+      "namapaket": "Paket 6",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
     {
       "id": 6,
       "namapaket": "Paket 6",

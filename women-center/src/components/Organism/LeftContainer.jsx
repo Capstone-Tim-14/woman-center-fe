@@ -1,6 +1,7 @@
 import React from 'react';
 import { HiOutlineUsers } from 'react-icons/hi2';
 import UserSummary from '../../assets/icon/icon_user.svg'
+import '../../styles/ArtikelContainer.css'
 
 const LeftContainer = () => (
   <div className="interaksi-kontributor">
@@ -21,7 +22,7 @@ const LeftContainer = () => (
     </div>
 
     {/* Bottom Section of Left Container */}
-    <div className="div-footer">
+    <div className="div-footer-summaryartikel">
       <div className="div-footer-content">
         {/* Artikel Diposting */}
         <div className="percentage-type">

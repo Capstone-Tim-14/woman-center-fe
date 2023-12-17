@@ -1,52 +1,55 @@
-import React, { useState } from 'react';
-import DeleteButton from "../Atom/DeleteButton";
-import { useNavigate } from 'react-router-dom';
-import { IoEyeOutline } from "react-icons/io5";
-import { BsBookmark } from "react-icons/bs";
+import React, { useState, useEffect } from 'react';
 import { BiSortAlt2 } from "react-icons/bi";
-import { FaRegComment } from "react-icons/fa";
-import { Button } from 'react-bootstrap';
-import '../../styles/TabelDatabase.css';
-import ModalDataUser from '../Molekul/Modal/modalDataUser';
+import ModalTambahAkunUser from '../../components/Molekul/Modal/modalTambahAkunUser';
+import ModalDataUser from '../../components/Molekul/Modal/modalDataUser';
+import ModalHapus from '../../components/Molekul/Modal/ModalHapusDataKonselor';
+import SearchDataUser from '../../components/Atom/inputan/SearchDataUser';
+import axios from 'axios';
+//import '../../styles/TabelUser.css';
+
 const TabelUser = () => {
-  const navigate = useNavigate();
 
-  // State untuk menyimpan data tabel
-  const [tableData, setTableData] = useState([
-    {
-      id: 1,
-      title: "001",
-      username: "Bagus",
-      namaDepan: "Bagus",
-      namaBelakang: "Bagus",
-      alamatEmail: "bagus1@gmailcom",
-    },
-    {
-      id: 2,
-      title: "002",
-      username: "Bagus2",
-      namaDepan: "Bagus",
-      namaBelakang: "Bagus",
-      alamatEmail: "bagus2@gmailcom",
-    },
-    {
-      id: 3,
-      title: "003",
-      username: "Bagus3",
-      namaDepan: "Bagus",
-      namaBelakang: "Bagus",
-      alamatEmail: "bagus3@gmailcom",
-    },
-    // Add more rows as needed
-  ]);
-
-  // State untuk menyimpan arah sort dan jenis kolom yang sedang di-sort
+  const [searchTerm, setSearchTerm] = useState('');
+  const [tableData, setTableData] = useState([]);
+  const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [currentPage, setCurrentPage] = useState(1);
   const [sortConfig, setSortConfig] = useState({
     key: null,
     direction: 'ascending',
   });
 
-  // Fungsi untuk mengurutkan tabel
+  // get data
+  const getDataUser = async () => {
+    try{
+      const response = await axios.get('http://localhost:3000/user');
+      const dataTabel = response.data;
+      setTableData(dataTabel);
+      console.log(dataTabel);
+    }catch(err){
+      console.log(err);
+    }
+  }
+
+  // delete data
+  const handleDelete = async (id) => {
+    await axios.delete(`http://localhost:3000/user/${id}`)
+    .then(() => {
+      getDataUser();
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+
+  useEffect(() => {
+    getDataUser();
+  },[])
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value)
+  }
+
+  // Sorting Tabel
   const sortTable = (key) => {
     let direction = 'ascending';
     if (sortConfig.key === key && sortConfig.direction === 'ascending') {
@@ -56,102 +59,115 @@ const TabelUser = () => {
 
     // Lakukan pengurutan data
     const sortedData = [...tableData].sort((a, b) => {
-      if (direction === 'ascending') {
-        return a[key].localeCompare(b[key]);
+      if (key === 'id') {
+        return direction === 'ascending' ? a[key] - b[key] : b[key] - a[key];
       } else {
-        return b[key].localeCompare(a[key]);
+        return direction === 'ascending' ? a[key].localeCompare(b[key]) : b[key].localeCompare(a[key]);
       }
     });
 
     setTableData(sortedData);
   };
 
-  const handleRowClick = (articleId) => {
-    navigate(`/articles/${articleId}`);
+  const handleItemsPerPage = (e) => {
+    setItemsPerPage(parseInt(e.target.value));
+    setCurrentPage(1);
   };
 
-  const confirmDelete = () => {
-    // Tambahkan logika konfirmasi atau hapus di sini
-    console.log('Delete button clicked');
+  const handlePageChange = (e) => {
+    setCurrentPage(parseInt(e.target.value, 10));
   };
+
+  // filter searching dan pagination
+  const filteredData = tableData.filter((row) => row.username.toLowerCase().includes(searchTerm.toLowerCase()));
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const visibleData = filteredData.slice(startIndex, endIndex);
+
 
   return (
-    <div className="table-container-database">
-      <table className="data-table-database">
-        <thead>
-          <tr>
-            <th></th>
-            <th onClick={() => sortTable('title')}>
-              ID User <BiSortAlt2 />
-            </th>
-            <th onClick={() => sortTable('username')}>
-              Username <BiSortAlt2 />
-            </th>
-            <th onClick={() => sortTable('namaDepan')}>
-              Nama Depan <BiSortAlt2 />
-            </th>
-            <th onClick={() => sortTable('namaBelakang')}>
-              Nama Belakang <BiSortAlt2 />
-            </th>
-            <th onClick={() => sortTable('alamatEmail')}>
-              Alamat Email <BiSortAlt2 />
-            </th>
-            <th>Aksi</th>
-          </tr>
-        </thead>    
-        <tbody>
-          {tableData.map((row) => (
-            <tr key={row.id} style={{margin:-100}}>
-              <td><input type="checkbox" /></td>
-              <td>{row.title}</td>
-              <td>{row.username}</td>
-              <td>
-                {row.namaDepan}
-              </td>
-              <td>{row.namaBelakang}</td>
-              <td>{row.alamatEmail}</td>
+    <div id='container-tabel'>
+      <div id='modal-tambah-user' className='d-flex flex-column gap-3' style={{ marginBottom: '20px' }}>
+        <div className='d-flex justify-content-end'>
+          <ModalTambahAkunUser />
+        </div>
+        <div className='d-flex justify-content-between' id='header-tableKonselor'>
+          <p className="m-0 fw-semibold fs-5">User</p>
+            <SearchDataUser
+              value={searchTerm} 
+              onChange={handleSearch}
               
+            />
+        </div>
+      </div>
+
+      <div className="table-database-user" >
+        <table className="data-database-user" id='table-konselor'>
+          <thead>
+            <tr>
+              <th><input type="cehckbox" style={{display: 'none'}}/></th>
+              <th onClick={() => sortTable('id')}>
+                ID User <BiSortAlt2 />
+              </th>
+              <th onClick={() => sortTable('username')}>
+                Username <BiSortAlt2 />
+              </th>
+              <th onClick={() => sortTable('first_name')}>
+                Nama Depan <BiSortAlt2 />
+              </th>
+              <th onClick={() => sortTable('last_name')}>
+                Nama Belakang <BiSortAlt2 />
+              </th>
+              <th onClick={() => sortTable('email')}>
+                Alamat Email <BiSortAlt2 />
+              </th>
+              <th>Aksi</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className="modal-tabeluser-container">
-      <div className='d-flex justify-content-end' style={{marginTop:"-140px", marginBottom:"30px"}}>
-          <div
-            style={{ innerWidth: "23px", color: "#F4518D",  marginTop : "-38px", cursor: "pointer"}}
-          >
-            <ModalDataUser/>
+          </thead>
+          <tbody>
+            {visibleData.map((row) => (
+              <tr key={row.id}>
+                <td><input type="checkbox" /></td>
+                <td>us-{String(row.id).padStart(4, '0')}</td>
+                <td>{row.username}</td>
+                <td>{row.first_name}</td>
+                <td>{row.last_name}</td>
+                <td>{row.email}</td>
+                <td className="d-flex justify-content-center gap-2">
+                  <ModalDataUser data={row}/>
+                  <ModalHapus onClick={() => handleDelete(row.id)} icons='src/assets/icons/Delete.png'/>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div id='pagination-container-user' className='d-flex justify-content-between'>
+
+          <div id='show-itemsKonselor-user'>
+            <span>Show </span>
+            <select onChange={handleItemsPerPage} value={itemsPerPage}>
+              <option value='5'>5</option>
+              <option value='10'>10</option>
+              <option value='15'>15</option>
+            </select>
+            <span> items per page</span>
           </div>
-          <div style={{marginTop:"20px"}}>
-            <DeleteButton 
-              onConfirmDelete={() => confirmDelete(row.id)}
-            />
+          
+          <div id='pagination-dropdownKonselor-user'>
+            <span>Page: </span>
+            <select onChange={handlePageChange} value={currentPage}>
+              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+                <option key={page} value={page}>
+                  {page}
+                </option>
+              ))}
+            </select>
+            <span> of {totalPages}</span>
           </div>
+
         </div>
-        <div className='d-flex justify-content-end' style={{marginTop:"-110px"}}>
-          <div
-            style={{ innerWidth: "23px", color: "#F4518D",  marginTop : "-38px", cursor: "pointer"}}
-          >
-            <ModalDataUser/>
-          </div>
-          <div style={{marginTop:"20px"}}>
-            <DeleteButton 
-              onConfirmDelete={() => confirmDelete(row.id)}
-            />
-          </div>
-        </div>
-        <div className='d-flex justify-content-end' style={{marginTop:"-85px"}}>
-          <div
-            style={{ innerWidth: "23px", color: "#F4518D",  marginTop : "-38px", cursor: "pointer"}}
-          >
-            <ModalDataUser/>
-          </div>
-          <div style={{marginTop:"20px"}}>
-            <DeleteButton 
-              onConfirmDelete={() => confirmDelete(row.id)}
-            />
-          </div>
-        </div>
+
       </div>
     </div>
   );

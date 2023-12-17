@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import FormsDataUser from '../../Molekul/form/FormDataUser'
-import Profil from '../../Molekul/profil'
 import Artikel from '../../Molekul/list/artikel'
 import Karier from '../../Molekul/list/karier'
 import Konseling from '../../Molekul/list/konseling'
-import Buttonn from '../../Atom/button/button'
+import Button from '../../Atom/button/button'
 import { Form } from 'react-bootstrap'
 import axios from "axios"
-import ImgUrl from "../../../assets/image 36.png"
+import imageedit from "../../../assets/icon/Edit Square.png"
 
 const KontenDataUser = () => {
 
@@ -32,7 +31,7 @@ const KontenDataUser = () => {
   const getProfil = async () => {
     try {
       const userId = '1'; // Gantilah dengan ID pengguna yang sesuai
-      const userApiUrl = `http://localhost:3000/users/${userId}`;
+      const userApiUrl = `http://localhost:3000/user/${id}`;
   
       // Panggil endpoint untuk mendapatkan data pengguna
       const userResponse = await axios.get(userApiUrl);
@@ -54,7 +53,7 @@ const KontenDataUser = () => {
   const getArtikel = async () => {
     try {
       const userId = '1'; // Gantilah dengan ID pengguna yang sesuai
-      const apiUrl = `http://localhost:3000/users/${userId}`;
+      const apiUrl = `http://localhost:3000/user/${id}`;
 
       const response = await axios.get(apiUrl);
       const user = response.data;
@@ -95,7 +94,7 @@ const KontenDataUser = () => {
 
     try {
       const userId = '1'; // Gantilah dengan ID pengguna yang sesuai
-      const apiUrl = `http://localhost:3000/users/${userId}`;
+      const apiUrl = `http://localhost:3000/user/${userId}`;
 
       const response = await axios.put(apiUrl, formData);
       
@@ -120,8 +119,7 @@ const KontenDataUser = () => {
 
     return (
         <>
-        <div className="container-xxl mt-4">
-          <div className="row mx-2">
+        <div className= "konten-data-user">
           <Form onSubmit={handleSubmit}>
             <div className="d-flex gap-4 col-12">
                 <FormsDataUser 
@@ -133,11 +131,10 @@ const KontenDataUser = () => {
                     password={formData.password}
                     onInputChange={handleInputChange}
                   />
-                <Profil 
-                  src={ImgUrl}/>
+                
             </div>
             <div className='ms-2 me-5 mt-4'>
-              <div className="d-flex justify-content-start col-8 gap-4" style={{marginTop: '-100px'}}>
+              <div className="d-flex justify-content-start col-8 gap-4" style={{marginBottom: '-200px'}}>
                 <Artikel 
                   checkboxArtikel={checkboxItemsArtikel} 
                   onCheckBoxChange={handleCheckboxChange} />
@@ -149,19 +146,8 @@ const KontenDataUser = () => {
                   onCheckBoxChange={handleCheckboxChange} /> 
               </div>
             </div>
-            <div className='d-flex gap-2 justify-content-end mt-4'>
-                <Buttonn 
-                  className={"bg-white text-primary"}
-                  label="Batal" />
-                <Buttonn 
-                  className={"bg-button"}
-                  label="Simpan"
-                  type="submit"
-                  disabled={loading} />
-            </div>
           </Form>
           </div>
-        </div>
         </>
     )
 }

@@ -82,7 +82,11 @@ function ModalJadwalKonselor({ jadwal }) {
     </button>
 
     <div id="modalJadwal">
+<<<<<<< HEAD
       <Modal show={showPopup} onHide={handleClose} size="xl">
+=======
+      <Modal show={showPopup} onHide={handleClose} size="xl" style={{width: '920px', height: '700px', marginTop: '30px', transform: 'translate(-50%, -50%)', top: '50%', left: '50%'}}>
+>>>>>>> 11520e525f967c7a5b2e34e9fb29688d0cb34f54
         <Modal.Header closeButton id='modalJadwal-header'>
           <Modal.Title>Jadwal</Modal.Title>
         </Modal.Header>

@@ -4,6 +4,7 @@ import { IoNotifications } from 'react-icons/io5';
 import SummaryContainer from '../../Molekul/summary/SummaryDataKonselor';
 import '../../../styles/headerDataKonselor.css';
 import profile from "../../../assets/profile 1.png"
+import ButtonNotif from '../../Atom/button/ButtonNotif';
 
 
 const HeaderDataKonselor = () => {
@@ -20,14 +21,9 @@ const HeaderDataKonselor = () => {
                 <div id="subtitle-text-konselor">/ Konselor</div>
             </div>
         </div>
-        <div id="header-icons-konselor">
+        <div id="header-icons-konselor" style={{gap: '20px'}}>
             {/* Notification Icon */}
-            <div id="div-icon-konselor">
-                <div id="div-icon-inner-konselor">
-                    <IoNotifications id="div-icon-bar-konselor" />
-                </div>
-            </div>
-
+            <ButtonNotif />
             {/* Profile Image */}
             <img id="div-image-konselor" src={profile} alt="Profile Image" />
         </div>
