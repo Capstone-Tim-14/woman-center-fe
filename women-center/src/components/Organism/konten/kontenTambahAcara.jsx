@@ -4,6 +4,7 @@ import InputJadwal from '../../Atom/inputan/inputJadwal';
 import ImageUp from '../../Molekul/ImageUp';
 import Buttonn from '../../Atom/button/button';
 import "../../../styles/modalAcara.css";
+import Tambah from '../../Atom/button/Tambah';
 import axios from 'axios';
 const KontenTambahAcara = () => {
 
