@@ -3,7 +3,7 @@ import React from 'react';
 
 const UserText = () => {
   return (
-    <div className="user-text" style={{ marginLeft: '15px'}}>
+    <div className="user-text" style={{ marginLeft: '-25px'}}>
       User
     </div>
   );
