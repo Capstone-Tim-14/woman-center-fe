@@ -223,6 +223,48 @@
       "price": 100000,
       "type": "Video Call",
       "sesi": 5
+    },
+    {
+      "id": 6,
+      "namapaket": "Paket 6",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 6,
+      "namapaket": "Paket 6",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 6,
+      "namapaket": "Paket 6",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 6,
+      "namapaket": "Paket 6",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 6,
+      "namapaket": "Paket 6",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
+    },
+    {
+      "id": 6,
+      "namapaket": "Paket 6",
+      "price": 100000,
+      "type": "Video Call",
+      "sesi": 5
     }
   ]
 }
