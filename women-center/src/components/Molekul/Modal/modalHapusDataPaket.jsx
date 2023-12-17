@@ -26,14 +26,16 @@ function ModalHapusData (props) {
       <Modal 
         show={show} 
         onHide={handleClose}
-        size='sm'>
+        size=''
+        style={{width: '500px', marginLeft: '450px'}}
+        >
+          
           <div className='container' id='container-modalHapusPaket'>
             <div className='row my-3 px-2 gap-3'>
               <div className='d-flex justify-content-between align-items-center'>
                 <p className='m-0' style={{fontSize: '14px', fontWeight: '500'}}>Hapus Data?</p>
                 <ButtonClose onClick={handleClose}/>
               </div>
-
               <div 
                 id='text-modalHapusPaket'
                 className='text-center' 
