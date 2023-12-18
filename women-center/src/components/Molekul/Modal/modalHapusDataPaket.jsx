@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Modal } from 'react-bootstrap';
 import Buttons from '../../Atom/button/buttonsPaket';
 import ButtonClose from '../../Atom/button/buttonsClosePaket';
+import image from '../../../assets/icon/Delete.png';
 
 function ModalHapusData (props) {
   
@@ -17,7 +18,7 @@ function ModalHapusData (props) {
       style={{border: 'none', background: 'none'}}
       onClick={handleShow}>
       <img 
-        src="src/assets/icon/Delete.png" 
+        src={image} 
         alt="" 
         style={{width: '16px', height: '18px'}}/>
     </button>

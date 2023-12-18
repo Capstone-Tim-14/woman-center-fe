@@ -3,6 +3,7 @@ import EditKonselingButton from '../../Atom/button/EditKonselingButton';
 import CloseButton from '../../Atom/button/Closebutton';
 import Modal from 'react-bootstrap/Modal'
 import '../../../styles/EditKonseling.css';
+import image1 from '../../../assets/icon/Edit Square.png';
 
 const EditKonseling = () => {
 
@@ -116,7 +117,7 @@ const EditKonseling = () => {
         style={{border: 'none', background: 'none'}}
         onClick={handleShow}>
         <img 
-          src="src/assets/icon/Edit Square.png" 
+          src={image1} 
           alt="" 
           style={{width: '16px', height: '18px'}}/>
       </button>

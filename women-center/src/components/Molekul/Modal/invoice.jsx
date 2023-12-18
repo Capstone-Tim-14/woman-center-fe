@@ -6,6 +6,7 @@ import ButtonDownload from '../../Atom/button/buttonsDownload'
 import Tabel from 'react-bootstrap/Table'
 import Modal from 'react-bootstrap/Modal'
 import '../../../styles/invoice.css'
+import image1 from "../../../assets/icon/Document.png"
 
 function Invoice() {
 
@@ -49,7 +50,7 @@ function Invoice() {
             <div id='header-line'>
                 <div id='header-logo'>
                   <img 
-                    src="src/assets/MAIN LOGO PINK.png" 
+                    src={image1}
                     alt=""/>
                   <p>WOMEN<br/>CENTER</p>
                 </div>
