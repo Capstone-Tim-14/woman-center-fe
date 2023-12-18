@@ -141,7 +141,7 @@ body {
 
 /* CSS untuk Tata Letak Sub Containers */
 .sub-content-jadwal-sesi {
-    width: 100%;
+    width: 90%;
     margin: 20px auto 5px; /* Adjusted margin */
     display: flex;
     justify-content: space-between;
@@ -220,7 +220,7 @@ body {
   .Sesi-acara {
     width: calc(100% - 10px); /* 50% lebar dan dikurangi margin */
     max-width: 590.5px;
-    height: 400px ;
+    height: 1000px ;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
