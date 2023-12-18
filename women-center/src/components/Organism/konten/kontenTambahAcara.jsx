@@ -4,9 +4,11 @@ import InputJadwal from '../../Atom/inputan/inputJadwal';
 import ImageUp from '../../Molekul/ImageUp';
 import TambahAcara from '../../Atom/button/TambahAcara';
 import axios from 'axios';
+import { useAuth } from '../../Layout/AuthContext'
+
 
 const KontenTambahAcara = () => {
-
+  const { token, logout } = useAuth();
   const [selectedOption, setSelectedOption] = useState('');
   const [showPopup, setShow] = useState(false);
   const [eventData, setEventData] = useState({
@@ -39,12 +41,16 @@ const KontenTambahAcara = () => {
 
   const handleCheckboxChange = (value) => {
     setSelectedOption(value);
-    setEventData((prevData) => ({
-      ...prevData,
-      eventType: value,
-    }));
+    setEventData((prevData) => {
+      // Check if the value is 'offline' or 'online'
+      const eventType = value === 'OFFLINE' || value === 'ONLINE' ? value : '';
+  
+      return {
+        ...prevData,
+        eventType: eventType,
+      };
+    });
   };
-
   const handleImageSubmit = (data) => {
     setEventData((prevData) => ({
       ...prevData,
@@ -68,19 +74,36 @@ const KontenTambahAcara = () => {
     setShow(false);
   };
 
-  const handleFormSubmit = () => {
-    const formData = {
-      title: eventData.title,
-      location: eventData.location,
-      date: eventData.date,
-      price: eventData.price,
-      eventLink: eventData.eventLink,
-      description: eventData.description,
-      eventImage: eventData.eventImage,
-      eventType: eventData.eventType,
-    };
-    sendEventDataToAPI();
-    console.log(formData);
+  const handleFormSubmit = async () => {
+    try {
+      const formData = new FormData();
+      formData.append('title', eventData.title);
+      formData.append('locations', eventData.location);
+      formData.append('date', eventData.date);
+      formData.append('price', eventData.price);
+      formData.append('event_url', eventData.eventLink);
+      formData.append('description', eventData.description);
+      formData.append('poster', eventData.eventImage);
+      formData.append('event_Type', eventData.eventType);
+      formData.append('status', 'OPEN');
+      formData.append('time_start', eventData.time_start || '08:00:00'); // Use actual or default value
+      formData.append('time_finish', eventData.time_finish || '17:00:00'); // Use actual or default value
+      
+
+      console.log('FormData:', formData);
+      const response = await axios.post('https://api-ferminacare.tech/api/v1/admin/event', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'Authorization': `Bearer ${token}`, 
+        },
+      });
+
+      console.log('API Response:', response.data);
+
+      closePopup();
+    } catch (error) {
+      console.error('Error submitting data:', error);
+    }
   };
   
 
@@ -106,23 +129,29 @@ const KontenTambahAcara = () => {
               <div className="mb-3">
                 <InputJadwal type="text" placeholder="Link Acara" autoFocus={true} name="eventLink" value={eventData.eventLink} onChange={handleInputChange} />
               </div>
+              <div className="mb-3">
+                <InputJadwal type="text" placeholder="Waktu Mulai" autoFocus={true} name="time_start" value={eventData.time_start} onChange={handleInputChange} />
+              </div>
+              <div className="mb-3">
+                <InputJadwal type="text" placeholder="Waktu Selesai" autoFocus={true} name="time_finish" value={eventData.finish} onChange={handleInputChange} />
+              </div>
               <div>
                 <h5>Tipe Acara</h5>
                 <div className="d-flex gap-2  ">
-                  <Form.Check
-                    type="checkbox"
-                    label="Offline"
-                    name="checkboxGroup"
-                    checked={eventData.eventType === 'offline'}
-                    onChange={() => handleCheckboxChange('offline')}
-                  />
-                  <Form.Check
-                    type="checkbox"
-                    label="Online"
-                    name="checkboxGroup"
-                    checked={eventData.eventType === 'online'}
-                    onChange={() => handleCheckboxChange('online')}
-                  />
+                <Form.Check
+  type="checkbox"
+  label="Offline"
+  name="checkboxGroup"
+  checked={eventData.eventType === 'OFFLINE'}
+  onChange={() => handleCheckboxChange('OFFLINE')}
+/>
+<Form.Check
+  type="checkbox"
+  label="Online"
+  name="checkboxGroup"
+  checked={eventData.eventType === 'ONLINE'}
+  onChange={() => handleCheckboxChange('ONLINE')}
+/>
                 </div>
               </div>
             </div>
@@ -143,13 +172,17 @@ const KontenTambahAcara = () => {
           </div>
           <div className="p-3" >
             <div className='d-flex gap-2 justify-content-end'>
-              <TambahAcara
-                className={"bg-button"}
-                label="Tambah"
-                id="btn-TambahAcara" 
+              <Buttonn
+                className={"bg-white text-primary"}
+                label="Batal"
                 // onClick nya diisi sesuai kondisi
-                onClick={handleFormSubmit}
+                onClick={closePopup}
               />
+              <Buttonn
+        className={"bg-button"}
+        label="Tambah"
+        onClick={handleFormSubmit}
+      />
             </div>
           </div>
         </div>

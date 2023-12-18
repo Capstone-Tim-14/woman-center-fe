@@ -39,9 +39,10 @@ const TabelUser = () => {
     }
   }
 
+
   // delete data
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3000/user/${id}`)
+    await axios.delete(`api-ferminacare.tech/api/v1/admin/users/${id}`)
     .then(() => {
       getDataUser();
     })
@@ -94,7 +95,7 @@ const TabelUser = () => {
   const endIndex = startIndex + itemsPerPage;
   const visibleData = filteredData.slice(startIndex, endIndex);
 
-
+// ... (other code)
   return (
     <div id='container-tabel'>
       <div id='modal-tambah-user' className='d-flex flex-column gap-3' style={{ marginBottom: '20px' }}>
