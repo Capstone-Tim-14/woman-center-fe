@@ -39,7 +39,7 @@ const TabelUser = () => {
 
   // delete data
   const handleDelete = async (id) => {
-    await axios.delete(`api-ferminacare.tech/api/v1/admin/users${id}`)
+    await axios.delete(`api-ferminacare.tech/api/v1/admin/users/${id}`)
     .then(() => {
       getDataUser();
     })

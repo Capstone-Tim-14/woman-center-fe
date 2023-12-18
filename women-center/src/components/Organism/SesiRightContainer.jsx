@@ -67,7 +67,7 @@ const SesiRightContainer = () => {
                         <h6 className="txt-dashboard-sesi-konseling">Acara</h6>
                     </div>
                     <div className="head-dashboard-sesi-konseling">
-                        <h10 className="txt-dashboard2-sesi-konseling">4 Acara Minggu Ini</h10>
+                        <h10 className="txt-dashboard2-sesi-konseling">Acara Bulan Ini</h10>
                     </div>
                     <hr className="garis" />
                     <div className="showall-sesi-konseling">
