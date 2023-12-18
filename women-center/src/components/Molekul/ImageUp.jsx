@@ -1,4 +1,4 @@
-import '../../styles/imageUp.css';
+import '../../styles/ImageUp.css';
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FiUploadCloud } from 'react-icons/fi';
