@@ -6,6 +6,7 @@ import Tambah from '../../Atom/button/Tambah';
 import  Modal  from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { FormCheck } from 'react-bootstrap';
+import image from '../../../assets/icon/Edit Square.png';
 
 const TambahPaket = ({  togglePopup }) => {
   const [namaPaket, setNamaPaket] = useState('');
@@ -92,8 +93,8 @@ const TambahPaket = ({  togglePopup }) => {
         style={{border: 'none', background: 'none'}}
         onClick={handleShowPaket}>
         <img 
-          src="src/assets/icon/Edit Square.png" 
-          alt="" 
+          src= {image}
+          alt=""
           style={{width: '16px', height: '18px'}}/>
       </button>
       

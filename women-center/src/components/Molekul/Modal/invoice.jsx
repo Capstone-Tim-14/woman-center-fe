@@ -6,7 +6,7 @@ import ButtonDownload from '../../Atom/button/buttonsDownload'
 import Tabel from 'react-bootstrap/Table'
 import Modal from 'react-bootstrap/Modal'
 import '../../../styles/invoice.css'
-import image1 from "../../../assets/icon/Document.png"
+import image1 from '../../../assets/icon/Document.png';
 
 function Invoice() {
 
@@ -33,7 +33,7 @@ function Invoice() {
         id='invoice'
         onClick={handleShow}>
         <img 
-          src="src/assets/icon/Document.png" 
+          src={image1}
           alt="" 
           style={{width: '16px', height: '18px'}}/>
       </button>
