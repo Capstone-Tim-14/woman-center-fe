@@ -7,7 +7,6 @@ import TambahPaket from '../Molekul/Modal/tambahpaket';
 import EditPaket from '../Molekul/Modal/EditPaket';
 import { useAuth } from '../Layout/AuthContext'
 import axios from 'axios';
-import DeleteButton from '../Atom/DeleteButton';
 
 function TabelPaket() {
   const { token, logout } = useAuth();
@@ -78,7 +77,11 @@ function TabelPaket() {
   return (
     <div className='d-flex flex-column gap-2' style={{ width: '550px' }}>
     <div className='d-flex justify-content-between align-items-center'>
-      {/* ... (other UI elements) */}
+    <p className='m-0' style={{ fontWeight: '500' }}>Paket</p>
+        <div className='d-flex align-items-center gap-2'>
+          <SearchPaket value={searchTerm} onchange={handleSearch} />
+          <TambahPaket />
+        </div>
     </div>
     <table responsive id='tabelpaket'>
       <thead style={{ borderTop: '1px solid #E5E5E5' }}>
@@ -95,10 +98,11 @@ function TabelPaket() {
           <tr key={item.id} style={{ fontSize: '14px' }}>
             <td>{item.title}</td>
             <td>Rp{item.price}</td>
-            <td>{/* You may need to update this column based on your data */}</td>
+            <td>{item.type}</td>
             <td>{item.session_per_week}</td>
             <td className='d-flex justify-content-center align-items-center gap-2'>
-            <DeleteButton/>
+            <EditPaket />
+              <ModalHapusData clicked={() => clicked(item.id)} />
             </td>
           </tr>
         ))}
