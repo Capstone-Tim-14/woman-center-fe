@@ -2,7 +2,7 @@ import React from 'react';
 import { GoHomeFill } from 'react-icons/go';
 import { IoNotifications } from 'react-icons/io5';
 import SummaryContainer from '../../Molekul/summary/SummaryDataKonselor';
-import '../../../styles/headerDataKonselor.css';
+import '../../../styles/HeaderDataKonselor.css';
 import profile from "../../../assets/profile 1.png"
 import ButtonNotif from '../../Atom/button/ButtonNotif';
 
