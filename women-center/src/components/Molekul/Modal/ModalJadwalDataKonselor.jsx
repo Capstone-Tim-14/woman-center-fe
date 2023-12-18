@@ -19,7 +19,7 @@ function ModalJadwalKonselor({ jadwal }) {
   const [formData, setFormData] = useState({
     full_name: "",
   });
-  const [chekboxJadwal, setCheckboxJadwal] = useState([]);
+  const [checkboxJadwal, setCheckboxJadwal] = useState([]);
 
   const handleCloseBerhasil = () => setSuccess(false);
   const handleCloseGagal = () => setFailed(false);
@@ -46,28 +46,31 @@ function ModalJadwalKonselor({ jadwal }) {
   const handleSubmit = async () => {
     try {
 
-      if (!chekboxJadwal || chekboxJadwal.length === 0) {
+      if (!checkboxJadwal || checkboxJadwal.length === 0) {
         setFailed(true);
         return;
       }
 
       if(token){
-        await axios.put(`http://api-ferminacare.tech/api/v1/admin/counselor/${id}/schedule/`, {
-        chekboxJadwal,
-      }, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        }
-      });
-      setSuccess(true);
+        const response = await axios.put(`https://api-ferminacare.tech/api/v1/admin/counselor/${id}/schedule`, checkboxJadwal, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data',
+          }
+        });
+      if (response.status === 200) {
+        setSuccess(true);
+      } else {
+        setFailed(true);
       }
+    }
     } catch (error) {
       console.error('Error:', error);
     }
   };
 
-  const handleCheckboxChange = (updatedCheckboxes) => {
-    setCheckboxJadwal(updatedCheckboxes);
+  const handleCheckboxChange = (time) => {
+    setCheckboxJadwal(time);
   };
 
   useEffect(() => {

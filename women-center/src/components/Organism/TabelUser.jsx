@@ -4,11 +4,13 @@ import ModalTambahAkunUser from '../../components/Molekul/Modal/modalTambahAkunU
 import ModalDataUser from '../../components/Molekul/Modal/modalDataUser';
 import ModalHapus from '../../components/Molekul/Modal/ModalHapusDataKonselor';
 import SearchDataUser from '../../components/Atom/inputan/SearchDataUser';
+import { useAuth } from '../Layout/AuthContext'
 import axios from 'axios';
 //import '../../styles/TabelUser.css';
 
 const TabelUser = () => {
 
+  const { token } = useAuth();
   const [searchTerm, setSearchTerm] = useState('');
   const [tableData, setTableData] = useState([]);
   const [itemsPerPage, setItemsPerPage] = useState(5);
@@ -21,10 +23,17 @@ const TabelUser = () => {
   // get data
   const getDataUser = async () => {
     try{
-      const response = await axios.get('http://localhost:3000/user');
-      const dataTabel = response.data;
-      setTableData(dataTabel);
-      console.log(dataTabel);
+      if(token) {
+        const response = await axios.get('https://api-ferminacare.tech/api/v1/admin/users',{
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        },
+      );
+        const data = response.data;
+        setTableData(data.data);
+        console.log(data.data);
+    }
     }catch(err){
       console.log(err);
     }
@@ -79,7 +88,7 @@ const TabelUser = () => {
   };
 
   // filter searching dan pagination
-  const filteredData = tableData.filter((row) => row.username.toLowerCase().includes(searchTerm.toLowerCase()));
+  const filteredData = tableData.filter((row) => row.first_name.toLowerCase().includes(searchTerm.toLowerCase()));
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -129,7 +138,7 @@ const TabelUser = () => {
             {visibleData.map((row) => (
               <tr key={row.id}>
                 <td><input type="checkbox" /></td>
-                <td>us-{String(row.id).padStart(4, '0')}</td>
+                <td>us-{String(row.id).padStart(5, '0')}</td>
                 <td>{row.username}</td>
                 <td>{row.first_name}</td>
                 <td>{row.last_name}</td>

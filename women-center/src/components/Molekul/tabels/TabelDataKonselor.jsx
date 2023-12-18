@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BiSortAlt2 } from "react-icons/bi";
 import ModalTambahAkunKonselor from '../Modal/modalTambahAkunKonselor';
-import ModalEditDataKonselor from '../modal/ModalEditDataKonselor';
+import ModalEditDataKonselor from '../Modal/ModalEditDataKonselor';
 import ModalHapus from '../Modal/ModalHapusDataKonselor';
 import SearchDataKonselor from '../../Atom/inputan/SearchDataKonselor';
 import ModalJadwalKonselor from '../Modal/ModalJadwalDataKonselor';
@@ -142,7 +142,7 @@ const TabelDataKonselor = () => {
             {visibleData.map((row) => (
               <tr key={row.id}>
                 <td><input type="checkbox" /></td>
-                <td>us-{String(row.id).padStart(4, '0')}</td>
+                <td>us-{String(row.id).padStart(5, '0')}</td>
                 <td>{row.username}</td>
                 <td>{row.first_name}</td>
                 <td>{row.last_name}</td>

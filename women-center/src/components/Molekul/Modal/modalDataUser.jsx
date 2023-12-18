@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import KontenDataUser from '../../Organism/konten/kontenDataUser'
 import ButtonsDataKonselor from '../../Atom/button/ButtonUser'
 import ButtonCloseDataKonselor from '../../Atom/button/buttonClose';
 import ModalGagalDataKonselor from './ModalGagalDataKonselor'
 import ModalBerhasilDataKonselor from '../../Molekul/Modal/BerhasilUser'
+import Artikel from '../list/artikel'
+import Karier from '../list/karier'
+import Konseling from '../list/konseling'
 import Profil from '../../Atom/profil/Profil'
+import FormsDataUser from '../form/FormDataUser'
+import { useAuth } from '../../Layout/AuthContext'
 import { Form } from 'react-bootstrap'
 import axios from 'axios'
 import Modal from 'react-bootstrap/Modal'
@@ -22,9 +26,10 @@ const ModalDataUser = ({ data }) => {
     birthday: '',
     password: '',
   })
-
-  const [checkboxItemsArtikel, setCheckboxItemsArtikel] = useState([])
-  const [checkboxItemsKarier, setCheckboxItemsKarier] = useState([])
+  const {token} = useAuth()
+  const [checkboxItemsArtikel, setCheckboxItemsArtikel] = useState([]);
+  const [checkboxItemsKarier, setCheckboxItemsKarier] = useState([]);
+  const [checkboxKonseling, setCheckboxKonseling] = useState([]);
   const [image, setImage] = useState(null)
   const [show, setShow] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -41,23 +46,24 @@ const ModalDataUser = ({ data }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  // Fungsi callback untuk memilih fungsi
-  const handleSelectedTopicsChange = (topics) => {
-    setSelectedTopics(topics);
-  };
-
   // Fungsi untuk mengambil data profil
   const getProfil = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/user/${id}`);
-      const konselor = response.data;
-      setFormData(konselor);
-      setImage(konselor.profile_picture);
-
+      if (token){
+        const response = await axios.get(`https://api-ferminacare.tech/api/v1/admin/user/${id}`,{
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        }
+      );
+        const user = response.data;
+        setFormData(user.data);
+        setImage(user.data.profile_picture);
+      }
     } catch (error) {
-      console.log(error);
+      console.error('Error:', error);
     }
-}
+  }
 
   // Fungsi untuk mengambil data artikel
   const getArtikel = async () => {
@@ -100,19 +106,73 @@ const ModalDataUser = ({ data }) => {
 // handle submit
   const handleSubmit = async () => {
     try {
-      // Validasi jika formData kosong atau ada propertinya yang kosong
-      if (Object.values(formData).some(value => !value)) {
-        setFailed(true);
+      if (!formData.first_name || 
+          !formData.last_name || 
+          !formData.email || 
+          !formData.birthday || 
+          !formData.username || 
+          !formData.password) {
+        alert('Semua field harus diisi');
         return;
       }
-      // Melakukan request dengan hanya mengirimkan formData
-      await axios.put(`http://localhost:3000/user/${id}`, formData);
-      setSuccess(true);
+      if (token) {
+        const apiFormData = new FormData();
+        apiFormData.append('first_name', formData.first_name);
+        apiFormData.append('last_name', formData.last_name);
+        apiFormData.append('email', formData.email);
+        apiFormData.append('birthday', formData.birthday);
+        apiFormData.append('username', formData.username);
+        apiFormData.append('password', formData.password);
   
-    } catch (error) {
-      console.error('Error:', error);
-    }
+        if(image){
+          apiFormData.append('profile_picture', image);
+        }
+  
+        const response = await axios.put(
+          `https://api-ferminacare.tech/api/v1/admin/user/${id}`,
+          apiFormData,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        // Check if the request was successful
+        if (response.status === 201) {
+          setSuccess(true); // Show success modal
+        } else {
+          setFailed(true); // Show failure modal if the request was not successful
+        }
+      }
+      } catch (error) {
+        console.error('Error:', error);
+      }
   };
+
+  const handleCheckboxChangeArtikel = (id) => {
+    setCheckboxItemsArtikel((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, checked: !item.checked } : item
+      )
+    );
+  }; 
+
+  
+  const handleCheckboxChangeKonseling = (id) => {
+    setCheckboxItemsKarier((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, checked: !item.checked } : item
+      )
+    );
+  }; 
+
+  const handleCheckboxChangeKarir = (id) => {
+    setCheckboxKonseling((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, checked: !item.checked } : item
+      )
+    );
+  }; 
 
 
   useEffect(() => {
@@ -140,12 +200,37 @@ const ModalDataUser = ({ data }) => {
                   <ButtonCloseDataKonselor onClick={handleClose}/>
                 </header>
 
+                  <main className='d-flex flex-column'>
                     <Form id='form-editKonselor'>
                         <div className="col-12 d-flex mb-3">
-                            <KontenDataUser/>
-                            <Profil src={image}/>
+                          <div className='col-8'>
+                            <FormsDataUser 
+                                first_name={formData.first_name}
+                                last_name={formData.last_name}
+                                username={formData.username}
+                                email={formData.email}
+                                birthday={formData.birthday}
+                                password={formData.password}
+                                onInputChange={handleInputChange}
+                              />
+                          </div>
+                            <div className='col-4'>
+                              <Profil src={image}/>
+                            </div>
                         </div>
                     </Form>
+
+                      <div className="d-flex justify-content-start col-10 gap-4" >
+                        <Artikel 
+                          checkboxArtikel={checkboxItemsArtikel} 
+                          onCheckBoxChange={handleCheckboxChangeArtikel} />
+                        <Karier 
+                          checkboxKarier={checkboxItemsKarier} 
+                          onCheckBoxChange={handleCheckboxChangeKonseling}/>
+                        <Konseling 
+                          checkboxKonseling={checkboxKonseling} 
+                          onCheckBoxChange={handleCheckboxChangeKarir} /> 
+                        </div>
 
                       <div id='footer-modal-editKonselor'>
                           <ButtonsDataKonselor 
@@ -158,6 +243,7 @@ const ModalDataUser = ({ data }) => {
                               label="Simpan" 
                               onClick={handleSubmit}/>
                       </div>
+                  </main>
                 </div>
           </Modal>
           <div>

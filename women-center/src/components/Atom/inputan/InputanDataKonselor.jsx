@@ -1,11 +1,11 @@
 import React from 'react'
 import { FormControl } from 'react-bootstrap'
 
-function InputanDataKonselor({type, name, placeholder, value, onChange, autoFocus}) {
+function InputanDataKonselor({type, name, placeholder, value, onChange, autoFocus,id}) {
   return (
     <div id='inputanDataKonselor'>
         <FormControl 
-            id='inputan-dataKonselor'
+            id={id}
             className="px-3 py-2"
             type={type}
             name={name}

@@ -28,6 +28,8 @@ const ModalEditDataKonselor = ({ data }) => {
     birthday: "",
     username: "",
     password: "",
+    phone_number:"",
+    picture:"",
   })
 
   const [checkboxItemsArtikel, setCheckboxItemsArtikel] = useState([])
@@ -111,21 +113,56 @@ const ModalEditDataKonselor = ({ data }) => {
   };
 
 // handle submit
-  const handleSubmit = async () => {
-    try {
-      // Validasi jika formData kosong atau ada propertinya yang kosong
-      if (Object.values(formData).some(value => !value)) {
-        setFailed(true);
-        return;
+const handleSubmit = async () => {
+  try {
+    if (!formData.first_name || 
+        !formData.last_name || 
+        !formData.email || 
+        !formData.description || 
+        !formData.education || 
+        !formData.birthday || 
+        !formData.username || 
+        !formData.password) {
+      setFailed(true);
+      return;
+    }
+    if (token) {
+      const apiFormData = new FormData();
+      apiFormData.append('first_name', formData.first_name);
+      apiFormData.append('last_name', formData.last_name);
+      apiFormData.append('email', formData.email);
+      apiFormData.append('description', formData.description);
+      apiFormData.append('education', formData.education);
+      apiFormData.append('birthday', formData.birthday);
+      apiFormData.append('username', formData.username);
+      apiFormData.append('password', formData.password);
+      apiFormData.append('phone_number', formData.phone_number);
+
+      if(image){
+        apiFormData.append('profile_picture', image);
       }
-      // Melakukan request dengan hanya mengirimkan formData
-      await axios.put(``, formData);
-      setSuccess(true);
-  
+
+      const response = await axios.put(
+        `https://api-ferminacare.tech/api/v1/admin/counselors/${id}`, // Use the correct career ID
+        apiFormData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
+      // Check if the request was successful
+      if (response.status === 200) {
+        setSuccess(true); // Show success modal
+      } else {
+        setFailed(true); // Show failure modal if the request was not successful
+      }
+    }
     } catch (error) {
       console.error('Error:', error);
     }
-  };
+};
 
   const handleCheckboxChangeArtikel = (id) => {
     setCheckboxItemsArtikel((prevItems) =>

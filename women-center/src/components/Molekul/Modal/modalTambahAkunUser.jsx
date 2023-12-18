@@ -19,11 +19,13 @@ function ModalTambahAkunUser() {
     const handleShow = () => setShow(true);
     const handleCloseBerhasil = () => setSuccess(false);
 
-    const [NamaDepan, setNamaDepan] = useState("");
-    const [NamaBelakang, setNamaBelakang] = useState("");
-    const [Username, setUsername] = useState("");
-    const [Email, setEmail] = useState("");
-    const [Password, setPassword] = useState("");
+    const [formData, setFormData] = useState({
+      first_name: '',
+      last_name: '',
+      username: '',
+      email: '',
+      password: '',
+    })
     const [success, setSuccess] = useState(false);
 
 
@@ -73,31 +75,31 @@ function ModalTambahAkunUser() {
                         type="text" 
                         placeholder="Nama Depan"
                         autoFocus={true}
-                        value={NamaDepan}
+                        value={formData.first_name}
                         onChange={(e) => setNamaDepan(e.target.value)}
                         />
                     <Inputan 
                         type="text" 
                         placeholder="Nama Belakang"
-                        value={NamaBelakang}
+                        value={formData.last_name}
                         onChange={(e) => setNamaBelakang(e.target.value)}
                         />
                     <Inputan 
                         type="text" 
                         placeholder="Username"
-                        value={Username}
+                        value={formData.username}
                         onChange={(e) => setUsername(e.target.value)}
                         />
                     <Inputan 
                         type="email" 
                         placeholder="Alamat Email"
-                        value={Email}
+                        value={formData.email}
                         onChange={(e) => setEmail(e.target.value)}
                         />
                     <Inputan
                         type="password" 
                         placeholder="Password"
-                        value={Password}
+                        value={formData.password}
                         onChange={(e) => setPassword(e.target.value)}
                         />
                 </Form.Group>

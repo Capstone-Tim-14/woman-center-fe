@@ -9,8 +9,6 @@ import Jadwal from "../pages/JadwalPage.jsx";
 import Paket from "../pages/PaketPage.jsx";
 import Karier from "../pages/KarirPage.jsx";
 //import KalenderPage from "../pages/Kalender.jsx";
-import DataKonselor from "../pages/DataKonselor.jsx";
-import DataUser from "../pages/DataUser.jsx";
 import Profile from "../pages/Profile.jsx";
 import EditProfile from "../pages/editProfile.jsx";
 import Artikel from "../pages/ArtikelContainer.jsx";
@@ -28,9 +26,6 @@ const Routers = () => {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/database/konselor" element={<DatabaseKonselor />} />
       <Route path="/database/user" element={<DatabaseUser />} />
-      {/*<Route path="/paket" element={<KalenderPage />} />*/}
-      {/*<Route path="/database/data-konselor" element={<DataKonselor />} />
-      <Route path="/database/data-user" element={<DataUser />} />*/}
       <Route path="/jadwal" element={<Jadwal />} />
       <Route path="/paket" element={<Paket />} />
       <Route path="/artikel" element={<Artikel />} />
