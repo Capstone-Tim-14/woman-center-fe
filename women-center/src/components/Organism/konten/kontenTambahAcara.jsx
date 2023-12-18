@@ -3,11 +3,12 @@ import { Form } from 'react-bootstrap';
 import InputJadwal from '../../Atom/inputan/inputJadwal';
 import ImageUp from '../../Molekul/ImageUp';
 import TambahAcara from '../../Atom/button/TambahAcara';
+import Buttonn from '../../Atom/button/button';
 import axios from 'axios';
 import { useAuth } from '../../Layout/AuthContext'
 
 
-const KontenTambahAcara = () => {
+const KontenTambahAcara = ({handleClose}) => {
   const { token, logout } = useAuth();
   const [selectedOption, setSelectedOption] = useState('');
   const [showPopup, setShow] = useState(false);
@@ -139,19 +140,19 @@ const KontenTambahAcara = () => {
                 <h5>Tipe Acara</h5>
                 <div className="d-flex gap-2  ">
                 <Form.Check
-  type="checkbox"
-  label="Offline"
-  name="checkboxGroup"
-  checked={eventData.eventType === 'OFFLINE'}
-  onChange={() => handleCheckboxChange('OFFLINE')}
-/>
-<Form.Check
-  type="checkbox"
-  label="Online"
-  name="checkboxGroup"
-  checked={eventData.eventType === 'ONLINE'}
-  onChange={() => handleCheckboxChange('ONLINE')}
-/>
+                    type="checkbox"
+                    label="Offline"
+                    name="checkboxGroup"
+                    checked={eventData.eventType === 'OFFLINE'}
+                    onChange={() => handleCheckboxChange('OFFLINE')}
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    label="Online"
+                    name="checkboxGroup"
+                    checked={eventData.eventType === 'ONLINE'}
+                    onChange={() => handleCheckboxChange('ONLINE')}
+                  />
                 </div>
               </div>
             </div>
@@ -172,17 +173,16 @@ const KontenTambahAcara = () => {
           </div>
           <div className="p-3" >
             <div className='d-flex gap-2 justify-content-end'>
+               <Buttonn
+                  className={"bg-white text-primary "}
+                  label="Batal"
+                  onClick={handleClose}
+                />
               <Buttonn
-                className={"bg-white text-primary"}
-                label="Batal"
-                // onClick nya diisi sesuai kondisi
-                onClick={closePopup}
-              />
-              <Buttonn
-        className={"bg-button"}
-        label="Tambah"
-        onClick={handleFormSubmit}
-      />
+                  className={"bg-button"}
+                  label="Tambah"
+                  onClick={handleFormSubmit}
+                />
             </div>
           </div>
         </div>

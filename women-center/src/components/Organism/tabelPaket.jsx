@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Tabel from 'react-bootstrap/Table';
-import Pagination from 'react-bootstrap/Pagination';
 import ModalHapusData from '../Molekul/Modal/modalHapusDataPaket';
 import SearchPaket from '../Atom/inputan/searchPaket';
 import TambahPaket from '../Molekul/Modal/tambahpaket';
 import EditPaket from '../Molekul/Modal/EditPaket';
 import { useAuth } from '../Layout/AuthContext'
+import '../../styles/KontenPaket.css'
 import axios from 'axios';
 
 function TabelPaket() {
-  const { token, logout } = useAuth();
+  const { token } = useAuth();
   const [searchTerm, setSearchTerm] = useState('');
   const [paket, setPaket] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -43,6 +43,7 @@ function TabelPaket() {
       console.log(error);
     });
   };
+
 
   const handleDateRange = (selectedDateRange) => {
     setDateRange(selectedDateRange);
@@ -136,6 +137,7 @@ function TabelPaket() {
       </div>
     </div>
   );
+
 }
 
 export default TabelPaket;

@@ -27,7 +27,7 @@ function ModalHapusData (props) {
       <Modal 
         show={show} 
         onHide={handleClose}
-        size=''
+        size='sm'
         style={{width: '500px', marginLeft: '450px'}}
         >
           
