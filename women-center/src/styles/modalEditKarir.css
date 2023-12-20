@@ -1,0 +1,172 @@
+/* Karir.css */
+
+.modal {
+    display: none;
+    position: fixed;
+    background: white;
+    padding: 100px;
+    z-index: 1000;
+  }
+  
+  /* Karir.css */
+  
+  .modal-content_karir {
+    display: inline-flex;
+    padding: 28px 24px;
+    flex-direction: column;
+    align-items: flex-start; /* Align to the left */
+    gap: 28px;
+    border-radius: 12px;
+    background: #FFF;
+  }
+  
+  
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .modal.show {
+    display: block;
+  }
+  
+  .fotoprofile {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    border: 1px solid var(--Grey, #E1E2E9);
+    background: var(--Main-Background, #F4F5FA);
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+    object-fit: cover;
+  }
+  
+  .fotosampul {
+    width: 455px;
+    height: 120px;
+    border-radius: 12px;
+    border: 1px solid var(--Grey, #E1E2E9);
+    background: var(--Main-Background, #F4F5FA);
+    margin-bottom: 30px;
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .uploaded-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  
+  .delete-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 55%; /* Sesuaikan posisi horizontal */
+    transform: translate(-50%, -50%);
+    color: red;
+  }
+  
+  .upload-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 45%; /* Sesuaikan posisi horizontal */
+    transform: translate(-50%, -50%);
+    color: blue;
+  }
+  
+  
+  .delete-icon {
+    color: red;
+  }
+  
+  .upload-icon {
+    color: blue;
+  }
+  
+
+.forminput{
+  display: flex;
+  width: 98%;
+  height: 43px;
+  padding: 8px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  align-self: stretch;
+  border-radius: 8px;
+  border: 1px solid var(--neutral-neutral-60, #939393);
+  background: rgba(239, 241, 249, 0.60);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.formcheckbox{
+  margin-top: 15px;
+}
+
+.formabout{
+  width: 290px;
+  height: 122px;
+  border-radius: 8px;
+  border: 1px solid var(--neutral-neutral-60, #939393);
+  background: rgba(239, 241, 249, 0.60);
+  margin-top: 10px;
+  gap:10px;
+  
+}
+
+.mainText{
+  color: var(--black-4, #5E6366);
+  font-family: Raleway-regular/12;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  
+}
+
+.buttonsave{
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-color:var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+  color: white;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+  margin-right: 50px;
+  margin-left: 15px;
+  margin-top: 80px;
+}
+
+.btnbatal{
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #5570F1;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 2px solid var(--Primary, #5570F1);  
+  margin-top: 80px;
+}
+
+.uploaded-image {
+  max-width: 100%;
+  max-height: 100%;
+}

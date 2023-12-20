@@ -1,0 +1,29 @@
+.textbox-pageartikel {
+    background-color: #FFFFFF;
+    width: 60%;
+    border-radius: 12px;
+    margin: 20px
+}
+
+.image-upload-artikelpage {
+    background-color: #FFFFFF;
+    width: 34%;
+    border-radius: 12px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px
+}
+.page-artikel-baru {
+    background-color: #FCFCFC;
+}
+
+.button-publikasi-pageartikel {
+    border-radius: 12px;
+background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+display: flex;
+width: 175px;
+height: 36px;
+justify-content: center;
+align-items: center;
+border: none;
+}

@@ -1,0 +1,24 @@
+#btn-editKonselor{
+    border: none;
+    background: none;
+}
+#header-modal-editKonselor{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+#footer-modal-editKonselor{
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+}
+#footer-modal-editKonselor .bg-button{
+   background: var(--Primary-Gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%)) !important;
+   color: #ffff !important;
+   border: none;
+}
+
+#modal-editKonselor {
+    width: max-content;
+}

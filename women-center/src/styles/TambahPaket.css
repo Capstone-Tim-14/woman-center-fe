@@ -1,0 +1,90 @@
+#form-group-tipepaket{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+
+#popup-content-tambahpaket input[type="text"],
+#popup-content-tambahpaket input[type="number"]{
+  width: 85%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background-color: #eff1f960; /* Added background color */
+  color: #ABAFB1;
+  border: none; /* Added border */
+  border-radius: 5px; /* Added border radius */
+  font-family: 'Inter, sans-serif';
+  font-size: 16px;
+}
+
+#new-benefit{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 30px;
+}
+
+#add-benefit {
+  background: transparent;
+  padding: 1px 5px;
+  border-radius: 5px;
+  background-color: #ffff;
+  color: #83898C;
+  border: 1px solid #83898C;
+  font-family: 'Poppins', 'sans serif';
+  
+}
+
+#newBenefit {
+  width: 70%; /* Adjusted width */
+  padding: 8px;
+  margin-top: 10px;
+  box-sizing: border-box; /* Adjusted margin */
+  border-radius: 5px; /* Added border radius */
+  font-size: 14px;
+  font-family: 'Inter', 'sans serif';
+  color: #83898C;
+}
+
+
+#button-section-paket {
+  display: flex; /* Mengaktifkan flexbox */
+  justify-content: flex-end; /* Menyebarkan elemen secara merata */
+  margin-top: 20px; /* Margin atas sesuai kebutuhan */
+}
+
+/* Styling for the Batal button */
+#btn-batalPaket {
+  background-color: #fff; /* Warna latar belakang tombol */
+  color: #5570F1; /* Warna teks tombol */
+  padding: 8px 16px; /* Padding tombol */
+  border-radius: 12px; /* Rounding border tombol */
+  cursor: pointer; /* Ubah cursor saat diarahkan ke tombol */
+  border: 2px solid #5570F1; /* Border berwarna biru dengan ketebalan 2px */
+  width: 15%;
+  height: 15%;
+  font-family: 'Inter', 'Sans Serif';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  margin-right: 10px;
+}
+
+
+#btn-TambahPaket {
+  background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+  color: #fff; /* Warna teks tombol */
+  padding: 8px 16px; /* Padding tombol */
+  border-radius: 12px; /* Rounding border tombol */
+  cursor: pointer; /* Ubah cursor saat diarahkan ke tombol */
+  border: none; /* Border berwarna biru dengan ketebalan 2px */
+  width: 15%;
+  height: 15%;
+  font-family: 'Inter', 'Sans Serif';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+}
+

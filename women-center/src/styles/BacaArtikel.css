@@ -1,0 +1,137 @@
+div {
+    display: block;
+    font-family: Raleway;
+}
+
+.container {
+    max-width: 100%;
+}
+
+.modal-dialog {
+    box-sizing: border-box;
+    max-width: calc((11 / 12) * 100%);
+    display: flex;
+  flex-direction: column;
+  
+ 
+  
+}
+
+.modal-content {
+    min-height: 80vh;
+    position: relative;
+    flex: 1 1 auto;
+    padding: var(--bs-modal-padding);
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--bs-modal-header-padding);
+    border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
+    border-top-left-radius: var(--bs-modal-inner-border-radius);
+    border-top-right-radius: var(--bs-modal-inner-border-radius);
+}
+
+.modal-body {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    padding: 0;
+    font-family: Raleway;
+    justify-content: center;
+
+}
+#artikel-modal-title {
+    font-family: Raleway;
+}
+
+#popupTextarea {
+    max-height: 100%;
+    
+    background-color:  var(--input-default-background, rgba(239, 241, 249, 0.60));
+    border: none;
+    
+}
+
+.img-fluid {
+    border-radius: 8px;
+   
+}
+
+.image-container {
+    justify-content: center;
+
+}
+
+#approve-article {
+    display: flex;
+    width: 48%;
+    padding: 17px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    background: var(--primary-gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%));
+    border: none;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative; /* or 'relative' */
+    /* Add other styles as needed */
+      
+}
+
+#reject-article{
+    display: flex;
+    width: 48%;
+    padding: 15px 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    background: transparent;
+    border: none;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative; /* or 'relative' */
+    /* Add other styles as needed */
+    border: none;
+    border-radius: 12px;
+    border: 2px solid var(--Primary, #5570F1);
+    color: var(--Primary, #5570F1);
+    text-align: center;
+}
+
+
+.btn-close {
+    border-radius: 8px;
+    background: var(--secondary-30, #FFF2E2);
+    background-image: var(--bs-btn-close-bg); /* Close icon background */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    --bs-btn-close-opacity: 1;
+
+}
+.modal-header .btn-close {
+    padding: calc(var(--bs-modal-header-padding-y) * .5) calc(var(--bs-modal-header-padding-x) * .5);
+    margin: 0;
+}
+
+.modal-footer {
+border-top: none;
+}
+
+.align-self-end {
+    display: flex;
+  }

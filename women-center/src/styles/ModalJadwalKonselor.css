@@ -1,0 +1,23 @@
+#modalJadwal-footer {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+}
+
+#modalJadwal-footer .custom-button {
+   background: var(--Primary-Gradient-1, linear-gradient(257deg, #FD8BA3 0%, #FF5BCD 100%)) !important;
+   color: #ffff !important;
+}
+
+#custom-buttons {
+    background: rgba(244, 81, 141, 0.20) !important;
+    border: none;
+    color: #F4518D !important;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#modalJadwal-header{
+    margin-left: 20px;
+}

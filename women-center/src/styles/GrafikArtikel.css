@@ -1,0 +1,13 @@
+
+.articles-organism {
+    
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px; 
+    min-width: 100%;
+  }
+  
+  .article-list {
+    padding: 10px;
+  }
+  
